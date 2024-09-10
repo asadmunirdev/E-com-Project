@@ -1,0 +1,28 @@
+{
+  "seller": [
+    {
+      "id": "bc37",
+      "name": "asadmunir",
+      "emai": "asad@gmail.com",
+      "password": "abc"
+    },
+    {
+      "id": "0e43",
+      "name": "Sammer",
+      "email": "sameer@gmail.com",
+      "password": "sameer123"
+    },
+    {
+      "id": "f79d",
+      "name": "Hassan",
+      "email": "hassan@gmail.com",
+      "password": "hassan123"
+    },
+    {
+      "id": "1aaa",
+      "name": "shazil",
+      "email": "shazil@gmail.com",
+      "password": "shazil123"
+    }
+  ]
+}

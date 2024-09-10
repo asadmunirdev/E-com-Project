@@ -1,0 +1,135 @@
+/* Seller Authentication Component Styling */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+/* Seller Authentication Container Styling */
+.seller-auth {
+    width: 100%;
+    max-width: 400px;
+    background: linear-gradient(135deg, #f0faff, #e0f0ff); /* Softer gradient with light blue tones */
+    border-radius: 20px; /* More rounded corners for a friendlier look */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer and slightly larger shadow for depth */
+    padding: 40px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: fadeIn 1s;
+    position: relative; /* Allows for layered elements */
+    overflow: hidden; /* Prevents content overflow */
+    border: 1px solid #cfe7ff; /* Light blue border for a refined look */
+  }
+  
+  /* Hover Effects for Seller Auth Container */
+  .seller-auth:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    border-color: #99d4ff; /* Darker blue border on hover */
+  }
+  
+  /* Decorative Elements for Visual Enhancement */
+  .seller-auth::before,
+  .seller-auth::after {
+    content: "";
+    position: absolute;
+    width: 120px; /* Larger circles for more visual interest */
+    height: 120px;
+    background: rgba(0, 150, 255, 0.1); /* Light blue decorative circles */
+    border-radius: 50%;
+    z-index: -1;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  }
+  
+  .seller-auth::before {
+    top: -40px;
+    left: -40px;
+  }
+  
+  .seller-auth::after {
+    bottom: -40px;
+    right: -40px;
+  }
+  
+  .seller-auth:hover::before {
+    transform: translate(-15px, -15px) scale(1.2); /* Enhanced scaling and movement on hover */
+    opacity: 0.8; /* Subtle fade effect */
+  }
+  
+  .seller-auth:hover::after {
+    transform: translate(15px, 15px) scale(1.2); /* Enhanced scaling and movement on hover */
+    opacity: 0.8; /* Subtle fade effect */
+  }
+  
+h1 {
+  font-size: 2.2rem; /* Larger font size for prominence */
+  text-align: center;
+  color: #0056b3; /* A deeper, more vibrant blue */
+  margin-bottom: 20px;
+  animation: slideIn 1s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  font-weight: bold; /* Make the font bold for emphasis */
+}
+
+/* Anchor Tag Styling */
+a {
+    display: inline-block; /* Allows for padding and margins */
+    text-align: center;
+    color: #007bff; /* Vibrant blue color for the links */
+    margin-top: 15px;
+    font-size: 15px;
+    text-decoration: none; /* Removes the default underline */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.2s ease;
+    font-weight: 600; /* Semi-bold for emphasis */
+    position: relative; /* Allows for pseudo-element positioning */
+  }
+  
+  a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #007bff; /* Underline color matches text color */
+    transition: width 0.3s;
+    margin-top: 5px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  a:hover {
+    color: #0056b3; /* Darker blue on hover for contrast */
+    transform: translateY(-2px); /* Slight upward movement on hover */
+    text-shadow: 0 2px 5px rgba(0, 123, 255, 0.3); /* Adds a glow effect on hover */
+  }
+  
+  a:hover::after {
+    width: 100%; /* Expands underline on hover */
+  }
+  
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

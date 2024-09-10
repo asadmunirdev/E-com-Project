@@ -1,0 +1,83 @@
+/* Custom Navbar Styles */
+.custom-navbar {
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Smooth gradient background */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  border-bottom: 2px solid #0056b3; /* Bottom border for added structure */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-navbar:hover {
+  background: linear-gradient(135deg, #0056b3, #003d80); /* Darker gradient on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+}
+
+/* Center and resize the search bar */
+.search-form {
+  width: 60%; /* Wider search bar */
+  max-width: 700px; /* Optional: Set a maximum width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.search-form input {
+  border-radius: 30px; /* More rounded corners */
+  border: 1px solid #0056b3;
+  padding: 10px 20px; /* Increased padding */
+  font-size: 16px; /* Larger font size */
+  transition: all 0.3s ease;
+}
+
+.search-form input:focus {
+  border-color: #00bfff; /* Light blue border on focus */
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.6); /* Light blue shadow */
+  transform: scale(1.03); /* Subtle scaling effect */
+}
+
+.search-form button {
+  border-radius: 30px; /* Rounded corners */
+  background-color: #00bfff; /* Light blue background */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-form button:hover {
+  background-color: #0099cc; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Custom Navigation Links */
+.custom-nav-link {
+  position: relative;
+  color: white;
+  font-size: 18px; /* Larger font size for readability */
+  font-weight: 500; /* Semi-bold text */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-nav-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px; /* Slightly thicker underline */
+  background: #ffcc00; /* Yellow underline */
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px; /* Space between text and underline */
+  left: 0;
+}
+
+.custom-nav-link:hover {
+  color: #ffcc00; /* Yellow text color on hover */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.custom-nav-link:hover::after {
+  width: 100%;
+}
+
+
+ .collapse{
+    visibility: visible;
+ } 

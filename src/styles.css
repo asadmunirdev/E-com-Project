@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+/* @import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Form Styling */
+.common-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input Field Styling */
+.form-input {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f9f9f9; /* Light background for contrast */
+  color: #333; /* Dark text color for readability */
+}
+
+.form-input:focus {
+  border-color: #0056b3; /* Matches the header color */
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.2); /* Light blue shadow for focus effect */
+  background-color: #ffffff; /* White background on focus for emphasis */
+}
+
+/* Button Styling */
+.form-button {
+  background-color: #28a745; /* Vibrant green color for a standout effect */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold; /* Bold text for emphasis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.form-button:hover {
+  background-color: #218838; /* Darker green for hover effect */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.error-p {
+  color: red; /* Text color for error message */
+  text-transform: capitalize; /* Capitalizes the first letter of each word */
+  text-align: center; /* Centers the text */
+  margin-bottom: 15px; /* Space below the error message */
+  font-size: 16px; /* Adjust font size for readability */
+  font-weight: bold; /* Makes the text bold */
+  padding: 10px; /* Adds space around the text */
+  display: inline-block; /* Ensures the background color and border apply correctly */
+  max-width: 100%; /* Prevents overflow in responsive design */
+}

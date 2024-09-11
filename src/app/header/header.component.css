@@ -13,71 +13,130 @@
 
 /* Center and resize the search bar */
 .search-form {
-  width: 60%; /* Wider search bar */
+  width: 100%;
   max-width: 700px; /* Optional: Set a maximum width */
-  margin: 0 auto; /* Center horizontally */
+  margin: 0 auto;
+  display: flex; /* Flex display for alignment */
+  align-items: center;
+  justify-content: center; /* Center align items */
 }
 
 .search-form input {
   border-radius: 30px; /* More rounded corners */
   border: 1px solid #0056b3;
-  padding: 10px 20px; /* Increased padding */
-  font-size: 16px; /* Larger font size */
+  padding: 10px 20px;
+  font-size: 16px;
   transition: all 0.3s ease;
+  flex: 1; /* Allow input to take up available space */
 }
 
 .search-form input:focus {
-  border-color: #00bfff; /* Light blue border on focus */
-  box-shadow: 0 0 12px rgba(0, 191, 255, 0.6); /* Light blue shadow */
-  transform: scale(1.03); /* Subtle scaling effect */
+  border-color: #00bfff;
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.6);
+  transform: scale(1.03);
 }
 
 .search-form button {
-  border-radius: 30px; /* Rounded corners */
-  background-color: #00bfff; /* Light blue background */
+  border-radius: 30px;
+  background-color: #00bfff;
   border: none;
   color: white;
   padding: 10px 20px;
   font-size: 16px;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-left: 5px; /* Space between input and button */
 }
 
 .search-form button:hover {
-  background-color: #0099cc; /* Darker blue on hover */
-  transform: scale(1.05); /* Slightly enlarge button on hover */
+  background-color: #0099cc;
+  transform: scale(1.05);
 }
 
 /* Custom Navigation Links */
 .custom-nav-link {
   position: relative;
   color: white;
-  font-size: 18px; /* Larger font size for readability */
-  font-weight: 500; /* Semi-bold text */
+  font-size: 18px;
+  font-weight: 500;
   transition: color 0.3s ease, transform 0.3s ease;
+  padding: 0.5rem 1rem; /* Additional padding for touch targets */
 }
 
 .custom-nav-link::after {
   content: '';
   display: block;
   width: 0;
-  height: 3px; /* Slightly thicker underline */
-  background: #ffcc00; /* Yellow underline */
+  height: 3px;
+  background: #ffcc00;
   transition: width 0.3s ease;
   position: absolute;
-  bottom: -5px; /* Space between text and underline */
+  bottom: -5px;
   left: 0;
 }
 
 .custom-nav-link:hover {
-  color: #ffcc00; /* Yellow text color on hover */
-  transform: translateY(-2px); /* Slight upward movement on hover */
+  color: #ffcc00;
+  transform: translateY(-2px);
 }
 
 .custom-nav-link:hover::after {
   width: 100%;
 }
 
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    text-align: center;
+  }
 
- .collapse{
-    visibility: visible;
- } 
+  .search-form {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: none; /* Remove max-width on smaller screens */
+  }
+
+  .search-form input,
+  .search-form button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-nav-link {
+    font-size: 16px; /* Slightly smaller font for mobile */
+    padding: 0.75rem 1rem; /* Adjust padding for touch targets */
+  }
+  
+}
+
+/* Align nav links to the right for 'seller' menu type */
+.seller-navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%; /* Ensure it takes full width */
+}
+
+.egg-shaped {
+  display: inline-block;
+  padding: 8px 16px; /* Adjust padding as needed */
+  background-color: white;
+  border-radius: 70px; /* This creates the egg shape */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow effect */
+  border: 1px solid #ddd; /* Optional: adds a border */
+  color: #333; /* Adjust text color if needed */
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+
+.collapse{
+  visibility: visible;
+} 

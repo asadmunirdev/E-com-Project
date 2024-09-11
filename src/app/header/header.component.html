@@ -1,58 +1,94 @@
-<!-- <nav class="flex flex-wrap items-center justify-between bg-gray-800 p-3 text-white">
-  <h1 class="text-xl font-bold">Asad-Shop</h1>
-  
-  
-  <div class="flex-grow flex justify-center space-x-2 mt-3 sm:mt-0 w-full sm:w-auto">
-    <input type="text" placeholder="Search Products" class="p-2 border border-gray-700 rounded-l-md outline-none focus:ring-2 focus:ring-blue-500 w-full sm:w-96">
-    <button class="p-2 bg-gray-600 rounded-r-md hover:bg-gray-500">Search</button>
-  </div>
-
-  
-  <ul class="flex flex-wrap justify-center sm:justify-end space-x-4 mt-3 sm:mt-0 ml-auto w-full sm:w-auto">
-    <li><a routerLink="" class="hover:text-gray-300 text-lg">Home</a></li>
-    <li><a routerLink="seller-auth" class="hover:text-gray-300 text-lg">Seller</a></li>
-    <li><a routerLink="" class="hover:text-gray-300 text-lg">Login</a></li>
-    <li><a routerLink="" class="hover:text-gray-300 text-lg">Cart(0)</a></li>
-  </ul>
-</nav> -->
-
-<!-- Bootstrap Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 custom-navbar">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="#">Asad-Shop</a>
+    <a class="navbar-brand fw-bold" routerLink="/">Asad-Shop</a>
 
     <!-- Toggle button for mobile view -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Collapsible content -->
     <div class="navbar-collapse collapse" id="navbarNav">
       <!-- Search bar -->
-      <form class="d-flex mx-auto my-2 my-lg-0 search-form">
-        <input class="form-control me-2" type="search" placeholder="Search Products" aria-label="Search">
+      <form
+        *ngIf="menuType === 'default'"
+        class="d-flex mx-auto my-2 my-lg-0 search-form w-100"
+      >
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search Products"
+          aria-label="Search"
+        />
         <button class="btn btn-outline-light" type="submit">Search</button>
       </form>
 
       <!-- Navigation links -->
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a routerLink="" class="nav-link custom-nav-link" aria-current="page">Home</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="seller-auth" class="nav-link custom-nav-link">Seller</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="" class="nav-link custom-nav-link">Login</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="" class="nav-link custom-nav-link">Cart(0)</a>
-        </li>
-      </ul>
+      <div [ngSwitch]="menuType">
+        <!-- Default Navbar Navlinks -->
+        <ul
+          [ngClass]="{ 'seller-navbar-nav': menuType === 'seller' }"
+          *ngSwitchCase="'default'"
+          class="navbar-nav ms-auto mb-2 mb-lg-0 justify-content-center w-100"
+        >
+          <li class="nav-item text-center">
+            <a
+              routerLink=""
+              class="nav-link custom-nav-link"
+              aria-current="page"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item text-center">
+            <a routerLink="seller-auth" class="nav-link custom-nav-link"
+              >Seller</a
+            >
+          </li>
+          <li class="nav-item text-center">
+            <a routerLink="#" class="nav-link custom-nav-link">Login</a>
+          </li>
+          <li class="nav-item text-center">
+            <a routerLink="#" class="nav-link custom-nav-link">Cart(0)</a>
+          </li>
+        </ul>
+
+        <!-- Seller Navbar Navlinks -->
+        <ul
+          [ngClass]="{ 'seller-navbar-nav': menuType === 'seller' }"
+          *ngSwitchCase="'seller'"
+          class="navbar-nav ms-auto mb-2 mb-lg-0 justify-content-center w-100"
+        >
+          <li class="nav-item text-center">
+            <a routerLink="seller-add-product" class="nav-link custom-nav-link"
+              >Add Product</a
+            >
+          </li>
+          <li class="nav-item text-center">
+            <a
+              routerLink="seller-auth"
+              class="nav-link custom-nav-link"
+              aria-current="page"
+              >Product List</a
+            >
+          </li>
+          <li class="nav-item text-center">
+            <a (click)="logout()" class="nav-link custom-nav-link">Logout</a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link  egg-shaped">{{ sellerName | titlecase }}</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>
 
 <router-outlet></router-outlet>
-
-

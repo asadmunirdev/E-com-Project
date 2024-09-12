@@ -1,28 +1,45 @@
 {
   "seller": [
     {
-      "id": "0e43",
-      "name": "Sammer",
-      "email": "sameer@gmail.com",
-      "password": "sameer123"
-    },
-    {
-      "id": "f79d",
-      "name": "Hassan",
-      "email": "hassan@gmail.com",
-      "password": "hassan123"
-    },
-    {
-      "id": "1aaa",
-      "name": "shazil",
-      "email": "shazil@gmail.com",
-      "password": "shazil123"
-    },
-    {
-      "id": "79fb",
-      "name": "Asad Munir",
+      "id": "773f",
+      "name": "Muhammad Asad Munir",
       "email": "asad@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "cacf",
+      "name": "rafay muzamil",
+      "email": "rafay@gmail.com",
+      "password": "rafay123"
+    }
+  ],
+  "products": [
+    {
+      "id": "0932",
+      "name": "iPhone 16",
+      "price": "$799",
+      "color": "black",
+      "category": "mobiles",
+      "description": "iPhone 16 features a sleek design, A18 Bionic chip, and Super Retina XDR display.",
+      "image": "https://www.techspecs.info/_next/image/?url=https%3A%2F%2Fwww.techspecs.info%2Fuploads%2FApple_i_Phone_16_color_variants_59da021f27.jpg&w=1920&q=75"
+    },
+    {
+      "id": "ffa2",
+      "name": "Rolex Watch",
+      "price": "$344",
+      "color": "brown",
+      "category": "watches",
+      "description": "Rolex: precision, reliability, and timeless design.",
+      "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": "e332",
+      "name": "Nike Shoes",
+      "price": "$144",
+      "color": "Red",
+      "category": "Shoes",
+      "description": "Nike shoes: comfort, style, and performance.",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D"
     }
   ]
 }

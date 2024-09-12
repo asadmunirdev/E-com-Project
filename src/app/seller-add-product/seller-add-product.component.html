@@ -1,1 +1,34 @@
-<p>seller-add-product works!</p>
+<div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8 add-product">
+        <h1 class="text-center mb-4">Add Product</h1>
+        <p class="messagee_p">{{addProductMessage}}</p>
+        <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" class="common-form">
+          <div class="row mb-3">
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-input form-control" placeholder="Enter Product Name" name="name" ngModel required />
+            </div>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-input form-control" placeholder="Enter Product Price" name="price" ngModel required />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-input form-control" placeholder="Enter Product Color" name="color" ngModel required />
+            </div>
+            <div class="col-12 col-md-6">
+              <input type="text" class="form-input form-control" placeholder="Enter Product Category" name="category" ngModel required />
+            </div>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-input form-control" placeholder="Enter Product Image URL" name="image" ngModel required />
+          </div>
+          <div class="mb-3">
+            <textarea class="form-input form-control" placeholder="Enter Product Description" name="description" ngModel required rows="5"></textarea>
+          </div>
+          <button class="form-button btn btn-primary w-100 mb-3" type="submit">Add Product</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

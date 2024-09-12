@@ -71,3 +71,12 @@ body {
   display: inline-block; /* Ensures the background color and border apply correctly */
   max-width: 100%; /* Prevents overflow in responsive design */
 }
+
+.messagee_p{
+  color: green; /* Set text color to green */
+  text-align: center; /* Center-align text */
+  font-size: 1.3em; /* Optional: adjust font size for better visibility */
+  margin-top: 10px; /* Optional: add some space above the message */
+  margin-bottom: 20px; /* Optional: add some space above the message */
+}
+

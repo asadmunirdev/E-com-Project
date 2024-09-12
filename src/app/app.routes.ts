@@ -5,7 +5,7 @@ import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { AuthGuard } from './auth.guard';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
 export const routes: Routes = [
-  {
+{
     component: HomeComponent,
     path: '',
   },
@@ -16,10 +16,11 @@ export const routes: Routes = [
   {
     component: SellerHomeComponent,
     path: 'seller-home',
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
-component: SellerAddProductComponent,
-path:'seller-add-product',
+    component: SellerAddProductComponent,
+    path: 'seller-add-product',
+    canActivate: [AuthGuard],
   },
 ];

@@ -1,0 +1,68 @@
+.product-list-container {
+  animation: fade-in 1s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-in-out;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.6s ease-out;
+}
+
+/* Improved styling */
+td, th {
+  vertical-align: middle; /* Centers content vertically */
+}
+
+table {
+  border-spacing: 0;
+  border: 2px solid #4A90E2; /* Enhances the border thickness */
+}
+
+img {
+  width: 128px; /* Fixed width */
+  height: 128px; /* Fixed height */
+  object-fit: cover; /* Ensures the image covers the cell without distortion */
+  display: block; /* Removes inline spacing */
+  margin: 0 auto; /* Centers the image horizontally */
+}
+
+.description-column {
+  word-wrap: break-word; /* Allows long words to break and fit within the cell */
+  max-width: 300px; /* Allows more space for the description */
+  text-align: center;
+}
+
+tr:hover {
+  background-color: #e3f2fd; /* Subtle hover effect */
+}
+
+td {
+  padding: 12px 0; /* Adds padding to top and bottom of each cell */
+  text-align: center; /* Center-aligns the content */
+}
+
+
+
+

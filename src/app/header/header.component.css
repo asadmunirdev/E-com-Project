@@ -122,6 +122,10 @@
   width: 100%; /* Ensure it takes full width */
 }
 
+.pointer{
+  cursor: pointer;
+}
+
 .egg-shaped {
   display: inline-block;
   padding: 8px 16px; /* Adjust padding as needed */
@@ -130,8 +134,9 @@
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow effect */
   border: 1px solid #ddd; /* Optional: adds a border */
-  color: #333; /* Adjust text color if needed */
-  font-size: 18px;
+  color: #0056b3; /* Adjust text color if needed */
+  cursor: pointer;
+  font-size: 20px;
   font-weight: 500;
   margin-left: 10px;
 }

@@ -52,6 +52,7 @@ img {
   word-wrap: break-word; /* Allows long words to break and fit within the cell */
   max-width: 300px; /* Allows more space for the description */
   text-align: center;
+  padding: 10px;
 }
 
 tr:hover {

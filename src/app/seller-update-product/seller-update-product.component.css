@@ -1,0 +1,126 @@
+/* Update Product Form Container Styling */
+.update-product {
+    width: 100%;
+    max-width: 800px; /* Adjust to desired max width */
+    background: linear-gradient(135deg, #d1f2d1, #a2e1a2); /* Soft green gradient */
+    border-radius: 20px; /* Rounded corners for a friendly look */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+    padding: 40px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: fadeIn 1s;
+    position: relative; /* Allows for layered elements */
+    overflow: hidden; /* Prevents content overflow */
+    border: 1px solid #a2d1a2; /* Lighter green border for a refined look */
+}
+
+/* Hover Effects for Update Product Container */
+.update-product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+    border-color: #8fcf8f; /* Darker green border color on hover */
+}
+
+/* Decorative Elements for Visual Enhancement */
+.update-product::before,
+.update-product::after {
+    content: "";
+    position: absolute;
+    width: 140px; /* Larger circles for more visual interest */
+    height: 140px;
+    background: rgba(0, 200, 100, 0.1); /* Light green decorative circles */
+    border-radius: 50%;
+    z-index: -1;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.update-product::before {
+    top: -50px;
+    left: -50px;
+}
+
+.update-product::after {
+    bottom: -50px;
+    right: -50px;
+}
+
+.update-product:hover::before {
+    transform: translate(-20px, -20px) scale(1.3); /* Enhanced scaling and movement on hover */
+    opacity: 0.8; /* Subtle fade effect */
+}
+
+.update-product:hover::after {
+    transform: translate(20px, 20px) scale(1.3); /* Enhanced scaling and movement on hover */
+    opacity: 0.8; /* Subtle fade effect */
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 2.2rem; /* Larger font size for prominence */
+    text-align: center;
+    color: #006400; /* Dark green for the heading */
+    margin-bottom: 20px;
+    animation: slideIn 1s;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    font-weight: bold; /* Make the font bold for emphasis */
+}
+
+/* Input Fields Styling */
+.form-input {
+    background-color: #ffffff; /* White background for the input fields */
+    border: 2px solid #a2d1a2; /* Green border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 10px 15px; /* Padding inside the input field */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for border and shadow */
+}
+
+.form-input:focus {
+    border-color: #8fcf8f; /* Darker green border on focus */
+    box-shadow: 0 4px 12px rgba(0, 200, 100, 0.3); /* Enhanced shadow on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Textarea Styling */
+textarea.form-input {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Button Styling */
+.form-button {
+    background-color: #4caf50; /* Green background for the button */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    color: #ffffff; /* White text */
+    padding: 12px; /* Padding inside the button */
+    font-size: 1rem; /* Adjust font size */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background and shadow */
+}
+
+.form-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

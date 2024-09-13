@@ -4,8 +4,11 @@ import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { AuthGuard } from './auth.guard';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
+import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+import { NotFoundComponent } from './not-found/not-found.component'; // Import the NotFoundComponent
+
 export const routes: Routes = [
-{
+  {
     component: HomeComponent,
     path: '',
   },
@@ -22,5 +25,14 @@ export const routes: Routes = [
     component: SellerAddProductComponent,
     path: 'seller-add-product',
     canActivate: [AuthGuard],
+  },
+  {
+    component: SellerUpdateProductComponent,
+    path: 'seller-update-product/:id',
+    canActivate: [AuthGuard],
+  },
+  {
+    path: '**',
+    component: NotFoundComponent, // Add this route for handling 404
   },
 ];

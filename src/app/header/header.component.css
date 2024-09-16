@@ -1,13 +1,21 @@
 /* Custom Navbar Styles */
 .custom-navbar {
-  background: linear-gradient(135deg, #007bff, #0056b3); /* Smooth gradient background */
+  background: linear-gradient(
+    135deg,
+    #007bff,
+    #0056b3
+  ); /* Smooth gradient background */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
   border-bottom: 2px solid #0056b3; /* Bottom border for added structure */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .custom-navbar:hover {
-  background: linear-gradient(135deg, #0056b3, #003d80); /* Darker gradient on hover */
+  background: linear-gradient(
+    135deg,
+    #0056b3,
+    #003d80
+  ); /* Darker gradient on hover */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
 }
 
@@ -63,7 +71,7 @@
 }
 
 .custom-nav-link::after {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 3px;
@@ -112,7 +120,6 @@
     font-size: 16px; /* Slightly smaller font for mobile */
     padding: 0.75rem 1rem; /* Adjust padding for touch targets */
   }
-  
 }
 
 /* Align nav links to the right for 'seller' menu type */
@@ -122,7 +129,7 @@
   width: 100%; /* Ensure it takes full width */
 }
 
-.pointer{
+.pointer {
   cursor: pointer;
 }
 
@@ -141,7 +148,26 @@
   margin-left: 10px;
 }
 
+.suggested-result {
+  position: absolute;
+  display: list-item !important;
+  z-index: 10;
+  background: #fff;
+  width: 300px;
+  top: 40px;
+  border: 1px solid #ddd;
+}
 
-.collapse{
+.suggested-result li{
+  border: 1 px solid #ddd;
+  padding: 5px;
+}
+
+.suggested-result a{
+  cursor: pointer;
+  color: #003d80;
+}
+
+.collapse {
   visibility: visible;
-} 
+}

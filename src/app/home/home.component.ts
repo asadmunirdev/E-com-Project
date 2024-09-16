@@ -1,13 +1,26 @@
-import { Component } from '@angular/core';
-import { AllInOneComponent } from "../all-in-one/all-in-one.component";
-
+import { Component, OnInit } from '@angular/core';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductService } from '../services/product.service';
+import { product } from '../data-type';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AllInOneComponent],
+  imports: [NgbCarouselModule,CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  popularProducts: undefined | product[];
+  trendyProducts: undefined | product[];
+  constructor(private product: ProductService) {}
 
+  ngOnInit(): void {
+    this.product.popularProducts().subscribe((data) => {
+      this.popularProducts = data;
+    });
+    this.product.trendyProducts().subscribe((data) => {
+      this.trendyProducts = data;
+    });
+  }
 }

@@ -1,14 +1,52 @@
-<!-- home.component.html -->
-<div class="home-container">
-    <div class="welcome-card">
-      <h1>Welcome to Asad-Shop</h1>
-      <p>Your one-stop shop for amazing products!</p>
-      <div class="buttons">
-        <button class="btn btn-primary">Explore Now</button>
-        <button class="btn btn-secondary">Contact Us</button>
-      </div>
+@if (popularProducts){
+<ngb-carousel
+  [interval]="3000"
+  [pauseOnHover]="false"
+  [wrap]="true"
+  [keyboard]="true"
+>
+  <ng-template *ngFor="let item of popularProducts" ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img
+        class="product-header-img"
+        src="{{ item.image }}"
+        alt="{{ item.name }}"
+      />
     </div>
-  </div>
+    <div class="carousel-caption">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.description }}</p>
+    </div>
+  </ng-template> </ngb-carousel
+>}
 
-  <app-all-in-one></app-all-in-one>
+<!-- Products -->
+<div class="container my-5">
+	<h1 class="text-center mb-4">Trendy Products</h1>
+	<div class="row">
+	  <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let item of trendyProducts">
+		<div class="card product-item">
+		  <!-- Product Image -->
+		  <img class="card-img-top" src="{{item.image}}" alt="{{item.name}}" />
+  
+		  <!-- Product Body -->
+		  <div class="card-body">
+			<h5 class="card-title">{{item.name}}</h5>
+			<div class="product-info">
+			  <p class="product-price"><strong>Price:</strong> {{item.price}}</p>
+			  <p class="product-color"><strong>Color:</strong> {{item.color}}</p>
+			  <p class="product-description"><strong>Description:</strong> {{item.description}}</p>
+			</div>
+		  </div>
+  
+		  <!-- Product Footer -->
+		  <div class="card-footer text-center">
+			<a href="#" class="btn btn-primary">View Details</a>
+			<a href="#" class="btn btn-success">Add to Cart</a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+  
   

@@ -25,10 +25,17 @@
         <input
           class="form-control me-2"
           type="search"
+          (keyup)="searchProducts($event)"
+          (blur)="hideSearch()"
           placeholder="Search Products"
           aria-label="Search"
         />
         <button class="btn btn-outline-light" type="submit">Search</button>
+        <ul class="suggested-result" *ngIf="searchResult">
+          <li *ngFor="let item of searchResult">
+            <a>{{ item.name }}</a>
+          </li>
+        </ul>
       </form>
 
       <!-- Navigation links -->
@@ -98,9 +105,7 @@
             >
           </li>
           <li class="nav-item text-center">
-            <a
-              (click)="logout()"
-              class="nav-link custom-nav-link pointer"
+            <a (click)="logout()" class="nav-link custom-nav-link pointer"
               >Logout</a
             >
           </li>

@@ -28,7 +28,7 @@
   "products": [
     {
       "name": "iPhone 16",
-      "price": "$299",
+      "price": "$1799",
       "color": "black",
       "category": "mobiles",
       "image": "https://www.techspecs.info/_next/image/?url=https%3A%2F%2Fwww.techspecs.info%2Fuploads%2FApple_i_Phone_16_color_variants_59da021f27.jpg&w=1920&q=75",
@@ -36,20 +36,20 @@
       "id": "0932"
     },
     {
-      "id": "ffa2",
       "name": "Rolex Watch",
-      "price": "$344",
+      "price": "$144",
       "color": "brown",
       "category": "watches",
+      "image": "https://images.unsplash.com/photo-1671119720870-df45dcaf81c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cm9sZXglMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D",
       "description": "Rolex: precision, reliability, and timeless design.",
-      "image": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d2F0Y2h8ZW58MHx8MHx8fDA%3D"
+      "id": "ffa2"
     },
     {
       "id": "e332",
       "name": "Nike Shoes",
       "price": "$144",
       "color": "Red",
-      "category": "Shoes",
+      "category": "shoes",
       "description": "Nike shoes: comfort, style, and performance.",
       "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D"
     },
@@ -63,13 +63,13 @@
       "image": "https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww"
     },
     {
-      "id": "aa01",
       "name": "Wireless Charger",
       "price": "$25",
       "color": "white",
       "category": "accessories",
+      "image": "https://images.unsplash.com/photo-1591290619618-904f6dd935e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2lyZWxlc3MlMjBjaGFyZ2VyfGVufDB8fDB8fHww",
       "description": "Fast charging wireless charger compatible with multiple devices.",
-      "image": "https://images.unsplash.com/photo-1520287636485-66d0e25add79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2hhcmdlcnxlbnwwfHwwfHx8MA%3D%3D"
+      "id": "aa01"
     },
     {
       "id": "bb02",
@@ -115,6 +115,96 @@
       "category": "electronics",
       "description": "Comfortable and precise ergonomic mouse for daily use.",
       "image": "https://images.unsplash.com/photo-1611532736570-dd6b097ecbb3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW91c2V8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": "gg07",
+      "name": "Bluetooth Headphones",
+      "price": "$120",
+      "color": "black",
+      "category": "electronics",
+      "description": "Wireless Bluetooth headphones with noise-cancellation features.",
+      "image": "https://images.unsplash.com/photo-1706372124814-417e2f0c3fe0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bW9iaWxlc3xlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "id": "hh08",
+      "name": "Digital Camera",
+      "price": "$650",
+      "color": "black",
+      "category": "electronics",
+      "description": "High-resolution digital camera with advanced features for professional photography.",
+      "image": "https://plus.unsplash.com/premium_photo-1681022527718-81786d7873bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2hhaXJzfGVufDB8fDB8fHww"
+    },
+    {
+      "id": "ii09",
+      "name": "Smartwatch",
+      "price": "$250",
+      "color": "black",
+      "category": "wearables",
+      "description": "Smartwatch with fitness tracking, notifications, and customizable watch faces.",
+      "image": "https://plus.unsplash.com/premium_photo-1679943423706-570c6462f9a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWN8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": "jj10",
+      "name": "Chairs",
+      "price": "$200",
+      "color": "black",
+      "category": "furniture",
+      "description": "Comfortable ergonomic chairs for office or home use.",
+      "image": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c25hY2tzfGVufDB8fDB8fHww"
+    },
+    {
+      "id": "kk11",
+      "name": "Desk Lamp",
+      "price": "$35",
+      "color": "white",
+      "category": "furniture",
+      "description": "Adjustable desk lamp with LED light for better illumination while working.",
+      "image": "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=310&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+    },
+    {
+      "id": "ll12",
+      "name": "Cycling Helmet",
+      "price": "$80",
+      "color": "blue",
+      "category": "sports",
+      "description": "Durable and lightweight helmet designed for safety and comfort while cycling.",
+      "image": "https://plus.unsplash.com/premium_photo-1684820879021-c51e33511861?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3ljbGV8ZW58MHx8MHx8fDA%3D"
+    },
+    {
+      "id": "mm13",
+      "name": "Bluetooth Speaker",
+      "price": "$75",
+      "color": "red",
+      "category": "accessories",
+      "description": "Portable Bluetooth speaker with high-quality sound and long battery life.",
+      "image": "https://images.unsplash.com/photo-1725303174952-d32e5f991251?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ymx1ZXRvb3RoJTIwaGVhZHNldHxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "id": "nn14",
+      "name": "Office Chair",
+      "price": "$250",
+      "color": "black",
+      "category": "furniture",
+      "description": "Ergonomic office chair with adjustable features for enhanced comfort.",
+      "image": "https://images.unsplash.com/photo-1722473386296-bddf01fe58f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Ymx1ZXRvb3RoJTIwaGVhZHNldHxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "id": "oo15",
+      "name": "Desk Organizer",
+      "price": "$40",
+      "color": "brown",
+      "category": "furniture",
+      "description": "Stylish desk organizer for keeping your workspace neat and tidy.",
+      "image": "https://images.unsplash.com/photo-1618414074972-723c8314d3db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Ymx1ZXRvb3RoJTIwaGVhZHNldHxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "id": "pp16",
+      "name": "Lamp",
+      "price": "$45",
+      "color": "white",
+      "category": "furniture",
+      "description": "Elegant lamp to brighten up your space.",
+      "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D"
     }
   ]
 }

@@ -1,0 +1,116 @@
+/* Search Item Styles */
+.search-item {
+    margin: 25px auto;
+    width: 100%;
+    max-width: 900px; /* Increased the max-width to accommodate larger image */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    padding: 10px;
+  }
+  
+  /* Search Image */
+  .search-img {
+    width: 100%;
+    height: 220px; /* Increased height for larger images */
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  /* Search Title */
+  .search-title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  /* Search Info */
+  .search-info {
+    margin-top: 15px;
+  }
+  
+  .search-info p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .search-price, .search-color, .search-category, .search-description {
+    font-size: 1rem;
+  }
+  
+  .search-price {
+    color: #28a745; /* Green for price */
+  }
+  
+  .search-color {
+    color: #007bff; /* Blue for color */
+  }
+  
+  .search-category {
+    color: #ff6347; /* Tomato for category */
+  }
+  
+  .search-description {
+    color: #666; /* Gray for description text */
+  }
+  
+  .search-info strong {
+    color: #333;
+  }
+  
+  /* Search Footer */
+  .search-footer {
+    margin-top: 15px;
+    padding: 10px;
+  }
+  
+  .search-footer .btn {
+    margin: 5px;
+  }
+  
+  .search-footer .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .search-footer .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .search-footer .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .search-footer .btn-success:hover {
+    background-color: #218838;
+    border-color: #218838;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 767.98px) {
+    .search-img {
+      height: 180px;
+    }
+    .details {
+      margin-top: 15px; /* Adds space between the image and title for small screens */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .search-img {
+      height: 220px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .search-img {
+      height: 250px;
+    }
+  }
+  

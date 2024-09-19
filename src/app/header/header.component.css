@@ -150,22 +150,38 @@
 
 .suggested-result {
   position: absolute;
-  display: list-item !important;
+  display: block; /* Changed from list-item to block for proper styling */
   z-index: 10;
   background: #fff;
   width: 300px;
   top: 40px;
   border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for better visibility */
+  border-radius: 4px; /* Rounded corners */
+  overflow: hidden; /* Ensures no overflow of content */
 }
 
-.suggested-result li{
-  border: 1 px solid #ddd;
-  padding: 5px;
+.suggested-result li {
+  border-bottom: 1px solid #ddd; /* Only bottom border for separation */
+  padding: 10px; /* Increased padding for better spacing */
+  transition: background-color 0.2s ease; /* Smooth background color transition */
 }
 
-.suggested-result a{
+.suggested-result li:last-child {
+  border-bottom: none; /* Remove border from the last item */
+}
+
+.suggested-result a {
+  display: block; /* Makes the entire list item clickable */
   cursor: pointer;
   color: #003d80;
+  text-decoration: none; /* Remove underline */
+  font-size: 14px; /* Set font size */
+}
+
+.suggested-result a:hover {
+  background-color: #f4f4f4; /* Light background on hover */
+  color: #0056b3; /* Slightly darker color on hover */
 }
 
 .collapse {

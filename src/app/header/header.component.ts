@@ -51,16 +51,31 @@ export class HeaderComponent implements OnInit {
   }
 
   searchProducts(query: KeyboardEvent) {
-    if (query) {
-      const element = query.target as HTMLInputElement;      
-      this.product.serachProducts(element.value).subscribe((result) => {
-        this.searchResult = result;
+    const element = query.target as HTMLInputElement;
+    console.warn(element.value);
+
+    const searchTerm = element.value; // Ensure clean input
+
+    if (searchTerm) {
+      this.product.serachProducts(searchTerm).subscribe((result) => {
+        if (result.length > 5) {
+          result.length = 5;
+        }
+        this.searchResult = result; // Store search results
+        console.log(result);
+        
       });
+    } else {
+      this.searchResult = []; // Clear results if no input
     }
   }
 
-  hideSearch(){
+  hideSearch() {
     this.searchResult = undefined;
+  }
+
+  submitSearch(val:string){
+this.route.navigate([`search/${val}`])
   }
 
 }

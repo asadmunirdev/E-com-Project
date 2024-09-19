@@ -6,6 +6,7 @@ import { AuthGuard } from './auth.guard';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
 import { NotFoundComponent } from './not-found/not-found.component'; // Import the NotFoundComponent
+import { SearchComponent } from './search/search.component';
 
 export const routes: Routes = [
   {
@@ -32,7 +33,12 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    component:SearchComponent,
+    path:'search/:query'
+  },
+  {
     path: '**',
     component: NotFoundComponent, // Add this route for handling 404
   },
+
 ];

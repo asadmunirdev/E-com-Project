@@ -1,7 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { product } from '../data-type';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -41,7 +43,7 @@ export class ProductService {
     return this.http.get<product[]>('http://localhost:3000/products');
   }
   //! Products in Searchbar
-  serachProducts(query:string) {
-    return this.http.get<product[]>(`http://localhost:3000/products?q=${query}`);
+  serachProducts(query: string) {
+       return this.http.get<product[]>(`http://localhost:3000/products?q=${query}`);
   }
 }

@@ -11,6 +11,7 @@
   position: relative; /* Allows for layered elements */
   overflow: hidden; /* Prevents content overflow */
   border: 1px solid #b2d0ff; /* Slightly darker blue border for contrast */
+  margin: 3rem 0;
 }
 
 /* Hover Effects for Add Product Container */

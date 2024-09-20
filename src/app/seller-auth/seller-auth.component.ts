@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./seller-auth.component.css'],
 })
 export class SellerAuthComponent implements OnInit {
-  showLogin = false;
+  showLogin = true;
   authError: string = '';
 
   constructor(private seller: SellerService) {}

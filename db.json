@@ -44,7 +44,7 @@
     {
       "name": "Smartphone",
       "price": "$799",
-      "color": "Silver",
+      "color": "Black",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1598965402089-897ce52e8355?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
       "description": "Latest smartphone with advanced features.",
@@ -80,7 +80,7 @@
     {
       "name": "Bluetooth Speaker",
       "price": "$70",
-      "color": "Blue",
+      "color": "Black",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJsdWV0b290aCUyMHNwZWFrZXJ8ZW58MHx8MHx8fDA%3D",
       "description": "Portable speaker with powerful sound.",
@@ -107,7 +107,7 @@
     {
       "name": "Action Camera",
       "price": "$300",
-      "color": "Black",
+      "color": "White",
       "category": "Photography",
       "image": "https://images.unsplash.com/photo-1689435505430-b4fda78d10ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWN0aW9uJTIwY2FtZXJhc3xlbnwwfHwwfHx8MA%3D%3D",
       "description": "Perfect for adventures and extreme sports.",
@@ -116,7 +116,7 @@
     {
       "name": "Gaming Console",
       "price": "$499",
-      "color": "Black",
+      "color": "White",
       "category": "Gaming",
       "image": "https://images.unsplash.com/photo-1678794373912-15776689850b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2FtaW5nJTIwY29uc29sZXxlbnwwfHwwfHx8MA%3D%3D",
       "description": "Experience immersive gaming with friends.",
@@ -125,7 +125,7 @@
     {
       "name": "VR Headset",
       "price": "$299",
-      "color": "Black",
+      "color": "White",
       "category": "Gaming",
       "image": "https://plus.unsplash.com/premium_photo-1710909336354-540462e95a43?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dnIlMjBoZWFkc2V0fGVufDB8fDB8fHww",
       "description": "Dive into virtual worlds with stunning visuals.",
@@ -134,7 +134,7 @@
     {
       "name": "Wireless Earbuds",
       "price": "$150",
-      "color": "White",
+      "color": "Black",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1655804436006-ec41717125dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2lyZWxlc3MlMjBlYXJwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
       "description": "Compact earbuds with excellent sound quality.",
@@ -143,7 +143,7 @@
     {
       "name": "Smart Home Hub",
       "price": "$120",
-      "color": "Black",
+      "color": "Silver",
       "category": "Smart Home",
       "image": "https://plus.unsplash.com/premium_photo-1663075936658-11cfc7d6a5d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c21hcnQlMjBob21lJTIwaHVifGVufDB8fDB8fHww",
       "description": "Control all your smart devices from one place.",
@@ -152,7 +152,7 @@
     {
       "name": "LED Desk Lamp",
       "price": "$40",
-      "color": "White",
+      "color": "Silver",
       "category": "Home Office",
       "image": "https://plus.unsplash.com/premium_photo-1683436836549-02da98f20041?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGVkJTIwZGVzayUyMGxhbXB8ZW58MHx8MHx8fDA%3D",
       "description": "Brighten your workspace with adjustable lighting.",
@@ -161,7 +161,7 @@
     {
       "name": "Portable Charger",
       "price": "$30",
-      "color": "Black",
+      "color": "Silver",
       "category": "Accessories",
       "image": "https://images.unsplash.com/photo-1619489646924-b4fce76b1db5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydGFibGUlMjBjaGFyZ2VyfGVufDB8fDB8fHww",
       "description": "Keep your devices charged on the go.",
@@ -170,7 +170,7 @@
     {
       "name": "Fitness Tracker",
       "price": "$60",
-      "color": "Green",
+      "color": "Black",
       "category": "Wearables",
       "image": "https://images.unsplash.com/photo-1665860455423-166cab57c383?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zml0bmVzcyUyMHRyYWNrZXJ8ZW58MHx8MHx8fDA%3D",
       "description": "Monitor your health and fitness goals.",
@@ -179,7 +179,7 @@
     {
       "name": "Coffee Maker",
       "price": "$100",
-      "color": "Black",
+      "color": "Silver, Red",
       "category": "Kitchen",
       "image": "https://images.unsplash.com/photo-1458060390477-1b8bc1cfe017?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29mZmUlMjBtYWtlcnxlbnwwfHwwfHx8MA%3D%3D",
       "description": "Brew coffee to perfection every morning.",
@@ -188,7 +188,7 @@
     {
       "name": "Electric Kettle",
       "price": "$40",
-      "color": "Silver",
+      "color": "White",
       "category": "Kitchen",
       "image": "https://plus.unsplash.com/premium_photo-1663133646496-f74226a2b263?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlY3RyaWMlMjBrZXR0bGV8ZW58MHx8MHx8fDA%3D",
       "description": "Boil water quickly and efficiently.",
@@ -197,7 +197,7 @@
     {
       "name": "Air Fryer",
       "price": "$150",
-      "color": "Black",
+      "color": "White",
       "category": "Kitchen",
       "image": "https://plus.unsplash.com/premium_photo-1672192166833-c8ae84e5e127?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YWlyJTIwZnJ5ZXJ8ZW58MHx8MHx8fDA%3D",
       "description": "Cook your favorite meals with less oil.",
@@ -206,7 +206,7 @@
     {
       "name": "Robot Vacuum",
       "price": "$250",
-      "color": "Black",
+      "color": "White",
       "category": "Home Appliances",
       "image": "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9ib3QlMjB2YWN1dW18ZW58MHx8MHx8fDA%3D",
       "description": "Automate your cleaning tasks.",
@@ -224,7 +224,7 @@
     {
       "name": "Smart Doorbell",
       "price": "$150",
-      "color": "Black",
+      "color": "White",
       "category": "Smart Home",
       "image": "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNtYXJ0JTIwZG9vcmJlbGx8ZW58MHx8MHx8fDA%3D",
       "description": "See who's at your door from anywhere.",
@@ -233,7 +233,7 @@
     {
       "name": "Home Security Camera",
       "price": "$200",
-      "color": "Black",
+      "color": "White",
       "category": "Smart Home",
       "image": "https://images.unsplash.com/photo-1670278458254-0df3f72ab093?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG9tZSUyMHNlY3VyaXR5JTIwY2FtZXJhfGVufDB8fDB8fHww",
       "description": "Keep an eye on your home from anywhere.",
@@ -251,7 +251,7 @@
     {
       "name": "Smart Thermostat",
       "price": "$150",
-      "color": "White",
+      "color": "Black",
       "category": "Smart Home",
       "image": "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnQlMjB0aGVybW9zdGF0fGVufDB8fDB8fHww",
       "description": "Save energy and control your home's temperature.",
@@ -287,7 +287,7 @@
     {
       "name": "External Hard Drive",
       "price": "$80",
-      "color": "Black",
+      "color": "White",
       "category": "Storage",
       "image": "https://images.unsplash.com/photo-1627486144847-03f8c678f90d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGV4dGVybmFsJTIwaGFyZCUyMGRyaXZlfGVufDB8fDB8fHww",
       "description": "Expand your storage with this portable drive.",
@@ -296,7 +296,7 @@
     {
       "name": "USB-C Hub",
       "price": "$30",
-      "color": "Gray",
+      "color": "Black",
       "category": "Accessories",
       "image": "https://images.unsplash.com/photo-1616578781650-cd818fa41e57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8VVNCJTIwQyUyMEh1YnxlbnwwfHwwfHx8MA%3D%3D",
       "description": "Connect multiple devices with this hub.",
@@ -314,7 +314,7 @@
     {
       "name": "Smart Scale",
       "price": "$50",
-      "color": "White",
+      "color": "Black",
       "category": "Health",
       "image": "https://plus.unsplash.com/premium_photo-1670505059834-be50739a3ac5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNtYXJ0JTIwc2NhbGV8ZW58MHx8MHx8fDA%3D",
       "description": "Track your weight and body metrics.",
@@ -323,7 +323,7 @@
     {
       "name": "Electric Toothbrush",
       "price": "$70",
-      "color": "Blue",
+      "color": "Black",
       "category": "Health",
       "image": "https://images.unsplash.com/photo-1695073623266-7cec9986c652?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZWxlY3RyaWMlMjB0b290aGJydXNofGVufDB8fDB8fHww",
       "description": "Achieve a superior clean with this toothbrush.",
@@ -332,7 +332,7 @@
     {
       "name": "Hair Dryer",
       "price": "$45",
-      "color": "Pink",
+      "color": "Black",
       "category": "Beauty",
       "image": "https://images.unsplash.com/photo-1620331309205-b5a4669ac526?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGFpciUyMGRyeWVyfGVufDB8fDB8fHww",
       "description": "Quick-drying hair dryer with multiple settings.",
@@ -350,7 +350,7 @@
     {
       "name": "Yoga Mat",
       "price": "$30",
-      "color": "Green",
+      "color": "Pink",
       "category": "Fitness",
       "image": "https://plus.unsplash.com/premium_photo-1675155952889-abb299df1fe7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8eW9nYSUyMG1hdHxlbnwwfHwwfHx8MA%3D%3D",
       "description": "Non-slip mat for yoga and workouts.",
@@ -359,7 +359,7 @@
     {
       "name": "Bicycle",
       "price": "$350",
-      "color": "Red",
+      "color": "Silver",
       "category": "Sports",
       "image": "https://images.unsplash.com/photo-1608393508049-40db8711fbd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJ5Y3ljbGV8ZW58MHx8MHx8fDA%3D",
       "description": "Ride in style with this durable bicycle.",
@@ -368,7 +368,7 @@
     {
       "name": "Treadmill",
       "price": "$800",
-      "color": "Black",
+      "color": "Silver",
       "category": "Fitness",
       "image": "https://plus.unsplash.com/premium_photo-1661920538067-c48451160c72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dHJlYWRtaWxsfGVufDB8fDB8fHww",
       "description": "Stay fit with this home treadmill.",
@@ -377,7 +377,7 @@
     {
       "name": "Camping Tent",
       "price": "$150",
-      "color": "Green",
+      "color": "White",
       "category": "Outdoors",
       "image": "https://images.unsplash.com/photo-1533393189657-3a18944e8203?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FtcGluZyUyMHRlbnR8ZW58MHx8MHx8fDA%3D",
       "description": "Perfect for your next camping trip.",
@@ -413,7 +413,7 @@
     {
       "name": "Sunglasses",
       "price": "$40",
-      "color": "Black",
+      "color": "Pink",
       "category": "Accessories",
       "image": "https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3VuZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D",
       "description": "Stylish sunglasses for sunny days.",
@@ -440,7 +440,7 @@
     {
       "name": "Backpack",
       "price": "$50",
-      "color": "Gray",
+      "color": "blue",
       "category": "Accessories",
       "image": "https://plus.unsplash.com/premium_photo-1687867117406-d62e827b31c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QmFja3BhY2t8ZW58MHx8MHx8fDA%3D",
       "description": "Versatile backpack for school or travel.",
@@ -449,7 +449,7 @@
     {
       "name": "Notebook",
       "price": "$15",
-      "color": "White",
+      "color": "Black",
       "category": "Stationery",
       "image": "https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bm90ZWJvb2t8ZW58MHx8MHx8fDA%3D",
       "description": "Ideal notebook for notes and sketches.",

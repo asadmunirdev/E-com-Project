@@ -33,193 +33,436 @@
   ],
   "products": [
     {
-      "name": "iphone 16",
-      "price": "$1799",
-      "color": "blue, pink, gold",
-      "category": "mobiles",
-      "image": "https://www.techspecs.info/_next/image/?url=https%3A%2F%2Fwww.techspecs.info%2Fuploads%2FApple_i_Phone_16_color_variants_59da021f27.jpg&w=1920&q=75",
-      "description": "iphone 16 features a sleek design, a18 bionic chip, and super retina xdr display.",
-      "id": "0932"
-    },
-    {
-      "name": "rolex watch",
-      "price": "$144",
-      "color": "brown",
-      "category": "watches",
-      "image": "https://images.unsplash.com/photo-1671119720870-df45dcaf81c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cm9sZXglMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D",
-      "description": "rolex: precision, reliability, and timeless design.",
-      "id": "ffa2"
-    },
-    {
-      "id": "e332",
-      "name": "nike shoes",
-      "price": "$144",
-      "color": "red",
-      "category": "shoes",
-      "description": "nike shoes: comfort, style, and performance.",
-      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D"
-    },
-    {
-      "id": "49ae",
-      "name": "dell laptop",
-      "price": "$600",
-      "color": "black",
-      "category": "laptops",
-      "description": "compact and powerful laptop with a high-resolution display, fast processor, and ample storage, perfect for both work and play.",
-      "image": "https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww"
-    },
-    {
-      "name": "wireless charger",
-      "price": "$25",
-      "color": "white",
-      "category": "accessories",
-      "image": "https://images.unsplash.com/photo-1591290619618-904f6dd935e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2lyZWxlc3MlMjBjaGFyZ2VyfGVufDB8fDB8fHww",
-      "description": "fast charging wireless charger compatible with multiple devices.",
-      "id": "aa01"
-    },
-    {
-      "id": "bb02",
-      "name": "leather bag",
-      "price": "$150",
-      "color": "brown",
-      "category": "bags",
-      "description": "high-quality leather bag, perfect for work and travel.",
-      "image": "https://plus.unsplash.com/premium_photo-1680373109883-47a3617e9acd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YmFnfGVufDB8fDB8fHww"
-    },
-    {
-      "id": "cc03",
-      "name": "sports water bottle",
-      "price": "$20",
-      "color": "blue",
-      "category": "accessories",
-      "description": "durable and lightweight water bottle for athletes and active lifestyles.",
-      "image": "https://plus.unsplash.com/premium_photo-1681154819686-43fcc4dc4df3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Ym90dGxlfGVufDB8fDB8fHww"
-    },
-    {
-      "id": "dd04",
-      "name": "mechanical keyboard",
-      "price": "$99",
-      "color": "black",
-      "category": "electronics",
-      "description": "high-performance mechanical keyboard with customizable keys.",
-      "image": "https://plus.unsplash.com/premium_photo-1683543124615-fb42e42c6201?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a2V5Ym9hcmR8ZW58MHx8MHx8fDA%3D"
-    },
-    {
-      "id": "ee05",
-      "name": "gaming keyboard",
-      "price": "$110",
-      "color": "rgb",
-      "category": "electronics",
-      "description": "rgb backlit gaming keyboard with mechanical switches for ultimate performance.",
-      "image": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2V5Ym9hcmR8ZW58MHx8MHx8fDA%3D"
-    },
-    {
-      "id": "ff06",
-      "name": "ergonomic mouse",
-      "price": "$50",
-      "color": "black",
-      "category": "electronics",
-      "description": "comfortable and precise ergonomic mouse for daily use.",
-      "image": "https://images.unsplash.com/photo-1611532736570-dd6b097ecbb3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW91c2V8ZW58MHx8MHx8fDA%3D"
-    },
-    {
-      "id": "gg07",
-      "name": "bluetooth headphones",
+      "name": "Bluetooth Headphones",
       "price": "$120",
-      "color": "black",
-      "category": "electronics",
-      "description": "wireless bluetooth headphones with noise-cancellation features.",
-      "image": "https://plus.unsplash.com/premium_photo-1681022527718-81786d7873bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2hhaXJzfGVufDB8fDB8fHww"
+      "color": "Black",
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1631281637549-fb740447b4ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Ymx1ZXRvb3RoJTIwaGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Wireless Bluetooth headphones with noise-cancellation features.",
+      "id": "gg01"
     },
     {
-      "id": "hh08",
-      "name": "digital camera",
-      "price": "$650",
-      "color": "black",
-      "category": "electronics",
-      "description": "high-resolution digital camera with advanced features for professional photography.",
-      "image": "https://plus.unsplash.com/premium_photo-1681022527718-81786d7873bd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2hhaXJzfGVufDB8fDB8fHww"
+      "name": "Smartphone",
+      "price": "$799",
+      "color": "Silver",
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1598965402089-897ce52e8355?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Latest smartphone with advanced features.",
+      "id": "gg02"
     },
     {
-      "id": "ii09",
-      "name": "smartwatch",
-      "price": "$250",
-      "color": "black",
-      "category": "wearables",
-      "description": "smartwatch with fitness tracking, notifications, and customizable watch faces.",
-      "image": "https://plus.unsplash.com/premium_photo-1679943423706-570c6462f9a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWN8ZW58MHx8MHx8fDA%3D"
+      "name": "Laptop",
+      "price": "$999",
+      "color": "Gray",
+      "category": "Computers",
+      "image": "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bGFwdG9wfGVufDB8fDB8fHww",
+      "description": "High-performance laptop for all your needs.",
+      "id": "gg03"
     },
     {
-      "id": "jj10",
-      "name": "chairs",
-      "price": "$200",
-      "color": "black",
-      "category": "furniture",
-      "description": "comfortable ergonomic chairs for office or home use.",
-      "image": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c25hY2tzfGVufDB8fDB8fHww"
+      "name": "Smartwatch",
+      "price": "$199",
+      "color": "Black",
+      "category": "Wearables",
+      "image": "https://images.unsplash.com/photo-1523475496153-3d6cc0f0bf19?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c21hcnR3YXRjaHxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Track your fitness and receive notifications.",
+      "id": "gg04"
     },
     {
-      "id": "kk11",
-      "name": "desk lamp",
-      "price": "$35",
-      "color": "white",
-      "category": "furniture",
-      "description": "adjustable desk lamp with led light for better illumination while working.",
-      "image": "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=310&auto=format&fit=crop&q=60&ixlib=rb-4.0.3"
+      "name": "Wireless Mouse",
+      "price": "$25",
+      "color": "Black",
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1586349906319-48d20e9d17e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2lyZWxlc3MlMjBtb3VzZXxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Ergonomic wireless mouse for comfort.",
+      "id": "gg05"
     },
     {
-      "id": "ll12",
-      "name": "cycling helmet",
-      "price": "$80",
-      "color": "blue",
-      "category": "sports",
-      "description": "durable and lightweight helmet designed for safety and comfort while cycling.",
-      "image": "https://plus.unsplash.com/premium_photo-1684820879021-c51e33511861?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y3ljbGV8ZW58MHx8MHx8fDA%3D"
+      "name": "Bluetooth Speaker",
+      "price": "$70",
+      "color": "Blue",
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJsdWV0b290aCUyMHNwZWFrZXJ8ZW58MHx8MHx8fDA%3D",
+      "description": "Portable speaker with powerful sound.",
+      "id": "gg06"
     },
     {
-      "id": "mm13",
-      "name": "bluetooth speaker",
-      "price": "$75",
-      "color": "red",
-      "category": "accessories",
-      "description": "portable bluetooth speaker with high-quality sound and long battery life.",
-      "image": "https://images.unsplash.com/photo-1725303174952-d32e5f991251?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Ymx1ZXRvb3RoJTIwaGVhZHNldHxlbnwwfHwwfHx8MA%3D%3D"
+      "name": "Smart TV",
+      "price": "$500",
+      "color": "Black",
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1461151304267-38535e780c79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnQlMjB0dnxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Watch your favorite shows in stunning quality.",
+      "id": "gg07"
     },
     {
-      "id": "nn14",
-      "name": "office chair",
-      "price": "$250",
-      "color": "black",
-      "category": "furniture",
-      "description": "ergonomic office chair with adjustable features for enhanced comfort.",
-      "image": "https://images.unsplash.com/photo-1722473386296-bddf01fe58f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Ymx1ZXRvb3RoJTIwaGVhZHNldHxlbnwwfHwwfHx8MA%3D%3D"
+      "name": "Digital Camera",
+      "price": "$700",
+      "color": "Black",
+      "category": "Photography",
+      "image": "https://images.unsplash.com/photo-1590292339438-5fc3be7fca9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGlnaXRhbCUyMGNhbWVyYXxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Capture high-quality photos and videos.",
+      "id": "gg08"
     },
     {
-      "id": "oo15",
-      "name": "desk organizer",
+      "name": "Action Camera",
+      "price": "$300",
+      "color": "Black",
+      "category": "Photography",
+      "image": "https://images.unsplash.com/photo-1689435505430-b4fda78d10ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWN0aW9uJTIwY2FtZXJhc3xlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Perfect for adventures and extreme sports.",
+      "id": "gg09"
+    },
+    {
+      "name": "Gaming Console",
+      "price": "$499",
+      "color": "Black",
+      "category": "Gaming",
+      "image": "https://images.unsplash.com/photo-1678794373912-15776689850b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2FtaW5nJTIwY29uc29sZXxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Experience immersive gaming with friends.",
+      "id": "gg10"
+    },
+    {
+      "name": "VR Headset",
+      "price": "$299",
+      "color": "Black",
+      "category": "Gaming",
+      "image": "https://plus.unsplash.com/premium_photo-1710909336354-540462e95a43?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dnIlMjBoZWFkc2V0fGVufDB8fDB8fHww",
+      "description": "Dive into virtual worlds with stunning visuals.",
+      "id": "gg11"
+    },
+    {
+      "name": "Wireless Earbuds",
+      "price": "$150",
+      "color": "White",
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1655804436006-ec41717125dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2lyZWxlc3MlMjBlYXJwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Compact earbuds with excellent sound quality.",
+      "id": "gg12"
+    },
+    {
+      "name": "Smart Home Hub",
+      "price": "$120",
+      "color": "Black",
+      "category": "Smart Home",
+      "image": "https://plus.unsplash.com/premium_photo-1663075936658-11cfc7d6a5d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c21hcnQlMjBob21lJTIwaHVifGVufDB8fDB8fHww",
+      "description": "Control all your smart devices from one place.",
+      "id": "gg13"
+    },
+    {
+      "name": "LED Desk Lamp",
       "price": "$40",
-      "color": "brown",
-      "category": "furniture",
-      "description": "stylish desk organizer for keeping your workspace neat and tidy.",
-      "image": "https://images.unsplash.com/photo-1618414074972-723c8314d3db?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Ymx1ZXRvb3RoJTIwaGVhZHNldHxlbnwwfHwwfHx8MA%3D%3D"
+      "color": "White",
+      "category": "Home Office",
+      "image": "https://plus.unsplash.com/premium_photo-1683436836549-02da98f20041?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGVkJTIwZGVzayUyMGxhbXB8ZW58MHx8MHx8fDA%3D",
+      "description": "Brighten your workspace with adjustable lighting.",
+      "id": "gg14"
     },
     {
-      "id": "pp16",
-      "name": "lamp",
-      "price": "$45",
-      "color": "white",
-      "category": "furniture",
-      "description": "elegant lamp to brighten up your space.",
-      "image": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D"
+      "name": "Portable Charger",
+      "price": "$30",
+      "color": "Black",
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1619489646924-b4fce76b1db5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydGFibGUlMjBjaGFyZ2VyfGVufDB8fDB8fHww",
+      "description": "Keep your devices charged on the go.",
+      "id": "gg15"
     },
     {
-      "name": "school bags",
+      "name": "Fitness Tracker",
+      "price": "$60",
+      "color": "Green",
+      "category": "Wearables",
+      "image": "https://images.unsplash.com/photo-1665860455423-166cab57c383?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zml0bmVzcyUyMHRyYWNrZXJ8ZW58MHx8MHx8fDA%3D",
+      "description": "Monitor your health and fitness goals.",
+      "id": "gg16"
+    },
+    {
+      "name": "Coffee Maker",
+      "price": "$100",
+      "color": "Black",
+      "category": "Kitchen",
+      "image": "https://images.unsplash.com/photo-1458060390477-1b8bc1cfe017?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29mZmUlMjBtYWtlcnxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Brew coffee to perfection every morning.",
+      "id": "gg17"
+    },
+    {
+      "name": "Electric Kettle",
+      "price": "$40",
+      "color": "Silver",
+      "category": "Kitchen",
+      "image": "https://plus.unsplash.com/premium_photo-1663133646496-f74226a2b263?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlY3RyaWMlMjBrZXR0bGV8ZW58MHx8MHx8fDA%3D",
+      "description": "Boil water quickly and efficiently.",
+      "id": "gg18"
+    },
+    {
+      "name": "Air Fryer",
+      "price": "$150",
+      "color": "Black",
+      "category": "Kitchen",
+      "image": "https://plus.unsplash.com/premium_photo-1672192166833-c8ae84e5e127?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YWlyJTIwZnJ5ZXJ8ZW58MHx8MHx8fDA%3D",
+      "description": "Cook your favorite meals with less oil.",
+      "id": "gg19"
+    },
+    {
+      "name": "Robot Vacuum",
+      "price": "$250",
+      "color": "Black",
+      "category": "Home Appliances",
+      "image": "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9ib3QlMjB2YWN1dW18ZW58MHx8MHx8fDA%3D",
+      "description": "Automate your cleaning tasks.",
+      "id": "gg20"
+    },
+    {
+      "name": "Smart Refrigerator",
+      "price": "$1200",
+      "color": "Stainless Steel",
+      "category": "Appliances",
+      "image": "https://images.unsplash.com/photo-1716193696093-9c54b6a290e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNtYXJ0JTIwcmVmcmlnZXJhdG9yfGVufDB8fDB8fHww",
+      "description": "Keep your food fresh and organized.",
+      "id": "gg21"
+    },
+    {
+      "name": "Smart Doorbell",
+      "price": "$150",
+      "color": "Black",
+      "category": "Smart Home",
+      "image": "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNtYXJ0JTIwZG9vcmJlbGx8ZW58MHx8MHx8fDA%3D",
+      "description": "See who's at your door from anywhere.",
+      "id": "gg22"
+    },
+    {
+      "name": "Home Security Camera",
+      "price": "$200",
+      "color": "Black",
+      "category": "Smart Home",
+      "image": "https://images.unsplash.com/photo-1670278458254-0df3f72ab093?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG9tZSUyMHNlY3VyaXR5JTIwY2FtZXJhfGVufDB8fDB8fHww",
+      "description": "Keep an eye on your home from anywhere.",
+      "id": "gg23"
+    },
+    {
+      "name": "Smart Light Bulb",
       "price": "$20",
-      "color": "pink & black",
-      "category": "bags",
-      "image": "https://images.unsplash.com/photo-1630830607408-261889eb4968?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJhZ3N8ZW58MHx8MHx8fDA%3D",
-      "description": "A bag is a versatile container used for carrying personal items, typically made from fabric, leather, or synthetic materials.",
-      "id": "9n6xvye"
+      "color": "White",
+      "category": "Smart Home",
+      "image": "https://images.unsplash.com/photo-1712294252418-680891540aa8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnQlMjBsaWdodCUyMGJ1bGJ8ZW58MHx8MHx8fDA%3D",
+      "description": "Control your lights with your smartphone.",
+      "id": "gg24"
+    },
+    {
+      "name": "Smart Thermostat",
+      "price": "$150",
+      "color": "White",
+      "category": "Smart Home",
+      "image": "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnQlMjB0aGVybW9zdGF0fGVufDB8fDB8fHww",
+      "description": "Save energy and control your home's temperature.",
+      "id": "gg25"
+    },
+    {
+      "name": "Gaming Mouse",
+      "price": "$60",
+      "color": "Black",
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1588440573874-54185a266452?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Z2FtaW5nJTIwbW91c2V8ZW58MHx8MHx8fDA%3D",
+      "description": "High precision gaming mouse for gamers.",
+      "id": "gg26"
+    },
+    {
+      "name": "Mechanical Keyboard",
+      "price": "$120",
+      "color": "RGB",
+      "category": "Accessories",
+      "image": "https://plus.unsplash.com/premium_photo-1664194583917-b0ba07c4ce2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVjaGFuaWNhbCUyMGtleWJvYXJkfGVufDB8fDB8fHww",
+      "description": "Enjoy a tactile typing experience.",
+      "id": "gg27"
+    },
+    {
+      "name": "4K Monitor",
+      "price": "$400",
+      "color": "Black",
+      "category": "Computers",
+      "image": "https://plus.unsplash.com/premium_photo-1678566111483-f45ad346d50a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8NGslMjBtb25pdG9yfGVufDB8fDB8fHww",
+      "description": "Stunning display for gaming and work.",
+      "id": "gg28"
+    },
+    {
+      "name": "External Hard Drive",
+      "price": "$80",
+      "color": "Black",
+      "category": "Storage",
+      "image": "https://images.unsplash.com/photo-1627486144847-03f8c678f90d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGV4dGVybmFsJTIwaGFyZCUyMGRyaXZlfGVufDB8fDB8fHww",
+      "description": "Expand your storage with this portable drive.",
+      "id": "gg29"
+    },
+    {
+      "name": "USB-C Hub",
+      "price": "$30",
+      "color": "Gray",
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1616578781650-cd818fa41e57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8VVNCJTIwQyUyMEh1YnxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Connect multiple devices with this hub.",
+      "id": "gg30"
+    },
+    {
+      "name": "Portable SSD",
+      "price": "$150",
+      "color": "Black",
+      "category": "Storage",
+      "image": "https://images.unsplash.com/photo-1602526431715-81a7851b96d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBvcnRhYmxlJTIwc3NkfGVufDB8fDB8fHww",
+      "description": "Fast storage solution for on-the-go.",
+      "id": "gg31"
+    },
+    {
+      "name": "Smart Scale",
+      "price": "$50",
+      "color": "White",
+      "category": "Health",
+      "image": "https://plus.unsplash.com/premium_photo-1670505059834-be50739a3ac5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNtYXJ0JTIwc2NhbGV8ZW58MHx8MHx8fDA%3D",
+      "description": "Track your weight and body metrics.",
+      "id": "gg32"
+    },
+    {
+      "name": "Electric Toothbrush",
+      "price": "$70",
+      "color": "Blue",
+      "category": "Health",
+      "image": "https://images.unsplash.com/photo-1695073623266-7cec9986c652?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZWxlY3RyaWMlMjB0b290aGJydXNofGVufDB8fDB8fHww",
+      "description": "Achieve a superior clean with this toothbrush.",
+      "id": "gg33"
+    },
+    {
+      "name": "Hair Dryer",
+      "price": "$45",
+      "color": "Pink",
+      "category": "Beauty",
+      "image": "https://images.unsplash.com/photo-1620331309205-b5a4669ac526?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGFpciUyMGRyeWVyfGVufDB8fDB8fHww",
+      "description": "Quick-drying hair dryer with multiple settings.",
+      "id": "gg34"
+    },
+    {
+      "name": "Electric Shaver",
+      "price": "$60",
+      "color": "Black",
+      "category": "Grooming",
+      "image": "https://images.unsplash.com/photo-1631255645312-90e87c3474b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZWxlY3RyaWMlMjBzaGF2ZXJ8ZW58MHx8MHx8fDA%3D",
+      "description": "Get a close shave with this electric shaver.",
+      "id": "gg35"
+    },
+    {
+      "name": "Yoga Mat",
+      "price": "$30",
+      "color": "Green",
+      "category": "Fitness",
+      "image": "https://plus.unsplash.com/premium_photo-1675155952889-abb299df1fe7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8eW9nYSUyMG1hdHxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Non-slip mat for yoga and workouts.",
+      "id": "gg37"
+    },
+    {
+      "name": "Bicycle",
+      "price": "$350",
+      "color": "Red",
+      "category": "Sports",
+      "image": "https://images.unsplash.com/photo-1608393508049-40db8711fbd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJ5Y3ljbGV8ZW58MHx8MHx8fDA%3D",
+      "description": "Ride in style with this durable bicycle.",
+      "id": "gg39"
+    },
+    {
+      "name": "Treadmill",
+      "price": "$800",
+      "color": "Black",
+      "category": "Fitness",
+      "image": "https://plus.unsplash.com/premium_photo-1661920538067-c48451160c72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dHJlYWRtaWxsfGVufDB8fDB8fHww",
+      "description": "Stay fit with this home treadmill.",
+      "id": "gg40"
+    },
+    {
+      "name": "Camping Tent",
+      "price": "$150",
+      "color": "Green",
+      "category": "Outdoors",
+      "image": "https://images.unsplash.com/photo-1533393189657-3a18944e8203?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FtcGluZyUyMHRlbnR8ZW58MHx8MHx8fDA%3D",
+      "description": "Perfect for your next camping trip.",
+      "id": "gg41"
+    },
+    {
+      "name": "Fishing Rod",
+      "price": "$70",
+      "color": "Blue",
+      "category": "Outdoors",
+      "image": "https://plus.unsplash.com/premium_photo-1663099722256-1a5512692d91?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmlzaGluZyUyMHJvZHxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Catch your next big fish with this rod.",
+      "id": "gg42"
+    },
+    {
+      "name": "Hiking Backpack",
+      "price": "$90",
+      "color": "Black",
+      "category": "Outdoors",
+      "image": "https://images.unsplash.com/photo-1620953749696-38989c40eadb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SGlraW5nJTIwQmFja3BhY2t8ZW58MHx8MHx8fDA%3D",
+      "description": "Durable backpack for all your hiking needs.",
+      "id": "gg43"
+    },
+    {
+      "name": "Portable Grill",
+      "price": "$120",
+      "color": "Black",
+      "category": "Outdoors",
+      "image": "https://images.unsplash.com/photo-1523139348426-081681667818?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydGFibGUlMjBncmlsbHxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Grill your favorite meals wherever you go.",
+      "id": "gg44"
+    },
+    {
+      "name": "Sunglasses",
+      "price": "$40",
+      "color": "Black",
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3VuZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Stylish sunglasses for sunny days.",
+      "id": "gg45"
+    },
+    {
+      "name": "Watch",
+      "price": "$200",
+      "color": "Gold",
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1495857000853-fe46c8aefc30?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHdhdGNofGVufDB8fDB8fHww",
+      "description": "Elegant watch for any occasion.",
+      "id": "gg46"
+    },
+    {
+      "name": "Leather Wallet",
+      "price": "$60",
+      "color": "Brown",
+      "category": "Accessories",
+      "image": "https://images.unsplash.com/photo-1633382570322-523ae94e5178?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TGVhdGhlciUyMFdhbGxldHxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Classic wallet for men and women.",
+      "id": "gg47"
+    },
+    {
+      "name": "Backpack",
+      "price": "$50",
+      "color": "Gray",
+      "category": "Accessories",
+      "image": "https://plus.unsplash.com/premium_photo-1687867117406-d62e827b31c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QmFja3BhY2t8ZW58MHx8MHx8fDA%3D",
+      "description": "Versatile backpack for school or travel.",
+      "id": "gg48"
+    },
+    {
+      "name": "Notebook",
+      "price": "$15",
+      "color": "White",
+      "category": "Stationery",
+      "image": "https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bm90ZWJvb2t8ZW58MHx8MHx8fDA%3D",
+      "description": "Ideal notebook for notes and sketches.",
+      "id": "gg49"
+    },
+    {
+      "name": "Pen Set",
+      "price": "$20",
+      "color": "Black",
+      "category": "Stationery",
+      "image": "https://images.unsplash.com/photo-1605641987825-c1664626d79f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVuJTIwc2V0fGVufDB8fDB8fHww",
+      "description": "Smooth-writing pens for everyday use.",
+      "id": "gg50"
     }
   ]
 }

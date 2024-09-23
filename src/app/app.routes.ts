@@ -8,6 +8,7 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
 import { NotFoundComponent } from './not-found/not-found.component'; // Import the NotFoundComponent
 import { SearchComponent } from './search/search.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { UserAuthComponent } from './user-auth/user-auth.component';
 
 export const routes: Routes = [
   {
@@ -40,6 +41,10 @@ export const routes: Routes = [
   {
     component: ProductDetailsComponent,
     path: 'details/:productId',
+  },
+  {
+    component:UserAuthComponent,
+    path:'user-auth'
   },
   {
     path: '**',

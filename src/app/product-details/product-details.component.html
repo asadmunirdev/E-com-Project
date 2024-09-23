@@ -25,9 +25,9 @@
             <button class="btn btn-success">Buy Now</button>
           </div>
           <div class="quantity-group d-flex align-items-center mt-3">
-            <button class="btn btn-outline-secondary">-</button>
-            <input type="text" value="1" class="form-control text-center mx-2 quantity-input" />
-            <button class="btn btn-outline-secondary">+</button>
+            <button (click)="handleQuality('min')" class="btn btn-outline-secondary">-</button>
+            <input type="text" value="{{productQuantity}}" class="form-control text-center mx-2 quantity-input" />
+            <button (click)="handleQuality('plus')" class="btn btn-outline-secondary">+</button>
           </div>
         </div>
       </div>

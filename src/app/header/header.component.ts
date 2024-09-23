@@ -12,13 +12,29 @@ import { product } from '../data-type';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  menuType: string = 'default';
+  // menuType: string = 'default';
+  menuType: 'default' | 'seller' = 'default';
   sellerName: string = '';
   searchResult: undefined | product[];
 
   @ViewChild('navbarNav') navbarNav!: ElementRef;
 
   constructor(private route: Router, private product: ProductService) {}
+
+// ngOnInit(): void {
+//     this.route.events.subscribe((val:any)=>{
+//       if(val.url){
+//         if(localStorage.getItem('seller') && val.url.includes('seller')){
+//           let sellerStore = localStorage.getItem("seller");
+//           let sellerData = sellerStore && JSON.parse(sellerStore)[0];
+//           this.sellerName=sellerData.name;
+//           this.menuType = 'seller';
+//         } else{
+//           this.menuType = 'default'
+//         }
+//       }
+//     });
+// }
 
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
@@ -63,7 +79,6 @@ export class HeaderComponent implements OnInit {
         }
         this.searchResult = result; // Store search results
         console.log(result);
-        
       });
     } else {
       this.searchResult = []; // Clear results if no input
@@ -74,8 +89,13 @@ export class HeaderComponent implements OnInit {
     this.searchResult = undefined;
   }
 
-  submitSearch(val:string){
-this.route.navigate([`search/${val}`])
+  redirectToDetails(id: number) {
+    this.route.navigate(['/details', id]).then(() => {
+      window.location.reload();
+    });
   }
-
+  
+  submitSearch(val: string) {
+    this.route.navigate([`search/${val}`]);
+  }
 }

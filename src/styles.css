@@ -9,7 +9,8 @@ html,
 body {
   height: 100%;
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding-top: 35px; 
 }
 
 .app-container {

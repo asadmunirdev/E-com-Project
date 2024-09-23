@@ -7,28 +7,22 @@
       "password": "123"
     },
     {
-      "id": "cacf",
-      "name": "rafay muzamil",
-      "email": "rafay@gmail.com",
-      "password": "rafay123"
+      "name": "saad",
+      "email": "saad@gmail.com",
+      "password": "saad123",
+      "id": "v3pdXAz"
     },
     {
-      "id": "a320",
-      "name": "ali naqvi",
-      "email": "ali@gmail.com",
-      "password": "ali123"
+      "name": "Hamza",
+      "email": "hamza@gmail.com",
+      "password": "hamza123",
+      "id": "ScqgUOX"
     },
     {
-      "id": "aba2",
-      "name": "Javed",
-      "email": "javed@gmail.com",
-      "password": "javed123"
-    },
-    {
-      "id": "27c9",
-      "name": "Sir Paras",
-      "email": "paras@gmail.com",
-      "password": "paras123"
+      "name": "Hamza",
+      "email": "hamza@gmail.com",
+      "password": "asd",
+      "id": "zaq392e"
     }
   ],
   "products": [
@@ -43,7 +37,7 @@
     },
     {
       "name": "Smartphone",
-      "price": "$799",
+      "price": "$299",
       "color": "Black",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1598965402089-897ce52e8355?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
@@ -463,6 +457,14 @@
       "image": "https://images.unsplash.com/photo-1605641987825-c1664626d79f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVuJTIwc2V0fGVufDB8fDB8fHww",
       "description": "Smooth-writing pens for everyday use.",
       "id": "gg50"
+    }
+  ],
+  "users": [
+    {
+      "name": "Asad Munir",
+      "email": "asad@gmail.com",
+      "password": "123",
+      "id": 1
     }
   ]
 }

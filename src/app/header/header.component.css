@@ -1,21 +1,17 @@
 /* Custom Navbar Styles */
 .custom-navbar {
-  background: linear-gradient(
-    135deg,
-    #007bff,
-    #0056b3
-  ); /* Smooth gradient background */
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Smooth gradient background */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
   border-bottom: 2px solid #0056b3; /* Bottom border for added structure */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: fixed; /* Fix the navbar to the top */
+  top: 0; /* Position it at the top */
+  width: 100%; /* Make it take the full width */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
 .custom-navbar:hover {
-  background: linear-gradient(
-    135deg,
-    #0056b3,
-    #003d80
-  ); /* Darker gradient on hover */
+  background: linear-gradient(135deg, #0056b3, #003d80); /* Darker gradient on hover */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
 }
 
@@ -122,6 +118,55 @@
   }
 }
 
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: stretch; /* Stretch elements to take full width */
+    width: 100%;
+    padding: 10px;
+  }
+
+  .search-form input {
+    width: 100%;
+    margin-bottom: 10px; /* Add spacing between input and button */
+    border-radius: 20px; /* Slightly less rounded corners */
+  }
+
+  .search-form button {
+    width: 100%;
+    margin: 0; /* Remove margin */
+    border-radius: 20px; /* Matching rounded corners */
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-nav-link {
+    font-size: 16px;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-form {
+    padding: 5px; /* Reduce padding for extra small screens */
+  }
+
+  .search-form input,
+  .search-form button {
+    font-size: 14px; /* Slightly reduce font size */
+    padding: 8px 12px; /* Adjust padding */
+  }
+
+  .custom-nav-link {
+    font-size: 14px; /* Smaller font for very small screens */
+    padding: 0.5rem 0.75rem;
+  }
+}
+
 /* Align nav links to the right for 'seller' menu type */
 .seller-navbar-nav {
   display: flex;
@@ -182,6 +227,16 @@
 .suggested-result a:hover {
   background-color: #f4f4f4; /* Light background on hover */
   color: #0056b3; /* Slightly darker color on hover */
+}
+
+.text-3d {
+  font-size: 1.7rem; /* Adjust the size as needed */
+  color: #fff; /* Main text color */
+  text-shadow: 
+    1px 1px 0 rgba(0, 0, 0, 0.2),
+    2px 2px 0 rgba(0, 0, 0, 0.2),
+    3px 3px 0 rgba(0, 0, 0, 0.2),
+    4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .collapse {

@@ -25,6 +25,8 @@ export class SellerService {
         if (result) {
           // If the response is successful
           localStorage.setItem('seller', JSON.stringify(result.body)); // Store seller data in local storage
+          console.log(result.body);
+          
           this.router.navigate(['seller-home']); // Navigate to the seller home page
         }
       });

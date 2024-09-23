@@ -30,40 +30,72 @@
   animation: slide-down 0.6s ease-out;
 }
 
-/* Improved styling */
 td, th {
-  vertical-align: middle; /* Centers content vertically */
+  vertical-align: middle;
 }
 
 table {
   border-spacing: 0;
-  border: 2px solid #4A90E2; /* Enhances the border thickness */
+  border: 2px solid #4A90E2;
 }
 
-img {
-  width: 128px; /* Fixed width */
-  height: 128px; /* Fixed height */
-  object-fit: cover; /* Ensures the image covers the cell without distortion */
-  display: block; /* Removes inline spacing */
-  margin: 0 auto; /* Centers the image horizontally */
+.product-image {
+  width: 120px; /* Default image size */
+  height: 120px; /* Default image size */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 .description-column {
-  word-wrap: break-word; /* Allows long words to break and fit within the cell */
-  max-width: 300px; /* Allows more space for the description */
+  word-wrap: break-word;
+  max-width: 300px;
   text-align: center;
   padding: 10px;
 }
 
 tr:hover {
-  background-color: #e3f2fd; /* Subtle hover effect */
+  background-color: #e3f2fd;
 }
 
 td {
-  padding: 12px 0; /* Adds padding to top and bottom of each cell */
-  text-align: center; /* Center-aligns the content */
+  padding: 12px 0;
+  text-align: center;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+  table {
+    display: none; /* Hide the table on small screens */
+  }
 
+  .product-card {
+    border: 1px solid #4A90E2; /* Card border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 16px;
+    margin: 8px 0; /* Margin between cards */
+    background-color: white; /* Card background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
 
+  .product-image {
+    width: 150px; /* Increased image width for mobile */
+    height: 150px; /* Increased image height for mobile */
+  }
 
+  .description-column {
+    max-width: none; /* Allow full width for description */
+    word-wrap: break-word; /* Allow long text to break */
+    text-align: left; /* Left align text */
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-direction: row; /* Keep buttons in a row for better layout */
+    gap: 8px; /* Added gap between buttons */
+  }
+
+  .action-buttons button {
+    flex: 1; /* Make buttons equal width */
+  }
+}

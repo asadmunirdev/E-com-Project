@@ -21,6 +21,7 @@
     <!-- Login Form -->
     <div *ngIf="showLogin">
       <h1 class="text-center mb-4">User Login</h1>
+      <p class="error-p">{{authError}}</p>
       <form #userLogin="ngForm" class="common-form" (ngSubmit)="login(userLogin)">
         <div class="mb-3">
           <input type="email" class="form-control" placeholder="Enter User Email" name="email" ngModel required />

@@ -5,6 +5,12 @@
       "email": "asad@gmail.com",
       "password": "123",
       "id": 1
+    },
+    {
+      "name": "Ahmad",
+      "email": "ahmad@gmail.com",
+      "password": "123",
+      "id": 2
     }
   ],
   "products": [
@@ -453,6 +459,18 @@
       "email": "saad@gmail.com",
       "password": "123",
       "id": 2
+    },
+    {
+      "name": "hamza",
+      "email": "hamza@gmail.com",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "name": "Ahmad",
+      "email": "ahmad@gmail.com",
+      "password": "123",
+      "id": 4
     }
   ]
 }

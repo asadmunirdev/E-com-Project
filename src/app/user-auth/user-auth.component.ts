@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { signUp } from '../data-type';
 import { UserService } from '../services/user.service';
 
@@ -13,6 +13,7 @@ import { UserService } from '../services/user.service';
 })
 export class UserAuthComponent implements OnInit {
   showLogin: boolean = true;
+  authError: string = '';
 
   constructor(private user: UserService) {}
 
@@ -28,7 +29,7 @@ export class UserAuthComponent implements OnInit {
     this.showLogin = false;
   }
 
-  signUp(form: any): void {
+  signUp(form: NgForm): void {
     if (form.valid) {
       const data: signUp = form.value;
       this.user.userSignUp(data);
@@ -37,12 +38,18 @@ export class UserAuthComponent implements OnInit {
     }
   }
 
-  login(form: any): void {
+  login(form: NgForm): void {
     if (form.valid) {
       const data: signUp = form.value;
       this.user.userLogin(data);
+      this.user.isLoginError.subscribe((isError) => {
+        if (isError) {
+          this.authError = 'Email or password is not correct';
+        }
+      });
     } else {
       console.log('Login Form is invalid');
     }
   }
+  
 }

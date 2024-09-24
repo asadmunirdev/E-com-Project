@@ -1,152 +1,151 @@
 :host {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(135deg, #f8f9fa, #ffffff); /* Light shade of white for body */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa, #ffffff); /* Light shade of white for body */
+}
+
+/* User Authentication Container Styling */
+.user-auth {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff; /* Solid white background for the form */
+  border-radius: 20px; /* More rounded corners for a friendlier look */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer and slightly larger shadow for depth */
+  padding: 40px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeIn 1s;
+  position: relative; /* Allows for layered elements */
+  overflow: hidden; /* Prevents content overflow */
+  border: 1px solid #cfe7ff; /* Light blue border for a refined look */
+}
+
+/* Hover Effects for User Auth Container */
+.user-auth:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  border-color: #99d4ff; /* Darker blue border on hover */
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 2.2rem; /* Larger font size for prominence */
+  text-align: center;
+  color: #0056b3; /* Blue color for text */
+  margin-bottom: 20px;
+  animation: slideIn 1s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  font-weight: bold; /* Make the font bold for emphasis */
+}
+
+/* Common Form Styling */
+.common-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input Field Styling */
+.form-input {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f9f9f9; /* Light background for contrast */
+  color: #333; /* Dark text color for readability */
+}
+
+.form-input:focus {
+  border-color: #0056b3; /* Matches the header color */
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.2); /* Light blue shadow for focus effect */
+  background-color: #ffffff; /* White background on focus for emphasis */
+}
+
+/* Button Styling */
+.form-button {
+  background-color: #28a745; /* Vibrant green color for a standout effect */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold; /* Bold text for emphasis */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.form-button:hover {
+  background-color: #218838; /* Darker green for hover effect */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Anchor Tag Styling */
+a {
+  display: inline-block; /* Allows for padding and margins */
+  text-align: center;
+  color: #007bff; /* Vibrant blue color for the links */
+  margin-top: 15px;
+  font-size: 15px;
+  text-decoration: none; /* Removes the default underline */
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.2s ease;
+  font-weight: 600; /* Semi-bold for emphasis */
+  position: relative; /* Allows for pseudo-element positioning */
+}
+
+a:hover {
+  color: #0056b3; /* Darker blue on hover for contrast */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+  text-shadow: 0 2px 5px rgba(0, 123, 255, 0.3); /* Adds a glow effect on hover */
+}
+
+/* Error Message Styling */
+.error-p {
+  color: red; /* Text color for error message */
+  text-transform: capitalize; /* Capitalizes the first letter of each word */
+  text-align: center; /* Centers the text */
+  margin-bottom: 15px; /* Space below the error message */
+  font-size: 16px; /* Adjust font size for readability */
+  font-weight: bold; /* Makes the text bold */
+  padding: 10px; /* Adds space around the text */
+  display: inline-block; /* Ensures the background color and border apply correctly */
+  max-width: 100%; /* Prevents overflow in responsive design */
+}
+
+/* Success Message Styling */
+.messagee_p {
+  color: green; /* Set text color to green */
+  text-align: center; /* Center-align text */
+  font-size: 1.3em; /* Optional: adjust font size for better visibility */
+  margin-top: 10px; /* Optional: add some space above the message */
+  margin-bottom: 20px; /* Optional: add some space above the message */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  /* User Authentication Container Styling */
-  .user-auth {
-    width: 100%;
-    max-width: 400px;
-    background: #ffffff; /* Solid white background for the form */
-    border-radius: 20px; /* More rounded corners for a friendlier look */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer and slightly larger shadow for depth */
-    padding: 40px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    animation: fadeIn 1s;
-    position: relative; /* Allows for layered elements */
-    overflow: hidden; /* Prevents content overflow */
-    border: 1px solid #cfe7ff; /* Light blue border for a refined look */
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Hover Effects for User Auth Container */
-  .user-auth:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-    border-color: #99d4ff; /* Darker blue border on hover */
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
   }
-  
-  /* Heading Styling */
-  h1 {
-    font-size: 2.2rem; /* Larger font size for prominence */
-    text-align: center;
-    color: #0056b3; /* Blue color for text */
-    margin-bottom: 20px;
-    animation: slideIn 1s;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    font-weight: bold; /* Make the font bold for emphasis */
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  
-  /* Common Form Styling */
-  .common-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Input Field Styling */
-  .form-input {
-    margin-bottom: 15px;
-    padding: 12px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: #f9f9f9; /* Light background for contrast */
-    color: #333; /* Dark text color for readability */
-  }
-  
-  .form-input:focus {
-    border-color: #0056b3; /* Matches the header color */
-    outline: none;
-    box-shadow: 0 0 8px rgba(0, 86, 179, 0.2); /* Light blue shadow for focus effect */
-    background-color: #ffffff; /* White background on focus for emphasis */
-  }
-  
-  /* Button Styling */
-  .form-button {
-    background-color: #28a745; /* Vibrant green color for a standout effect */
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: bold; /* Bold text for emphasis */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
-  .form-button:hover {
-    background-color: #218838; /* Darker green for hover effect */
-    transform: translateY(-2px); /* Slight upward movement on hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-  }
-  
-  /* Anchor Tag Styling */
-  a {
-    display: inline-block; /* Allows for padding and margins */
-    text-align: center;
-    color: #007bff; /* Vibrant blue color for the links */
-    margin-top: 15px;
-    font-size: 15px;
-    text-decoration: none; /* Removes the default underline */
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.2s ease;
-    font-weight: 600; /* Semi-bold for emphasis */
-    position: relative; /* Allows for pseudo-element positioning */
-  }
-  
-  a:hover {
-    color: #0056b3; /* Darker blue on hover for contrast */
-    transform: translateY(-2px); /* Slight upward movement on hover */
-    text-shadow: 0 2px 5px rgba(0, 123, 255, 0.3); /* Adds a glow effect on hover */
-  }
-  
-  /* Error Message Styling */
-  .error-p {
-    color: red; /* Text color for error message */
-    text-transform: capitalize; /* Capitalizes the first letter of each word */
-    text-align: center; /* Centers the text */
-    margin-bottom: 15px; /* Space below the error message */
-    font-size: 16px; /* Adjust font size for readability */
-    font-weight: bold; /* Makes the text bold */
-    padding: 10px; /* Adds space around the text */
-    display: inline-block; /* Ensures the background color and border apply correctly */
-    max-width: 100%; /* Prevents overflow in responsive design */
-  }
-  
-  /* Success Message Styling */
-  .messagee_p {
-    color: green; /* Set text color to green */
-    text-align: center; /* Center-align text */
-    font-size: 1.3em; /* Optional: adjust font size for better visibility */
-    margin-top: 10px; /* Optional: add some space above the message */
-    margin-bottom: 20px; /* Optional: add some space above the message */
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateX(-30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
+}

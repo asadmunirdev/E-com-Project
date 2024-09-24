@@ -1,28 +1,40 @@
 {
   "seller": [
     {
-      "id": "773f",
-      "name": "Muhammad Asad Munir",
+      "name": "Asad Munir",
       "email": "asad@gmail.com",
-      "password": "123"
+      "password": "123",
+      "id": 1
     },
     {
-      "name": "saad",
-      "email": "saad@gmail.com",
-      "password": "saad123",
-      "id": "v3pdXAz"
+      "name": "Asad Munir",
+      "email": "asad@gmail.com",
+      "password": "123",
+      "id": 2
     },
     {
-      "name": "Hamza",
-      "email": "hamza@gmail.com",
-      "password": "hamza123",
-      "id": "ScqgUOX"
+      "name": "Asad Munir",
+      "email": "asad@gmail.com",
+      "password": "123",
+      "id": 3
     },
     {
-      "name": "Hamza",
-      "email": "hamza@gmail.com",
-      "password": "asd",
-      "id": "zaq392e"
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "name": "Asad Munir",
+      "email": "asad@gmail.com",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "name": "sample",
+      "email": "sample@gmail.com",
+      "password": "123",
+      "id": 6
     }
   ],
   "products": [
@@ -465,6 +477,12 @@
       "email": "asad@gmail.com",
       "password": "123",
       "id": 1
+    },
+    {
+      "name": "sample",
+      "email": "sample@gmail.com",
+      "password": "123",
+      "id": 2
     }
   ]
 }

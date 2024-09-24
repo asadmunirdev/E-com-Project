@@ -1,17 +1,36 @@
 <div class="container d-flex align-items-center justify-content-center vh-100">
   <div class="user-auth bg-light p-4 rounded shadow">
-    <h1 class="text-center mb-4">User Sign Up</h1>
-    <form #userSignUp="ngForm" class="common-form" (ngSubmit)="signUp(userSignUp.value)">
-      <div class="mb-3">
-        <input type="text" class="form-control" placeholder="Enter User Name" name="name" ngModel required>
-      </div>
-      <div class="mb-3">
-        <input type="email" class="form-control" placeholder="Enter User Email" name="email" ngModel required>
-      </div>
-      <div class="mb-3">
-        <input type="password" class="form-control" placeholder="Enter User Password" name="password" ngModel required>
-      </div>
-      <button class="btn btn-primary w-100" type="submit">Sign Up</button>
-    </form>
+    <!-- Sign Up Form -->
+    <div *ngIf="!showLogin">
+      <h1 class="text-center mb-4">User Sign Up</h1>
+      <form #userSignUp="ngForm" class="common-form" (ngSubmit)="signUp(userSignUp)">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="Enter User Name" name="name" ngModel required />
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="Enter User Email" name="email" ngModel required />
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" placeholder="Enter User Password" name="password" ngModel required />
+        </div>
+        <button class="btn btn-primary w-100" type="submit">Sign Up</button>
+        <a (click)="openLogin()" class="d-block text-center mt-3">Already have an account? Click for Login</a>
+      </form>
+    </div>
+
+    <!-- Login Form -->
+    <div *ngIf="showLogin">
+      <h1 class="text-center mb-4">User Login</h1>
+      <form #userLogin="ngForm" class="common-form" (ngSubmit)="login(userLogin)">
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="Enter User Email" name="email" ngModel required />
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" placeholder="Enter User Password" name="password" ngModel required />
+        </div>
+        <button class="btn btn-primary w-100" type="submit">Login</button>
+        <a (click)="openSignUp()" class="d-block text-center mt-3">Don't have an account? Click for Sign Up</a>
+      </form>
+    </div>
   </div>
 </div>

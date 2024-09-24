@@ -22,7 +22,7 @@ export class SellerService {
       .post('http://localhost:3000/seller', data, { observe: 'response' }) // HTTP POST request to the server
       .subscribe((result) => {
         console.log(result); // Logging the server response
-        if (result) {
+        if (result.body) {
           // If the response is successful
           localStorage.setItem('seller', JSON.stringify(result.body)); // Store seller data in local storage
           console.log(result.body);
@@ -45,13 +45,13 @@ export class SellerService {
   userLogin(data: login) {
     this.http
       .get(
-        `http://localhost:3000/seller?email=${data.email}&password=${data.password}`, // HTTP GET request with email and password
+        `http://localhost:3000/seller?email=${data.email}&password=${data.password}`, 
         { observe: 'response' }
       )
       .subscribe((result: any) => {
         if (result && result.body && result.body.length === 1) {
           // If login is successful
-          localStorage.setItem('seller', JSON.stringify(result.body)); // Store seller data in local storage
+          localStorage.setItem('seller', JSON.stringify(result.body[0])); // Store seller data in local storage
           this.router.navigate(['seller-home']); // Navigate to the seller home page
           this.isLoginError.emit(false); // Emit false to indicate no login error
         } else {

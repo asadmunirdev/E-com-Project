@@ -1,3 +1,7 @@
+.collapse {
+  visibility: visible;
+}
+
 /* Custom Navbar Styles */
 .custom-navbar {
   background: linear-gradient(135deg, #007bff, #0056b3); /* Smooth gradient background */
@@ -17,27 +21,27 @@
 
 /* Center and resize the search bar */
 .search-form {
-  width: 100%;
-  max-width: 700px; /* Optional: Set a maximum width */
+  width: auto; /* Use auto width for flexible control */
+  max-width: 550px; /* Increase max-width for a larger search box */
   margin: 0 auto;
-  display: flex; /* Flex display for alignment */
+  display: flex; 
   align-items: center;
-  justify-content: center; /* Center align items */
+  justify-content: center;
 }
 
 .search-form input {
-  border-radius: 30px; /* More rounded corners */
+  border-radius: 30px; 
   border: 1px solid #0056b3;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 12px 20px; /* Increase padding for a bigger input */
+  font-size: 16px; /* Increase font size */
   transition: all 0.3s ease;
-  flex: 1; /* Allow input to take up available space */
+  flex: 1;
 }
 
 .search-form input:focus {
   border-color: #00bfff;
   box-shadow: 0 0 12px rgba(0, 191, 255, 0.6);
-  transform: scale(1.03);
+  transform: scale(1.05); /* Slightly increase scale */
 }
 
 .search-form button {
@@ -45,15 +49,15 @@
   background-color: #00bfff;
   border: none;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 25px; /* Adjust padding to make the button bigger */
   font-size: 16px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-left: 5px; /* Space between input and button */
+  margin-left: 8px; /* Increase space between input and button */
 }
 
 .search-form button:hover {
   background-color: #0099cc;
-  transform: scale(1.05);
+  transform: scale(1.08); /* Slightly larger scale on hover */
 }
 
 /* Custom Navigation Links */
@@ -239,6 +243,3 @@
     4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.collapse {
-  visibility: visible;
-}

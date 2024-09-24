@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { product } from '../data-type';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -13,46 +14,54 @@ import { product } from '../data-type';
 })
 export class HeaderComponent implements OnInit {
   // menuType: string = 'default';
-  menuType: 'default' | 'seller' = 'default';
+  menuType: string = 'default';
   sellerName: string = '';
   searchResult: undefined | product[];
-
+  userName: string = '';
   @ViewChild('navbarNav') navbarNav!: ElementRef;
 
-  constructor(private route: Router, private product: ProductService) {}
+  constructor(private route: Router, private product: ProductService, private user:UserService) {}
 
-// ngOnInit(): void {
-//     this.route.events.subscribe((val:any)=>{
-//       if(val.url){
-//         if(localStorage.getItem('seller') && val.url.includes('seller')){
-//           let sellerStore = localStorage.getItem("seller");
-//           let sellerData = sellerStore && JSON.parse(sellerStore)[0];
-//           this.sellerName=sellerData.name;
-//           this.menuType = 'seller';
-//         } else{
-//           this.menuType = 'default'
-//         }
-//       }
-//     });
-// }
+  // ngOnInit(): void {
+  //     this.route.events.subscribe((val:any)=>{
+  //       if(val.url){
+  //         if(localStorage.getItem('seller') && val.url.includes('seller')){
+  //           let sellerStore = localStorage.getItem("seller");
+  //           let sellerData = sellerStore && JSON.parse(sellerStore)[0];
+  //           this.sellerName=sellerData.name;
+  //           this.menuType = 'seller';
+  //         } else{
+  //           this.menuType = 'default'
+  //         }
+  //       }
+  //     });
+  // }
 
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
       if (val.url) {
+        // Check for seller
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
           this.menuType = 'seller';
-          if (localStorage.getItem('seller')) {
-            let sellerStore = localStorage.getItem('seller');
-            let sellerData = sellerStore && JSON.parse(sellerStore)[0];
-            this.sellerName = sellerData.name;
-          }
-        } else {
+          const sellerStore = localStorage.getItem('seller');
+          const sellerData = sellerStore ? JSON.parse(sellerStore) : null;
+          this.sellerName = sellerData ? sellerData.name : '';
+        }
+        // Check for user regardless of the URL path
+        else if (localStorage.getItem('user')) {
+          this.menuType = 'user';
+          const userStore = localStorage.getItem('user');
+          const userData = userStore ? JSON.parse(userStore) : null; // Adjust to parse directly
+          this.userName = userData ? userData.name : '';
+        }
+        // Default case
+        else {
           this.menuType = 'default';
         }
       }
     });
   }
-
+    
   collapseNavbar(): void {
     const collapseElement = this.navbarNav.nativeElement;
     const bsCollapse = new (window as any).bootstrap.Collapse(collapseElement, {
@@ -65,6 +74,12 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('seller');
     this.route.navigate(['/']);
   }
+
+  userLogout(){
+    localStorage.removeItem('user');
+    this.route.navigate(['user-auth']);    
+  }
+
 
   searchProducts(query: KeyboardEvent) {
     const element = query.target as HTMLInputElement;
@@ -94,8 +109,9 @@ export class HeaderComponent implements OnInit {
       window.location.reload();
     });
   }
-  
+
   submitSearch(val: string) {
     this.route.navigate([`search/${val}`]);
   }
+
 }

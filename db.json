@@ -11,6 +11,12 @@
       "email": "asad@gmail.com",
       "password": "123",
       "id": 5
+    },
+    {
+      "name": "Hassan Farooq",
+      "email": "hassan@gmail.com",
+      "password": "12345",
+      "id": 6
     }
   ],
   "products": [
@@ -445,6 +451,15 @@
       "image": "https://images.unsplash.com/photo-1605641987825-c1664626d79f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVuJTIwc2V0fGVufDB8fDB8fHww",
       "description": "Smooth-writing pens for everyday use.",
       "id": "gg50"
+    },
+    {
+      "name": "Power Bank",
+      "price": "$50",
+      "color": "white",
+      "category": "Accesories",
+      "image": "https://images.unsplash.com/photo-1706275400998-7fc21c8cd8ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvd2VyJTIwYmFua3xlbnwwfHwwfHx8MA%3D%3D",
+      "description": "A very power powerbank with 15000mah battery backup",
+      "id": "A8Vzkee"
     }
   ],
   "users": [

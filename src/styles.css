@@ -89,11 +89,20 @@ router-outlet {
 }
 
 .invalid-input {
-  color: #e74c3c; /* Red color for error */
+  color: red; /* Red color for error */
   font-size: 14px; /* Adjust the font size */
-  margin: -7px 0 7px 7px; /* top right bottom left */
+  margin: -20px 0 10px 10px; /* top right bottom left */
   display: block;
   animation: fadeIn 0.3s ease-in-out; /* Animation for appearance */
+}
+
+.seller_invalid-input{
+  color: red; /* Red color for error */
+  font-size: 14px; /* Adjust the font size */
+  margin:  -20px 12px 10px 7px; /* top right bottom left */
+  display: block;
+  animation: fadeIn 0.3s ease-in-out; /* Animation for appearance */
+
 }
 
 @keyframes fadeIn {

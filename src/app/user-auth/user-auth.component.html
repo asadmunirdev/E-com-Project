@@ -1,26 +1,15 @@
 <div class="container d-flex align-items-center justify-content-center vh-100">
   <!-- Auth container with shadow, padding, and rounded corners -->
   <div class="user-auth bg-light p-4 rounded shadow">
-    
+
     <!-- Sign Up Form -->
     <div *ngIf="!showLogin">
       <h1 class="text-center mb-4">User Sign Up</h1>
-      <form
-        #userSignUp="ngForm"
-        class="common-form"
-        (ngSubmit)="signUp(userSignUp)"
-      >
+      <form #userSignUp="ngForm" class="common-form" (ngSubmit)="signUp(userSignUp)">
         <!-- Name input field -->
         <div class="mb-3">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Enter User Name"
-            name="name"
-            ngModel
-            #name="ngModel"
-            required
-          />
+          <input type="text" class="form-control" placeholder="Enter User Name" name="name" ngModel #name="ngModel"
+            required />
         </div>
         <p class="invalid-input">
           <!-- Validation message for name -->
@@ -29,16 +18,8 @@
 
         <!-- Email input field -->
         <div class="mb-3">
-          <input
-            type="email"
-            class="form-control"
-            placeholder="Enter User Email"
-            name="email"
-            ngModel
-            #email="ngModel"
-            email
-            required
-          />
+          <input type="email" class="form-control" placeholder="Enter User Email" name="email" ngModel #email="ngModel"
+            email required />
         </div>
         <p class="invalid-input">
           <!-- Validation message for email -->
@@ -47,17 +28,8 @@
 
         <!-- Password input field -->
         <div class="mb-3">
-          <input
-            type="password"
-            class="form-control"
-            placeholder="Enter User Password"
-            name="password"
-            ngModel
-            #password="ngModel"
-            minlength="3"
-            maxlength="20"
-            required
-          />
+          <input type="password" class="form-control" placeholder="Enter User Password" name="password" ngModel
+            #password="ngModel" minlength="3" maxlength="20" required />
         </div>
         <p class="invalid-input">
           <!-- Validation message for password -->
@@ -65,11 +37,7 @@
         </p>
 
         <!-- Submit button, disabled if form is invalid -->
-        <button
-          [disabled]="userSignUp.invalid"
-          class="btn btn-primary w-100"
-          type="submit"
-        >
+        <button [disabled]="userSignUp.invalid" class="btn btn-primary w-100" type="submit">
           Sign Up
         </button>
 
@@ -84,23 +52,11 @@
     <div *ngIf="showLogin">
       <h1 class="text-center mb-4">User Login</h1>
       <p class="error-p">{{ authError }}</p>
-      <form
-        #userLogin="ngForm"
-        class="common-form"
-        (ngSubmit)="login(userLogin)"
-      >
+      <form #userLogin="ngForm" class="common-form" (ngSubmit)="login(userLogin)">
         <!-- Email input field -->
         <div class="mb-3">
-          <input
-            type="email"
-            class="form-control"
-            placeholder="Enter User Email"
-            name="email"
-            ngModel
-            #email="ngModel"
-            email
-            required
-          />
+          <input type="email" class="form-control" placeholder="Enter User Email" name="email" ngModel #email="ngModel"
+            email required />
         </div>
         <p class="invalid-input">
           <!-- Validation message for email -->
@@ -109,17 +65,8 @@
 
         <!-- Password input field -->
         <div class="mb-3">
-          <input
-            type="password"
-            class="form-control"
-            placeholder="Enter User Password"
-            name="password"
-            ngModel
-            #password="ngModel"
-            minlength="3"
-            maxlength="20"
-            required
-          />
+          <input type="password" class="form-control" placeholder="Enter User Password" name="password" ngModel
+            #password="ngModel" minlength="3" maxlength="20" required />
         </div>
         <p class="invalid-input">
           <!-- Validation message for password -->
@@ -127,11 +74,7 @@
         </p>
 
         <!-- Submit button, disabled if form is invalid -->
-        <button
-          [disabled]="userLogin.invalid"
-          class="btn btn-primary w-100"
-          type="submit"
-        >
+        <button [disabled]="userLogin.invalid" class="btn btn-primary w-100" type="submit">
           Login
         </button>
 

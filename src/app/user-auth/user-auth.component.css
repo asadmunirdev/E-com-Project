@@ -40,14 +40,7 @@ h1 {
   font-weight: bold; /* Make the font bold for emphasis */
 }
 
-/* Common Form Styling */
-.common-form {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Input Field Styling */
-.form-input {
+input.form-control {
   margin-bottom: 15px;
   padding: 12px;
   border: 2px solid #ddd;
@@ -58,13 +51,12 @@ h1 {
   color: #333; /* Dark text color for readability */
 }
 
-.form-input:focus {
+input.form-control:focus {
   border-color: #0056b3; /* Matches the header color */
   outline: none;
   box-shadow: 0 0 8px rgba(0, 86, 179, 0.2); /* Light blue shadow for focus effect */
   background-color: #ffffff; /* White background on focus for emphasis */
 }
-
 /* Button Styling */
 .form-button {
   background-color: #28a745; /* Vibrant green color for a standout effect */

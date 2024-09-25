@@ -1,23 +1,23 @@
 {
   "seller": [
     {
-      "name": "Asad Munir",
-      "email": "asad@gmail.com",
-      "password": "123",
-      "id": 1
+      "name": "Shazil",
+      "email": "shazil@gmail.com",
+      "password": "12345",
+      "id": 4
     },
     {
-      "name": "Ahmad",
-      "email": "ahmad@gmail.com",
+      "name": "Muhammad Asad Munir",
+      "email": "asad@gmail.com",
       "password": "123",
-      "id": 2
+      "id": 5
     }
   ],
   "products": [
     {
       "name": "Bluetooth Headphones",
       "price": "$120",
-      "color": "Black",
+      "color": "Green",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1631281637549-fb740447b4ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Ymx1ZXRvb3RoJTIwaGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D",
       "description": "Wireless Bluetooth headphones with noise-cancellation features.",
@@ -471,6 +471,18 @@
       "email": "ahmad@gmail.com",
       "password": "123",
       "id": 4
+    },
+    {
+      "name": "Ali Butt",
+      "email": "ali@gmail.com",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "name": "Shazil",
+      "email": "shazil@gmail.com",
+      "password": "shazil123",
+      "id": 6
     }
   ]
 }

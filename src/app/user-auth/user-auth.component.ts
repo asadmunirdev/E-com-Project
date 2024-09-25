@@ -44,7 +44,7 @@ export class UserAuthComponent implements OnInit {
       this.user.userLogin(data);
       this.user.isLoginError.subscribe((isError) => {
         if (isError) {
-          this.authError = 'Email or password is not correct';
+          this.authError = 'Please enter valid user details';
         }
       });
     } else {

@@ -4,42 +4,150 @@
       <!-- Sign Up Form -->
       <div *ngIf="!showLogin" class="sign-up">
         <h1 class="text-center mb-4">Seller Sign-up</h1>
-        <form #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp)" class="common-form">
+        <form
+          #sellerSignUp="ngForm"
+          (ngSubmit)="signUp(sellerSignUp)"
+          class="common-form"
+        >
+          <!-- Name input field -->
           <div class="mb-3">
-            <input type="text" class="form-input form-control" placeholder="Enter Name" name="name" ngModel required />
+            <input
+              type="text"
+              class="form-input form-control"
+              placeholder="Enter Name"
+              name="name"
+              ngModel
+              #name="ngModel"
+              required
+            />
           </div>
+          <p class="invalid-input">
+            <!-- Validation message for name -->
+            <span *ngIf="name.invalid && name.touched"
+              >Please Enter a Valid Name</span
+            >
+          </p>
+
+          <!-- Email input field -->
           <div class="mb-3">
-            <input type="email" class="form-input form-control" placeholder="Enter Email" name="email" ngModel
-              required />
+            <input
+              type="email"
+              class="form-input form-control"
+              placeholder="Enter Email"
+              name="email"
+              ngModel
+              #email="ngModel"
+              email
+              required
+            />
           </div>
+          <p class="invalid-input">
+            <!-- Validation message for email -->
+            <span *ngIf="email.invalid && email.touched"
+              >Please Enter a Valid Email</span
+            >
+          </p>
+
+          <!-- Password input field -->
           <div class="mb-3">
-            <input type="password" class="form-input form-control" placeholder="Enter Password" name="password" ngModel
-              required />
+            <input
+              type="password"
+              class="form-input form-control"
+              placeholder="Enter Password"
+              name="password"
+              ngModel
+              #password="ngModel"
+              minlength="3"
+              maxlength="20"
+              required
+            />
           </div>
-          <button class="form-button btn btn-primary w-100 mb-3" type="submit">
+          <p class="invalid-input">
+            <!-- Validation message for password -->
+            <span *ngIf="password.invalid && password.touched"
+              >Please Enter a Valid Password</span
+            >
+          </p>
+
+          <!-- Submit button, disabled if form is invalid -->
+          <button
+            [disabled]="sellerSignUp.invalid"
+            class="form-button btn btn-primary w-100 mb-3"
+            type="submit"
+          >
             Sign Up
           </button>
-          <a (click)="openLogin()" class="d-block text-center">Already have an account? Click for Login</a>
+
+          <!-- Link to switch to the login form -->
+          <a (click)="openLogin()" class="d-block text-center">
+            Already have an account? Click for Login
+          </a>
         </form>
       </div>
 
       <!-- Login Form -->
       <div *ngIf="showLogin" class="login">
         <h1 class="text-center mb-4">Seller Login</h1>
-        <p class="error-p">{{authError}}</p>
-        <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin)" class="common-form">
+        <p class="error-p">{{ authError }}</p>
+        <form
+          #sellerLogin="ngForm"
+          (ngSubmit)="login(sellerLogin)"
+          class="common-form"
+        >
+          <!-- Email input field -->
           <div class="mb-3">
-            <input type="email" class="form-input form-control" placeholder="Enter Email" name="email" ngModel
-              required />
+            <input
+              type="email"
+              class="form-input form-control"
+              placeholder="Enter Email"
+              name="email"
+              ngModel
+              #email="ngModel"
+              email
+              required
+            />
           </div>
+          <p class="invalid-input">
+            <!-- Validation message for email -->
+            <span *ngIf="email.invalid && email.touched"
+              >Please Enter a Valid Email</span
+            >
+          </p>
+
+          <!-- Password input field -->
           <div class="mb-3">
-            <input type="password" class="form-input form-control" placeholder="Enter Password" name="password" ngModel
-              required />
+            <input
+              type="password"
+              class="form-input form-control"
+              placeholder="Enter Password"
+              name="password"
+              ngModel
+              #password="ngModel"
+              minlength="3"
+              maxlength="20"
+              required
+            />
           </div>
-          <button class="form-button btn btn-primary w-100 mb-3" type="submit">
+          <p class="invalid-input">
+            <!-- Validation message for password -->
+            <span *ngIf="password.invalid && password.touched"
+              >Please Enter a Valid Password</span
+            >
+          </p>
+
+          <!-- Submit button, disabled if form is invalid -->
+          <button
+            [disabled]="sellerLogin.invalid"
+            class="form-button btn btn-primary w-100 mb-3"
+            type="submit"
+          >
             Login
           </button>
-          <a (click)="openSignUp()" class="d-block text-center">Don't have an account? Click for Sign Up</a>
+
+          <!-- Link to switch to the sign-up form -->
+          <a (click)="openSignUp()" class="d-block text-center">
+            Don't have an account? Click for Sign Up
+          </a>
         </form>
       </div>
     </div>

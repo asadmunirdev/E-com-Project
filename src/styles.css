@@ -88,6 +88,27 @@ router-outlet {
   margin-bottom: 20px; /* Optional: add some space above the message */
 }
 
+.invalid-input {
+  color: #e74c3c; /* Red color for error */
+  font-size: 14px; /* Adjust the font size */
+  margin: -7px 0 7px 7px; /* top right bottom left */
+  display: block;
+  animation: fadeIn 0.3s ease-in-out; /* Animation for appearance */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+button:disabled{
+  cursor: not-allowed;
+}
+
 /* Caption Styles */
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.6); /* More opacity control */

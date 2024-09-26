@@ -25,7 +25,7 @@
       "price": "$120",
       "color": "Green",
       "category": "Electronics",
-      "image": "https://images.unsplash.com/photo-1631281637549-fb740447b4ee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Ymx1ZXRvb3RoJTIwaGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D",
+      "image": "https://c4.wallpaperflare.com/wallpaper/904/821/218/headset-music-purple-nice-wallpaper-preview.jpg",
       "description": "Wireless Bluetooth headphones with noise-cancellation features.",
       "id": "gg01"
     },
@@ -34,7 +34,7 @@
       "price": "$299",
       "color": "Black",
       "category": "Electronics",
-      "image": "https://images.unsplash.com/photo-1598965402089-897ce52e8355?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
+      "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",
       "description": "Latest smartphone with advanced features.",
       "id": "gg02"
     },
@@ -43,7 +43,7 @@
       "price": "$999",
       "color": "Gray",
       "category": "Computers",
-      "image": "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bGFwdG9wfGVufDB8fDB8fHww",
+      "image": "https://c1.wallpaperflare.com/preview/722/538/350/interior-minimal-white-workspace.jpg",
       "description": "High-performance laptop for all your needs.",
       "id": "gg03"
     },
@@ -52,17 +52,17 @@
       "price": "$199",
       "color": "Black",
       "category": "Wearables",
-      "image": "https://images.unsplash.com/photo-1523475496153-3d6cc0f0bf19?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c21hcnR3YXRjaHxlbnwwfHwwfHx8MA%3D%3D",
+      "image": "https://c4.wallpaperflare.com/wallpaper/41/294/427/smartwatch-apple-wristwatch-wallpaper-preview.jpg",
       "description": "Track your fitness and receive notifications.",
       "id": "gg04"
     },
     {
-      "name": "Wireless Mouse",
-      "price": "$25",
+      "name": "Desktop System",
+      "price": "$250",
       "color": "Black",
-      "category": "Accessories",
-      "image": "https://images.unsplash.com/photo-1586349906319-48d20e9d17e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2lyZWxlc3MlMjBtb3VzZXxlbnwwfHwwfHx8MA%3D%3D",
-      "description": "Ergonomic wireless mouse for comfort.",
+      "category": "Electronic",
+      "image": "https://c0.wallpaperflare.com/preview/739/93/119/computer-keyboard-connection-contemporary-desk.jpg",
+      "description": "Luxury Design PowerFull Gaming System.",
       "id": "gg05"
     },
     {

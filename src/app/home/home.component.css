@@ -1,8 +1,11 @@
+
 /* Image Styles */
 .product-header-img {
-  object-fit:contain;
+  object-fit: cover;
   height: 600px;
   width: 100%;
+  padding: 12px;
+  border-radius: 20px;
   transition: transform 0.5s ease-in-out; /* Smooth zoom effect */
 }
 
@@ -10,6 +13,7 @@
 .picsum-img-wrapper:hover .product-header-img {
   transform: scale(1.05); /* Slight zoom */
 }
+
 
 /* Container */
 .container {
@@ -38,54 +42,60 @@ h1::before {
 
 /* Card Styles */
 .card {
-  border: 1px solid #ddd;
+  border: none; /* Remove border */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f8f9fa; /* Light gray background for the card */
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  background-color: #fff; /* Set a clean white background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Add hover effect to the card */
+.card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 .card-img-top {
-  height: 200px;
+  height: 200px; /* Default height for larger screens */
   object-fit: cover;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 .card-body {
-  padding: 15px;
+  padding: 20px; /* Increase padding for a spacious look */
+  text-align: center; /* Center align text */
 }
 
 .card-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem; /* Slightly larger font size */
   color: #333;
-  font-weight: 600;
+  font-weight: bold; /* Bold font weight for emphasis */
+  margin-bottom: 10px; /* Space below title */
 }
 
 /* Product Info */
 .product-info {
   margin-top: 15px;
+  background-color: #f9f9f9; /* Light background for product info */
+  padding: 15px; /* Add padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .product-info p {
-  margin: 5px 0;
-  color: #555;
-}
-
-.product-price, .product-color, .product-description {
-  font-size: 1rem;
+  margin: 8px 0; /* Increased margin for spacing */
+  font-size: 0.9rem; /* Slightly smaller font size */
 }
 
 .product-price {
   color: #28a745; /* Green for price */
+  font-size: 1.1rem; /* Slightly larger font size */
 }
 
-.product-color {
-  color: #007bff; /* Blue for color */
-}
-
+.product-color,
 .product-description {
-  color: #666; /* Gray for description text */
+  color: #555; /* Gray for color and description */
 }
 
 .product-info strong {
@@ -95,12 +105,16 @@ h1::before {
 /* Product Footer */
 .card-footer {
   padding: 10px;
-  background-color: #f1f1f1; /* Slightly darker gray for the footer */
+  background-color: #f8f9fa; /* Slightly darker gray for the footer */
   border-top: 1px solid #ddd;
+  text-align: center; /* Center align buttons */
 }
 
 .card-footer .btn {
   margin: 5px;
+  border-radius: 20px; /* Rounded button edges */
+  padding: 10px 20px; /* Increased padding for buttons */
+  transition: background-color 0.3s ease; /* Smooth transition for button hover */
 }
 
 .card-footer .btn-primary {
@@ -125,19 +139,23 @@ h1::before {
 
 /* Responsive Adjustments */
 @media (max-width: 767.98px) {
+  .product-header-img {
+    height: 300px; /* Adjust header image height for small screens */
+  }
+
   .card-img-top {
-    height: 150px;
+    height: 100%; /* Stack to 100% height */
   }
 }
 
 @media (min-width: 768px) {
   .card-img-top {
-    height: 200px;
+    height: 200px; /* Height for medium screens */
   }
 }
 
 @media (min-width: 992px) {
   .card-img-top {
-    height: 250px;
+    height: 250px; /* Height for large screens */
   }
 }

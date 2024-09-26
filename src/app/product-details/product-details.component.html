@@ -1,36 +1,50 @@
 <div class="container product-details" *ngIf="productData">
-    <div class="row">
-      <div class="col-md-6 text-center">
-        <img
-          class="img-fluid product-img"
-          [src]="productData.image"
-          alt="{{ productData.name }}"
-        />
-      </div>
-      <div class="col-md-6">
-        <div class="details">
-          <h1>{{ productData.name }}</h1>
-          <h3 class="price">Price: {{ productData.price }}</h3>
-          <div class="d-flex align-items-center color-section">
-            <span class="me-2">Color:</span>
-            <span
-              class="product-color"
-              [style.backgroundColor]="productData.color"
-            ></span>
-          </div>
-          <h6 class="category">Category: {{ productData.category }}</h6>
-          <p class="description">{{ productData.description }}</p>
-          <div class="btn-group mt-4 mb-4">
-            <button class="btn btn-warning me-3">Add to Cart</button>
-            <button class="btn btn-success">Buy Now</button>
-          </div>
-          <div class="quantity-group d-flex align-items-center mt-3">
-            <button (click)="handleQuality('min')" class="btn btn-outline-secondary">-</button>
-            <input type="text" value="{{productQuantity}}" class="form-control text-center mx-2 quantity-input" />
-            <button (click)="handleQuality('plus')" class="btn btn-outline-secondary">+</button>
-          </div>
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <img
+        class="img-fluid product-img"
+        [src]="productData.image"
+        alt="{{ productData.name }}"
+      />
+    </div>
+    <div class="col-md-6">
+      <div class="details">
+        <h1>{{ productData.name }}</h1>
+        <h3 class="price">Price: {{ productData.price }}</h3>
+        <div class="d-flex align-items-center color-section">
+          <span class="me-2">Color:</span>
+          <span
+            class="product-color"
+            [style.backgroundColor]="productData.color"
+          ></span>
+        </div>
+        <h6 class="category">Category: {{ productData.category }}</h6>
+        <p class="description">{{ productData.description }}</p>
+        <div class="btn-group mt-4 mb-4">
+          <button *ngIf="!removeCart" class="btn btn-warning me-3" (click)="AddToCart()">Add to Cart</button>
+          <button *ngIf="removeCart" class="btn btn-warning me-3" (click)="RemoveFromCart(productData.id)">Remove from Cart</button>
+          <button class="btn btn-success">Buy Now</button>
+        </div>
+        <div class="quantity-group d-flex align-items-center mt-3">
+          <button
+            (click)="handleQuality('min')"
+            class="btn btn-outline-secondary"
+          >
+            -
+          </button>
+          <input
+            type="text"
+            value="{{ productQuantity }}"
+            class="form-control text-center mx-2 quantity-input"
+          />
+          <button
+            (click)="handleQuality('plus')"
+            class="btn btn-outline-secondary"
+          >
+            +
+          </button>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

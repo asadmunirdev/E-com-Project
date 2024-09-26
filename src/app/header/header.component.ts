@@ -18,24 +18,14 @@ export class HeaderComponent implements OnInit {
   sellerName: string = '';
   searchResult: undefined | product[];
   userName: string = '';
+  cartItems = 0;
   @ViewChild('navbarNav') navbarNav!: ElementRef;
 
-  constructor(private route: Router, private product: ProductService, private user:UserService) {}
-
-  // ngOnInit(): void {
-  //     this.route.events.subscribe((val:any)=>{
-  //       if(val.url){
-  //         if(localStorage.getItem('seller') && val.url.includes('seller')){
-  //           let sellerStore = localStorage.getItem("seller");
-  //           let sellerData = sellerStore && JSON.parse(sellerStore)[0];
-  //           this.sellerName=sellerData.name;
-  //           this.menuType = 'seller';
-  //         } else{
-  //           this.menuType = 'default'
-  //         }
-  //       }
-  //     });
-  // }
+  constructor(
+    private route: Router,
+    private product: ProductService,
+    private user: UserService
+  ) {}
 
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
@@ -60,8 +50,16 @@ export class HeaderComponent implements OnInit {
         }
       }
     });
+
+    let cartData = localStorage.getItem('localCart');
+    if (cartData) {
+      this.cartItems = JSON.parse(cartData).length;
+    }
+    this.product.cartData.subscribe((items) => {
+      this.cartItems = items.length;
+    });
   }
-    
+
   collapseNavbar(): void {
     const collapseElement = this.navbarNav.nativeElement;
     const bsCollapse = new (window as any).bootstrap.Collapse(collapseElement, {
@@ -75,11 +73,10 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(['/']);
   }
 
-  userLogout(){
+  userLogout() {
     localStorage.removeItem('user');
-    this.route.navigate(['user-auth']);    
+    this.route.navigate(['user-auth']);
   }
-
 
   searchProducts(query: KeyboardEvent) {
     const element = query.target as HTMLInputElement;
@@ -113,5 +110,4 @@ export class HeaderComponent implements OnInit {
   submitSearch(val: string) {
     this.route.navigate([`search/${val}`]);
   }
-
 }

@@ -24,7 +24,10 @@ export class NotFoundComponent implements AfterViewInit {
       this.canvas.width = this.width;
       this.ctx = this.canvas.getContext('2d');
       if (this.ctx) {
-        document.body.appendChild(this.canvas);
+        const notFoundDiv = document.querySelector('.not-found');
+        if (notFoundDiv) {
+          notFoundDiv.appendChild(this.canvas); // Append canvas to not-found div
+        }
         this.initializeWords();
         this.render();
       }

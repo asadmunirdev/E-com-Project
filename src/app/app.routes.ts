@@ -9,6 +9,7 @@ import { NotFoundComponent } from './not-found/not-found.component'; // Import t
 import { SearchComponent } from './search/search.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
+import { FooterComponent } from './footer/footer.component';
 
 export const routes: Routes = [
   {
@@ -50,4 +51,8 @@ export const routes: Routes = [
     path: '**',
     component: NotFoundComponent, // Add this route for handling 404
   },
+  {
+    component:FooterComponent,
+    path:'footer'
+  }
 ];

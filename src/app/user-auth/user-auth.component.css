@@ -1,80 +1,77 @@
+/* User Authentication Component Styling */
 :host {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa, #ffffff); /* Light shade of white for body */
+  background: url('../../assets/images/userauth.jpg') no-repeat center center fixed; /* Add your background image */
+  background-size: cover; /* Ensure the image covers the whole area */
 }
 
 /* User Authentication Container Styling */
 .user-auth {
   width: 100%;
   max-width: 400px;
-  background: #ffffff; /* Solid white background for the form */
-  border-radius: 20px; /* More rounded corners for a friendlier look */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer and slightly larger shadow for depth */
+  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+  border-radius: 20px; 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
   padding: 40px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   animation: fadeIn 1s;
-  position: relative; /* Allows for layered elements */
-  overflow: hidden; /* Prevents content overflow */
-  border: 1px solid #cfe7ff; /* Light blue border for a refined look */
+  position: relative; 
+  overflow: hidden; 
+  border: 1px solid rgba(207, 231, 255, 0.6); /* Light blue border with transparency */
 }
 
 /* Hover Effects for User Auth Container */
 .user-auth:hover {
   transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-  border-color: #99d4ff; /* Darker blue border on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+  border-color: rgba(153, 212, 255, 0.8); /* Darker blue border with some transparency */
 }
 
-/* Heading Styling */
+/* Decorative Elements for Visual Enhancement */
+.user-auth::before,
+.user-auth::after {
+  content: "";
+  position: absolute;
+  width: 120px; /* Larger circles for more visual interest */
+  height: 120px;
+  background: rgba(0, 150, 255, 0.1); /* Light blue decorative circles */
+  border-radius: 50%;
+  z-index: -1;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.user-auth::before {
+  top: -40px;
+  left: -40px;
+}
+
+.user-auth::after {
+  bottom: -40px;
+  right: -40px;
+}
+
+.user-auth:hover::before {
+  transform: translate(-15px, -15px) scale(1.2); /* Enhanced scaling and movement on hover */
+  opacity: 0.8; /* Subtle fade effect */
+}
+
+.user-auth:hover::after {
+  transform: translate(15px, 15px) scale(1.2); /* Enhanced scaling and movement on hover */
+  opacity: 0.8; /* Subtle fade effect */
+}
+
 h1 {
   font-size: 2.2rem; /* Larger font size for prominence */
   text-align: center;
-  color: #0056b3; /* Blue color for text */
+  color: #0056b3; /* A deeper, more vibrant blue */
   margin-bottom: 20px;
   animation: slideIn 1s;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   font-weight: bold; /* Make the font bold for emphasis */
-}
-
-input.form-control {
-  margin-bottom: 15px;
-  padding: 12px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #f9f9f9; /* Light background for contrast */
-  color: #333; /* Dark text color for readability */
-}
-
-input.form-control:focus {
-  border-color: #0056b3; /* Matches the header color */
-  outline: none;
-  box-shadow: 0 0 8px rgba(0, 86, 179, 0.2); /* Light blue shadow for focus effect */
-  background-color: #ffffff; /* White background on focus for emphasis */
-}
-/* Button Styling */
-.form-button {
-  background-color: #28a745; /* Vibrant green color for a standout effect */
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  font-weight: bold; /* Bold text for emphasis */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-.form-button:hover {
-  background-color: #218838; /* Darker green for hover effect */
-  transform: translateY(-2px); /* Slight upward movement on hover */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
 /* Anchor Tag Styling */
@@ -91,32 +88,27 @@ a {
   position: relative; /* Allows for pseudo-element positioning */
 }
 
+a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #007bff; /* Underline color matches text color */
+  transition: width 0.3s;
+  margin-top: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 a:hover {
   color: #0056b3; /* Darker blue on hover for contrast */
   transform: translateY(-2px); /* Slight upward movement on hover */
   text-shadow: 0 2px 5px rgba(0, 123, 255, 0.3); /* Adds a glow effect on hover */
 }
 
-/* Error Message Styling */
-.error-p {
-  color: red; /* Text color for error message */
-  text-transform: capitalize; /* Capitalizes the first letter of each word */
-  text-align: center; /* Centers the text */
-  margin-bottom: 15px; /* Space below the error message */
-  font-size: 16px; /* Adjust font size for readability */
-  font-weight: bold; /* Makes the text bold */
-  padding: 10px; /* Adds space around the text */
-  display: inline-block; /* Ensures the background color and border apply correctly */
-  max-width: 100%; /* Prevents overflow in responsive design */
-}
-
-/* Success Message Styling */
-.messagee_p {
-  color: green; /* Set text color to green */
-  text-align: center; /* Center-align text */
-  font-size: 1.3em; /* Optional: adjust font size for better visibility */
-  margin-top: 10px; /* Optional: add some space above the message */
-  margin-bottom: 20px; /* Optional: add some space above the message */
+a:hover::after {
+  width: 100%; /* Expands underline on hover */
 }
 
 /* Animations */
@@ -139,5 +131,17 @@ a:hover {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.8rem; /* Responsive font size */
+  }
+
+  .user-auth {
+    padding: 30px; /* Adjust padding for smaller screens */
+    width: 90%; /* Full width on smaller screens */
   }
 }

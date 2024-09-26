@@ -498,6 +498,12 @@
       "email": "shazil@gmail.com",
       "password": "shazil123",
       "id": 6
+    },
+    {
+      "name": "Ali Ahmad",
+      "email": "ali@gmail.com",
+      "password": "123",
+      "id": 7
     }
   ]
 }

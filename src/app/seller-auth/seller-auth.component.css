@@ -5,31 +5,32 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  background: url('../../assets/images/sellerauth.jpg') no-repeat center center fixed; /* Add your background image */
+  background-size: cover; /* Ensure the image covers the whole area */
 }
 
 /* Seller Authentication Container Styling */
 .seller-auth {
-    width: 100%;
-    max-width: 400px;
-    background: linear-gradient(135deg, #f0faff, #e0f0ff); /* Softer gradient with light blue tones */
-    border-radius: 20px; /* More rounded corners for a friendlier look */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer and slightly larger shadow for depth */
-    padding: 40px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    animation: fadeIn 1s;
-    position: relative; /* Allows for layered elements */
-    overflow: hidden; /* Prevents content overflow */
-    border: 1px solid #cfe7ff; /* Light blue border for a refined look */
-  }
-  
-  /* Hover Effects for Seller Auth Container */
-  .seller-auth:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-    border-color: #99d4ff; /* Darker blue border on hover */
-  }
-  
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
+  border-radius: 20px; 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+  padding: 40px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeIn 1s;
+  position: relative; 
+  overflow: hidden; 
+  border: 1px solid rgba(207, 231, 255, 0.6); /* Light blue border with transparency */
+}
+
+/* Hover Effects for Seller Auth Container */
+.seller-auth:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15); 
+  border-color: rgba(153, 212, 255, 0.8); /* Darker blue border with some transparency */
+}
+
   /* Decorative Elements for Visual Enhancement */
   .seller-auth::before,
   .seller-auth::after {

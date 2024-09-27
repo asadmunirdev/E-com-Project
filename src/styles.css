@@ -10,6 +10,7 @@ body {
   height: 100%;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #e0e0e0; 
   padding-top: 42.5px; 
 }
 
@@ -33,19 +34,18 @@ router-outlet {
 .form-input {
   margin-bottom: 15px;
   padding: 12px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 16px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #f9f9f9; /* Light background for contrast */
+  background-color: rgba(255, 255, 255, 0.6); /* More transparent background */
   color: #333; /* Dark text color for readability */
 }
 
 .form-input:focus {
   border-color: #0056b3; /* Matches the header color */
   outline: none;
-  box-shadow: 0 0 8px rgba(0, 86, 179, 0.2); /* Light blue shadow for focus effect */
-  background-color: #ffffff; /* White background on focus for emphasis */
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.2); /* More subtle shadow for focus effect */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque on focus */
 }
 
 /* Button Styling */
@@ -89,13 +89,14 @@ router-outlet {
 }
 
 
-.invalid-input{
-  color: red; /* Red color for error */
-  font-size: 14px; /* Adjust the font size */
-  margin:  -20px 12px 10px 7px; /* top right bottom left */
+.invalid-input {
+  color: #e60000; /* Slightly darker red for better readability */
+  font-size: 15px; /* Adjust font size for visibility */
+  margin: -20px 12px 10px 7px; /* top right bottom left */
   display: block;
   animation: fadeIn 0.3s ease-in-out; /* Animation for appearance */
-
+  font-weight: bold; /* Makes the text bold */
+  padding: 5px; /* Adds a bit of padding for spacing */
 }
 
 @keyframes fadeIn {

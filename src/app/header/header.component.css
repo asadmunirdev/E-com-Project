@@ -185,7 +185,7 @@
 .egg-shaped {
   display: inline-block;
   padding: 8px 16px; /* Adjust padding as needed */
-  background-color: white;
+  background-color: white; /* Original background color */
   border-radius: 70px; /* This creates the egg shape */
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow effect */
@@ -195,6 +195,12 @@
   font-size: 20px;
   font-weight: 500;
   margin-left: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.egg-shaped:hover {
+  transform: scale(1.05); /* Zoom in effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly darker shadow on hover */
 }
 
 .suggested-result {

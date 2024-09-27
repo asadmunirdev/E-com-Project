@@ -142,6 +142,6 @@ a:hover::after {
 
   .user-auth {
     padding: 30px; /* Adjust padding for smaller screens */
-    width: 90%; /* Full width on smaller screens */
+    width: 80%; /* Full width on smaller screens */
   }
 }

@@ -504,6 +504,92 @@
       "email": "ali@gmail.com",
       "password": "123",
       "id": 7
+    },
+    {
+      "name": "Sameer",
+      "email": "sameer@gmail.com",
+      "password": "123",
+      "id": 8
+    },
+    {
+      "name": "Haseeb",
+      "email": "haseeb@gmail.con",
+      "password": "123",
+      "id": 9
+    }
+  ],
+  "cart": [
+    {
+      "name": "Smartphone",
+      "price": "$299",
+      "color": "Black",
+      "category": "Electronics",
+      "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",
+      "description": "Latest smartphone with advanced features.",
+      "quantity": 1,
+      "userId": 1,
+      "productId": "gg02",
+      "id": 1
+    },
+    {
+      "name": "Smartwatch",
+      "price": "$199",
+      "color": "Black",
+      "category": "Wearables",
+      "image": "https://c4.wallpaperflare.com/wallpaper/41/294/427/smartwatch-apple-wristwatch-wallpaper-preview.jpg",
+      "description": "Track your fitness and receive notifications.",
+      "quantity": 6,
+      "productId": "gg04",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "name": "Bluetooth Headphones",
+      "price": "$120",
+      "color": "Green",
+      "category": "Electronics",
+      "image": "https://c4.wallpaperflare.com/wallpaper/904/821/218/headset-music-purple-nice-wallpaper-preview.jpg",
+      "description": "Wireless Bluetooth headphones with noise-cancellation features.",
+      "quantity": 1,
+      "productId": "gg01",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "name": "Smartphone",
+      "price": "$299",
+      "color": "Black",
+      "category": "Electronics",
+      "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",
+      "description": "Latest smartphone with advanced features.",
+      "quantity": 1,
+      "productId": "gg02",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "name": "Desktop System",
+      "price": "$250",
+      "color": "Black",
+      "category": "Electronic",
+      "image": "https://c0.wallpaperflare.com/preview/739/93/119/computer-keyboard-connection-contemporary-desk.jpg",
+      "description": "Luxury Design PowerFull Gaming System.",
+      "quantity": 1,
+      "productId": "gg05",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "name": "Laptop",
+      "price": "$999",
+      "color": "Gray",
+      "category": "Computers",
+      "image": "https://c1.wallpaperflare.com/preview/722/538/350/interior-minimal-white-workspace.jpg",
+      "description": "High-performance laptop for all your needs.",
+      "quantity": 1,
+      "productId": "gg03",
+      "userId": 1,
+      "id": 6
     }
   ]
 }

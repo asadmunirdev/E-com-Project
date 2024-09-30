@@ -1,19 +1,21 @@
-import { EventEmitter, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { signUp, login } from '../data-type';
-import { BehaviorSubject } from 'rxjs';
-import { Router } from '@angular/router';
+// Importing necessary modules and dependencies
+import { EventEmitter, Injectable } from '@angular/core'; // For creating injectable services and event emitters
+import { HttpClient } from '@angular/common/http'; // For making HTTP requests
+import { signUp, login } from '../data-type'; // Importing data types for seller login and signup
+import { BehaviorSubject } from 'rxjs'; // For reactive programming to handle state
+import { Router } from '@angular/router'; // For navigation
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root', // Makes this service available throughout the application
 })
 export class SellerService {
   //* Observable to track if the seller is logged in or not
-  isSellerLoggedIn = new BehaviorSubject<boolean>(false);
+  isSellerLoggedIn = new BehaviorSubject<boolean>(false); // Holds the state of seller's login status
 
   //* Event emitter to handle login errors
-  isLoginError = new EventEmitter<boolean>(false);
+  isLoginError = new EventEmitter<boolean>(false); // Emits a boolean indicating if there is a login error
 
+  // Constructor to inject HttpClient and Router services
   constructor(private http: HttpClient, private router: Router) {}
 
   //! Method to handle user sign-up

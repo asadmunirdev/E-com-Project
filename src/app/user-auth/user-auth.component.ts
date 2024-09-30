@@ -1,3 +1,4 @@
+// Importing necessary modules and dependencies
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -6,48 +7,55 @@ import { UserService } from '../services/user.service';
 import { ProductService } from '../services/product.service';
 
 @Component({
-  selector: 'app-user-auth',
-  standalone: true,
-  imports: [FormsModule, CommonModule],
-  templateUrl: './user-auth.component.html',
-  styleUrls: ['./user-auth.component.css'],
+  selector: 'app-user-auth', // Selector for the component
+  standalone: true, // This component is standalone
+  imports: [FormsModule, CommonModule], // Modules that this component uses
+  templateUrl: './user-auth.component.html', // Template URL for the HTML view
+  styleUrls: ['./user-auth.component.css'], // Stylesheet for this component
 })
 export class UserAuthComponent implements OnInit {
-  showLogin: boolean = true;
-  authError: string = '';
+  showLogin: boolean = true; // Variable to toggle between login and signup forms
+  authError: string = ''; // Variable to store authentication error messages
 
+  // Injecting UserService and ProductService through the constructor
   constructor(private user: UserService, private product: ProductService) {}
 
+  // Lifecycle hook that runs when the component initializes
   ngOnInit(): void {
-    this.user.userAuthReload();
+    this.user.userAuthReload(); // Reloads user authentication status
   }
 
+  // Method to open the login form
   openLogin(): void {
     this.showLogin = true;
   }
 
+  // Method to open the signup form
   openSignUp(): void {
     this.showLogin = false;
   }
 
+  // Method to handle user signup
   signUp(form: NgForm): void {
     if (form.valid) {
       const data: signUp = form.value;
-      this.user.userSignUp(data);
+      this.user.userSignUp(data); // Calling user signup method
+      this.localCartToRemoteCart(); // Transfer local cart to remote cart after signup
     } else {
       console.log('Sign Up Form is invalid');
     }
   }
 
+  // Method to handle user login
   login(form: NgForm): void {
     if (form.valid) {
       const data: signUp = form.value;
-      this.user.userLogin(data);
+      this.user.userLogin(data); // Calling user login method
       this.user.isLoginError.subscribe((isError) => {
         if (isError) {
           this.authError = 'Please enter valid user details';
         } else {
-          this.localCartToRemoteCart();
+          this.localCartToRemoteCart(); // Transfer local cart to remote cart after login
         }
       });
     } else {
@@ -55,12 +63,14 @@ export class UserAuthComponent implements OnInit {
     }
   }
 
+  // Method to transfer local cart items to remote cart
   localCartToRemoteCart() {
     let data = localStorage.getItem('localCart');
+    let user = localStorage.getItem('user');
+    let userId = user && JSON.parse(user).id; // Get the user ID from localStorage
+
     if (data) {
       let cartDataList: product[] = JSON.parse(data);
-      let user = localStorage.getItem('user');
-      let userId = user && JSON.parse(user).id;
 
       cartDataList.forEach((product: product, index) => {
         let cartData: cart = {
@@ -68,18 +78,27 @@ export class UserAuthComponent implements OnInit {
           productId: product.id,
           userId,
         };
-        delete cartData.id;
+        delete cartData.id; // Removing local cart id since it's no longer needed
+
+        // Adding product to remote cart with a slight delay
         setTimeout(() => {
           this.product.addtoCart(cartData).subscribe((result) => {
             if (result) {
               console.log('item stored in db');
             }
           });
+
+          // Clear local cart after all items have been added to the remote cart
           if (cartDataList.length === index + 1) {
             localStorage.removeItem('localCart');
           }
         }, 500);
       });
     }
+
+    // Fetching the updated cart list from the server
+    setTimeout(() => {
+      this.product.getCartList(userId);
+    }, 500);
   }
 }

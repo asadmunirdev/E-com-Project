@@ -43,6 +43,7 @@ export class HeaderComponent implements OnInit {
           const userStore = localStorage.getItem('user');
           const userData = userStore ? JSON.parse(userStore) : null; // Adjust to parse directly
           this.userName = userData ? userData.name : '';
+          this.product.getCartList(userData.id);
         }
         // Default case
         else {
@@ -76,6 +77,7 @@ export class HeaderComponent implements OnInit {
   userLogout() {
     localStorage.removeItem('user');
     this.route.navigate(['user-auth']);
+    this.product.cartData.emit([]);
   }
 
   searchProducts(query: KeyboardEvent) {
@@ -85,7 +87,7 @@ export class HeaderComponent implements OnInit {
     const searchTerm = element.value; // Ensure clean input
 
     if (searchTerm) {
-      this.product.serachProducts(searchTerm).subscribe((result) => {
+      this.product.searchProducts(searchTerm).subscribe((result) => {
         if (result.length > 5) {
           result.length = 5;
         }

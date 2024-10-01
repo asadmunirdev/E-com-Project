@@ -36,7 +36,8 @@ export class UserService {
       )
       .subscribe((result: any) => {
         if (result && result.body && result.body.length === 1) { // Check if user exists
-          console.log(result); // Log the result for debugging
+          // console.log(result);
+           // Log the result for debugging
 
           localStorage.setItem('user', JSON.stringify(result.body[0])); // Store user data in localStorage
           this.router.navigate(['/']); // Navigate to the home page after successful login

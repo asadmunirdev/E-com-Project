@@ -5,12 +5,13 @@ import { HeaderComponent } from "./header/header.component";
 import { HomeComponent } from './home/home.component';
 import { SellerAuthComponent } from './seller-auth/seller-auth.component';
 import { FooterComponent } from "./footer/footer.component";
+import { GoToTopComponent } from "./go-to-top/go-to-top.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AllInOneComponent, HeaderComponent, HomeComponent, SellerAuthComponent, FooterComponent],
+  imports: [RouterOutlet, AllInOneComponent, HeaderComponent, HomeComponent, SellerAuthComponent, FooterComponent, GoToTopComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

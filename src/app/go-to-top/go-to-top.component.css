@@ -1,0 +1,31 @@
+.go-to-top {
+    position: fixed; /* Fixed position for visibility */
+    bottom: 80px; /* Space from the bottom to avoid footer overlap */
+    right: 20px; /* Space from the right edge */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 8px; /* Slightly rounded corners */
+    width: 50px; /* Fixed width for square shape */
+    height: 50px; /* Fixed height for square shape */
+    display: flex; /* Flexbox for centering icon */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    cursor: pointer; /* Pointer cursor on hover */
+    opacity: 1; /* Always visible */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */
+    z-index: 1000; /* Ensure it appears on top of other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+  
+  /* Hover effect */
+  .go-to-top:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Scale up slightly on hover for emphasis */
+  }
+  
+  /* Icon styles */
+  .go-to-top i {
+    font-size: 24px; /* Font size for the icon */
+  }
+  

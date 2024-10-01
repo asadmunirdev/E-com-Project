@@ -34,7 +34,8 @@ export class HomeComponent implements OnInit {
 
     this.product.getCategories().subscribe((data) => {
       this.categories = data; // Load categories from the service
-      console.log('Loaded categories:', this.categories); // Log loaded categories
+      // console.log('Loaded categories:', this.categories); 
+      // Log loaded categories
     });
   }
 

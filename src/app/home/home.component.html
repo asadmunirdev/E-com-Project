@@ -23,17 +23,6 @@
 >}
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- Products -->
 <!-- Products -->
 <div class="container mb-4">
   <h1>Trendy Products</h1> <!-- Add a heading for context -->
@@ -45,7 +34,7 @@
   </select>
 
   <div class="row">
-    <div class="col-sm-4 mb-4" *ngFor="let item of filteredProducts">
+    <div class="col-sm-3 mb-4" *ngFor="let item of filteredProducts">
       <div class="card h-100">
         <a routerLink="/details/{{item.id}}">
           <img src="{{ item.image }}" alt="{{ item.name }}" class="card-img-top" />
@@ -55,7 +44,7 @@
             <a routerLink="/details/{{item.id}}">{{ item.name | titlecase }}</a>
           </h5>
           <div class="product-info">
-            <p class="product-price"><strong>Price:</strong> {{ item.price  }}</p>
+            <p class="product-price"><strong>Price:</strong> {{ item.price }}</p>
             <p class="product-color">
               <strong>Color:</strong> {{ item.color | titlecase }}
             </p>

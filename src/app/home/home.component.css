@@ -1,3 +1,4 @@
+/* Carousal Styling */
 
 /* Image Styles */
 .product-header-img {
@@ -12,6 +13,12 @@
 /* Add a zoom effect on hover */
 .picsum-img-wrapper:hover .product-header-img {
   transform: scale(1.05); /* Slight zoom */
+}
+
+@media (max-width: 767.98px) {
+  .product-header-img {
+    height: 300px; /* Adjust header image height for small screens */
+  }
 }
 /* Container */
 .container {
@@ -32,11 +39,11 @@ h1 {
 }
 
 h1::before {
-  content: '';
+  content: "";
   display: block;
   width: 60px;
   height: 3px;
-  background-color: #007bff;
+  background-color: #007bff; /* Reverted to blue */
   margin: 10px auto;
 }
 
@@ -50,7 +57,7 @@ h1::before {
 /* Select Category Styles */
 .category-select {
   border-radius: 5px; /* Rounded corners */
-  border: 1px solid #007bff; /* Blue border */
+  border: 1px solid #007bff; /* Reverted to blue border */
   padding: 10px; /* Padding inside the select box */
   background-color: #f9f9f9; /* Light background color */
   transition: border-color 0.3s ease; /* Smooth transition for border color */
@@ -65,63 +72,62 @@ h1::before {
 /* Card Styles */
 .card {
   border: none; /* Remove border */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  border-radius: 8px; /* Slightly smaller border radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial shadow for depth */
   background-color: #fff; /* Set a clean white background */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+  height: 350px; /* Set a fixed height for the card */
 }
 
 /* Add hover effect to the card */
 .card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); /* Light blue gradient background on hover */
 }
 
+/* Card Image */
 .card-img-top {
-  height: 200px; /* Default height for larger screens */
+  height: 180px; /* Reduced height for images */
   object-fit: cover;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 8px; /* Adjusted for new radius */
+  border-top-right-radius: 8px; /* Adjusted for new radius */
 }
 
+/* Card Body */
 .card-body {
-  padding: 20px; /* Increase padding for a spacious look */
+  padding: 10px; /* Reduced padding */
   text-align: center; /* Center align text */
 }
 
+/* Card Title */
 .card-title {
-  font-size: 1.5rem; /* Slightly larger font size */
+  font-size: 1.5rem; /* Slightly smaller font size */
   color: #333;
   font-weight: bold; /* Bold font weight for emphasis */
-  margin-bottom: 10px; /* Space below title */
+  margin: 8px 0; /* Space below title */
 }
 
 /* Product Info */
 .product-info {
-  margin-top: 15px;
-  background-color: #f9f9f9; /* Light background for product info */
-  padding: 15px; /* Add padding */
-  border-radius: 8px; /* Rounded corners */
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+  padding: 10px; /* Reduced padding */
+  border-radius: 6px; /* Slightly smaller border radius */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease; /* Smooth transition for product info on hover */
+  text-align: left; /* Align text to the left */
 }
 
+/* Individual Info Sections */
 .product-info p {
-  margin: 8px 0; /* Increased margin for spacing */
-  font-size: 0.9rem; /* Slightly smaller font size */
+  margin: 8px 0; /* Space between paragraphs, adjust as needed */
+  font-size: 1rem; /* Maintain font size for product info */
 }
 
-.product-price {
-  color: #28a745; /* Green for price */
-  font-size: 1.1rem; /* Slightly larger font size */
-}
-
-.product-color,
-.product-description {
-  color: #555; /* Gray for color and description */
-}
-
-.product-info strong {
-  color: #333;
+/* Change background of product info on card hover */
+.card:hover .product-info {
+  background-color: rgba(255, 255, 255, 1); /* Fully opaque on hover */
 }
 
 /* Card Footer */
@@ -134,57 +140,79 @@ h1::before {
 .card-footer .btn {
   margin: 5px;
   border-radius: 20px; /* Rounded button edges */
-  padding: 10px 20px; /* Increased padding for buttons */
-  transition: background-color 0.3s ease; /* Smooth transition for button hover */
+  padding: 8px 15px; /* Reduced padding for buttons */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for button hover */
   width: 80%;
 }
 
 .card-footer .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #28a745; /* Green for "View Details" button */
+  border-color: #28a745; /* Button border color */
 }
 
+/* Button hover effect */
 .card-footer .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background-color: #218838; /* Darker green on hover */
+  border-color: #1e7e34; /* Darker border on hover */
 }
 
-/* Responsive Adjustments */
 @media (max-width: 767.98px) {
-  .product-header-img {
-    height: 300px; /* Adjust header image height for small screens */
+  .col-sm-3 {
+    flex: 0 0 90%; /* Make each card take 90% width on small screens */
+    max-width: 90%; /* Prevent overflow */
+    margin: 0 auto; /* Center the cards */
   }
-  
+
+  .card {
+    height: auto; /* Set height to auto to accommodate content */
+  }
+
   .card-img-top {
-    height: 100%; /* Adjust image height for small screens */
+    height: 200px; /* Adjust image height for small screens */
+  }
+
+  .card-body {
+    padding: 10px; /* Maintain padding for the card body */
+  }
+
+  .card-title {
+    font-size: 1.5rem; /* Maintain font size for titles */
+    margin: 10px 0; /* Maintain space below title */
+  }
+
+  .product-info p {
+    margin: 4px 0; /* Maintain margin for product info */
+    font-size: 1rem; /* Maintain font size for product info */
+  }
+
+  .product-price {
+    font-size: 1rem; /* Maintain font size for price */
+  }
+
+  .product-color,
+  .product-description {
+    font-size: 0.85rem; /* Maintain font size for color and description */
   }
 }
 
 @media (min-width: 768px) {
-  .card-img-top {
-    height: 200px; /* Height for medium screens */
+  .col-sm-3 {
+    flex: 0 0 50%; /* Two cards per row for tablets */
+    max-width: 50%;
+  }
+
+  .card {
+    height: 350px; /* Maintain original height for tablets */
   }
 }
 
 @media (min-width: 992px) {
-  .card-img-top {
-    height: 250px; /* Height for large screens */
+  .col-sm-3 {
+    flex: 0 0 25%; /* Four cards per row for larger screens */
+    max-width: 25%;
+  }
+
+  .card {
+    height: 350px; /* Maintain original height for large screens */
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

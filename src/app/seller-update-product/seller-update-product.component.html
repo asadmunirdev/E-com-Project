@@ -2,20 +2,15 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-8 update-product">
       <h1 class="text-center mb-4">Update Product</h1>
-      <p class="messagee_p">{{productMeSSAGE}}</p>
-      <form
-        #updateProduct="ngForm"
-        (ngSubmit)="submit(updateProduct.value)"
-        class="common-form"
-      >
+      <p class="messagee_p">{{ productMessage }}</p>
+      <form [formGroup]="updateProductForm" (ngSubmit)="submit()" class="common-form">
         <div class="row mb-3">
           <div class="col-12 col-md-6">
             <input
               type="text"
               class="form-input form-control"
               placeholder="Enter Product Name"
-              name="name"
-              ngModel="{{ productData?.name }}"
+              formControlName="name"
               required
             />
           </div>
@@ -24,8 +19,7 @@
               type="text"
               class="form-input form-control"
               placeholder="Enter Product Price"
-              name="price"
-              ngModel="{{ productData?.price }}"
+              formControlName="price"
               required
             />
           </div>
@@ -36,20 +30,15 @@
               type="text"
               class="form-input form-control"
               placeholder="Enter Product Color"
-              name="color"
-              ngModel="{{ productData?.color }}"
+              formControlName="color"
               required
             />
           </div>
           <div class="col-12 col-md-6">
-            <input
-              type="text"
-              class="form-input form-control"
-              placeholder="Enter Product Category"
-              name="category"
-              ngModel="{{ productData?.category }}"
-              required
-            />
+            <select class="form-input form-control" formControlName="category">
+              <option value="" disabled>Select a Category</option>
+              <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
+            </select>
           </div>
         </div>
         <div class="mb-3">
@@ -57,8 +46,7 @@
             type="text"
             class="form-input form-control"
             placeholder="Enter Product Image URL"
-            name="image"
-            ngModel="{{ productData?.image }}"
+            formControlName="image"
             required
           />
         </div>
@@ -66,8 +54,7 @@
           <textarea
             class="form-input form-control"
             placeholder="Enter Product Description"
-            name="description"
-            ngModel="{{productData?.description}}"
+            formControlName="description"
             required
             rows="4"
           ></textarea>

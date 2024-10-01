@@ -17,7 +17,10 @@
             <input type="text" class="form-input form-control" placeholder="Enter Product Color" formControlName="color" />
           </div>
           <div class="col-12 col-md-6">
-            <input type="text" class="form-input form-control" placeholder="Enter Product Category" formControlName="category" />
+            <select class="form-input form-control" formControlName="category">
+              <option value="" disabled selected>Select a Category</option>
+              <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
+            </select>
           </div>
         </div>
         <div class="mb-3">

@@ -1,7 +1,7 @@
 // Importing necessary modules and dependencies
 import { HttpClient } from '@angular/common/http'; // For making HTTP requests
 import { EventEmitter, Injectable } from '@angular/core'; // For creating injectable services and event emitters
-import { cart, product } from '../data-type'; // Importing data types for products and cart
+import { cart, category, product } from '../data-type'; // Importing data types for products and cart
 import { Router } from '@angular/router'; // For navigation
 
 @Injectable({
@@ -14,27 +14,32 @@ export class ProductService {
   // Constructor to inject HttpClient and Router services
   constructor(private http: HttpClient, private router: Router) {}
 
-  //! Adding Product API Service
+   //* Method to fetch categories
+   getCategories() {
+    return this.http.get<category[]>('http://localhost:3000/categories');
+  }
+
+  //* Adding Product API Service
   addProduct(data: product) {
     return this.http.post('http://localhost:3000/products', data); // Sends POST request to add a product
   }
 
-  //! Showing Product API Service
+  //* Showing Product API Service
   productList() {
     return this.http.get<product[]>('http://localhost:3000/products'); // Retrieves the list of products
   }
 
-  //! Deleting Product API Service
+  //* Deleting Product API Service
   deleteProduct(id: number) {
     return this.http.delete(`http://localhost:3000/products/${id}`); // Sends DELETE request to remove a product by ID
   }
 
-  //! Prefill Product API Service
+  //* Prefill Product API Service
   getProduct(id: string) {
     return this.http.get<product>(`http://localhost:3000/products/${id}`); // Retrieves a single product by ID
   }
 
-  //! Update Product API Service
+  //* Update Product API Service
   updateProduct(product: product) {
     return this.http.put<product>( // Sends PUT request to update a product
       `http://localhost:3000/products/${product.id}`,
@@ -42,22 +47,22 @@ export class ProductService {
     );
   }
 
-  //! Products in Carousel
+  //* Products in Carousel
   popularProducts() {
     return this.http.get<product[]>('http://localhost:3000/products?_limit=5'); // Retrieves popular products limited to 5
   }
 
-  //! Products in Cards
+  //* Products in Cards
   trendyProducts() {
     return this.http.get<product[]>('http://localhost:3000/products'); // Retrieves all products for display in cards
   }
 
-  //! Products in Search Bar
+  //* Products in Search Bar
   searchProducts(query: string) {
     return this.http.get<product[]>(`http://localhost:3000/products?q=${query}`); // Searches products based on a query
   }
 
-  //! Add Product to Cart by Local Storage
+  //* Add Product to Cart by Local Storage
   localAddToCart(data: product) {
     let cartData = []; // Initialize cart data array
     let localCart = localStorage.getItem('localCart'); // Get local cart from local storage
@@ -74,7 +79,7 @@ export class ProductService {
     }
   }
 
-  //! Remove Product from Cart by Local Storage
+  //* Remove Product from Cart by Local Storage
   removeItemsFromCart(productId: number) {
     let cartData = localStorage.getItem('localCart'); // Get local cart from local storage
     if (cartData) {
@@ -85,12 +90,12 @@ export class ProductService {
     }
   }
 
-  //! Add to Cart with User Logged In
+  //* Add to Cart with User Logged In
   addtoCart(cartData: cart) {
     return this.http.post('http://localhost:3000/cart', cartData); // Sends POST request to add the product to the user's cart
   }
 
-  //! Getting Cart List
+  //* Getting Cart List
   getCartList(userId: number) {
     return this.http
       .get<product[]>('http://localhost:3000/cart?userId=' + userId, { observe: 'response' }) // Retrieves the cart list for a specific user
@@ -101,7 +106,7 @@ export class ProductService {
       });
   }
 
-  //! Remove From Cart
+  //* Remove From Cart
   removeToCart(cartId: number) {
     return this.http.delete(`http://localhost:3000/cart/${cartId}`); // Sends DELETE request to remove a specific item from the cart
   }

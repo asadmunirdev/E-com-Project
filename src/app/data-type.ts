@@ -48,3 +48,8 @@ export interface order {
   userId:string,
   id:number|undefined
 }
+
+export interface category {
+  id: number;        // Unique identifier for the category
+  name: string;      // Name of the category
+}

@@ -1,19 +1,21 @@
 // Importing necessary modules and dependencies
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ProductService } from '../services/product.service';
-import { product } from '../data-type';
+import { product, category } from '../data-type';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-seller-add-product', // Selector for the component
   standalone: true, // This component is standalone
-  imports: [ReactiveFormsModule], // Import ReactiveFormsModule for reactive forms
+  imports: [ReactiveFormsModule, CommonModule], // Import ReactiveFormsModule and CommonModule
   templateUrl: './seller-add-product.component.html', // Template URL for the HTML view
   styleUrls: ['./seller-add-product.component.css'] // Stylesheet for this component
 })
-export class SellerAddProductComponent {
+export class SellerAddProductComponent implements OnInit {
   addProductForm: FormGroup; // FormGroup to manage the product addition form
   addProductMessage: string | undefined; // Variable to store success messages after product addition
+  categories: category[] = []; // Array to hold categories
 
   // Injecting FormBuilder and ProductService through the constructor
   constructor(private fb: FormBuilder, private product: ProductService) {
@@ -25,6 +27,13 @@ export class SellerAddProductComponent {
       category: ['', Validators.required], // Product category is required
       image: ['', Validators.required], // Product image is required
       description: ['', Validators.required] // Product description is required
+    });
+  }
+
+  // Lifecycle hook to fetch categories when the component initializes
+  ngOnInit() {
+    this.product.getCategories().subscribe((data: category[]) => {
+      this.categories = data; // Populate categories from the service
     });
   }
 

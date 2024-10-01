@@ -13,8 +13,6 @@
 .picsum-img-wrapper:hover .product-header-img {
   transform: scale(1.05); /* Slight zoom */
 }
-
-
 /* Container */
 .container {
   max-width: 1200px;
@@ -24,11 +22,13 @@
 /* Heading */
 h1 {
   font-size: 2.5rem;
+  text-align: center;
   color: #333;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
+  margin-bottom: 20px; /* Space below the heading */
 }
 
 h1::before {
@@ -38,6 +38,28 @@ h1::before {
   height: 3px;
   background-color: #007bff;
   margin: 10px auto;
+}
+
+/* Label Styles */
+.category-label {
+  font-size: 1.2rem;
+  color: #333; /* Dark color for the label */
+  margin-bottom: 10px; /* Space below the label */
+}
+
+/* Select Category Styles */
+.category-select {
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #007bff; /* Blue border */
+  padding: 10px; /* Padding inside the select box */
+  background-color: #f9f9f9; /* Light background color */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+/* Change border color on focus */
+.category-select:focus {
+  border-color: #0056b3; /* Darker blue on focus */
+  outline: none; /* Remove default outline */
 }
 
 /* Card Styles */
@@ -102,19 +124,19 @@ h1::before {
   color: #333;
 }
 
-/* Product Footer */
+/* Card Footer */
 .card-footer {
-  padding: 10px;
   background-color: #f8f9fa; /* Slightly darker gray for the footer */
-  border-top: 1px solid #ddd;
-  text-align: center; /* Center align buttons */
+  border-top: 1px solid #ddd; /* Add border */
 }
 
+/* Button Styles */
 .card-footer .btn {
   margin: 5px;
   border-radius: 20px; /* Rounded button edges */
   padding: 10px 20px; /* Increased padding for buttons */
   transition: background-color 0.3s ease; /* Smooth transition for button hover */
+  width: 80%;
 }
 
 .card-footer .btn-primary {
@@ -127,24 +149,14 @@ h1::before {
   border-color: #0056b3;
 }
 
-.card-footer .btn-success {
-  background-color: #28a745;
-  border-color: #28a745;
-}
-
-.card-footer .btn-success:hover {
-  background-color: #218838;
-  border-color: #218838;
-}
-
 /* Responsive Adjustments */
 @media (max-width: 767.98px) {
   .product-header-img {
     height: 300px; /* Adjust header image height for small screens */
   }
-
+  
   .card-img-top {
-    height: 100%; /* Stack to 100% height */
+    height: 100%; /* Adjust image height for small screens */
   }
 }
 
@@ -159,3 +171,20 @@ h1::before {
     height: 250px; /* Height for large screens */
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -83,7 +83,7 @@
   "products": [
     {
       "name": "Bluetooth Headphones",
-      "price": "$120",
+      "price": "120",
       "color": "Red",
       "category": "Electronics",
       "image": "https://c4.wallpaperflare.com/wallpaper/904/821/218/headset-music-purple-nice-wallpaper-preview.jpg",
@@ -92,7 +92,7 @@
     },
     {
       "name": "Smartphone",
-      "price": "$299",
+      "price": "299",
       "color": "Black",
       "category": "Electronics",
       "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",
@@ -101,7 +101,7 @@
     },
     {
       "name": "Laptop",
-      "price": "$999",
+      "price": "999",
       "color": "Gray",
       "category": "Electronics",
       "image": "https://c1.wallpaperflare.com/preview/722/538/350/interior-minimal-white-workspace.jpg",
@@ -110,7 +110,7 @@
     },
     {
       "name": "Smartwatch",
-      "price": "$199",
+      "price": "199",
       "color": "Black",
       "category": "Electronics",
       "image": "https://c4.wallpaperflare.com/wallpaper/41/294/427/smartwatch-apple-wristwatch-wallpaper-preview.jpg",
@@ -119,7 +119,7 @@
     },
     {
       "name": "Desktop System",
-      "price": "$250",
+      "price": "250",
       "color": "Black",
       "category": "Electronics",
       "image": "https://c0.wallpaperflare.com/preview/739/93/119/computer-keyboard-connection-contemporary-desk.jpg",
@@ -128,7 +128,7 @@
     },
     {
       "name": "Bluetooth Speaker",
-      "price": "$70",
+      "price": "70",
       "color": "Black",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJsdWV0b290aCUyMHNwZWFrZXJ8ZW58MHx8MHx8fDA%3D",
@@ -137,7 +137,7 @@
     },
     {
       "name": "Smart TV",
-      "price": "$500",
+      "price": "500",
       "color": "Black",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1461151304267-38535e780c79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnQlMjB0dnxlbnwwfHwwfHx8MA%3D%3D",
@@ -146,7 +146,7 @@
     },
     {
       "name": "Digital Camera",
-      "price": "$700",
+      "price": "700",
       "color": "Black",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1590292339438-5fc3be7fca9d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGlnaXRhbCUyMGNhbWVyYXxlbnwwfHwwfHx8MA%3D%3D",
@@ -155,7 +155,7 @@
     },
     {
       "name": "Action Camera",
-      "price": "$300",
+      "price": "300",
       "color": "White",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1689435505430-b4fda78d10ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YWN0aW9uJTIwY2FtZXJhc3xlbnwwfHwwfHx8MA%3D%3D",
@@ -164,7 +164,7 @@
     },
     {
       "name": "Gaming Console",
-      "price": "$499",
+      "price": "499",
       "color": "White",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1678794373912-15776689850b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2FtaW5nJTIwY29uc29sZXxlbnwwfHwwfHx8MA%3D%3D",
@@ -173,7 +173,7 @@
     },
     {
       "name": "VR Headset",
-      "price": "$299",
+      "price": "299",
       "color": "White",
       "category": "Electronics",
       "image": "https://plus.unsplash.com/premium_photo-1710909336354-540462e95a43?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dnIlMjBoZWFkc2V0fGVufDB8fDB8fHww",
@@ -182,7 +182,7 @@
     },
     {
       "name": "Wireless Earbuds",
-      "price": "$150",
+      "price": "150",
       "color": "Black",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1655804436006-ec41717125dd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2lyZWxlc3MlMjBlYXJwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
@@ -191,7 +191,7 @@
     },
     {
       "name": "Smart Home Hub",
-      "price": "$120",
+      "price": "120",
       "color": "Silver",
       "category": "Home & Garden",
       "image": "https://plus.unsplash.com/premium_photo-1663075936658-11cfc7d6a5d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c21hcnQlMjBob21lJTIwaHVifGVufDB8fDB8fHww",
@@ -200,7 +200,7 @@
     },
     {
       "name": "LED Desk Lamp",
-      "price": "$40",
+      "price": "40",
       "color": "Silver",
       "category": "Home & Garden",
       "image": "https://plus.unsplash.com/premium_photo-1683436836549-02da98f20041?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGVkJTIwZGVzayUyMGxhbXB8ZW58MHx8MHx8fDA%3D",
@@ -209,7 +209,7 @@
     },
     {
       "name": "Portable Charger",
-      "price": "$30",
+      "price": "30",
       "color": "Silver",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1619489646924-b4fce76b1db5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydGFibGUlMjBjaGFyZ2VyfGVufDB8fDB8fHww",
@@ -218,7 +218,7 @@
     },
     {
       "name": "Fitness Tracker",
-      "price": "$60",
+      "price": "60",
       "color": "Black",
       "category": "Health & Wellness",
       "image": "https://images.unsplash.com/photo-1665860455423-166cab57c383?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Zml0bmVzcyUyMHRyYWNrZXJ8ZW58MHx8MHx8fDA%3D",
@@ -227,7 +227,7 @@
     },
     {
       "name": "Coffee Maker",
-      "price": "$100",
+      "price": "100",
       "color": "Silver, Red",
       "category": "Home Appliances",
       "image": "https://images.unsplash.com/photo-1458060390477-1b8bc1cfe017?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29mZmUlMjBtYWtlcnxlbnwwfHwwfHx8MA%3D%3D",
@@ -236,7 +236,7 @@
     },
     {
       "name": "Electric Kettle",
-      "price": "$40",
+      "price": "40",
       "color": "White",
       "category": "Home Appliances",
       "image": "https://plus.unsplash.com/premium_photo-1663133646496-f74226a2b263?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWxlY3RyaWMlMjBrZXR0bGV8ZW58MHx8MHx8fDA%3D",
@@ -245,7 +245,7 @@
     },
     {
       "name": "Air Fryer",
-      "price": "$150",
+      "price": "150",
       "color": "White",
       "category": "Home Appliances",
       "image": "https://plus.unsplash.com/premium_photo-1672192166833-c8ae84e5e127?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YWlyJTIwZnJ5ZXJ8ZW58MHx8MHx8fDA%3D",
@@ -254,7 +254,7 @@
     },
     {
       "name": "Robot Vacuum",
-      "price": "$250",
+      "price": "250",
       "color": "White",
       "category": "Home Appliances",
       "image": "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9ib3QlMjB2YWN1dW18ZW58MHx8MHx8fDA%3D",
@@ -263,7 +263,7 @@
     },
     {
       "name": "Smart Refrigerator",
-      "price": "$1200",
+      "price": "1200",
       "color": "Stainless Steel",
       "category": "Home & Garden",
       "image": "https://images.unsplash.com/photo-1716193696093-9c54b6a290e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNtYXJ0JTIwcmVmcmlnZXJhdG9yfGVufDB8fDB8fHww",
@@ -272,7 +272,7 @@
     },
     {
       "name": "Smart Doorbell",
-      "price": "$150",
+      "price": "150",
       "color": "White",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNtYXJ0JTIwZG9vcmJlbGx8ZW58MHx8MHx8fDA%3D",
@@ -281,7 +281,7 @@
     },
     {
       "name": "Home Security Camera",
-      "price": "$200",
+      "price": "200",
       "color": "White",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1670278458254-0df3f72ab093?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG9tZSUyMHNlY3VyaXR5JTIwY2FtZXJhfGVufDB8fDB8fHww",
@@ -290,7 +290,7 @@
     },
     {
       "name": "Smart Light Bulb",
-      "price": "$20",
+      "price": "20",
       "color": "White",
       "category": "Home & Garden",
       "image": "https://images.unsplash.com/photo-1712294252418-680891540aa8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnQlMjBsaWdodCUyMGJ1bGJ8ZW58MHx8MHx8fDA%3D",
@@ -299,7 +299,7 @@
     },
     {
       "name": "Smart Thermostat",
-      "price": "$150",
+      "price": "150",
       "color": "Black",
       "category": "Home & Garden",
       "image": "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnQlMjB0aGVybW9zdGF0fGVufDB8fDB8fHww",
@@ -308,7 +308,7 @@
     },
     {
       "name": "Gaming Mouse",
-      "price": "$60",
+      "price": "60",
       "color": "Black",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1588440573874-54185a266452?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Z2FtaW5nJTIwbW91c2V8ZW58MHx8MHx8fDA%3D",
@@ -317,7 +317,7 @@
     },
     {
       "name": "Mechanical Keyboard",
-      "price": "$120",
+      "price": "120",
       "color": "RGB",
       "category": "Electronics",
       "image": "https://plus.unsplash.com/premium_photo-1664194583917-b0ba07c4ce2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVjaGFuaWNhbCUyMGtleWJvYXJkfGVufDB8fDB8fHww",
@@ -326,7 +326,7 @@
     },
     {
       "name": "4K Monitor",
-      "price": "$400",
+      "price": "400",
       "color": "Black",
       "category": "Electronics",
       "image": "https://plus.unsplash.com/premium_photo-1678566111483-f45ad346d50a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8NGslMjBtb25pdG9yfGVufDB8fDB8fHww",
@@ -335,7 +335,7 @@
     },
     {
       "name": "External Hard Drive",
-      "price": "$80",
+      "price": "80",
       "color": "White",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1627486144847-03f8c678f90d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGV4dGVybmFsJTIwaGFyZCUyMGRyaXZlfGVufDB8fDB8fHww",
@@ -344,7 +344,7 @@
     },
     {
       "name": "USB-C Hub",
-      "price": "$30",
+      "price": "30",
       "color": "Black",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1616578781650-cd818fa41e57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8VVNCJTIwQyUyMEh1YnxlbnwwfHwwfHx8MA%3D%3D",
@@ -353,7 +353,7 @@
     },
     {
       "name": "Portable SSD",
-      "price": "$150",
+      "price": "150",
       "color": "Black",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1602526431715-81a7851b96d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBvcnRhYmxlJTIwc3NkfGVufDB8fDB8fHww",
@@ -362,7 +362,7 @@
     },
     {
       "name": "Smart Scale",
-      "price": "$50",
+      "price": "50",
       "color": "Black",
       "category": "Health & Wellness",
       "image": "https://plus.unsplash.com/premium_photo-1670505059834-be50739a3ac5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHNtYXJ0JTIwc2NhbGV8ZW58MHx8MHx8fDA%3D",
@@ -371,7 +371,7 @@
     },
     {
       "name": "Electric Toothbrush",
-      "price": "$70",
+      "price": "70",
       "color": "Black",
       "category": "Beauty & Personal Care",
       "image": "https://images.unsplash.com/photo-1695073623266-7cec9986c652?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZWxlY3RyaWMlMjB0b290aGJydXNofGVufDB8fDB8fHww",
@@ -380,7 +380,7 @@
     },
     {
       "name": "Hair Dryer",
-      "price": "$45",
+      "price": "45",
       "color": "Black",
       "category": "Beauty & Personal Care",
       "image": "https://images.unsplash.com/photo-1620331309205-b5a4669ac526?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGFpciUyMGRyeWVyfGVufDB8fDB8fHww",
@@ -389,7 +389,7 @@
     },
     {
       "name": "Electric Shaver",
-      "price": "$60",
+      "price": "60",
       "color": "Black",
       "category": "Beauty & Personal Care",
       "image": "https://images.unsplash.com/photo-1631255645312-90e87c3474b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZWxlY3RyaWMlMjBzaGF2ZXJ8ZW58MHx8MHx8fDA%3D",
@@ -398,7 +398,7 @@
     },
     {
       "name": "Yoga Mat",
-      "price": "$30",
+      "price": "30",
       "color": "Pink",
       "category": "Sports & Outdoors",
       "image": "https://plus.unsplash.com/premium_photo-1675155952889-abb299df1fe7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8eW9nYSUyMG1hdHxlbnwwfHwwfHx8MA%3D%3D",
@@ -407,7 +407,7 @@
     },
     {
       "name": "Bicycle",
-      "price": "$350",
+      "price": "350",
       "color": "Silver",
       "category": "Sports & Outdoors",
       "image": "https://images.unsplash.com/photo-1608393508049-40db8711fbd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJ5Y3ljbGV8ZW58MHx8MHx8fDA%3D",
@@ -416,7 +416,7 @@
     },
     {
       "name": "Treadmill",
-      "price": "$800",
+      "price": "800",
       "color": "Silver",
       "category": "Sports & Outdoors",
       "image": "https://plus.unsplash.com/premium_photo-1661920538067-c48451160c72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dHJlYWRtaWxsfGVufDB8fDB8fHww",
@@ -425,7 +425,7 @@
     },
     {
       "name": "Camping Tent",
-      "price": "$150",
+      "price": "150",
       "color": "White",
       "category": "Sports & Outdoors",
       "image": "https://images.unsplash.com/photo-1533393189657-3a18944e8203?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FtcGluZyUyMHRlbnR8ZW58MHx8MHx8fDA%3D",
@@ -434,7 +434,7 @@
     },
     {
       "name": "Fishing Rod",
-      "price": "$70",
+      "price": "70",
       "color": "Blue",
       "category": "Sports & Outdoors",
       "image": "https://plus.unsplash.com/premium_photo-1663099722256-1a5512692d91?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmlzaGluZyUyMHJvZHxlbnwwfHwwfHx8MA%3D%3D",
@@ -443,7 +443,7 @@
     },
     {
       "name": "Hiking Backpack",
-      "price": "$90",
+      "price": "90",
       "color": "Black",
       "category": "Sports & Outdoors",
       "image": "https://images.unsplash.com/photo-1620953749696-38989c40eadb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8SGlraW5nJTIwQmFja3BhY2t8ZW58MHx8MHx8fDA%3D",
@@ -452,7 +452,7 @@
     },
     {
       "name": "Portable Grill",
-      "price": "$120",
+      "price": "120",
       "color": "Black",
       "category": "Home & Garden",
       "image": "https://images.unsplash.com/photo-1523139348426-081681667818?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG9ydGFibGUlMjBncmlsbHxlbnwwfHwwfHx8MA%3D%3D",
@@ -461,7 +461,7 @@
     },
     {
       "name": "Sunglasses",
-      "price": "$40",
+      "price": "40",
       "color": "Pink",
       "category": "Clothing & Accessories",
       "image": "https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c3VuZ2xhc3Nlc3xlbnwwfHwwfHx8MA%3D%3D",
@@ -470,7 +470,7 @@
     },
     {
       "name": "Watch",
-      "price": "$200",
+      "price": "200",
       "color": "Gold",
       "category": "Clothing & Accessories",
       "image": "https://images.unsplash.com/photo-1495857000853-fe46c8aefc30?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHdhdGNofGVufDB8fDB8fHww",
@@ -479,7 +479,7 @@
     },
     {
       "name": "Leather Wallet",
-      "price": "$60",
+      "price": "60",
       "color": "Brown",
       "category": "Clothing & Accessories",
       "image": "https://images.unsplash.com/photo-1633382570322-523ae94e5178?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8TGVhdGhlciUyMFdhbGxldHxlbnwwfHwwfHx8MA%3D%3D",
@@ -488,7 +488,7 @@
     },
     {
       "name": "Backpack",
-      "price": "$50",
+      "price": "50",
       "color": "Blue",
       "category": "Clothing & Accessories",
       "image": "https://plus.unsplash.com/premium_photo-1687867117406-d62e827b31c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QmFja3BhY2t8ZW58MHx8MHx8fDA%3D",
@@ -497,7 +497,7 @@
     },
     {
       "name": "Notebook",
-      "price": "$15",
+      "price": "15",
       "color": "Black",
       "category": "Books & Stationery",
       "image": "https://images.unsplash.com/photo-1516414447565-b14be0adf13e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bm90ZWJvb2t8ZW58MHx8MHx8fDA%3D",
@@ -506,7 +506,7 @@
     },
     {
       "name": "Pen Set",
-      "price": "$20",
+      "price": "20",
       "color": "Black",
       "category": "Books & Stationery",
       "image": "https://images.unsplash.com/photo-1605641987825-c1664626d79f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVuJTIwc2V0fGVufDB8fDB8fHww",
@@ -515,7 +515,7 @@
     },
     {
       "name": "Power Bank",
-      "price": "$50",
+      "price": "50",
       "color": "White",
       "category": "Electronics",
       "image": "https://images.unsplash.com/photo-1706275400998-7fc21c8cd8ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvd2VyJTIwYmFua3xlbnwwfHwwfHx8MA%3D%3D",
@@ -524,7 +524,7 @@
     },
     {
       "name": "Classic TV",
-      "price": "$76",
+      "price": "76",
       "color": "Brown",
       "category": "Electronics",
       "image": "https://plus.unsplash.com/premium_photo-1682125902211-7e7c32844fa5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHR2fGVufDB8fDB8fHww",

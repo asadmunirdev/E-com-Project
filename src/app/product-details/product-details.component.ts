@@ -4,11 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import { cart, product } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { CommonModule } from '@angular/common';
+import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
 
 @Component({
   selector: 'app-product-details', // Selector for the component
   standalone: true, // This component is standalone
-  imports: [CommonModule], // Modules that this component uses
+  imports: [CommonModule,PkrCurrencyPipe], // Modules that this component uses
   templateUrl: './product-details.component.html', // Template URL for the HTML view
   styleUrls: ['./product-details.component.css'], // Stylesheet for this component
 })

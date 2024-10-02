@@ -5,11 +5,12 @@ import { product, category } from '../data-type';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgbCarouselModule, CommonModule, RouterModule, FormsModule], // Added FormsModule here
+  imports: [NgbCarouselModule, CommonModule, RouterModule, FormsModule, PkrCurrencyPipe], // Added FormsModule here
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'], // Corrected from styleUrl to styleUrls
 })

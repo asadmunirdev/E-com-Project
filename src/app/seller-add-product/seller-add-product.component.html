@@ -27,7 +27,7 @@
           <input type="text" class="form-input form-control" placeholder="Enter Product Image URL" formControlName="image" />
         </div>
         <div class="mb-3">
-          <textarea class="form-input form-control" placeholder="Enter Product Description" formControlName="description" rows="4"></textarea>
+          <textarea class="form-input form-control" placeholder="Enter Product Description" formControlName="description" rows="2" [maxlength]="70"></textarea>
         </div>
         <button class="form-button btn btn-primary w-100 mb-3" type="submit">Add Product</button>
       </form>

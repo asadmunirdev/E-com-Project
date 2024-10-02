@@ -79,8 +79,8 @@ td {
   }
 
   .product-image {
-    width: 150px; /* Increased image width for mobile */
-    height: 150px; /* Increased image height for mobile */
+    width: 100%; /* Increased image width for mobile */
+    height: 220px; /* Increased image height for mobile */
   }
 
   .description-column {

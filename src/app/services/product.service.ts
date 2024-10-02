@@ -110,4 +110,12 @@ export class ProductService {
   removeToCart(cartId: number) {
     return this.http.delete(`http://localhost:3000/cart/${cartId}`); // Sends DELETE request to remove a specific item from the cart
   }
+
+  //* Cart Page
+currebCart(){
+let userStore = localStorage.getItem('user');
+let userData = userStore && JSON.parse(userStore);
+return this.http.get<cart[]>('http://localhost:3000/cart?userId=' + userData.id)
+}
+
 }

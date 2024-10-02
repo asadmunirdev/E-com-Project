@@ -1,0 +1,72 @@
+<div class="cart-page container mt-5">
+    <h1 class="text-center mb-4">Shopping Cart</h1>
+    <div class="row">
+
+        <!-- Cart Items Section for Desktop -->
+        <div class="col-lg-8 col-md-7 cart-items" *ngIf="!isMobile">
+            <div class="card mb-3 custom-card" *ngFor="let cart of cartData">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-4">
+                            <img src="{{cart.image}}" class="img-fluid" alt="{{cart.name}}" />
+                        </div>
+                        <div class="col-8">
+                            <h5 class="card-title">{{cart.name}}</h5>
+                            <p class="card-text product-price"><strong>Price:</strong> ${{cart.price}}</p>
+                            <p class="product-color">
+                                <strong>Color:</strong>
+                                <span class="color-swatch" [style.backgroundColor]="cart.color | lowercase"></span>
+                                {{ cart.color | titlecase }}
+                            </p>
+                            <p class="product-category"><strong>Category:</strong> {{cart.category}}</p>
+                            <p class="product-description">{{cart.description}}</p>
+                            <p class="product-quantity"><strong>Quantity:</strong> {{cart.quantity}}</p>
+                            <div class="btn-group" role="group" aria-label="Item Actions">
+                                <button routerLink="/details/{{ cart.productId }}" class="btn btn-pr go-to-item-btn"> Go to Item</button>
+                                <button class="btn btn-danger remove-btn">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Items Section for Mobile -->
+        <div class="col-12 cart-items mobile-only" *ngIf="isMobile">
+            <div class="card mb-3 custom-card" *ngFor="let cart of cartData">
+                <img src="{{cart.image}}" class="cart-image" alt="{{cart.name}}" />
+                <div class="card-body">
+                    <h5 class="card-title">{{cart.name}}</h5>
+                    <p class="card-text product-price"><strong>Price:</strong> ${{cart.price}}</p>
+                    <p class="product-color">
+                        <strong>Color:</strong>
+                        <span class="color-swatch" [style.backgroundColor]="cart.color | lowercase"></span>
+                        {{ cart.color | titlecase }}
+                    </p>
+                    <p class="product-category"><strong>Category:</strong> {{cart.category}}</p>
+                    <p class="product-description">{{cart.description}}</p>
+                    <p class="product-quantity"><strong>Quantity:</strong> {{cart.quantity}}</p>
+                    <div class="btn-group" role="group" aria-label="Item Actions">
+                        <button routerLink="/details/{{ cart.productId }}" class="btn btn-pr go-to-item-btn">Go to Item</button>
+                        <button class="btn btn-danger remove-btn">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Summary Section -->
+        <div class="col-lg-4 col-md-5 order-summary">
+            <div class="summary-card">
+                <h3>Order Summary</h3>
+                <hr />
+                <p><strong>Subtotal:</strong> $500.00</p>
+                <p><strong>Discount:</strong> - $50.00</p>
+                <p><strong>Delivery Charges:</strong> $20.00</p>
+                <hr />
+                <p class="total"><strong>Total:</strong> $470.00</p>
+                <hr />
+                <button class="btn btn-primary btn-block">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>

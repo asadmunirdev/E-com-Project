@@ -120,9 +120,44 @@ h1::before {
 }
 
 /* Individual Info Sections */
-.product-info p {
-  margin: 8px 0; /* Space between paragraphs, adjust as needed */
-  font-size: 1rem; /* Maintain font size for product info */
+.product-price {
+  margin: 8px 0; /* Space between paragraphs */
+  font-size: 1.2rem; /* Larger font size for price */
+  color: #007BFF; /* Bootstrap primary color for price */
+  font-weight: bold; /* Bold for emphasis */
+}
+
+.product-color {
+  display: flex; /* Use flexbox to align the items */
+  align-items: center; /* Center align vertically */
+  margin: 8px 0; /* Space between paragraphs */
+  font-size: 1rem; /* Maintain font size */
+  font-weight: bold; /* Bold for emphasis */
+  
+}
+
+.color-swatch {
+  width: 25px; /* Width of the color swatch */
+  height: 25px; /* Height of the color swatch */
+  border-radius: 50%; /* Fully rounded corners for a circle */
+  margin-left: 10px; /* Space between the label and swatch */
+  margin-right: 10px; /* Space between the label and swatch */
+  border: 2px solid #ccc; /* Light gray border */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+}
+
+
+
+.product-category {
+  margin: 8px 0; /* Space between paragraphs */
+  font-size: 1rem; /* Maintain font size */
+  color: #28A745; /* Green color for category */
+}
+
+.product-description {
+  margin: 8px 0; /* Space between paragraphs */
+  font-size: 1rem; /* Maintain font size */
+  color: #6C757D; /* Grey color for description */
 }
 
 /* Change background of product info on card hover */

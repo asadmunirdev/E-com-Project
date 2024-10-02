@@ -4,11 +4,12 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { product } from '../data-type';
 import { CommonModule } from '@angular/common';
+import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
 
 @Component({
   selector: 'app-search', // Selector for the component
   standalone: true, // This component is standalone
-  imports: [CommonModule, RouterModule], // Modules that this component uses
+  imports: [CommonModule, RouterModule, PkrCurrencyPipe], // Modules that this component uses
   templateUrl: './search.component.html', // Template URL for the HTML view
   styleUrl: './search.component.css' // Stylesheet for this component
 })

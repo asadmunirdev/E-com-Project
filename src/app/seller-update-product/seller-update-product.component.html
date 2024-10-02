@@ -3,7 +3,11 @@
     <div class="col-12 col-md-10 col-lg-8 update-product">
       <h1 class="text-center mb-4">Update Product</h1>
       <p class="messagee_p">{{ productMessage }}</p>
-      <form [formGroup]="updateProductForm" (ngSubmit)="submit()" class="common-form">
+      <form
+        [formGroup]="updateProductForm"
+        (ngSubmit)="submit()"
+        class="common-form"
+      >
         <div class="row mb-3">
           <div class="col-12 col-md-6">
             <input
@@ -37,7 +41,12 @@
           <div class="col-12 col-md-6">
             <select class="form-input form-control" formControlName="category">
               <option value="" disabled>Select a Category</option>
-              <option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</option>
+              <option
+                *ngFor="let category of categories"
+                [value]="category.name"
+              >
+                {{ category.name }}
+              </option>
             </select>
           </div>
         </div>
@@ -56,7 +65,8 @@
             placeholder="Enter Product Description"
             formControlName="description"
             required
-            rows="4"
+            rows="2"
+            [maxlength]="70"
           ></textarea>
         </div>
         <button class="form-button btn btn-primary w-100 mb-3" type="submit">

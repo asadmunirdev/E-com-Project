@@ -3,10 +3,10 @@
     All Product List
   </h1>
   <p class="message-p">{{ productMessage }}</p>
-  
+
   <div class="overflow-x-auto">
-    <!-- Table Layout for Large Screens -->
-    <table class="table-auto w-full border-collapse border border-blue-400 bg-white shadow-xl hidden lg:table">
+    <!-- Table Layout for All Screens Except Small Screens -->
+    <table class="table-auto w-full border-collapse border border-blue-400 bg-white shadow-xl lg:table">
       <thead class="bg-blue-600 text-white animate-slide-down">
         <tr>
           <th class="p-6 text-center border border-blue-400">Image</th>
@@ -21,15 +21,25 @@
       <tbody>
         <tr *ngFor="let item of productList" class="hover:bg-blue-50 transition-all duration-300">
           <td class="p-6 text-center border border-blue-300">
-            <img src="{{ item.image }}" alt="{{ item.name }}" class="product-image" />
+            <img src="{{ item.image }}" alt="{{ item.name | titlecase}}" class="product-image" />
           </td>
-          <td class="p-6 text-center text-lg border border-blue-300 text-blue-900 font-medium">{{ item.name }}</td>
-          <td class="p-6 text-center text-lg border border-blue-300 text-green-700 font-semibold">{{ item.price }}</td>
-          <td class="p-6 text-center text-lg border border-blue-300 text-blue-700">{{ item.color }}</td>
-          <td class="p-6 text-center text-lg border border-blue-300 text-blue-700">{{ item.category }}</td>
-          <td class="p-6 border border-blue-300 text-blue-700 description-column">{{ item.description }}</td>
+          <td class="p-6 text-center text-lg border border-blue-300 text-blue-900 font-medium">
+            {{ item.name | titlecase }}
+          </td>
+          <td class="p-6 text-center text-lg border border-blue-300 text-green-700 font-semibold">
+            {{ item.price | pkrCurrency }}
+          </td>
           <td class="p-6 text-center text-lg border border-blue-300 text-blue-700">
-            <div class="action-buttons">
+            {{ item.color | titlecase }}
+          </td>
+          <td class="p-6 text-center text-lg border border-blue-300 text-blue-700">
+            {{ item.category | titlecase }}
+          </td>
+          <td class="p-6 border border-blue-300 text-blue-700 description-column">
+            {{ item.description | titlecase }}
+          </td>
+          <td class="p-6 text-center text-lg border border-blue-300 text-blue-700">
+            <div class="btn-group action-buttons">
               <button class="btn btn-outline-success" [routerLink]="['/seller-update-product', item.id]">
                 <i class="fas fa-edit"></i> Update
               </button>
@@ -41,16 +51,16 @@
         </tr>
       </tbody>
     </table>
-    
+
     <!-- Card Layout for Small Screens -->
-    <div class="product-card lg:hidden block" *ngFor="let item of productList">
+    <div class="product-card md:hidden block" *ngFor="let item of productList">
       <img src="{{ item.image }}" alt="{{ item.name }}" class="product-image" />
-      <h2 class="text-lg text-blue-900 font-medium">{{ item.name }}</h2>
-      <p class="text-green-700 font-semibold">{{ item.price }}</p>
-      <p class="text-blue-700">{{ item.color }}</p>
-      <p class="text-blue-700">{{ item.category }}</p>
-      <p class="description-column">{{ item.description }}</p>
-      <div class="action-buttons">
+      <h2 class="text-lg text-blue-900 font-medium">{{ item.name | titlecase }}</h2>
+      <p class="text-green-700 font-semibold">{{ item.price | pkrCurrency }}</p>
+      <p class="text-blue-700">{{ item.color | titlecase }}</p>
+      <p class="text-blue-700">{{ item.category | titlecase }}</p>
+      <p class="description-column">{{ item.description | titlecase }}</p>
+      <div class="btn-group action-buttons">
         <button class="btn btn-outline-success" [routerLink]="['/seller-update-product', item.id]">
           <i class="fas fa-edit"></i> Update
         </button>

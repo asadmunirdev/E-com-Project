@@ -21,8 +21,8 @@
       "id": 1
     },
     {
-      "name": "Rafay",
-      "email": "rafay@gmail.com",
+      "name": "Hamza",
+      "email": "hamza@gmail.com",
       "password": "123",
       "id": 2
     },
@@ -79,32 +79,7 @@
       "name": "Home Appliances"
     }
   ],
-  "cart": [
-    {
-      "name": "Bluetooth Headphones",
-      "price": "120",
-      "color": "Red",
-      "category": "Electronics",
-      "image": "https://c4.wallpaperflare.com/wallpaper/904/821/218/headset-music-purple-nice-wallpaper-preview.jpg",
-      "description": "Wireless Bluetooth headphones with noise-cancellation features.",
-      "quantity": 1,
-      "userId": 1,
-      "productId": "gg01",
-      "id": 1
-    },
-    {
-      "name": "Smartphone",
-      "price": "299",
-      "color": "Black",
-      "category": "Electronics",
-      "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",
-      "description": "Latest smartphone with advanced features.",
-      "quantity": 1,
-      "userId": 1,
-      "productId": "gg02",
-      "id": 2
-    }
-  ],
+  "cart": [],
   "products": [
     {
       "name": "Bluetooth Headphones",

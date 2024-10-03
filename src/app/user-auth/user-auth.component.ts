@@ -1,8 +1,7 @@
-// Importing necessary modules and dependencies
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
-import { cart, product, signUp } from '../data-type';
+import { cart, product, signUp, login } from '../data-type'; // Ensure login is imported here
 import { UserService } from '../services/user.service';
 import { ProductService } from '../services/product.service';
 
@@ -40,7 +39,11 @@ export class UserAuthComponent implements OnInit {
     if (form.valid) {
       const data: signUp = form.value;
       this.user.userSignUp(data); // Calling user signup method
-      this.localCartToRemoteCart(); // Transfer local cart to remote cart after signup
+      this.user.isLoginError.subscribe((isError) => {
+        if (!isError) {
+          this.localCartToRemoteCart(); // Transfer local cart to remote cart after successful signup
+        }
+      });
     } else {
       console.log('Sign Up Form is invalid');
     }
@@ -49,13 +52,13 @@ export class UserAuthComponent implements OnInit {
   // Method to handle user login
   login(form: NgForm): void {
     if (form.valid) {
-      const data: signUp = form.value;
+      const data: login = form.value; // Use the correct type here
       this.user.userLogin(data); // Calling user login method
       this.user.isLoginError.subscribe((isError) => {
         if (isError) {
           this.authError = 'Please enter valid user details';
         } else {
-          this.localCartToRemoteCart(); // Transfer local cart to remote cart after login
+          this.localCartToRemoteCart(); // Transfer local cart to remote cart after successful login
         }
       });
     } else {
@@ -80,25 +83,25 @@ export class UserAuthComponent implements OnInit {
         };
         delete cartData.id; // Removing local cart id since it's no longer needed
 
-        // Adding product to remote cart with a slight delay
-        setTimeout(() => {
-          this.product.addtoCart(cartData).subscribe((result) => {
-            if (result) {
-              console.log('item stored in db');
-            }
-          });
-
-          // Clear local cart after all items have been added to the remote cart
-          if (cartDataList.length === index + 1) {
-            localStorage.removeItem('localCart');
+        // Adding product to remote cart
+        this.product.addtoCart(cartData).subscribe((result) => {
+          if (result) {
+            console.log('Item stored in DB');
           }
-        }, 500);
+        });
+
+        // Clear local cart after all items have been added to the remote cart
+        if (cartDataList.length === index + 1) {
+          localStorage.removeItem('localCart');
+        }
       });
     }
 
     // Fetching the updated cart list from the server
-    setTimeout(() => {
-      this.product.getCartList(userId);
-    }, 500);
+    if (userId) {
+      setTimeout(() => {
+        this.product.getCartList(userId);
+      }, 500);
+    }
   }
 }

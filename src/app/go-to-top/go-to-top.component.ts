@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-go-to-top',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './go-to-top.component.html',
   styleUrls: ['./go-to-top.component.css']
 })
@@ -31,5 +32,9 @@ export class GoToTopComponent {
 
   scrollToBottom() {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); // Smooth scroll to the bottom
+  }
+
+  goBack() {
+    window.history.back(); // Go back to the previous page
   }
 }

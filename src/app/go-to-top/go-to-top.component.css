@@ -1,94 +1,105 @@
-.go-to-top {
-    position: fixed; /* Fixed position for visibility */
-    bottom: 80px; /* Space from the bottom to avoid footer overlap */
-    right: 20px; /* Space from the right edge */
-    background-color: #007bff; /* Button color */
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 50px; /* Slightly rounded corners */
-    width: 50px; /* Fixed width for square shape */
-    height: 50px; /* Fixed height for square shape */
-    display: flex; /* Flexbox for centering icon */
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
-    cursor: pointer; /* Pointer cursor on hover */
-    opacity: 1; /* Always visible */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */
-    z-index: 1000; /* Ensure it appears on top of other elements */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  }
-  
-  /* Hover effect */
-  .go-to-top:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Scale up slightly on hover for emphasis */
-  }
-  
-  /* Icon styles */
-  .go-to-top i {
-    font-size: 26px; /* Font size for the icon */
-  }
-
-  .go-to-bottom {
-    position: fixed; /* Fixed position for visibility */
-    bottom: 80px; /* Space from the bottom to avoid footer overlap */
-    left: 20px; /* Space from the left edge */
-    background-color: #007bff; /* Button color */
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 50px; /* Slightly rounded corners */
-    width: 50px; /* Fixed width for square shape */
-    height: 50px; /* Fixed height for square shape */
-    display: flex; /* Flexbox for centering icon */
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
-    cursor: pointer; /* Pointer cursor on hover */
-    opacity: 1; /* Always visible */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */
-    z-index: 1000; /* Ensure it appears on top of other elements */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+/* Common Buttons Div */
+.common-buttons {
+  position: fixed; /* Fixed position for visibility */
+  bottom: 80px; /* Space from the bottom (adjust as necessary) */
+  right: 20px; /* Space from the right edge */
+  display: flex; /* Use flexbox to arrange buttons */
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Space between buttons */
 }
 
-/* Hover effect */
-.go-to-bottom:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05); /* Scale up slightly on hover for emphasis */
+/* WhatsApp Button */
+.whatsapp-button {
+  background-color: rgba(37, 211, 102, 0.8); /* WhatsApp color with transparency */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 50px; /* Slightly rounded corners */
+  width: 50px; /* Fixed width for square shape */
+  height: 50px; /* Fixed height for square shape */
+  display: flex; /* Flexbox for centering icon */
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  z-index: 1000; /* Ensure it appears on top of other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Hover effect for WhatsApp Button */
+.whatsapp-button:hover {
+  background-color: rgba(18, 140, 126, 0.9); /* Darker shade on hover */
+  transform: scale(1.05); /* Scale up slightly on hover for emphasis */
 }
 
 /* Icon styles */
-.go-to-bottom i {
-    font-size: 26px; /* Font size for the icon */
+.whatsapp-button i {
+  font-size: 34px; /* Font size for the icon */
 }
 
+/* Back Button */
+.go-back {
+  background-color: rgba(253, 126, 20, 0.8); /* Button color (orange) with transparency */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 50px; /* Slightly rounded corners */
+  width: 50px; /* Fixed width for square shape */
+  height: 50px; /* Fixed height for square shape */
+  display: flex; /* Flexbox for centering icon */
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  z-index: 1000; /* Ensure it appears on top of other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
 
-  .whatsapp-button {
-    position: fixed; /* Fixed position for visibility */
-    bottom: 150px; /* Space from the bottom (adjust as necessary) */
-    right: 20px; /* Space from the right edge */
-    background-color: #25D366; /* WhatsApp color */
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 50px; /* Slightly rounded corners */
-    width: 50px; /* Fixed width for square shape */
-    height: 50px; /* Fixed height for square shape */
-    display: flex; /* Flexbox for centering icon */
-    align-items: center; /* Center icon vertically */
-    justify-content: center; /* Center icon horizontally */
-    cursor: pointer; /* Pointer cursor on hover */
-    opacity: 1; /* Always visible */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scale */
-    z-index: 1000; /* Ensure it appears on top of other elements */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  }
-  
-  /* Hover effect */
-  .whatsapp-button:hover {
-    background-color: #128C7E; /* Darker shade on hover */
-    transform: scale(1.05); /* Scale up slightly on hover for emphasis */
-  }
-  
-  /* Icon styles */
-  .whatsapp-button i {
-    font-size: 34px; /* Font size for the icon */
-  }
-  
+/* Hover effect for Back Button */
+.go-back:hover {
+  background-color: rgba(230, 126, 34, 0.9); /* Darker orange with less transparency on hover */
+  transform: scale(1.05); /* Scale up slightly on hover for emphasis */
+}
+
+/* Icon styles */
+.go-back i {
+  font-size: 26px; /* Font size for the icon */
+}
+
+/* Scroll Buttons */
+.scroll-buttons {
+  position: fixed; /* Fixed position for visibility */
+  bottom: 80px; /* Match the common buttons' bottom position */
+  left: 20px; /* Space from the left edge */
+  display: flex; /* Use flexbox to arrange buttons */
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Space between buttons */
+}
+
+.go-to-top,
+.go-to-bottom {
+  background-color: rgba(0, 123, 255, 0.8); /* Button color with transparency */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 50px; /* Slightly rounded corners */
+  width: 50px; /* Fixed width for square shape */
+  height: 50px; /* Fixed height for square shape */
+  display: flex; /* Flexbox for centering icon */
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  z-index: 1000; /* Ensure it appears on top of other elements */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+}
+
+/* Hover effect */
+.go-to-top:hover,
+.go-to-bottom:hover {
+  background-color: rgba(0, 86, 179, 0.9); /* Darker blue with less transparency on hover */
+  transform: scale(1.1); /* Scale up slightly more on hover for emphasis */
+}
+
+/* Icon styles */
+.go-to-top i,
+.go-to-bottom i {
+  font-size: 26px; /* Font size for the icon */
+}

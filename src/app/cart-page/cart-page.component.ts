@@ -1,10 +1,10 @@
 // cart-page.component.ts
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { cart } from '../data-type';
 import { CommonModule } from '@angular/common';
 import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
-import { Router, RouterModule } from '@angular/router';
+import {  RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cart-page',
@@ -15,7 +15,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class CartPageComponent implements OnInit {
   cartData: cart[] | undefined;
-  isMobile: boolean = false;
+  
 
   constructor(private product: ProductService) {}
 
@@ -23,15 +23,5 @@ export class CartPageComponent implements OnInit {
     this.product.currebCart().subscribe((result) => {
       this.cartData = result;
     });
-    this.checkIfMobile();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.checkIfMobile();
-  }
-
-  checkIfMobile() {
-    this.isMobile = window.innerWidth <= 768; // Adjust this threshold as needed
   }
 }

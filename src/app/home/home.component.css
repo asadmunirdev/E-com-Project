@@ -35,7 +35,8 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
-  margin-bottom: 20px; /* Space below the heading */
+  margin-top: 80px;
+  margin-bottom: 30px; /* Space below the heading */
 }
 
 h1::before {

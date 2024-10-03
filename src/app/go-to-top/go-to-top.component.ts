@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -10,31 +10,34 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./go-to-top.component.css']
 })
 export class GoToTopComponent {
-  isVisible = false; // Flag to control button visibility
-  showButtons = true; // Flag to control visibility when reaching the footer
+  isCardVisible = false; // Flag to control card visibility
 
-  @HostListener('window:scroll', []) // Listen for scroll events
-  onWindowScroll() {
-    const footerElement = document.querySelector('footer'); // Adjust this if your footer has a different tag or class
-    const footerOffsetTop = footerElement ? footerElement.offsetTop : 0;
-    const windowHeight = window.innerHeight;
-    const scrollPosition = window.scrollY + windowHeight;
+  // Function to toggle card visibility
+  toggleCard() {
+    this.isCardVisible = !this.isCardVisible;
+  }
 
-    this.isVisible = window.scrollY > 300; // Show buttons after scrolling down 300px
-    
-    // Check if user has reached or passed the footer
-    this.showButtons = scrollPosition < footerOffsetTop;
+  // Function to handle button click and close the card
+  onButtonClick() {
+    this.isCardVisible = false; // Hide the card when any button is clicked
   }
 
   scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.onButtonClick(); // Close the card after action
   }
 
   scrollToBottom() {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); // Smooth scroll to the bottom
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    this.onButtonClick(); // Close the card after action
   }
 
   goBack() {
-    window.history.back(); // Go back to the previous page
+    if (window.history.length > 1) {
+      window.history.back(); // Go back to the previous page
+    } else {
+      window.location.href = '/'; // Fallback to the homepage if no history
+    }
+    this.onButtonClick(); // Close the card after action
   }
 }

@@ -8,8 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [CommonModule, MatIconModule],
   templateUrl: './go-to-top.component.html',
   styleUrls: ['./go-to-top.component.css']
-})
-export class GoToTopComponent {
+})export class GoToTopComponent {
   isCardVisible = false; // Flag to control card visibility
 
   // Function to toggle card visibility

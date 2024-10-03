@@ -4,7 +4,7 @@
 </button>
 
 <!-- Popup Card for Buttons -->
-<div class="button-card" [ngClass]="{'visible': isCardVisible}">
+<div class="button-card" *ngIf="isCardVisible" [ngClass]="{'visible': isCardVisible}">
   <!-- Go to Top Button -->
   <button class="go-to-top" (click)="scrollToTop()">
     <i class="fas fa-chevron-up"></i>

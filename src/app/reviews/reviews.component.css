@@ -1,0 +1,149 @@
+.container {
+    max-width: 1200px; /* Added max width for layout control */
+    margin: auto;
+    padding: 20px; /* Added padding to the container */
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 450px; /* Height for the slider */
+    margin: 20px 0;
+    border-radius: 15px; /* Rounded corners for the slider */
+    background: #f8f9fa; /* Light background color */
+    padding: 20px; /* Added padding to the slider */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.review-card {
+    background: #ffffff; /* Card background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 30px; /* Padding inside the card */
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition effects */
+    display: flex; /* Flexbox for card layout */
+    flex-direction: column; /* Vertical stacking */
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center content */
+    margin: 0 10px; /* Space between cards */
+}
+
+.review-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.customer-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    transition: transform 0.3s; /* Smooth transition for image */
+}
+
+.review-text {
+    font-size: 1.1rem; /* Adjusted font size */
+    color: #333; /* Darker text for contrast */
+    margin: 15px 0; /* Space around the text */
+    text-align: center; /* Center-align text */
+}
+
+.rating {
+    font-size: 1.5rem; 
+    color: #f39c12; /* Star color */
+    margin-bottom: 10px; /* Space below rating */
+}
+
+.review-date {
+    font-size: 0.9rem; 
+    color: #888; /* Subtle text color */
+    margin-top: 10px; /* Space above the date */
+}
+
+button {
+    position: absolute;
+    top: 50%; /* Centered vertically */
+    transform: translateY(-50%);
+    background: #007bff; /* Primary color for buttons */
+    color: white; /* Text color for buttons */
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background 0.3s, transform 0.3s; 
+}
+
+.prev {
+    left: 5px; /* Adjust left button position */
+}
+
+.next {
+    right: 5px; /* Adjust right button position */
+}
+
+button:hover {
+    background: #0056b3; /* Darker shade on hover */
+    transform: translateY(-50%) scale(1.05); /* Slightly enlarge on hover */
+}
+
+button i {
+    font-size: 1.5rem; 
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 40px; /* Adjusted top margin */
+    margin-bottom: 30px; /* Space below the heading */
+}
+
+h1::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #007bff; /* Blue line under heading */
+    margin: 10px auto;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .customer-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .review-text {
+        font-size: 1rem; /* Adjusted font size */
+    }
+
+    .slider {
+        height: auto; /* Allow height to adjust on smaller screens */
+    }
+
+    button {
+        padding: 8px; /* Reduced padding for buttons */
+    }
+
+    button i {
+        font-size: 1.2rem; /* Smaller icon size */
+    }
+}

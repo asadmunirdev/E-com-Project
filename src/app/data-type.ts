@@ -4,9 +4,10 @@ export interface signUp {
   password: string;
 }
 
-export interface login {  // This should be lowercase 'string'
-  email: string;        // Change String to string
-  password: string;     // Change String to string
+export interface login {
+  // This should be lowercase 'string'
+  email: string; // Change String to string
+  password: string; // Change String to string
 }
 
 export interface product {
@@ -52,6 +53,14 @@ export interface order {
 }
 
 export interface category {
-  id: number;        // Unique identifier for the category
-  name: string;      // Name of the category
+  id: number; // Unique identifier for the category
+  name: string; // Name of the category
+}
+
+export interface priceSummary {
+  price: number;
+  discount: number;
+  tax: number;
+  delivery: number;
+  total: number;
 }

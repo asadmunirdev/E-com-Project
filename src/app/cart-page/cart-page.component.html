@@ -1,8 +1,8 @@
 <div class="cart-page container mt-5">
     <h1 class="text-center">
         <i class="fas fa-shopping-cart"></i> <!-- Shopping cart icon -->
-
-        Shopping Cart</h1>
+        Shopping Cart
+    </h1>
     <div class="row">
         <!-- Cart Items Section for Desktop -->
         <div class="col-lg-8 col-md-7 cart-items">
@@ -11,12 +11,12 @@
                     <div class="row align-items-center">
                         <!-- Image Section -->
                         <div class="col-lg-4 col-md-4 image-section">
-                            <img src="{{cart.image}}" class="img-fluid cart-image" alt="{{cart.name}}" />
+                            <img routerLink="/details/{{ cart.productId }}" src="{{cart.image}}" class="img-fluid cart-image" alt="{{cart.name}}" />
                         </div>
 
                         <!-- Product Details Section -->
                         <div class="col-lg-5 col-md-5 details-section">
-                            <h5 class="card-title">{{cart.name | titlecase}}</h5>
+                            <h5 routerLink="/details/{{ cart.productId }}" class="card-title">{{cart.name | titlecase}}</h5>
                             <p class="card-text product-price"><strong>Price:</strong> {{cart.price | pkrCurrency}}</p>
                             <p class="product-color">
                                 <strong>Color:</strong>
@@ -30,10 +30,7 @@
 
                         <!-- Buttons Section -->
                         <div class="col-lg-3 col-md-3 button-section text-center">
-                            <div class="btn-group" role="group" aria-label="Item Actions">
-                                <button routerLink="/details/{{ cart.productId }}" class="btn btn-info go-to-item-btn">Product</button>
-                                <button  class="btn btn-danger remove-btn">Remove</button>
-                            </div>
+                            <button *ngIf="cart.id" (click)="removeCart(cart.id)" class="btn btn-danger remove-btn">Remove</button>
                         </div>
                     </div>
                 </div>
@@ -45,13 +42,14 @@
             <div class="summary-card">
                 <h3>Order Summary</h3>
                 <hr />
-                <p><strong>Subtotal:</strong> $500.00</p>
-                <p><strong>Discount:</strong> - $50.00</p>
-                <p><strong>Delivery Charges:</strong> $20.00</p>
+                <p><strong>Subtotal:</strong> {{priceSummary.price | pkrCurrency}}</p>
+                <p><strong>Discount:</strong> {{priceSummary.discount | pkrCurrency}}</p>
+                <p><strong>Delivery Charges:</strong> {{priceSummary.delivery | pkrCurrency}}</p>
+                <p><strong>Tax:</strong> {{priceSummary.tax | pkrCurrency}}</p>
                 <hr />
-                <p class="total"><strong>Total:</strong> $470.00</p>
+                <p class="total"><strong>Total:</strong> {{priceSummary.total | pkrCurrency}}</p>
                 <hr />
-                <button class="btn btn-primary btn-block">Proceed to Checkout</button>
+                <button (click)="checkout()" class="btn btn-primary btn-block">Proceed to Checkout</button>
             </div>
         </div>
     </div>

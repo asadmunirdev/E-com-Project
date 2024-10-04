@@ -104,9 +104,7 @@ export class HeaderComponent implements OnInit {
   }
 
   redirectToDetails(id: number) {
-    this.route.navigate(['/details', id]).then(() => {
-      window.location.reload();
-    });
+    this.route.navigate(['/details', id])
   }
 
   submitSearch(val: string) {

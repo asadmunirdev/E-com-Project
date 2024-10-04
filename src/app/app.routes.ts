@@ -12,6 +12,7 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { LoginPromptComponent } from './login-prompt/login-prompt.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 export const routes: Routes = [
   {
@@ -46,23 +47,27 @@ export const routes: Routes = [
     path: 'details/:productId',
   },
   {
-    component:UserAuthComponent,
-    path:'user-auth'
+    component: UserAuthComponent,
+    path: 'user-auth',
   },
   {
-    component:CartPageComponent,
-    path:'cart-page'
+    component: CartPageComponent,
+    path: 'cart-page',
   },
   {
-    component:LoginPromptComponent,
-    path:'login-first'
+    component: LoginPromptComponent,
+    path: 'login-first',
+  },
+  {
+    component: CheckoutComponent,
+    path: 'checkout',
   },
   {
     path: '**',
     component: NotFoundComponent, // Add this route for handling 404
   },
   {
-    component:FooterComponent,
-    path:'footer'
-  }
+    component: FooterComponent,
+    path: 'footer',
+  },
 ];

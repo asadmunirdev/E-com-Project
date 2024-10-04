@@ -32,6 +32,7 @@ h1 {
 
 .cart-image {
     max-width: 100%;
+    cursor: pointer;
     height: 180px;
     object-fit: cover;
     border-radius: 8px;
@@ -46,6 +47,7 @@ h1 {
     font-size: 1.5rem;
     font-weight: bold;
     color: #333;
+    cursor: pointer;
 }
 
 .product-price {
@@ -125,15 +127,6 @@ button {
     width: 100%;
 }
 
-.go-to-item-btn {
-    background-color: #17a2b8;
-    color: #f8f9fa;
-}
-
-.go-to-item-btn:hover {
-    background-color: #138496;
-}
-
 .remove-btn {
     background-color: #dc3545;
     color: #f8f9fa;
@@ -158,10 +151,14 @@ button {
     padding: 20px;
 }
 
-
 .summary-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
+}
+
+.summary-card hr {
+    border-top: 1px solid #eee;
+    margin: 10px 0; /* Space around the hr element */
 }
 
 .total {
@@ -177,7 +174,9 @@ button {
         width: 100%;
     }
 
-    .image-section, .details-section, .button-section {
+    .image-section,
+    .details-section,
+    .button-section {
         text-align: center;
         margin-bottom: 15px;
     }
@@ -186,14 +185,16 @@ button {
         height: 150px;
     }
 
+
     /* Product details section */
     .details-section {
         padding: 0;
     }
 
+
     /* Adjust button size and spacing for mobile */
     button {
-        max-width: 200px;
+        max-width: 300px;
         width: 100%;
         font-size: 0.9rem;
         padding: 10px;
@@ -206,6 +207,7 @@ button {
     .color-swatch {
         margin-left: 5px;
     }
+
     .product-quantity {
         justify-content: center;
     }

@@ -1,4 +1,4 @@
-@if (popularProducts){
+@if (popularProducts) {
 <ngb-carousel
   [interval]="3000"
   [pauseOnHover]="false"
@@ -19,19 +19,17 @@
       <h3>{{ item.name | titlecase }}</h3>
       <p>{{ item.description | titlecase }}</p>
     </div>
-  </ng-template> </ngb-carousel
->}
+  </ng-template>
+</ngb-carousel>
+}
 
 <!-- Products -->
 <div class="container mb-4">
-  <h1>   
-    <i class="fas fa-shopping-cart"></i> <!-- Shopping cart icon -->
-    Trendy Products</h1>
-  <!-- Add a heading for context -->
+  <h1><i class="fas fa-shopping-cart"></i> Trendy Products</h1>
 
   <label for="categorySelect" class="category-label">
-    <i class="fas fa-list"></i> <!-- List icon for category selection -->
-    Select Category:</label>
+    <i class="fas fa-list"></i> Select Category:
+  </label>
   <select
     id="categorySelect"
     [(ngModel)]="selectedCategory"
@@ -45,9 +43,10 @@
   </select>
 
   <div class="row">
-    <div class="col-sm-3 mb-4" *ngFor="let item of filteredProducts">
+    <div class="col-sm-3 mb-4" *ngFor="let item of displayedProducts">
       <div class="card h-100">
-        <a routerLink="/details/{{ item.id }}">
+        <a>
+          <!-- routerLink="/details/{{ item.id }}" -->
           <img
             src="{{ item.image }}"
             alt="{{ item.name }}"
@@ -76,7 +75,7 @@
               <strong>Category:</strong> {{ item.category | titlecase }}
             </p>
             <p class="product-description">
-             {{ item.description | titlecase }}
+              {{ item.description | titlecase }}
             </p>
           </div>
         </div>
@@ -88,4 +87,14 @@
       </div>
     </div>
   </div>
+
+  <button
+    *ngIf="hasMoreProducts"
+    (click)="loadMore()"
+    class="btn btn-primary w-100"
+  >
+    Load More
+  </button>
 </div>
+
+<app-reviews></app-reviews>

@@ -228,7 +228,7 @@
     {
       "name": "Coffee Maker",
       "price": "100",
-      "color": "Silver, Red",
+      "color": "Red",
       "category": "Home Appliances",
       "image": "https://images.unsplash.com/photo-1458060390477-1b8bc1cfe017?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29mZmUlMjBtYWtlcnxlbnwwfHwwfHx8MA%3D%3D",
       "description": "Brew coffee to perfection every morning.",

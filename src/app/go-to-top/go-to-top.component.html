@@ -1,6 +1,6 @@
 <!-- Toggle Button -->
 <button class="toggle-button" (click)="toggleCard()">
-  <i class="fas fa-bars"></i>
+  <i class="fas" [ngClass]="isCardVisible ? 'fa-times' : 'fa-bars'"></i>
 </button>
 
 <!-- Popup Card for Buttons -->

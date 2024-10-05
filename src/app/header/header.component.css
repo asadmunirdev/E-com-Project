@@ -1,3 +1,4 @@
+/* Visibility control for collapsible elements */
 .collapse {
   visibility: visible;
 }
@@ -27,6 +28,7 @@
   display: flex; 
   align-items: center;
   justify-content: center;
+  position: relative; /* Make this the reference point for absolute positioning of suggestions */
 }
 
 .search-form input {
@@ -59,6 +61,53 @@
   background-color: #0099cc;
   transform: scale(1.08); /* Slightly larger scale on hover */
 }
+.suggested-result {
+  position: absolute;
+  display: block;
+  z-index: 10;
+  background: #fff;
+  width: 100%; /* Full width of parent container for responsive design */
+  max-width: 440px; /* Adjust max-width based on your layout */
+  top: 55px; /* Positioned relative to the search bar */
+  left: 0; /* Align to the left edge of the search input */
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better depth */
+  border-radius: 15px; /* Smooth rounded corners */
+  overflow: hidden; /* Ensures no content overflows */
+  transition: all 0.3s ease; /* Smooth transition for dropdown */
+}
+
+.suggested-result li {
+  border-bottom: 1px solid #eee; /* Slightly lighter border for better separation */
+  padding: 10px 12px; /* Reduced padding for a more compact touch area */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.suggested-result li:last-child {
+  border-bottom: none; /* Remove border from the last item */
+}
+
+.suggested-result a {
+  display: block;
+  cursor: pointer;
+  color: #003d80; /* Primary text color */
+  text-decoration: none; /* No underline */
+  font-size: 16px; /* Increased font size for readability */
+  font-weight: 500; /* Slightly bold text for better emphasis */
+  padding: 10px 0; /* Padding for better clickability */
+  transition: color 0.3s ease, transform 0.2s ease; /* Smooth color and scale transitions */
+}
+.suggested-result a:hover {
+  color: #007bff; /* Change text color to a blue shade on hover */
+  text-decoration: none; /* No underline on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.suggested-result li:hover {
+  background-color: #e0e0e0; /* Slightly darker gray background on list item hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
 
 /* Custom Navigation Links */
 .custom-nav-link {
@@ -90,6 +139,49 @@
 .custom-nav-link:hover::after {
   width: 100%;
 }
+
+/* Align nav links to the right for 'seller' menu type */
+.seller-navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%; /* Ensure it takes full width */
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.egg-shaped {
+  display: inline-block;
+  padding: 8px 16px; /* Adjust padding as needed */
+  background-color: white; /* Original background color */
+  border-radius: 70px; /* This creates the egg shape */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow effect */
+  border: 1px solid #ddd; /* Optional: adds a border */
+  color: #0056b3; /* Adjust text color if needed */
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.egg-shaped:hover {
+  transform: scale(1.05); /* Zoom in effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly darker shadow on hover */
+}
+
+.text-3d {
+  font-size: 1.7rem; /* Adjust the size as needed */
+  color: #fff; /* Main text color */
+  text-shadow: 
+    1px 1px 0 rgba(0, 0, 0, 0.2),
+    2px 2px 0 rgba(0, 0, 0, 0.2),
+    3px 3px 0 rgba(0, 0, 0, 0.2),
+    4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
@@ -152,6 +244,13 @@
     font-size: 16px;
     padding: 0.75rem 1rem;
   }
+
+  .suggested-result {
+    max-width: 100%; /* Full width on small screens */
+    left: 0; /* Align to the left edge */
+    right: 0; /* Full width of the container */
+    top: 50px; /* Positioned just below the search bar */
+  }
 }
 
 @media (max-width: 576px) {
@@ -169,83 +268,5 @@
     font-size: 14px; /* Smaller font for very small screens */
     padding: 0.5rem 0.75rem;
   }
-}
-
-/* Align nav links to the right for 'seller' menu type */
-.seller-navbar-nav {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%; /* Ensure it takes full width */
-}
-
-.pointer {
-  cursor: pointer;
-}
-
-.egg-shaped {
-  display: inline-block;
-  padding: 8px 16px; /* Adjust padding as needed */
-  background-color: white; /* Original background color */
-  border-radius: 70px; /* This creates the egg shape */
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow effect */
-  border: 1px solid #ddd; /* Optional: adds a border */
-  color: #0056b3; /* Adjust text color if needed */
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: 500;
-  margin-left: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.egg-shaped:hover {
-  transform: scale(1.05); /* Zoom in effect on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly darker shadow on hover */
-}
-
-.suggested-result {
-  position: absolute;
-  display: block; /* Changed from list-item to block for proper styling */
-  z-index: 10;
-  background: #fff;
-  width: 300px;
-  top: 40px;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for better visibility */
-  border-radius: 4px; /* Rounded corners */
-  overflow: hidden; /* Ensures no overflow of content */
-}
-
-.suggested-result li {
-  border-bottom: 1px solid #ddd; /* Only bottom border for separation */
-  padding: 10px; /* Increased padding for better spacing */
-  transition: background-color 0.2s ease; /* Smooth background color transition */
-}
-
-.suggested-result li:last-child {
-  border-bottom: none; /* Remove border from the last item */
-}
-
-.suggested-result a {
-  display: block; /* Makes the entire list item clickable */
-  cursor: pointer;
-  color: #003d80;
-  text-decoration: none; /* Remove underline */
-  font-size: 14px; /* Set font size */
-}
-
-.suggested-result a:hover {
-  background-color: #f4f4f4; /* Light background on hover */
-  color: #0056b3; /* Slightly darker color on hover */
-}
-
-.text-3d {
-  font-size: 1.7rem; /* Adjust the size as needed */
-  color: #fff; /* Main text color */
-  text-shadow: 
-    1px 1px 0 rgba(0, 0, 0, 0.2),
-    2px 2px 0 rgba(0, 0, 0, 0.2),
-    3px 3px 0 rgba(0, 0, 0, 0.2),
-    4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 

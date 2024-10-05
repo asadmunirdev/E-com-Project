@@ -3,7 +3,7 @@
   position: fixed;
   bottom: 50px;
   right: 20px;
-  background-color: #007bff;
+  background-color: #28a745; /* Button color */
   color: white;
   border: none;
   border-radius: 50px;
@@ -14,25 +14,56 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition for shadow and transform */
 }
 
+/* Pulse effect on hover */
 .toggle-button:hover {
-  transform: scale(1.1) rotate(15deg); /* Scale and rotate on hover */
+  animation: pulse 1s infinite; /* Pulse effect on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  background-color: #218838; /* Darker shade on hover */
 }
 
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Original size */
+  }
+  50% {
+    transform: scale(1.1); /* Slightly larger */
+  }
+  100% {
+    transform: scale(1); /* Back to original size */
+  }
+}
+
+/* Rotate effect on click */
+.toggle-button:active {
+  animation: rotate 0.5s; /* Rotate effect on click */
+}
+
+/* Rotate animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); /* Start position */
+  }
+  100% {
+    transform: rotate(360deg); /* Full rotation */
+  }
+}
+
+/* Font Awesome Icon Size */
 .toggle-button i {
-  font-size: 25px;
+  font-size: 25px; /* Size of the icon in the toggle button */
 }
 
-/* Popup Card for Buttons (Slightly Visible) */
+/* Popup Card for Buttons */
 .button-card {
   position: fixed;
-  bottom: 110px;
+  bottom: 110px; /* Adjusted to be above the toggle button */
   right: 20px;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.3); /* Slightly visible card */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent card */
   border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
@@ -54,7 +85,7 @@
 .go-back,
 .go-to-top,
 .go-to-bottom {
-  background-color: #007bff;
+  background-color: #007bff; /* Default button color */
   color: white;
   border: none;
   border-radius: 50px;
@@ -69,6 +100,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
 }
 
+/* Specific button colors */
 .whatsapp-button {
   background-color: #25d366; /* WhatsApp green */
 }
@@ -77,24 +109,20 @@
   background-color: #fd7e14; /* Orange */
 }
 
-.go-to-top {
-  background-color: #007bff; /* Same blue */
-}
-
+.go-to-top,
 .go-to-bottom {
   background-color: #007bff; /* Same blue */
 }
 
-/* WhatsApp Icon Size */
+/* Icon sizes */
 .whatsapp-button i {
   font-size: 34px; /* Larger font size for WhatsApp icon */
 }
 
-/* Other Icons (Same size) */
 .go-back i,
 .go-to-top i,
 .go-to-bottom i {
-  font-size: 28px;
+  font-size: 28px; /* Standard font size for other icons */
 }
 
 /* Button Hover Effects */
@@ -105,6 +133,7 @@
   transform: scale(1.1); /* Scale up on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
 }
+
 /* Responsive Styles */
 @media (max-width: 600px) {
   .whatsapp-button,

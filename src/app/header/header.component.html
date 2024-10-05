@@ -22,23 +22,25 @@
         *ngIf="menuType === 'default' || menuType === 'user'"
         class="d-flex mx-auto my-2 my-lg-0 search-form w-100"
       >
-        <input
-          #searchInput
-          class="form-control me-2"
-          type="search"
-          (keyup)="searchProducts($event)"
-          (blur)="hideSearch()"
-          placeholder="Search Products"
-          aria-label="Search"
-        />
-        <button
-          (click)="submitSearch(searchInput.value)"
-          class="btn btn-outline-light"
-          type="submit"
-        >
-          Search
-        </button>
-        <ul class="suggested-result" *ngIf="searchResult">
+      <input
+      #searchInput
+      class="form-control me-2"
+      type="search"
+      (keyup)="searchProducts($event)"
+      (blur)="hideSearch()"
+      placeholder="Search Products"
+      aria-label="Search"
+    />
+    
+    <button
+      (click)="submitSearch(searchInput.value)"
+      class="btn btn-outline-light"
+      type="submit"
+      [disabled]="!searchInput.value.trim()"  
+    >
+      Search
+    </button>
+    <ul class="suggested-result" *ngIf="searchResult">
           <li *ngFor="let item of searchResult">
             <a (mousedown)="redirectToDetails(item.id)">{{ item.name }}</a>
           </li>

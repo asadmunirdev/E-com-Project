@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { LoginPromptComponent } from './login-prompt/login-prompt.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 export const routes: Routes = [
   {
@@ -61,6 +62,10 @@ export const routes: Routes = [
   {
     component: CheckoutComponent,
     path: 'checkout',
+  },
+  {
+    component:MyOrdersComponent,
+    path:'my-orders'
   },
   {
     path: '**',

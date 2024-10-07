@@ -29,7 +29,7 @@ export class CartPageComponent implements OnInit {
   }
 
   getCartData() {
-    this.product.currebCart().subscribe((result) => {
+    this.product.currentCart().subscribe((result) => {
       this.cartData = result;
       let price = 0;
       result.forEach((item) => {
@@ -42,6 +42,7 @@ export class CartPageComponent implements OnInit {
       this.priceSummary.tax = price / 5;
       this.priceSummary.delivery = 100;
       this.priceSummary.total =
+
         price +
         this.priceSummary.tax +
         this.priceSummary.delivery -

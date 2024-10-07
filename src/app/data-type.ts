@@ -48,19 +48,11 @@ export interface order {
   address: string;
   contact: string;
   totalPrice: number;
-  userId: string;
+  userId: number;
   id: number | undefined;
 }
 
 export interface category {
   id: number; // Unique identifier for the category
   name: string; // Name of the category
-}
-
-export interface priceSummary {
-  price: number;
-  discount: number;
-  tax: number;
-  delivery: number;
-  total: number;
 }

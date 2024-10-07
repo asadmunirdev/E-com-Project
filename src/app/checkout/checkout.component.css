@@ -1,0 +1,178 @@
+/* General Checkout Container Styles */
+.checkout {
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 80px;  /* Space from fixed navbar */
+    margin-bottom: 80px;  /* Space from footer */
+}
+
+/* Heading Styling */
+.checkout h1 {
+    font-size: 2.5rem;
+    color: #343a40;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.checkout h3 {
+    font-size: 2rem;  /* Increased font size */
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.checkout h4 {
+    font-size: 1.75rem;  /* Increased font size */
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 15px;
+}
+
+/* Form Styles */
+.common-form .form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 15px;
+    font-size: 1.1rem;  /* Increased font size */
+}
+
+/* Button Styling */
+.form-button {
+    padding: 12px;
+    font-size: 1.2rem;  /* Increased font size */
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    padding: 25px;
+    max-width: 400px; /* Reduced card width */
+    margin: 0 auto; /* Center the card horizontally */
+}
+
+/* Centered Text */
+.card h3 {
+    font-size: 2rem;  /* Increased font size */
+    color: #28a745;
+    font-weight: 600;
+    text-align: center; /* Center text */
+}
+
+.card h4 {
+    font-size: 1.75rem;  /* Increased font size */
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Checkbox Label Styling */
+.form-check-label {
+    font-size: 1.5rem;  /* Increased font size */
+    color: #495057;
+}
+
+/* Checkbox Styling */
+.form-check-input {
+    margin-right: 10px;
+    width: 20px; /* Increased checkbox size */
+    height: 20px; /* Increased checkbox size */
+}
+
+.form-check {
+    text-align: left; /* Align checkboxes to the left */
+}
+
+/* Invalid Input Message Styling */
+.checkout-invalid-input {
+    color: #e60000; /* Slightly darker red for better readability */
+    font-size: 15px; /* Adjust font size for visibility */
+    display: block;
+    margin: -10px 0 -10px 7px; /* top right bottom left */
+    font-weight: bold; /* Makes the text bold */
+    padding: 5px; /* Adds a bit of padding for spacing */
+}
+
+/* Form Input Styling */
+.check-form-input {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 1rem; /* Increased font size */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff; /* Solid white background for input fields */
+    color: #333; /* Dark text color for readability */
+    border: 1px solid #ced4da; /* Light gray border */
+}
+
+.check-form-input:focus {
+    border-color: #0056b3; /* Matches the header color */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.2); /* Subtle shadow for focus effect */
+    background-color: #ffffff; /* Keep white background on focus */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .checkout {
+        padding: 15px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .checkout h1 {
+        font-size: 2rem;
+    }
+
+    .checkout h3 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .form-button {
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+
+    .common-form .form-control {
+        font-size: 1rem;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .checkout {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .checkout h1 {
+        font-size: 1.75rem;
+    }
+
+    .checkout h3 {
+        font-size: 1.4rem;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .form-button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .common-form .form-control {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+}

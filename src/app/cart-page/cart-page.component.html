@@ -1,5 +1,5 @@
-<div class="cart-page container mt-5">
-    <h1 class="text-center">
+<div class="cart-page container">
+    <h1 class="text-center heading">
         <i class="fas fa-shopping-cart"></i> <!-- Shopping cart icon -->
         Shopping Cart
     </h1>
@@ -23,14 +23,14 @@
                                 <span class="color-swatch" [style.backgroundColor]="cart.color | lowercase"></span>
                                 {{ cart.color | titlecase }}
                             </p>
+                            <p class="product-quantity"><strong>Quantity:</strong> {{cart.quantity}}</p>
                             <p class="product-category"><strong>Category:</strong> {{cart.category | titlecase}}</p>
                             <p class="product-description">{{cart.description | titlecase}}</p>
-                            <p class="product-quantity"><strong>Quantity:</strong> {{cart.quantity}}</p>
                         </div>
 
                         <!-- Buttons Section -->
                         <div class="col-lg-3 col-md-3 button-section text-center">
-                            <button *ngIf="cart.id" (click)="removeCart(cart.id)" class="btn btn-danger remove-btn">Remove</button>
+                            <button *ngIf="cart.id" (click)="removeCart(cart.id)" class="cancel-button">Remove</button>
                         </div>
                     </div>
                 </div>

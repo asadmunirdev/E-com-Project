@@ -1,0 +1,100 @@
+/* My Orders Section */
+.my-orders {
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Order Header */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #343a40; /* Dark background */
+    color: #ffffff;
+    padding: 10px 0;
+    border-radius: 4px;
+    border-bottom: none; /* Remove the bottom partition */
+}
+
+/* Order Header Labels */
+.order-label {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Order Data Rows */
+.order-data {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0; /* Adjust padding for better spacing */
+    transition: background-color 0.3s ease;
+    gap: 10px; /* Add space between columns */
+    align-items: center; /* Center align items */
+}
+
+/* Hover effect for data rows */
+.order-data:hover {
+    cursor: pointer;
+    background-color: #e9ecef; /* Slightly darker gray for better hover contrast */
+}
+
+/* Order Data Items */
+.order-data-item {
+    padding: 5px 15px; /* Adjusted padding for better spacing */
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid #bbb; /* Thicker partition between columns */
+    height: 100%; /* Increase the height of the partition */
+}
+
+/* Remove border from the last column */
+.order-data-item:last-child {
+    border-right: none;
+}
+
+/* Order Data Text */
+.order-data-item span {
+    font-size: 1.2rem;
+}
+
+/* Status Text */
+.status-text {
+    font-weight: bold;
+}
+
+/* Enhanced Image Clarity */
+.fixed-size {
+    width: 150px;
+    height: 100px;
+    object-fit: cover; /* Maintains aspect ratio */
+    image-rendering: crisp-edges; /* Improves sharpness */
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds slight shadow for clarity */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect to zoom in slightly */
+.fixed-size:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .heading {
+        font-size: 2rem;
+    }
+
+    .order-label, .order-data-item span {
+        font-size: 1rem;
+    }
+
+    .fixed-size {
+        width: 80px;
+        height: 80px;
+    }
+}

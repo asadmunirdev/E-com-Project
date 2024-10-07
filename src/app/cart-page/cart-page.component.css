@@ -5,15 +5,6 @@
     border-radius: 10px;
 }
 
-/* Title styles */
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 50px;
-}
-
 /* Cart item card */
 .custom-card {
     border-radius: 10px;
@@ -127,15 +118,6 @@ button {
     width: 100%;
 }
 
-.remove-btn {
-    background-color: #dc3545;
-    color: #f8f9fa;
-}
-
-.remove-btn:hover {
-    background-color: #c82333;
-}
-
 /* Order Summary Section */
 .order-summary {
     position: sticky; /* Make the order summary sticky */
@@ -169,9 +151,21 @@ button {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    .cart-page {
+        padding: 15px; /* Reduced padding */
+    }
+
+    h1 {
+        font-size: 2rem; /* Smaller title */
+        margin-bottom: 30px; /* Adjusted margin */
+    }
+
+    .custom-card {
+        margin-bottom: 20px; /* Spacing between cards */
+    }
+
     .cart-items {
-        flex-direction: column;
-        width: 100%;
+        flex-direction: column; /* Stack items vertically */
     }
 
     .image-section,
@@ -182,37 +176,44 @@ button {
     }
 
     .cart-image {
-        height: 150px;
+        height: 150px; /* Adjusted image height */
     }
 
-
-    /* Product details section */
     .details-section {
-        padding: 0;
+        padding: 0; /* Remove left padding */
     }
 
-
-    /* Adjust button size and spacing for mobile */
     button {
-        max-width: 300px;
-        width: 100%;
-        font-size: 0.9rem;
-        padding: 10px;
+        max-width: 100%; /* Full width buttons */
+        font-size: 0.9rem; /* Smaller font size */
+        padding: 10px; /* Reduced padding */
     }
 
     .product-color {
-        justify-content: center;
+        justify-content: center; /* Center alignment */
     }
 
     .color-swatch {
-        margin-left: 5px;
+        margin-left: 5px; /* Adjusted margin */
     }
 
     .product-quantity {
-        justify-content: center;
+        justify-content: center; /* Center alignment */
     }
 
     .product-quantity input {
-        width: 50px;
+        width: 40px; /* Smaller input width */
+    }
+
+    .summary-card {
+        padding: 15px; /* Reduced padding for summary card */
+    }
+
+    .summary-card h3 {
+        font-size: 1.25rem; /* Smaller heading in summary */
+    }
+
+    .total {
+        font-size: 1.25rem; /* Smaller total font size */
     }
 }

@@ -1,5 +1,9 @@
 /* Carousal Styling */
 
+.carousel-body{
+  margin-bottom: 80px;
+}
+
 /* Image Styles */
 .product-header-img {
   object-fit: cover;
@@ -26,27 +30,6 @@
   padding: 0 15px; /* Adds some horizontal padding */
 }
 
-/* Heading */
-h1 {
-  font-size: 2.5rem;
-  text-align: center;
-  color: #333;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  margin-top: 80px;
-  margin-bottom: 30px; /* Space below the heading */
-}
-
-h1::before {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: #007bff; /* Reverted to blue */
-  margin: 10px auto;
-}
 
 /* Label Styles */
 .category-label {
@@ -192,6 +175,29 @@ h1::before {
   border-color: #1e7e34; /* Darker border on hover */
 }
 
+.load-more-btn {
+  background-color: #007bff; /* Primary color */
+  border-radius: 30px; /* Rounded corners */
+  font-size: 1.1rem; /* Larger text size */
+  font-weight: bold; /* Bold text */
+  transition: all 0.3s ease; /* Smooth transition */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hover effect */
+.load-more-btn:hover {
+  background-color: #0056b3; /* Darker shade of primary */
+  transform: translateY(-3px); /* Slight upward movement on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Active/click effect */
+.load-more-btn:active {
+  transform: translateY(1px); /* Slight downward movement when clicked */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow on click */
+}
+
+
 @media (max-width: 767.98px) {
   .col-sm-3 {
     flex: 0 0 90%; /* Make each card take 90% width on small screens */
@@ -252,3 +258,5 @@ h1::before {
     height: 350px; /* Maintain original height for large screens */
   }
 }
+
+

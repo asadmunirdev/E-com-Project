@@ -1,7 +1,7 @@
 // Importing necessary modules and dependencies
 import { HttpClient } from '@angular/common/http'; // For making HTTP requests
 import { EventEmitter, Injectable } from '@angular/core'; // For creating injectable services and event emitters
-import { cart, category, product } from '../data-type'; // Importing data types for products and cart
+import { cart, category, order, product } from '../data-type'; // Importing data types for products and cart
 import { Router } from '@angular/router'; // For navigation
 
 @Injectable({
@@ -14,8 +14,8 @@ export class ProductService {
   // Constructor to inject HttpClient and Router services
   constructor(private http: HttpClient, private router: Router) {}
 
-   //* Method to fetch categories
-   getCategories() {
+  //* Method to fetch categories
+  getCategories() {
     return this.http.get<category[]>('http://localhost:3000/categories');
   }
 
@@ -59,7 +59,9 @@ export class ProductService {
 
   //* Products in Search Bar
   searchProducts(query: string) {
-    return this.http.get<product[]>(`http://localhost:3000/products?q=${query}`); // Searches products based on a query
+    return this.http.get<product[]>(
+      `http://localhost:3000/products?q=${query}`
+    ); // Searches products based on a query
   }
 
   //* Add Product to Cart by Local Storage
@@ -98,7 +100,9 @@ export class ProductService {
   //* Getting Cart List
   getCartList(userId: number) {
     return this.http
-      .get<product[]>('http://localhost:3000/cart?userId=' + userId, { observe: 'response' }) // Retrieves the cart list for a specific user
+      .get<product[]>('http://localhost:3000/cart?userId=' + userId, {
+        observe: 'response',
+      }) // Retrieves the cart list for a specific user
       .subscribe((result) => {
         if (result && result.body) {
           this.cartData.emit(result.body); // Emit the cart data
@@ -112,10 +116,33 @@ export class ProductService {
   }
 
   //* Cart Page
-currebCart(){
-let userStore = localStorage.getItem('user');
-let userData = userStore && JSON.parse(userStore);
-return this.http.get<cart[]>('http://localhost:3000/cart?userId=' + userData.id)
-}
+  currentCart() {
+    let userStore = localStorage.getItem('user');
+    let userData = userStore && JSON.parse(userStore);
+    return this.http.get<cart[]>(
+      'http://localhost:3000/cart?userId=' + userData.id
+    );
+  }
+  //* Chexkout Page API
+  orderNow(data: order) {
+    return this.http.post('http://localhost:3000/orders', data);
+  }
 
+  //* My Order Page API
+  orderList() {
+    let userStore = localStorage.getItem('user');
+    let userData = userStore && JSON.parse(userStore);
+    return this.http.get<order[]>(
+      'http://localhost:3000/orders?userId=' + userData.id
+    );
+  }
+
+  //* Delete CardItems API
+  deleteCartItems(cartId:number){
+    return this.http.delete(`http://localhost:3000/cart/${cartId}`,{observe:'response'}).subscribe((result)=>{
+      if(result){
+        this.cartData.emit([])
+      }
+    })
+  }
 }

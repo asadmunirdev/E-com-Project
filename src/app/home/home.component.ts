@@ -16,23 +16,26 @@ import { ReviewsComponent } from "../reviews/reviews.component";
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  popularProducts: undefined | product[];
-  trendyProducts: undefined | product[];
-  categories: category[] = [];
-  selectedCategory: string = '';
-  filteredProducts: product[] = [];
+  // Properties for popular products, trendy products, and categories
+  popularProducts: undefined | product[]; // Array to store popular products
+  trendyProducts: undefined | product[]; // Array to store trendy products
+  categories: category[] = []; // Array to store product categories
+  selectedCategory: string = ''; // Selected category for filtering products
+  filteredProducts: product[] = []; // Array for filtered products based on the selected category
   displayedProducts: product[] = []; // Array for the currently displayed products
   currentIndex: number = 0; // Index to track how many products are shown
-  itemsToShow: number = 8; // Always show 8 items
+  itemsToShow: number = 8; // Number of items to show initially
   hasMoreProducts: boolean = true; // Flag to control the visibility of the Load More button
 
   constructor(private product: ProductService) {}
 
   ngOnInit(): void {
+    // Load popular products
     this.product.popularProducts().subscribe((data) => {
       this.popularProducts = data;
     });
 
+    // Load trendy products and initialize displayed products
     this.product.trendyProducts().subscribe((data) => {
       this.trendyProducts = data;
       this.filteredProducts = data;
@@ -40,14 +43,16 @@ export class HomeComponent implements OnInit {
       this.hasMoreProducts = this.displayedProducts.length < this.filteredProducts.length; // Check if there are more products to display
     });
 
+    // Load product categories
     this.product.getCategories().subscribe((data) => {
       this.categories = data;
     });
   }
 
+  // Function to load more products when "Load More" button is clicked
   loadMore(): void {
     const currentSize = this.displayedProducts.length;
-    
+
     const nextProducts = this.filteredProducts.slice(currentSize, currentSize + this.itemsToShow);
     this.displayedProducts = [...this.displayedProducts, ...nextProducts];
 
@@ -55,6 +60,7 @@ export class HomeComponent implements OnInit {
     this.hasMoreProducts = this.displayedProducts.length < this.filteredProducts.length;
   }
 
+  // Function to filter products based on the selected category
   filterProducts(): void {
     if (this.selectedCategory) {
       this.filteredProducts = this.trendyProducts?.filter(
@@ -64,7 +70,8 @@ export class HomeComponent implements OnInit {
       this.filteredProducts = this.trendyProducts || [];
     }
 
-    this.displayedProducts = this.filteredProducts.slice(0, this.itemsToShow); // Reset displayed products based on the new filter
+    // Reset displayed products based on the new filter
+    this.displayedProducts = this.filteredProducts.slice(0, this.itemsToShow);
     this.hasMoreProducts = this.displayedProducts.length < this.filteredProducts.length; // Check if more products are available
   }
 }

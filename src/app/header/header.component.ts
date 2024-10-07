@@ -82,7 +82,7 @@ export class HeaderComponent implements OnInit {
 
   searchProducts(query: KeyboardEvent) {
     const element = query.target as HTMLInputElement;
-    console.warn(element.value);
+    // console.warn(element.value);
 
     const searchTerm = element.value; // Ensure clean input
 
@@ -92,7 +92,7 @@ export class HeaderComponent implements OnInit {
           result.length = 5;
         }
         this.searchResult = result; // Store search results
-        console.log(result);
+        // console.log(result);
       });
     } else {
       this.searchResult = []; // Clear results if no input

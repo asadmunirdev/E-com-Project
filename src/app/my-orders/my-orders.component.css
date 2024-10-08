@@ -1,100 +1,153 @@
-/* My Orders Section */
+/* General Styles */
 .my-orders {
-    background-color: #f8f9fa; /* Light background for contrast */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 500px;
+    padding: 0 15px;
 }
 
+/* Order Card */
+.order-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-/* Order Header */
+.order-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .order-header {
     display: flex;
     justify-content: space-between;
-    background-color: #343a40; /* Dark background */
-    color: #ffffff;
-    padding: 10px 0;
-    border-radius: 4px;
-    border-bottom: none; /* Remove the bottom partition */
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-/* Order Header Labels */
-.order-label {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.order-image-container {
+    flex: 0 0 80px;
 }
 
-/* Order Data Rows */
-.order-data {
+.order-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.order-details-info {
+    flex-grow: 1;
+    padding-left: 15px;
+    font-size: 1.2rem; /* Increase font size for better readability */
+}
+
+.order-id {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.order-status, .order-price {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* Action Buttons */
+.order-actions {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 10px;
+}
+
+/* Order Details Modal */
+.order-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.order-details-card {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.order-details-header {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0; /* Adjust padding for better spacing */
-    transition: background-color 0.3s ease;
-    gap: 10px; /* Add space between columns */
-    align-items: center; /* Center align items */
+    align-items: center;
 }
 
-/* Hover effect for data rows */
-.order-data:hover {
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
     cursor: pointer;
-    background-color: #e9ecef; /* Slightly darker gray for better hover contrast */
 }
 
-/* Order Data Items */
-.order-data-item {
-    padding: 5px 15px; /* Adjusted padding for better spacing */
-    flex: 1;
-    text-align: center;
-    border-right: 2px solid #bbb; /* Thicker partition between columns */
-    height: 100%; /* Increase the height of the partition */
+.order-details-body {
+    margin-top: 15px;
 }
 
-/* Remove border from the last column */
-.order-data-item:last-child {
-    border-right: none;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .order-card {
+        padding: 10px;
+        max-width: 80%; /* Set card width to 80% on small screens */
+        margin: 10px auto; /* Center the card */
+    }
+
+    .order-header {
+        flex-direction: row; /* Maintain original layout */
+        align-items: center;
+    }
+
+    .order-image-container {
+        flex: 0 0 60px; /* Reduce image size on mobile */
+    }
+
+    .order-details-info {
+        padding-left: 10px; /* Leave space between image and order ID */
+        font-size: 1.1rem; /* Slightly larger font for mobile */
+    }
+
+    .form-button, .cancel-button {
+        width: auto; /* Set width to auto */
+        font-size: 0.9rem; /* Reduce font size */
+        padding: 5px 10px; /* Adjust padding for smaller buttons */
+    }
 }
 
-/* Order Data Text */
-.order-data-item span {
-    font-size: 1.2rem;
-}
-
-/* Status Text */
-.status-text {
-    font-weight: bold;
-}
-
-/* Enhanced Image Clarity */
-.fixed-size {
-    width: 150px;
-    height: 100px;
-    object-fit: cover; /* Maintains aspect ratio */
-    image-rendering: crisp-edges; /* Improves sharpness */
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds slight shadow for clarity */
-    transition: transform 0.2s ease-in-out;
-}
-
-/* Hover effect to zoom in slightly */
-.fixed-size:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-
-/* Responsive Adjustments */
 @media (max-width: 576px) {
     .heading {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    .order-label, .order-data-item span {
-        font-size: 1rem;
+    .order-card {
+        padding: 8px;
+        max-width: 95%; /* Further adjust max-width for smaller screens */
     }
 
-    .fixed-size {
-        width: 80px;
-        height: 80px;
+    .order-details-card {
+        padding: 15px;
+    }
+
+    .order-details-info {
+        font-size: 1.2rem; /* Increase font size further for better mobile readability */
     }
 }

@@ -1,119 +1,118 @@
 <div class="checkout container">
-    <h1 class="text-center heading">Checkout</h1>
-    <p class="messagee_p">{{orderMessage}}</p>
-    <div class="row">
-      <!-- Shipping Address Section -->
-      <div class="col-lg-7 col-md-12 mb-4">
-        <h3 class="mb-4">Add Shipping Address</h3>
-        <form #orderData="ngForm" class="common-form" (ngSubmit)="orderNow(orderData.value)">
-          
-          <!-- Email Input with Validation -->
-          <div class="form-group mb-3">
-            <input
-              type="email"
-              class="check-form-input"
-              name="email"
-              placeholder="Enter user email"
-              ngModel
-              #email="ngModel"
-              required
-              email
-            />
-            <p class="checkout-invalid-input">
-              <span *ngIf="email.invalid && email.touched">Please Enter a Valid Email</span>
-            </p>
-          </div>
-  
-          <!-- Address Input with Validation -->
-          <div class="form-group mb-3">
-            <input
-              type="text"
-              class="check-form-input"
-              name="address"
-              placeholder="Enter your address"
-              ngModel
-              #address="ngModel"
-              required
-            />
-            <p class="checkout-invalid-input">
-              <span *ngIf="address.invalid && address.touched">Address is required.</span>
-            </p>
-          </div>
-  
-          <!-- Contact Input with Validation -->
-          <div class="form-group mb-3">
-            <input
-              type="text"
-              class="check-form-input"
-              name="contact"
-              placeholder="Enter your contact details"
-              ngModel
-              #contact="ngModel"
-              required
-              minlength="10"
-              maxlength="15"
-            />
-            <p class="checkout-invalid-input">
-              <span *ngIf="contact.invalid && contact.touched">Contact is required.</span>
-              <span *ngIf="contact.errors?.['minlength'] && contact.touched">Contact must be at least 10 characters.</span>
-              <span *ngIf="contact.errors?.['maxlength'] && contact.touched">Contact cannot exceed 15 characters.</span>
-            </p>
-          </div>
-  
-          <!-- Submit Button, disabled if form is invalid -->
-          <button
-            [disabled]="orderData.invalid"
-            class="form-button btn btn-primary w-100 mb-3"
-            type="submit"
-          >
-            Order Now
-          </button>
-        </form>
-      </div>
-  
-      <!-- Order Summary & Payment Method Section -->
-      <div class="col-lg-5 col-md-12">
-        <div class="card p-3 mb-4">
-          <h3>Total Amount: <span class="text-success">{{totalPrice}}</span></h3>
-          <h4 class="mb-3">Payment Method:</h4>
-          <div class="form-check mb-2">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="payOnDelivery"
-              (change)="onPaymentMethodChange('payOnDelivery')"
-              [checked]="selectedPaymentMethod === 'payOnDelivery'"
-            />
-            <label class="form-check-label" for="payOnDelivery">
-              Cash on Delivery
-            </label>
-          </div>
-          <div class="form-check mb-2">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="creditCard"
-              (change)="onPaymentMethodChange('creditCard')"
-              [checked]="selectedPaymentMethod === 'creditCard'"
-            />
-            <label class="form-check-label" for="creditCard">
-              Credit Card
-            </label>
-          </div>
-          <div class="form-check mb-2">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="paypal"
-              (change)="onPaymentMethodChange('paypal')"
-              [checked]="selectedPaymentMethod === 'paypal'"
-            />
-            <label class="form-check-label" for="bankTransfer">
-              Bank Transfer
-            </label>
-          </div>
+  <h1 class="text-center heading">Checkout</h1>
+  <p class="messagee_p">{{ orderMessage }}</p>
+  <div class="row">
+    <!-- Shipping Address Section -->
+    <div class="col-lg-7 col-md-12 mb-4">
+      <h3 class="mb-4">Add Shipping Address</h3>
+      <form #orderData="ngForm" class="common-form" (ngSubmit)="orderNow(orderData.value)">
+        
+        <!-- Email Input with Validation -->
+        <div class="form-group mb-3">
+          <input
+            type="email"
+            class="check-form-input"
+            name="email"
+            placeholder="Enter user email"
+            ngModel
+            #email="ngModel"
+            required
+            email
+          />
+          <p class="checkout-invalid-input">
+            <span *ngIf="email.invalid && email.touched">Please Enter a Valid Email</span>
+          </p>
+        </div>
+
+        <!-- Address Input with Validation -->
+        <div class="form-group mb-3">
+          <input
+            type="text"
+            class="check-form-input"
+            name="address"
+            placeholder="Enter your address"
+            ngModel
+            #address="ngModel"
+            required
+          />
+          <p class="checkout-invalid-input">
+            <span *ngIf="address.invalid && address.touched">Address is required.</span>
+          </p>
+        </div>
+
+        <!-- Contact Input with Validation -->
+        <div class="form-group mb-3">
+          <input
+            type="text"
+            class="check-form-input"
+            name="contact"
+            placeholder="Enter your contact details"
+            ngModel
+            #contact="ngModel"
+            required
+            minlength="10"
+            maxlength="15"
+          />
+          <p class="checkout-invalid-input">
+            <span *ngIf="contact.invalid && contact.touched">Contact is required.</span>
+            <span *ngIf="contact.errors?.['minlength'] && contact.touched">Contact must be at least 10 characters.</span>
+            <span *ngIf="contact.errors?.['maxlength'] && contact.touched">Contact cannot exceed 15 characters.</span>
+          </p>
+        </div>
+
+        <!-- Submit Button, disabled if form is invalid or payment method is not selected -->
+        <button
+          [disabled]="orderData.invalid || !selectedPaymentMethod"
+          class="form-button btn btn-primary w-100 mb-3"
+          type="submit"
+        >
+          Confirm Order
+        </button>
+      </form>
+    </div>
+
+    <!-- Order Summary & Payment Method Section -->
+    <div class="col-lg-5 col-md-12">
+      <div class="card p-3 mb-4">
+        <h3>Total Amount: <span class="text-success">{{ totalPrice }}</span></h3>
+        <h4 class="mb-3">Payment Method:</h4>
+        <div class="form-check mb-2">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="COD"
+            (change)="onPaymentMethodChange('COD')"
+            [checked]="selectedPaymentMethod === 'COD'"
+          />
+          <label class="form-check-label" for="COD">
+            Cash on Delivery
+          </label>
+        </div>
+        <div class="form-check mb-2">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="creditCard"
+            (change)="onPaymentMethodChange('creditCard')"
+            [checked]="selectedPaymentMethod === 'creditCard'"
+          />
+          <label class="form-check-label" for="creditCard">
+            Credit Card
+          </label>
+        </div>
+        <div class="form-check mb-2">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="paypal"
+            (change)="onPaymentMethodChange('paypal')"
+            [checked]="selectedPaymentMethod === 'paypal'"
+          />
+          <label class="form-check-label" for="bankTransfer">
+            Bank Transfer
+          </label>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

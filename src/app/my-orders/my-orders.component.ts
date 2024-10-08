@@ -9,14 +9,25 @@ import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
   standalone: true,
   imports: [CommonModule, PkrCurrencyPipe],
   templateUrl: './my-orders.component.html',
-  styleUrl: './my-orders.component.css',
+  styleUrls: ['./my-orders.component.css'],
 })
 export class MyOrdersComponent implements OnInit {
   orderData: order[] | undefined;
+  selectedOrder: order | undefined;
+
   constructor(private product: ProductService) {}
+
   ngOnInit(): void {
     this.product.orderList().subscribe((result) => {
       this.orderData = result;
     });
+  }
+
+  showDetails(order: order): void {
+    this.selectedOrder = order;
+  }
+
+  closeDetails(): void {
+    this.selectedOrder = undefined;
   }
 }

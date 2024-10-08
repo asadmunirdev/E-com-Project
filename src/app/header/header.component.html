@@ -47,7 +47,11 @@
         </button>
         <ul class="suggested-result" *ngIf="searchResult">
           <li *ngFor="let item of searchResult">
-            <a (mousedown)="redirectToDetails(item.id)">{{ item.name }}</a>
+            <a
+              (click)="collapseNavbar()"
+              (mousedown)="redirectToDetails(item.id)"
+              >{{ item.name }}</a
+            >
           </li>
         </ul>
       </form>

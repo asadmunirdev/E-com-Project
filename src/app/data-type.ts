@@ -42,13 +42,14 @@ export interface priceSummary {
   delivery: number;
   total: number;
 }
-
 export interface order {
   email: string;
   address: string;
   contact: string;
   totalPrice: number;
   userId: number;
+  paymentMethod: string; // Payment method field
+  products: string[]; // Array of product names
   id: number | undefined;
 }
 

@@ -85,8 +85,12 @@
       "email": "asad@gmail.com",
       "address": "House #43, Street #1A, Isteqlal Street Sohwari Mughapura Lahore",
       "contact": "03244590782",
-      "totalPrice": 2449.6,
+      "totalPrice": 232,
       "userId": 1,
+      "paymentMethod": "creditCard",
+      "products": [
+        "Bluetooth Headphones"
+      ],
       "id": 1
     }
   ],

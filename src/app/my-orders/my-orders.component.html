@@ -1,42 +1,42 @@
-<h1 class="heading  mt-5">My Orders</h1>
-<div class="my-orders container mb-5">
-    
-    <!-- Header Row -->
-    <div class="row order-header  text-center fw-bold mb-3">
-      <div class="col-sm-2 order-header-item">
-        <span class="order-label">Order</span>
-      </div>
-      <div class="col-sm-2 order-header-item">
-        <span class="order-label">Order Id</span>
-      </div>
-      <div class="col-sm-2 order-header-item">
-        <span class="order-label">Price</span>
-      </div>
-      <div class="col-sm-2 order-header-item">
-        <span class="order-label">Status</span>
-      </div>
-      <div class="col-sm-2 order-header-item">
-        <span class="order-label">Action</span>
-      </div>
+<h1 class="heading my-5">My Orders</h1>
+<div class="container my-orders">
+    <div class="order-list">
+        <!-- Loop through orders -->
+        <div class="order-card" *ngFor="let order of orderData">
+            <div class="order-header">
+                <div class="order-image-container">
+                    <img src="../../assets/images/delivery.png" 
+                         alt="Order Image" class="order-image rounded">
+                </div>
+                <div class="order-details-info">
+                    <h4 class="order-id">Order ID: #{{ order.id }}</h4>
+                    <p class="order-status text-warning">Status: In Process</p>
+                    <p class="order-price">{{ order.totalPrice | pkrCurrency }}</p>
+                </div>
+            </div>
+            <div class="order-actions">
+                <button class="form-button btn-sm" (click)="showDetails(order)">View Details</button>
+                <button class="cancel-button btn-sm">Cancel Order</button>
+            </div>
+        </div>
     </div>
-    
-    <!-- Order Data Row -->
-    <div class="row order-data align-items-center text-center" *ngFor="let order of orderData">
-      <div class="col-sm-2 order-data-item">
-        <img src="https://scontent.flhe3-2.fna.fbcdn.net/v/t39.30808-6/302138151_474297181380027_512170526366941999_n.png?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=dzOyMyz4vF4Q7kNvgE43NLS&_nc_ht=scontent.flhe3-2.fna&_nc_gid=AESRgnE-4DtZw5vGGQ8LSNQ&oh=00_AYDNWz5EbxMcbdnTrQN00aGWdUu0YbwAU7XQmNvWsaq8BA&oe=6709DA0E"
-          alt="Order Image" class="img-fluid fixed-size">
-      </div>
-      <div class="col-sm-2 order-data-item">
-        <span>#{{order.id}}</span>
-      </div>
-      <div class="col-sm-2 order-data-item">
-        <span>{{order.totalPrice | pkrCurrency}}</span>
-      </div>
-      <div class="col-sm-2 order-data-item">
-        <span class="status-text text-warning">In Process</span>
-      </div>
-      <div class="col-sm-2 order-data-item">
-        <button class="cancel-button">Cancel Order</button>
-      </div>
+
+    <!-- Order Details Modal -->
+    <div class="order-details-modal" *ngIf="selectedOrder">
+        <div class="order-details-card">
+            <div class="order-details-header">
+                <h3>Order Details</h3>
+                <button class="close-button" (click)="closeDetails()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="order-details-body">
+                <p><strong>Order ID:</strong> #{{ selectedOrder.id }}</p>
+                <p><strong>Price:</strong> {{ selectedOrder.totalPrice | pkrCurrency }}</p>
+                <p><strong>Products:</strong> {{ selectedOrder.products.join(', ') }}</p>
+                <p><strong>Payment Method:</strong> {{ selectedOrder.paymentMethod }}</p>
+                <p><strong>Status:</strong> <span class="status-text text-warning">In Process</span></p>
+            </div>
+        </div>
     </div>
 </div>

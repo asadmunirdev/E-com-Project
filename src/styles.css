@@ -151,7 +151,7 @@ router-outlet {
   }
 }
 
-button:disabled{
+.invalid-input button:disabled{
   cursor: not-allowed;
 }
 

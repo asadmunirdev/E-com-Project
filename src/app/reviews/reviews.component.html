@@ -1,31 +1,40 @@
 <div class="container my-5">
-    <h1 class="text-center mb-4 heading">What Our Customers Say</h1>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="slider">
-          <div class="slider-wrapper" [ngStyle]="{ transform: 'translateX(-' + currentIndex * 100 + '%)' }">
-            <div class="slide" *ngFor="let review of reviews">
-              <div class="review-card text-center shadow-lg">
-                <img [src]="review.image" alt="{{ review.name }}" class="customer-image mx-auto" />
-                <h3>{{ review.name }}</h3>
-                <p class="review-text">{{ review.text }}</p>
-                <div class="rating">
-                  <span *ngFor="let star of [].constructor(review.rating); let i = index">
-                    <i class="fas fa-star"></i>
-                  </span>
-                </div>
-                <p class="review-date">{{ review.date }}</p>
+  <h1 class="text-center mb-4 heading">What Our Customers Say</h1>
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="slider">
+        <div class="slider-wrapper" [ngStyle]="{ transform: 'translateX(-' + currentIndex * 100 + '%)' }">
+          <div class="slide" *ngFor="let review of reviews">
+            <div class="review-card text-center shadow-lg">
+              <img [src]="review.image" alt="{{ review.name }}" class="customer-image mx-auto" />
+              <h3>{{ review.name }}</h3>
+              <p class="review-text" [ngClass]="{ 'expanded': review.isExpanded }">
+                {{ review.isExpanded ? review.text : (review.text | slice:0:150) + '...' }}
+              </p>
+              <span class="toggle-text" (click)="toggleText(review)">
+                {{ review.isExpanded ? 'See Less' : 'See More' }}
+              </span>
+              <div class="rating">
+                <span *ngFor="let star of [].constructor(review.rating); let i = index">
+                  <i class="fas fa-star"></i>
+                </span>
               </div>
+              <p class="review-date">{{ review.date }}</p>
             </div>
           </div>
-          <button class="prev" (click)="prevReview()">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="next" (click)="nextReview()">
-            <i class="fas fa-chevron-right"></i>
-          </button>
         </div>
+        <button class="prev" (click)="prevReview()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="next" (click)="nextReview()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      <div class="dots">
+        <span *ngFor="let review of reviews; let i = index" 
+              (click)="currentIndex = i" 
+              [class.active]="currentIndex === i"></span>
       </div>
     </div>
   </div>
-  
+</div>

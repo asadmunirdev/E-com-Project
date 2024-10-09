@@ -27,9 +27,7 @@
 <div class="container mb-4">
   <h1 class="heading"><i class="fas fa-shopping-cart"></i> Trendy Products</h1>
 
-  <label for="categorySelect" class="category-label">
-    <i class="fas fa-list"></i> Select Category:
-  </label>
+
   <select
     id="categorySelect"
     [(ngModel)]="selectedCategory"
@@ -81,20 +79,22 @@
         </div>
         <div class="card-footer text-center">
           <a routerLink="/details/{{ item.id }}" class="btn btn-primary"
-            >Add to Cart</a
+            >View Details</a
           >
         </div>
       </div>
     </div>
   </div>
-
-  <button
+  <div class="button-container">
+    <button
   *ngIf="hasMoreProducts"
   (click)="loadMore()"
-  class="btn btn-primary load-more-btn w-100 p-2"
+  class="btn btn-primary load-more-btn"
 >
   Load More
 </button>
+  </div>
+  
 </div>
 
 <app-reviews></app-reviews>

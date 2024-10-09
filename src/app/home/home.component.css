@@ -1,16 +1,12 @@
 /* Carousal Styling */
-
 .carousel-body{
   margin-bottom: 80px;
 }
-
 /* Image Styles */
 .product-header-img {
   object-fit: cover;
-  height: 600px;
+  height: 90vh;
   width: 100%;
-  padding: 12px;
-  border-radius: 20px;
   transition: transform 0.5s ease-in-out; /* Smooth zoom effect */
 }
 
@@ -21,9 +17,14 @@
 
 @media (max-width: 767.98px) {
   .product-header-img {
+      padding: 12px;
+  border-radius: 20px;
     height: 300px; /* Adjust header image height for small screens */
   }
 }
+
+/* Products CSS Starts Here */
+
 /* Container */
 .container {
   max-width: 1200px;
@@ -31,12 +32,6 @@
 }
 
 
-/* Label Styles */
-.category-label {
-  font-size: 1.2rem;
-  color: #333; /* Dark color for the label */
-  margin-bottom: 10px; /* Space below the label */
-}
 
 /* Select Category Styles */
 .category-select {
@@ -67,7 +62,7 @@
 .card:hover {
   transform: translateY(-2px); /* Slight lift on hover */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
-  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%); /* Light blue gradient background on hover */
+  cursor: pointer;
 }
 
 /* Card Image */
@@ -182,6 +177,16 @@
   font-weight: bold; /* Bold text */
   transition: all 0.3s ease; /* Smooth transition */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 15px 30px; /* Add some padding for better appearance */
+  margin-top: 15px;
+}
+
+/* Additional styles to center the button */
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100%; /* Make sure this container takes full height if needed */
 }
 
 /* Hover effect */

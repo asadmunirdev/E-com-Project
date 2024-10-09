@@ -1,32 +1,9 @@
-<!-- Toggle Button -->
-<button class="toggle-button" (click)="toggleCard()">
-  <i class="fas" [ngClass]="isCardVisible ? 'fa-times' : 'fa-bars'"></i>
+<!-- Go to Top Button (Visible when scrolling up and not at the top of the page) -->
+<button *ngIf="showTopButton" class="go-to-top" (click)="scrollToTop()">
+  <mat-icon>arrow_upward</mat-icon>
 </button>
 
-<!-- Popup Card for Buttons -->
-<div class="button-card" *ngIf="isCardVisible" [ngClass]="{'visible': isCardVisible}">
-  <!-- Go to Top Button -->
-  <button class="go-to-top" (click)="scrollToTop()">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- WhatsApp Button -->
-  <a
-    href="https://wa.me/+923244590782"
-    target="_blank"
-    class="whatsapp-button"
-    (click)="onButtonClick()"
-  >
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- Go to Bottom Button -->
-  <button class="go-to-bottom" (click)="scrollToBottom()">
-    <i class="fas fa-chevron-down"></i>
-  </button>
-
-  <!-- Back Button -->
-  <button class="go-back" (click)="goBack()">
-    <i class="fas fa-reply"></i>
-  </button>
-</div>
+<!-- Go to Bottom Button (Visible when scrolling down and not at the bottom of the page) -->
+<button *ngIf="showBottomButton" class="go-to-bottom" (click)="scrollToBottom()">
+  <mat-icon>arrow_downward</mat-icon>
+</button>

@@ -4,13 +4,8 @@
       "name": "Muhammad asad Munir",
       "email": "asad@gmail.com",
       "password": "123",
+      "securityKey": "pass1122",
       "id": 1
-    },
-    {
-      "name": "Saad",
-      "email": "saad@gmail.com",
-      "password": "123",
-      "id": 2
     }
   ],
   "users": [
@@ -19,18 +14,6 @@
       "email": "asad@gmail.com",
       "password": "123",
       "id": 1
-    },
-    {
-      "name": "Hamza",
-      "email": "hamza@gmail.com",
-      "password": "123",
-      "id": 2
-    },
-    {
-      "name": "Saad",
-      "email": "saad@gmail.com",
-      "password": "123",
-      "id": 3
     }
   ],
   "categories": [
@@ -79,7 +62,32 @@
       "name": "Home Appliances"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "name": "Smartphone",
+      "price": "299",
+      "color": "Black",
+      "category": "Electronics",
+      "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",
+      "description": "Latest smartphone with advanced features.",
+      "quantity": 9,
+      "userId": 1,
+      "productId": "gg02",
+      "id": 1
+    },
+    {
+      "name": "Laptop",
+      "price": "999",
+      "color": "Gray",
+      "category": "Electronics",
+      "image": "https://c1.wallpaperflare.com/preview/722/538/350/interior-minimal-white-workspace.jpg",
+      "description": "High-performance laptop for all your needs.",
+      "quantity": 1,
+      "userId": 1,
+      "productId": "gg03",
+      "id": 2
+    }
+  ],
   "orders": [
     {
       "email": "asad@gmail.com",
@@ -104,18 +112,21 @@
         "Bluetooth Speaker"
       ],
       "id": 3
+    },
+    {
+      "email": "asad@gmail.com",
+      "address": "House #43, Street #1A, Isteqlal Street Sohwari Mughapura Lahore",
+      "contact": "03244590782",
+      "totalPrice": 408,
+      "userId": 1,
+      "paymentMethod": "creditCard",
+      "products": [
+        "Bluetooth Speaker"
+      ],
+      "id": 4
     }
   ],
   "products": [
-    {
-      "name": "Bluetooth Headphones",
-      "price": "120",
-      "color": "Red",
-      "category": "Electronics",
-      "image": "https://c4.wallpaperflare.com/wallpaper/904/821/218/headset-music-purple-nice-wallpaper-preview.jpg",
-      "description": "Wireless Bluetooth headphones with noise-cancellation features.",
-      "id": "gg01"
-    },
     {
       "name": "Smartphone",
       "price": "299",
@@ -556,6 +567,15 @@
       "image": "https://plus.unsplash.com/premium_photo-1682125902211-7e7c32844fa5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fHR2fGVufDB8fDB8fHww",
       "description": "It's an old classic TV, an antique piece.",
       "id": "7xjnvhu"
+    },
+    {
+      "name": "EarBuds",
+      "price": "234",
+      "color": "blue",
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1613497646519-ee1ab64293af?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Good quality eardbuds",
+      "id": "Bj32Sr9"
     }
   ]
 }

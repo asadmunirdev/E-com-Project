@@ -1,19 +1,19 @@
 .container {
-    max-width: 1200px; /* Added max width for layout control */
+    max-width: 1200px;
     margin: auto;
-    padding: 20px; /* Added padding to the container */
+    padding: 20px;
 }
 
 .slider {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 450px; /* Height for the slider */
+    height: auto; /* Allow height to adjust */
     margin: 20px 0;
-    border-radius: 15px; /* Rounded corners for the slider */
-    background: #f8f9fa; /* Light background color */
-    padding: 20px; /* Added padding to the slider */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 15px;
+    background: #f8f9fa; /* Retain background for larger screens */
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 .slider-wrapper {
@@ -27,22 +27,17 @@
 }
 
 .review-card {
-    background: #ffffff; /* Card background */
-    border-radius: 15px; /* Rounded corners */
-    padding: 30px; /* Padding inside the card */
+    background: #ffffff; /* Keep background for larger screens */
+    border-radius: 15px;
+    padding: 20px; /* Adjust padding */
     position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transition effects */
-    display: flex; /* Flexbox for card layout */
-    flex-direction: column; /* Vertical stacking */
-    align-items: center; /* Center align items */
-    justify-content: center; /* Center content */
-    margin: 0 10px; /* Space between cards */
-}
-
-.review-card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px; /* Adjust margin */
 }
 
 .customer-image {
@@ -50,80 +45,117 @@
     width: 100px;
     height: 100px;
     margin-bottom: 15px;
-    transition: transform 0.3s; /* Smooth transition for image */
 }
 
 .review-text {
-    font-size: 1.1rem; /* Adjusted font size */
-    color: #333; /* Darker text for contrast */
-    margin: 15px 0; /* Space around the text */
-    text-align: center; /* Center-align text */
+    font-size: 1rem;
+    color: #333;
+    margin: 15px 0;
+    text-align: center;
+    max-height: 60px; /* Limit height for non-expanded text */
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.review-text.expanded {
+    max-height: 300px; /* Allow more height when expanded */
+}
+
+.toggle-text {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
 }
 
 .rating {
-    font-size: 1.5rem; 
-    color: #f39c12; /* Star color */
-    margin-bottom: 10px; /* Space below rating */
+    font-size: 1.5rem;
+    color: #f39c12;
+    margin-bottom: 10px;
 }
 
 .review-date {
-    font-size: 0.9rem; 
-    color: #888; /* Subtle text color */
-    margin-top: 10px; /* Space above the date */
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 10px;
 }
 
 button {
     position: absolute;
-    top: 50%; /* Centered vertically */
+    top: 50%;
     transform: translateY(-50%);
-    background: #007bff; /* Primary color for buttons */
-    color: white; /* Text color for buttons */
+    background: #007bff;
+    color: white;
     border: none;
     border-radius: 50%;
     padding: 12px;
     cursor: pointer;
     z-index: 100;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-    transition: background 0.3s, transform 0.3s; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
 }
 
 .prev {
-    left: 5px; /* Adjust left button position */
+    left: 5px;
 }
 
 .next {
-    right: 5px; /* Adjust right button position */
+    right: 5px;
 }
 
 button:hover {
-    background: #0056b3; /* Darker shade on hover */
-    transform: translateY(-50%) scale(1.05); /* Slightly enlarge on hover */
+    background: #0056b3;
+    transform: translateY(-50%) scale(1.05);
 }
 
 button i {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
+}
+
+/* Dots for active review */
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dots span.active {
+    background: #007bff;
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
+    .slider {
+        background: none; /* Remove background for mobile view */
+        padding: 0; /* Remove padding */
+    }
+
+    .review-card {
+        width: auto; /* Center cards */
+        margin: 10px auto; /* Center cards horizontally */
+        box-shadow: none; /* Remove shadow */
+        border: 1px solid #ccc; /* Optional border */
+    }
+
     .customer-image {
         width: 80px;
         height: 80px;
     }
 
     .review-text {
-        font-size: 1rem; /* Adjusted font size */
-    }
-
-    .slider {
-        height: auto; /* Allow height to adjust on smaller screens */
+        font-size: 0.9rem;
     }
 
     button {
-        padding: 8px; /* Reduced padding for buttons */
-    }
-
-    button i {
-        font-size: 1.2rem; /* Smaller icon size */
+        top: 80%; /* Adjust button position for mobile */
     }
 }

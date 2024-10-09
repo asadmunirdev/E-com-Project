@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh; /* Ensure minimum full viewport height */
+  padding: 20px 0; /* Add top and bottom padding */
   background: url('../../assets/images/sellerauth.jpg') no-repeat center center fixed; /* Add your background image */
   background-size: cover; /* Ensure the image covers the whole area */
 }
@@ -18,6 +19,7 @@
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   padding: 40px;
+  margin: 20px 0; /* Margin added to give space from top and bottom */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   animation: fadeIn 1s;
   position: relative;
@@ -31,39 +33,40 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   border-color: rgba(153, 212, 255, 0.8); /* Darker blue border with some transparency */
 }
-  /* Decorative Elements for Visual Enhancement */
-  .seller-auth::before,
-  .seller-auth::after {
-    content: "";
-    position: absolute;
-    width: 120px; /* Larger circles for more visual interest */
-    height: 120px;
-    background: rgba(0, 150, 255, 0.1); /* Light blue decorative circles */
-    border-radius: 50%;
-    z-index: -1;
-    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-  }
-  
-  .seller-auth::before {
-    top: -40px;
-    left: -40px;
-  }
-  
-  .seller-auth::after {
-    bottom: -40px;
-    right: -40px;
-  }
-  
-  .seller-auth:hover::before {
-    transform: translate(-15px, -15px) scale(1.2); /* Enhanced scaling and movement on hover */
-    opacity: 0.8; /* Subtle fade effect */
-  }
-  
-  .seller-auth:hover::after {
-    transform: translate(15px, 15px) scale(1.2); /* Enhanced scaling and movement on hover */
-    opacity: 0.8; /* Subtle fade effect */
-  }
-  
+
+/* Decorative Elements for Visual Enhancement */
+.seller-auth::before,
+.seller-auth::after {
+  content: "";
+  position: absolute;
+  width: 120px; /* Larger circles for more visual interest */
+  height: 120px;
+  background: rgba(0, 150, 255, 0.1); /* Light blue decorative circles */
+  border-radius: 50%;
+  z-index: -1;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.seller-auth::before {
+  top: -40px;
+  left: -40px;
+}
+
+.seller-auth::after {
+  bottom: -40px;
+  right: -40px;
+}
+
+.seller-auth:hover::before {
+  transform: translate(-15px, -15px) scale(1.2); /* Enhanced scaling and movement on hover */
+  opacity: 0.8; /* Subtle fade effect */
+}
+
+.seller-auth:hover::after {
+  transform: translate(15px, 15px) scale(1.2); /* Enhanced scaling and movement on hover */
+  opacity: 0.8; /* Subtle fade effect */
+}
+
 h1 {
   font-size: 2.2rem; /* Larger font size for prominence */
   text-align: center;
@@ -75,41 +78,40 @@ h1 {
 
 /* Anchor Tag Styling */
 a {
-    display: inline-block; /* Allows for padding and margins */
-    text-align: center;
-    color: #007bff; /* Vibrant blue color for the links */
-    margin-top: 15px;
-    font-size: 15px;
-    text-decoration: none; /* Removes the default underline */
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.2s ease;
-    font-weight: 600; /* Semi-bold for emphasis */
-    position: relative; /* Allows for pseudo-element positioning */
-  }
-  
-  a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #007bff; /* Underline color matches text color */
-    transition: width 0.3s;
-    margin-top: 5px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  a:hover {
-    color: #0056b3; /* Darker blue on hover for contrast */
-    transform: translateY(-2px); /* Slight upward movement on hover */
-    text-shadow: 0 2px 5px rgba(0, 123, 255, 0.3); /* Adds a glow effect on hover */
-  }
-  
-  a:hover::after {
-    width: 100%; /* Expands underline on hover */
-  }
-  
+  display: inline-block; /* Allows for padding and margins */
+  text-align: center;
+  color: #007bff; /* Vibrant blue color for the links */
+  margin-top: 15px;
+  font-size: 15px;
+  text-decoration: none; /* Removes the default underline */
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease, text-shadow 0.2s ease;
+  font-weight: 600; /* Semi-bold for emphasis */
+  position: relative; /* Allows for pseudo-element positioning */
+}
+
+a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #007bff; /* Underline color matches text color */
+  transition: width 0.3s;
+  margin-top: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+a:hover {
+  color: #0056b3; /* Darker blue on hover for contrast */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+  text-shadow: 0 2px 5px rgba(0, 123, 255, 0.3); /* Adds a glow effect on hover */
+}
+
+a:hover::after {
+  width: 100%; /* Expands underline on hover */
+}
 
 /* Animations */
 @keyframes fadeIn {
@@ -142,6 +144,7 @@ a {
 
   .seller-auth {
     padding: 30px; /* Adjust padding for smaller screens */
-    width: 80%; /* Full width on smaller screens */
+    width: 85%; /* Full width on smaller screens */
+    margin: 10px 0; /* Adjust margin for better spacing */
   }
 }

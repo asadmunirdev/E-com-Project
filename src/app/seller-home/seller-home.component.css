@@ -54,10 +54,6 @@ table {
   padding: 10px;
 }
 
-tr:hover {
-  background-color: #e3f2fd;
-}
-
 td {
   padding: 12px 0;
   text-align: center;
@@ -73,20 +69,21 @@ td {
     border: 1px solid #4A90E2; /* Card border */
     border-radius: 8px; /* Rounded corners */
     padding: 16px;
-    margin: 8px 0; /* Margin between cards */
+    margin: 25px 0; /* Margin between cards */
     background-color: white; /* Card background */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    text-align: center;
   }
 
   .product-image {
     width: 100%; /* Increased image width for mobile */
-    height: 220px; /* Increased image height for mobile */
+    height: 180px; /* Increased image height for mobile */
+    margin-bottom: 20px;
   }
 
   .description-column {
     max-width: none; /* Allow full width for description */
     word-wrap: break-word; /* Allow long text to break */
-    text-align: left; /* Left align text */
   }
 
   .action-buttons {

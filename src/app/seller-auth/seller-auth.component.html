@@ -22,7 +22,6 @@
             />
           </div>
           <p class="invalid-input">
-            <!-- Validation message for name -->
             <span *ngIf="name.invalid && name.touched"
               >Please Enter a Valid Name</span
             >
@@ -42,7 +41,6 @@
             />
           </div>
           <p class="invalid-input">
-            <!-- Validation message for email -->
             <span *ngIf="email.invalid && email.touched"
               >Please Enter a Valid Email</span
             >
@@ -53,7 +51,7 @@
             <input
               type="password"
               class="form-input form-control"
-              placeholder="Enter Password"
+              placeholder="Set Password"
               name="password"
               ngModel
               #password="ngModel"
@@ -63,11 +61,31 @@
             />
           </div>
           <p class="invalid-input">
-            <!-- Validation message for password -->
             <span *ngIf="password.invalid && password.touched"
               >Please Enter a Valid Password</span
             >
           </p>
+
+          <!-- Security Key input field -->
+          <div class="mb-3">
+            <input
+              type="password"
+              class="form-input form-control"
+              placeholder="Enter Security Key"
+              name="securityKey"
+              ngModel
+              #securityKey="ngModel"
+              minlength="8"
+              maxlength="15"
+              required
+            />
+          </div>
+          <p class="invalid-input">
+            <span *ngIf="securityKey.invalid && securityKey.touched"
+              >Please Enter the Security Key</span
+            >
+          </p>
+          <p class="invalid-input" *ngIf="securityError">{{ securityError }}</p>
 
           <!-- Submit button, disabled if form is invalid -->
           <button
@@ -108,7 +126,6 @@
             />
           </div>
           <p class="invalid-input">
-            <!-- Validation message for email -->
             <span *ngIf="email.invalid && email.touched"
               >Please Enter a Valid Email</span
             >
@@ -129,7 +146,6 @@
             />
           </div>
           <p class="invalid-input">
-            <!-- Validation message for password -->
             <span *ngIf="password.invalid && password.touched"
               >Please Enter a Valid Password</span
             >

@@ -15,6 +15,8 @@ import { CommonModule } from '@angular/common';
 export class SellerAuthComponent implements OnInit {
   showLogin = true; // Variable to toggle between login and signup forms
   authError: string = ''; // Variable to store authentication error messages
+  securityError: string = ''; // Variable to store security key error
+  private securityKey: string = 'pass1122'; // Security key for signup
 
   // Injecting SellerService through the constructor
   constructor(private seller: SellerService) {}
@@ -38,8 +40,17 @@ export class SellerAuthComponent implements OnInit {
   signUp(form: NgForm): void {
     if (form.valid) {
       const data: signUp = form.value;
-      console.log(data); // Log the signup data for debugging
-      this.seller.userSignUp(data); // Call the signup method from SellerService
+      const enteredSecurityKey = form.value.securityKey;
+
+      // Validate the security key
+      if (enteredSecurityKey === this.securityKey) {
+        console.log('Security key matched, proceeding with signup');
+        this.securityError = ''; // Clear any previous security errors
+        this.seller.userSignUp(data); // Call the signup method from SellerService
+      } else {
+        this.securityError = 'Invalid security key, please try again'; // Set an error message if the key doesn't match
+        console.log('Invalid security key');
+      }
     } else {
       console.log('Form is invalid'); // Log an error message if the form is invalid
     }
@@ -52,7 +63,7 @@ export class SellerAuthComponent implements OnInit {
       this.seller.userLogin(data); // Call the login method from SellerService
       this.seller.isLoginError.subscribe((isError) => {
         if (isError) {
-          this.authError = 'email or password is not correct'; // Display error message if login fails
+          this.authError = 'Email or password is not correct'; // Display error message if login fails
         }
       });
     } else {

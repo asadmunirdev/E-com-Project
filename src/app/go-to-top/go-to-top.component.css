@@ -1,141 +1,42 @@
-.toggle-button {
-  position: fixed;
-  bottom: 50px;
-  right: 20px;
-  background-color: #28a745; /* Button color */
+/* Button styles (Common for both) */
+.go-to-top,
+.go-to-bottom {
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 50px;
+  border-radius: 15px;
   width: 50px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition for shadow and transform */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: fixed; /* Make the buttons fixed on screen */
+  left: 20px; /* Position from the right edge */
+  z-index: 1000; /* Ensure the buttons are above other elements */
 }
 
-/* Pulse effect on hover */
-.toggle-button:hover {
-  animation: pulse 1s infinite; /* Pulse effect on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
-  background-color: #218838; /* Darker shade on hover */
+/* Specific positions */
+.go-to-top {
+  bottom: 20px; /* Position the "Go to Top" button slightly above the bottom */
 }
 
-
-/* Rotate effect on click */
-.toggle-button:active {
-  animation: rotate 0.5s; /* Rotate effect on click */
-}
-
-/* Rotate animation */
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg); /* Start position */
-  }
-  100% {
-    transform: rotate(360deg); /* Full rotation */
-  }
-}/* Font Awesome Icon Size */
-.toggle-button i {
-  font-size: 25px; /* Size of the icon in the toggle button */
-}
-
-/* Popup Card for Buttons */
-.button-card {
-  position: fixed;
-  bottom: 110px; /* Adjusted to be above the toggle button */
-  right: 20px;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent card */
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns */
-  grid-gap: 10px; /* Equal gap between buttons */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for the card */
-  opacity: 0; /* Initial opacity for animation */
-  transform: translateY(10px) scale(0.9); /* Start slightly below and scaled down */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for opacity and transform */
-}
-
-/* Add this class when the card is visible */
-.button-card.visible {
-  opacity: 1; /* Fully visible */
-  transform: translateY(0) scale(1); /* Move to its original position and scale up */
-}
-
-/* Button styles (Common for all) */
-.whatsapp-button,
-.go-back,
-.go-to-top,
 .go-to-bottom {
-  background-color: #007bff; /* Default button color */
-  color: white;
-  border: none;
-  border-radius: 50px;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  margin: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow transition */
+  bottom: 20px; /* Position the "Go to Bottom" button at the bottom */
 }
 
-/* Specific button colors */
-.whatsapp-button {
-  background-color: #25d366; /* WhatsApp green */
-}
-
-.go-back {
-  background-color: #fd7e14; /* Orange */
-}
-
-.go-to-top,
-.go-to-bottom {
-  background-color: #007bff; /* Same blue */
-}
-
-/* Icon sizes */
-.whatsapp-button i {
-  font-size: 34px; /* Larger font size for WhatsApp icon */
-}
-
-.go-back i,
+/* Icon style */
 .go-to-top i,
 .go-to-bottom i {
-  font-size: 28px; /* Standard font size for other icons */
+  font-size: 28px;
 }
 
-/* Button Hover Effects */
-.whatsapp-button:hover,
-.go-back:hover,
+/* Hover effect */
 .go-to-top:hover,
 .go-to-bottom:hover {
-  transform: scale(1.1); /* Scale up on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
-}
-
-/* Responsive Styles */
-@media (max-width: 600px) {
-  .whatsapp-button,
-  .go-back,
-  .go-to-top,
-  .go-to-bottom {
-    width: 40px; /* Smaller width on small screens */
-    height: 40px; /* Smaller height on small screens */
-  }
-
-  .whatsapp-button i {
-    font-size: 29px; /* Smaller icon size */
-  }
-
-  .go-back i,
-  .go-to-top i,
-  .go-to-bottom i {
-    font-size: 25px; /* Smaller icon size */
-  }
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }

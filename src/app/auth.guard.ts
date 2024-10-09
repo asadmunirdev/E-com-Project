@@ -1,4 +1,4 @@
-import { CanActivate } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { SellerService } from './services/seller.service';
 
@@ -7,7 +7,7 @@ import { SellerService } from './services/seller.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private sellerService: SellerService) {}
+  constructor(private sellerService: SellerService, private route : Router) {}
 
   canActivate(): boolean {
     if(localStorage.getItem('seller')){
@@ -15,4 +15,5 @@ export class AuthGuard implements CanActivate {
     }
     return this.sellerService.isSellerLoggedIn.getValue(); // Use getValue() to get the current value
   }
+
 }

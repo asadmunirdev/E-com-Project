@@ -24,7 +24,7 @@
     <div #navbarNav class="navbar-collapse collapse" id="navbarNav">
       <!-- Search bar visible for 'default' and 'user' menu types -->
       <form
-        *ngIf="menuType === 'default' || menuType === 'user'"
+        *ngIf="menuType !== 'seller'"
         class="d-flex mx-auto my-2 my-lg-0 search-form w-100"
       >
         <input
@@ -138,7 +138,7 @@
           </li>
           <li class="nav-item text-center">
             <a
-              routerLink="cart-page"
+              [routerLink]="cartItems>0?'cart-page':null"
               class="nav-link custom-nav-link"
               (click)="collapseNavbar()"
               >Cart({{ cartItems }})</a

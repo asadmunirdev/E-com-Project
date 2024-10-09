@@ -42,31 +42,42 @@ export class CartPageComponent implements OnInit {
       this.priceSummary.tax = price / 5;
       this.priceSummary.delivery = 100;
       this.priceSummary.total =
-
         price +
         this.priceSummary.tax +
         this.priceSummary.delivery -
         this.priceSummary.discount;
+
+           if(!this.cartData.length){
+            this.router.navigate(['/']);
+           }
+
     });
   }
 
-  removeCart(itemId: number) {
-    if (localStorage.getItem('user')) {
-      const user = localStorage.getItem('user');
-      const userId = user && JSON.parse(user).id;
-
-      // Call the service method with the correct item ID
-      this.product.removeToCart(itemId).subscribe((result) => {
-        if (result) {
-          console.log(result);
-          this.getCartData(); // Refresh cart data
-          this.product.getCartList(userId); // Optionally refresh cart list
-        }
+  removeCart(cartId: number | undefined) {
+    cartId &&
+      this.cartData &&
+      this.product.removeToCart(cartId).subscribe((result) => {
+        this.getCartData();
       });
-    }
   }
 
   checkout() {
     this.router.navigate(['checkout']);
   }
+
+  // removeCart(itemId: number) {
+  //   if (localStorage.getItem('user')) {
+  //     const user = localStorage.getItem('user');
+  //     const userId = user && JSON.parse(user).id;
+
+  //     this.product.removeToCart(itemId).subscribe((result) => {
+  //       if (result) {
+  //         console.log(result);
+  //         this.getCartData();
+  //         this.product.getCartList(userId);
+  //       }
+  //     });
+  //   }
+  // }
 }

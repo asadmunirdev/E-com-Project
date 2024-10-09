@@ -83,7 +83,7 @@ export class CheckoutComponent implements OnInit {
           setTimeout(() => {
             this.route.navigate(['my-orders']); // Navigate to "My Orders" page
             this.orderMessage = undefined; // Clear the success message
-          }, 4000);
+          }, 3000);
         }
       });
     }

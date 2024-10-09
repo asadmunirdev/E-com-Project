@@ -1,42 +1,58 @@
 <h1 class="heading my-5">My Orders</h1>
 <div class="container my-orders">
-    <div class="order-list">
-        <!-- Loop through orders -->
-        <div class="order-card" *ngFor="let order of orderData">
-            <div class="order-header">
-                <div class="order-image-container">
-                    <img src="../../assets/images/delivery.png" 
-                         alt="Order Image" class="order-image rounded">
-                </div>
-                <div class="order-details-info">
-                    <h4 class="order-id">Order ID: #{{ order.id }}</h4>
-                    <p class="order-status text-warning">Status: In Process</p>
-                    <p class="order-price">{{ order.totalPrice | pkrCurrency }}</p>
-                </div>
-            </div>
-            <div class="order-actions">
-                <button class="form-button btn-sm" (click)="showDetails(order)">View Details</button>
-                <button class="cancel-button btn-sm">Cancel Order</button>
-            </div>
+  <div class="order-list">
+    <!-- Loop through orders -->
+    <div class="order-card" *ngFor="let order of orderData">
+      <div class="order-header">
+        <div class="order-image-container">
+          <img
+            src="delivery.png"
+            alt="Order Image"
+            class="order-image rounded"
+          />
         </div>
+        <div class="order-details-info">
+          <h4 class="order-id">Order ID: #{{ order.id }}</h4>
+          <p class="order-status text-warning">Status: In Process</p>
+          <p class="order-price">{{ order.totalPrice | pkrCurrency }}</p>
+        </div>
+      </div>
+      <div class="order-actions">
+        <button class="form-button btn-sm" (click)="showDetails(order)">
+          View Details
+        </button>
+        <button class="cancel-button btn-sm" (click)="cancelOrder(order.id)">
+          Cancel Order
+        </button>
+      </div>
     </div>
+  </div>
 
-    <!-- Order Details Modal -->
-    <div class="order-details-modal" *ngIf="selectedOrder">
-        <div class="order-details-card">
-            <div class="order-details-header">
-                <h3>Order Details</h3>
-                <button class="close-button" (click)="closeDetails()">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="order-details-body">
-                <p><strong>Order ID:</strong> #{{ selectedOrder.id }}</p>
-                <p><strong>Price:</strong> {{ selectedOrder.totalPrice | pkrCurrency }}</p>
-                <p><strong>Products:</strong> {{ selectedOrder.products.join(', ') }}</p>
-                <p><strong>Payment Method:</strong> {{ selectedOrder.paymentMethod }}</p>
-                <p><strong>Status:</strong> <span class="status-text text-warning">In Process</span></p>
-            </div>
-        </div>
+  <!-- Order Details Modal -->
+  <div class="order-details-modal" *ngIf="selectedOrder">
+    <div class="order-details-card">
+      <div class="order-details-header">
+        <h3>Order Details</h3>
+        <button class="close-button" (click)="closeDetails()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="order-details-body">
+        <p><strong>Order ID:</strong> #{{ selectedOrder.id }}</p>
+        <p>
+          <strong>Price:</strong> {{ selectedOrder.totalPrice | pkrCurrency }}
+        </p>
+        <p>
+          <strong>Products:</strong> {{ selectedOrder.products.join(", ") }}
+        </p>
+        <p>
+          <strong>Payment Method:</strong> {{ selectedOrder.paymentMethod }}
+        </p>
+        <p>
+          <strong>Status:</strong>
+          <span class="status-text text-warning">In Process</span>
+        </p>
+      </div>
     </div>
+  </div>
 </div>

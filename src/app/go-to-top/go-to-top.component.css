@@ -1,85 +1,87 @@
-/* Button styles (Common for both) */
+/* Button styles for both Go-to-Top and Go-to-Bottom */
 .go-to-top,
 .go-to-bottom {
-  background-color: #007bff;
+  background-color: rgba(108, 117, 125, 0.9); /* Semi-transparent gray background */
   color: white;
   border: none;
-  border-radius: 15px;
-  width: 50px; /* Default width */
-  height: 50px; /* Default height */
+  border-radius: 50%; /* Circular buttons */
+  width: 45px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: fixed; /* Make the buttons fixed on screen */
-  left: 20px; /* Position from the left edge */
-  z-index: 1000; /* Ensure the buttons are above other elements */
+  position: fixed; /* Fixed on screen */
+  left: 20px; /* Right-aligned */
+  z-index: 1000; /* Above other content */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow for elevation */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* Specific positions */
+/* Go to Top specific positioning */
 .go-to-top {
-  bottom: 80px; /* Position the "Go to Top" button slightly above the bottom */
+  bottom: 20px; /* Positioned slightly above the bottom */
 }
 
+/* Go to Bottom specific positioning */
 .go-to-bottom {
-  bottom: 20px; /* Position the "Go to Bottom" button at the bottom */
+  bottom: 20px; /* Positioned at the bottom */
 }
 
-/* Icon style */
-.go-to-top i,
-.go-to-bottom i {
-  font-size: 28px; /* Default icon size */
+/* Icon styles */
+.go-to-top mat-icon,
+.go-to-bottom mat-icon {
+  font-size: 24px; /* Icon size */
 }
 
-/* Hover effect */
+/* Hover effect for better interaction feedback */
 .go-to-top:hover,
 .go-to-bottom:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background-color: rgba(108, 117, 125, 1); /* Opaque background on hover */
+  transform: scale(1.1); /* Slight zoom on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) { /* Tablet */
+@media (max-width: 768px) {
   .go-to-top,
   .go-to-bottom {
-    width: 45px; /* Adjust width */
-    height: 45px; /* Adjust height */
+    width: 40px;
+    height: 40px;
   }
 
   .go-to-top {
-    bottom: 70px; /* Adjust position */
+    bottom: 10px;
   }
 
   .go-to-bottom {
-    bottom: 10px; /* Adjust position */
+    bottom: 10px;
   }
 
-  .go-to-top i,
-  .go-to-bottom i {
-    font-size: 24px; /* Adjust icon size */
+  .go-to-top mat-icon,
+  .go-to-bottom mat-icon {
+    font-size: 22px;
   }
 }
 
-@media (max-width: 480px) { /* Mobile */
+@media (max-width: 480px) {
   .go-to-top,
   .go-to-bottom {
-    width: 40px; /* Adjust width */
-    height: 40px; /* Adjust height */
+    width: 35px;
+    height: 35px;
+    right: 15px; /* Adjust closer to the right edge */
   }
 
   .go-to-top {
-    bottom: 60px; /* Adjust position */
+    bottom: 5px;
   }
 
   .go-to-bottom {
-    bottom: 5px; /* Adjust position */
+    bottom: 10px;
   }
 
-  .go-to-top i,
-  .go-to-bottom i {
-    font-size: 20px; /* Adjust icon size */
+  .go-to-top mat-icon,
+  .go-to-bottom mat-icon {
+    font-size: 20px;
   }
 }

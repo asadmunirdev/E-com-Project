@@ -1,10 +1,11 @@
-/* Carousal Styling */
-.carousel-body{
+/* Carousel Styling */
+.carousel-body {
   margin-bottom: 80px;
 }
+
 /* Image Styles */
 .product-header-img {
-  object-fit: cover;
+  object-fit:cover;
   height: 90vh;
   width: 100%;
   transition: transform 0.5s ease-in-out; /* Smooth zoom effect */
@@ -15,23 +16,11 @@
   transform: scale(1.05); /* Slight zoom */
 }
 
-@media (max-width: 767.98px) {
-  .product-header-img {
-      padding: 12px;
-  border-radius: 20px;
-    height: 300px; /* Adjust header image height for small screens */
-  }
-}
-
-/* Products CSS Starts Here */
-
 /* Container */
 .container {
   max-width: 1200px;
   padding: 0 15px; /* Adds some horizontal padding */
 }
-
-
 
 /* Select Category Styles */
 .category-select {
@@ -48,13 +37,61 @@
   outline: none; /* Remove default outline */
 }
 
+.no-products-message {
+  text-align: center; /* Center the text */
+  padding: 20px; /* Add padding for spacing */
+  background-color: #fff3cd; /* Light yellow background for emphasis */
+  color: #856404; /* Dark yellow text color for better readability */
+  border: 1px solid #ffeeba; /* Light border to define the message box */
+  border-radius: 5px; /* Slightly rounded corners */
+  font-size: 1.5rem; /* Larger font size */
+  font-weight: bold; /* Bold text for emphasis */
+  margin: 20px 0; /* Margin for spacing above and below */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.no-products-message i {
+  font-size: 2rem; /* Larger icon size */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+
+/* Products CSS Starts Here */
+
+/* Grid Layout for Products */
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of cards */
+}
+
+/* Column Styles */
+.col-sm-3 {
+  flex: 0 0 25%; /* Four columns on normal screens */
+  max-width: 25%; /* Ensures it stays at four columns */
+}
+
+/* Adjust columns for smaller screens */
+@media (max-width: 768px) {
+  .col-sm-3 {
+    flex: 0 0 50%; /* Two columns on tablet screens */
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-sm-3 {
+    flex: 0 0 100%; /* One column on mobile screens */
+    max-width: 100%;
+  }
+}
+
 /* Card Styles */
 .card {
   border: none; /* Remove border */
   border-radius: 8px; /* Slightly smaller border radius */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial shadow for depth */
   background-color: #fff; /* Set a clean white background */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
   height: 350px; /* Set a fixed height for the card */
 }
 
@@ -62,7 +99,6 @@
 .card:hover {
   transform: translateY(-2px); /* Slight lift on hover */
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
-  cursor: pointer;
 }
 
 /* Card Image */
@@ -112,7 +148,6 @@
   margin: 8px 0; /* Space between paragraphs */
   font-size: 1rem; /* Maintain font size */
   font-weight: bold; /* Bold for emphasis */
-  
 }
 
 .color-swatch {
@@ -124,8 +159,6 @@
   border: 2px solid #ccc; /* Light gray border */
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
 }
-
-
 
 .product-category {
   margin: 8px 0; /* Space between paragraphs */
@@ -170,6 +203,7 @@
   border-color: #1e7e34; /* Darker border on hover */
 }
 
+/* Load More Button */
 .load-more-btn {
   background-color: #007bff; /* Primary color */
   border-radius: 30px; /* Rounded corners */
@@ -193,7 +227,6 @@
 .load-more-btn:hover {
   background-color: #0056b3; /* Darker shade of primary */
   transform: translateY(-3px); /* Slight upward movement on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 /* Active/click effect */
@@ -201,9 +234,14 @@
   transform: translateY(1px); /* Slight downward movement when clicked */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow on click */
 }
-
-
+/* Responsive Styles */
 @media (max-width: 767.98px) {
+  .product-header-img {
+    padding: 12px;
+    border-radius: 20px;
+    height: 300px; /* Adjust header image height for small screens */
+  }
+
   .col-sm-3 {
     flex: 0 0 90%; /* Make each card take 90% width on small screens */
     max-width: 90%; /* Prevent overflow */
@@ -228,40 +266,47 @@
   }
 
   .product-info p {
-    margin: 4px 0; /* Maintain margin for product info */
-    font-size: 1rem; /* Maintain font size for product info */
+    margin: 4px 0; /* Reduce margin for paragraphs */
   }
 
-  .product-price {
-    font-size: 1rem; /* Maintain font size for price */
+  .load-more-btn {
+    width: 100%; /* Full width for the load more button */
   }
 
-  .product-color,
-  .product-description {
-    font-size: 0.85rem; /* Maintain font size for color and description */
+  .no-products-message {
+    font-size: 1.5rem; /* Larger font size for better readability */
+    color: #dc3545; /* Bootstrap red for warning */
+    text-align: center; /* Center align the message */
+    padding: 20px; /* Add padding for spacing */
+    border: 2px solid #dc3545; /* Border to emphasize the message */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px 0; /* Space above and below the message */
+    background-color: rgba(220, 53, 69, 0.1); /* Light background for emphasis */
   }
 }
 
-@media (min-width: 768px) {
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 991.98px) {
   .col-sm-3 {
-    flex: 0 0 50%; /* Two cards per row for tablets */
+    flex: 0 0 50%; /* Two columns on tablet screens */
     max-width: 50%;
   }
 
-  .card {
-    height: 350px; /* Maintain original height for tablets */
+  .no-products-message {
+    font-size: 1.8rem; /* Slightly larger font size for tablets */
+    margin: 30px 0; /* Increased margin for tablets */
   }
 }
 
-@media (min-width: 992px) {
+/* Extra small screens */
+@media (max-width: 576px) {
   .col-sm-3 {
-    flex: 0 0 25%; /* Four cards per row for larger screens */
-    max-width: 25%;
+    flex: 0 0 100%; /* One column on mobile screens */
+    max-width: 100%;
   }
 
-  .card {
-    height: 350px; /* Maintain original height for large screens */
+  .no-products-message {
+    font-size: 1.2rem; /* Smaller font size for extra small screens */
+    padding: 10px; /* Less padding for smaller screens */
   }
 }
-
-

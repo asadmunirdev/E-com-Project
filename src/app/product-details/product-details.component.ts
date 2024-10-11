@@ -18,6 +18,7 @@ export class ProductDetailsComponent implements OnInit {
   productQuantity: number = 1; // Variable to store product quantity
   removeCart = false; // Flag to determine if the product is in the cart
   cartData: product | undefined; // Variable to store cart data
+  hasPurchased: boolean = false; // Flag to check if the product has been purchased before
 
   // Injecting ActivatedRoute and ProductService through the constructor
   constructor(
@@ -33,45 +34,33 @@ export class ProductDetailsComponent implements OnInit {
       if (productId) {
         this.product.getProduct(productId).subscribe((result) => {
           this.productData = result; // Assign fetched product data to productData
-  
-          // Check local storage for cart data
-          let cartData = localStorage.getItem('localCart');
-          if (productId && cartData) {
-            let items = JSON.parse(cartData);
-            // Filter items in the cart to see if the current product is present
-            items = items.filter(
-              (item: product) => item.id && productId === item.id.toString()
-            );
-            // Update removeCart flag based on presence in the cart
-            if (items.length) {
-              this.removeCart = true;
-            } else {
-              this.removeCart = false;
-            }
-          }
-  
-          // Check for user in local storage to determine if the user is logged in
-          let user = localStorage.getItem('user');
-          if (user) {
-            let userId = user && JSON.parse(user).id; // Get user ID from local storage
-            this.product.getCartList(userId); // Fetch cart list for the user
-            this.product.cartData.subscribe((result) => {
-              // Check if the current product is in the user's cart
-              let item = result.filter(
-                (item: product) =>
-                  productId?.toString() === item.productId?.toString()
-              );
-              // Update cartData and removeCart flag if the product is found
-              if (item.length) {
-                this.cartData = item[0];
-                this.removeCart = true;
-              }
-            });
-          }
+          this.checkIfProductInCart(productId); // Check cart for the product
+          this.checkIfPurchased(productId); // Check if the product has been purchased
         });
       }
-    
     });
+  }
+
+  // Method to check if the product is in the cart
+  checkIfProductInCart(productId: string) {
+    let cartData = localStorage.getItem('localCart');
+    if (cartData) {
+      let items = JSON.parse(cartData);
+      items = items.filter(
+        (item: product) => item.id && productId === item.id.toString()
+      );
+      this.removeCart = items.length > 0;
+    }
+  }
+
+  // Method to check if the product has been purchased before
+  checkIfPurchased(productId: string) {
+    // Implement your logic to check if the product has been purchased
+    // For example, you can check against a list of purchased products in local storage
+    let purchasedProducts = JSON.parse(
+      localStorage.getItem('purchasedProducts') || '[]'
+    );
+    this.hasPurchased = purchasedProducts.includes(productId);
   }
 
   // Method to handle product quantity adjustments
@@ -80,6 +69,17 @@ export class ProductDetailsComponent implements OnInit {
       this.productQuantity += 1; // Increase quantity if less than 20
     } else if (this.productQuantity > 1 && val === 'min') {
       this.productQuantity -= 1; // Decrease quantity if greater than 1
+    }
+  }
+
+  // Method to handle the "Buy Now" button click
+  BuyNow() {
+    if (this.hasPurchased) {
+      // Logic to handle buying again (if applicable)
+      console.log('Buying again');
+    } else {
+      // Logic for a first-time purchase
+      console.log('Buying product');
     }
   }
 

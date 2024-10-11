@@ -1,37 +1,64 @@
-// Importing necessary modules and dependencies
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { product } from '../data-type';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-seller-home', // Selector for the component
-  standalone: true, // This component is standalone
-  imports: [CommonModule, RouterModule,PkrCurrencyPipe], // Modules that this component uses
-  templateUrl: './seller-home.component.html', // Template URL for the HTML view
-  styleUrl: './seller-home.component.css', // Stylesheet for this component
+  selector: 'app-seller-home',
+  standalone: true,
+  imports: [CommonModule, RouterModule, PkrCurrencyPipe, FormsModule],
+  templateUrl: './seller-home.component.html',
+  styleUrls: ['./seller-home.component.css'],
 })
 export class SellerHomeComponent implements OnInit {
-  productList: undefined | product[]; // Variable to store the list of products
-  productMessage: undefined | string; // Variable to store success or error messages
+  productList: undefined | product[]; // All products
+  filteredProducts: product[] = [];   // Filtered products
+  categories: string[] = [];          // Available categories
+  selectedCategory: string = '';      // Selected category
+  productMessage: undefined | string; // Success or error message
 
-  // Injecting ProductService through the constructor
   constructor(private product: ProductService) {}
 
-  // Lifecycle hook that runs when the component initializes
   ngOnInit(): void {
-    this.list(); // Fetch the list of products when the component initializes
+    this.list(); // Load products on component initialization
   }
 
-  // Method to handle product deletion
+  // Fetch product list
+  list() {
+    this.product.productList().subscribe((result) => {
+      this.productList = result;
+      this.filteredProducts = result; // Initially, all products are displayed
+      this.setCategories(); // Extract categories from product list
+    });
+  }
+
+  // Extract categories from the product list
+  setCategories() {
+    if (this.productList) {
+      this.categories = Array.from(new Set(this.productList.map(product => product.category)));
+    }
+  }
+
+  // Filter products based on the selected category
+  filterProducts() {
+    if (this.selectedCategory) {
+      this.filteredProducts = this.productList?.filter(
+        (product) => product.category === this.selectedCategory
+      ) || [];
+    } else {
+      this.filteredProducts = this.productList || [];
+    }
+  }
+
+  // Delete a product and update the list
   deleteProduct(id: number) {
-    console.warn('testing delete', id); // Log the product ID being deleted
     this.product.deleteProduct(id).subscribe((result) => {
       if (result) {
-        this.productMessage = 'Product is deleted'; // Display success message
-        this.list(); // Refresh the product list
+        this.productMessage = 'Product is deleted';
+        this.list(); // Reload the product list after deletion
       }
     });
 
@@ -39,12 +66,5 @@ export class SellerHomeComponent implements OnInit {
     setTimeout(() => {
       this.productMessage = undefined;
     }, 3000);
-  }
-
-  // Method to fetch the list of products from the ProductService
-  list() {
-    this.product.productList().subscribe((result) => {
-      this.productList = result; // Assign the result to productList
-    });
   }
 }

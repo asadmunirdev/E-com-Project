@@ -14,6 +14,12 @@
       "email": "asad@gmail.com",
       "password": "123",
       "id": "1"
+    },
+    {
+      "id": "e3c1",
+      "name": "Saad",
+      "email": "saad@gmail.com",
+      "password": "123"
     }
   ],
   "categories": [
@@ -62,7 +68,20 @@
       "name": "Home Appliances"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "dd7f",
+      "name": "Smartphone",
+      "price": "299",
+      "color": "Black",
+      "category": "Electronics",
+      "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",
+      "description": "Latest smartphone with advanced features.",
+      "quantity": 1,
+      "productId": "gg02",
+      "userId": "1"
+    }
+  ],
   "orders": [],
   "products": [
     {
@@ -489,15 +508,6 @@
       "id": "gg50"
     },
     {
-      "name": "Power Bank",
-      "price": "50",
-      "color": "White",
-      "category": "Electronics",
-      "image": "https://images.unsplash.com/photo-1706275400998-7fc21c8cd8ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBvd2VyJTIwYmFua3xlbnwwfHwwfHx8MA%3D%3D",
-      "description": "A very powerful power bank with 15000mAh battery backup.",
-      "id": "A8Vzkee"
-    },
-    {
       "name": "Classic TV",
       "price": "76",
       "color": "Brown",
@@ -514,6 +524,15 @@
       "image": "https://images.unsplash.com/photo-1613497646519-ee1ab64293af?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Good quality eardbuds",
       "id": "Bj32Sr9"
+    },
+    {
+      "name": "SmartDrive Vehicle",
+      "price": "90000",
+      "color": "black",
+      "category": "Automotive",
+      "image": "https://plus.unsplash.com/premium_photo-1683134240084-ba074973f75e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YXV0b21vdGl2ZXxlbnwwfHwwfHx8MA%3D%3D",
+      "description": "Experience the future of transportation with this cutting-edge vehicle",
+      "id": "6c3b"
     }
   ]
 }

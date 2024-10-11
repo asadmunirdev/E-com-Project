@@ -5,37 +5,37 @@
 
 /* Custom Navbar Styles */
 .custom-navbar {
-  background: linear-gradient(135deg, #007bff, #0056b3); /* Smooth gradient background */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
-  border-bottom: 2px solid #0056b3; /* Bottom border for added structure */
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid #0056b3;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  position: fixed; /* Fix the navbar to the top */
-  top: 0; /* Position it at the top */
-  width: 100%; /* Make it take the full width */
-  z-index: 1000; /* Ensure it stays above other content */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .custom-navbar:hover {
-  background: linear-gradient(135deg, #0056b3, #003d80); /* Darker gradient on hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow on hover */
+  background: linear-gradient(135deg, #0056b3, #003d80);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Center and resize the search bar */
 .search-form {
-  width: auto; /* Use auto width for flexible control */
-  max-width: 550px; /* Increase max-width for a larger search box */
+  width: auto;
+  max-width: 550px;
   margin: 0 auto;
   display: flex; 
   align-items: center;
   justify-content: center;
-  position: relative; /* Make this the reference point for absolute positioning of suggestions */
+  position: relative; /* Reference point for absolute positioning of suggestions */
 }
 
 .search-form input {
-  border-radius: 30px; 
+  border-radius: 30px;
   border: 1px solid #0056b3;
-  padding: 12px 20px; /* Increase padding for a bigger input */
-  font-size: 16px; /* Increase font size */
+  padding: 12px 20px;
+  font-size: 16px;
   transition: all 0.3s ease;
   flex: 1;
 }
@@ -43,7 +43,7 @@
 .search-form input:focus {
   border-color: #00bfff;
   box-shadow: 0 0 12px rgba(0, 191, 255, 0.6);
-  transform: scale(1.05); /* Slightly increase scale */
+  transform: scale(1.05);
 }
 
 .search-form button {
@@ -51,63 +51,62 @@
   background-color: #00bfff;
   border: none;
   color: white;
-  padding: 12px 25px; /* Adjust padding to make the button bigger */
+  padding: 12px 25px;
   font-size: 16px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-left: 8px; /* Increase space between input and button */
+  margin-left: 8px;
 }
 
 .search-form button:hover {
   background-color: #0099cc;
-  transform: scale(1.08); /* Slightly larger scale on hover */
+  transform: scale(1.08);
 }
+
 .suggested-result {
   position: absolute;
   display: block;
   z-index: 10;
   background: #fff;
-  width: 100%; /* Full width of parent container for responsive design */
-  max-width: 440px; /* Adjust max-width based on your layout */
-  top: 55px; /* Positioned relative to the search bar */
-  left: 0; /* Align to the left edge of the search input */
+  width: 100%;
+  max-width: 440px;
+  top: 55px;
+  left: 0;
   border: 1px solid #ddd;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better depth */
-  border-radius: 15px; /* Smooth rounded corners */
-  overflow: hidden; /* Ensures no content overflows */
-  transition: all 0.3s ease; /* Smooth transition for dropdown */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .suggested-result li {
-  border-bottom: 1px solid #eee; /* Slightly lighter border for better separation */
-  padding: 10px 12px; /* Reduced padding for a more compact touch area */
-  transition: background-color 0.3s ease; /* Smooth background transition */
+  border-bottom: 1px solid #eee;
+  padding: 10px 12px;
+  transition: background-color 0.3s ease;
 }
 
 .suggested-result li:last-child {
-  border-bottom: none; /* Remove border from the last item */
+  border-bottom: none;
 }
 
 .suggested-result a {
   display: block;
   cursor: pointer;
-  color: #003d80; /* Primary text color */
-  text-decoration: none; /* No underline */
-  font-size: 16px; /* Increased font size for readability */
-  font-weight: 500; /* Slightly bold text for better emphasis */
-  padding: 10px 0; /* Padding for better clickability */
-  transition: color 0.3s ease, transform 0.2s ease; /* Smooth color and scale transitions */
+  color: #003d80;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 0;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
+
 .suggested-result a:hover {
-  color: #007bff; /* Change text color to a blue shade on hover */
-  text-decoration: none; /* No underline on hover */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  color: #007bff;
+  text-decoration: none;
 }
 
 .suggested-result li:hover {
-  background-color: #e0e0e0; /* Slightly darker gray background on list item hover */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  background-color: #e0e0e0;
 }
-
 
 /* Custom Navigation Links */
 .custom-nav-link {
@@ -116,7 +115,7 @@
   font-size: 18px;
   font-weight: 500;
   transition: color 0.3s ease, transform 0.3s ease;
-  padding: 0.5rem 1rem; /* Additional padding for touch targets */
+  padding: 0.5rem 1rem; 
 }
 
 .custom-nav-link::after {
@@ -144,7 +143,7 @@
 .seller-navbar-nav {
   display: flex;
   justify-content: flex-end;
-  width: 100%; /* Ensure it takes full width */
+  width: 100%; 
 }
 
 .pointer {
@@ -153,28 +152,28 @@
 
 .egg-shaped {
   display: inline-block;
-  padding: 8px 16px; /* Adjust padding as needed */
-  background-color: white; /* Original background color */
-  border-radius: 70px; /* This creates the egg shape */
+  padding: 8px 16px; 
+  background-color: white; 
+  border-radius: 70px; 
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow effect */
-  border: 1px solid #ddd; /* Optional: adds a border */
-  color: #0056b3; /* Adjust text color if needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  border: 1px solid #ddd; 
+  color: #0056b3; 
   cursor: pointer;
   font-size: 20px;
   font-weight: 500;
   margin-left: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .egg-shaped:hover {
-  transform: scale(1.05); /* Zoom in effect on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly darker shadow on hover */
+  transform: scale(1.05); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .text-3d {
-  font-size: 1.7rem; /* Adjust the size as needed */
-  color: #fff; /* Main text color */
+  font-size: 1.7rem; 
+  color: #fff; 
   text-shadow: 
     1px 1px 0 rgba(0, 0, 0, 0.2),
     2px 2px 0 rgba(0, 0, 0, 0.2),
@@ -182,18 +181,16 @@
     4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-
 /* Responsive adjustments */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .navbar-collapse {
     text-align: center;
   }
 
   .search-form {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     width: 100%;
-    max-width: none; /* Remove max-width on smaller screens */
   }
 
   .search-form input,
@@ -206,54 +203,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .custom-nav-link {
-    font-size: 16px; /* Slightly smaller font for mobile */
-    padding: 0.75rem 1rem; /* Adjust padding for touch targets */
-  }
-}
-
-@media (max-width: 768px) {
-  .search-form {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: stretch; /* Stretch elements to take full width */
     width: 100%;
-    padding: 10px;
-  }
-
-  .search-form input {
-    width: 100%;
-    margin-bottom: 10px; /* Add spacing between input and button */
-    border-radius: 20px; /* Slightly less rounded corners */
-  }
-
-  .search-form button {
-    width: 100%;
-    margin: 0; /* Remove margin */
-    border-radius: 20px; /* Matching rounded corners */
-  }
-
-  .navbar-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   .custom-nav-link {
     font-size: 16px;
     padding: 0.75rem 1rem;
   }
+}
+
+@media (max-width: 992px) {
+  .search-form {
+    padding: 10px; /* Add some padding */
+  }
+
+  .search-form input,
+  .search-form button {
+    font-size: 14px; /* Slightly reduce font size */
+  }
 
   .suggested-result {
     max-width: 100%; /* Full width on small screens */
-    left: 0; /* Align to the left edge */
-    right: 0; /* Full width of the container */
+    left: 0;
+    right: 0;
     top: 50px; /* Positioned just below the search bar */
+    overflow: hidden; /* Prevent overflow on small screens */
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .search-form {
     padding: 5px; /* Reduce padding for extra small screens */
   }
@@ -269,4 +247,3 @@
     padding: 0.5rem 0.75rem;
   }
 }
-

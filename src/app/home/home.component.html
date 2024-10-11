@@ -1,32 +1,31 @@
 @if (popularProducts) {
-<ngb-carousel class="carousel-body"
-  [interval]="3000"
-  [pauseOnHover]="false"
-  [wrap]="true"
-  [keyboard]="true"
->
-  <ng-template *ngFor="let item of popularProducts" ngbSlide>
-    <div class="picsum-img-wrapper">
-      <a routerLink="/details/{{ item.id }}">
-        <img
-          class="product-header-img"
-          src="{{ item.image }}"
-          alt="{{ item.name }}"
-        />
-      </a>
-    </div>
-    <div class="carousel-caption">
-      <h3>{{ item.name | titlecase }}</h3>
-      <p>{{ item.description | titlecase }}</p>
-    </div>
-  </ng-template>
-</ngb-carousel>
+  <ngb-carousel class="carousel-body"
+    [interval]="3000"
+    [pauseOnHover]="false"
+    [wrap]="true"
+    [keyboard]="true"
+  >
+    <ng-template *ngFor="let item of popularProducts" ngbSlide>
+      <div class="picsum-img-wrapper">
+        <a routerLink="/details/{{ item.id }}">
+          <img
+            class="product-header-img"
+            src="{{ item.image }}"
+            alt="{{ item.name }}"
+          />
+        </a>
+      </div>
+      <div class="carousel-caption">
+        <h3>{{ item.name | titlecase }}</h3>
+        <p>{{ item.description | titlecase }}</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
 }
 
 <!-- Products -->
 <div class="container mb-4">
   <h1 class="heading"><i class="fas fa-shopping-cart"></i> Trendy Products</h1>
-
 
   <select
     id="categorySelect"
@@ -44,7 +43,6 @@
     <div class="col-sm-3 mb-4" *ngFor="let item of displayedProducts">
       <div class="card h-100">
         <a>
-          <!-- routerLink="/details/{{ item.id }}" -->
           <img
             src="{{ item.image }}"
             alt="{{ item.name }}"
@@ -84,17 +82,23 @@
         </div>
       </div>
     </div>
+
+    <!-- No Products Message -->
+    <div *ngIf="displayedProducts.length === 0" class="no-products-message">
+      <i class="fas fa-exclamation-triangle"></i>
+      No Products in this Category
+    </div>
   </div>
+
   <div class="button-container">
     <button
-  *ngIf="hasMoreProducts"
-  (click)="loadMore()"
-  class="btn btn-primary load-more-btn"
->
-  Load More
-</button>
+      *ngIf="hasMoreProducts"
+      (click)="loadMore()"
+      class="btn btn-primary load-more-btn"
+    >
+      Load More
+    </button>
   </div>
-  
 </div>
 
 <app-reviews></app-reviews>

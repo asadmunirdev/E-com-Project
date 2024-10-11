@@ -1,10 +1,11 @@
 .footer {
   background-color: #2c3e50; /* Dark background */
-  padding-bottom: 20px;
+  padding: 40px 20px; /* Padding for better spacing */
+  text-align: center; /* Center text by default */
 }
 
 .footer-heading {
-  font-size: 1.25rem;
+  font-size: 1.5rem; /* Increased font size for better readability */
   margin-bottom: 1rem;
   font-weight: bold;
   color: #ffffff;
@@ -22,7 +23,10 @@
 }
 
 .social-icons {
-  gap: 15px;
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center items */
+  gap: 15px; /* Space between icons */
+  margin-top: 15px; /* Margin for spacing */
 }
 
 .social-icons .footer-icon {
@@ -53,17 +57,41 @@
   background-color: white !important;
 }
 
-/* Responsive Centering for Small Screens */
-@media (max-width: 768px) {
-  .text-md-start {
-    text-align: center !important;
+/* Responsive Adjustments for Tablet and Small Screens */
+@media (max-width: 1200px) {
+  .footer {
+    padding: 30px 15px; /* Adjust padding for medium devices */
   }
-  
-  .justify-content-md-start {
-    justify-content: center !important;
+
+  .footer-heading {
+    font-size: 1.25rem; /* Adjust font size for tablets */
   }
-  
+}
+
+@media (max-width: 992px) {
+  .footer {
+    padding: 25px 10px; /* Further reduce padding for smaller devices */
+  }
+
+  .footer-heading {
+    font-size: 1.1rem; /* Reduce font size for small devices */
+  }
+
   .social-icons {
-    justify-content: center !important;
+    flex-wrap: wrap; /* Allow icons to wrap on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    text-align: center; /* Center text on small screens */
+  }
+
+  .footer-heading {
+    font-size: 1rem; /* Further reduce font size */
+  }
+
+  .social-icons {
+    justify-content: center !important; /* Center social icons */
   }
 }

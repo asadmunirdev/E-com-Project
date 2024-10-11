@@ -49,7 +49,7 @@ export class ProductService {
 
   //* Products in Carousel
   popularProducts() {
-    return this.http.get<product[]>('http://localhost:3000/products?_limit=5'); // Retrieves popular products limited to 5
+    return this.http.get<product[]>('http://localhost:3000/products?_limit=3'); // Retrieves popular products limited to 5
   }
 
   //* Products in Cards

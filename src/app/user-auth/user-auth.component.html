@@ -4,22 +4,10 @@
       <!-- Sign Up Form -->
       <div *ngIf="!showLogin" class="sign-up">
         <h1 class="text-center mb-4">User Sign-up</h1>
-        <form
-          #userSignUp="ngForm"
-          (ngSubmit)="signUp(userSignUp)"
-          class="common-form"
-        >
+        <form #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp)" class="common-form">
           <!-- Name input field -->
           <div class="mb-3">
-            <input
-              type="text"
-              class="form-input form-control"
-              placeholder="Enter Name"
-              name="name"
-              ngModel
-              #name="ngModel"
-              required
-            />
+            <input type="text" class="form-input form-control" placeholder="Enter Name" name="name" ngModel #name="ngModel" required />
           </div>
           <p class="invalid-input">
             <span *ngIf="name.invalid && name.touched">Please Enter a Valid Name</span>
@@ -27,16 +15,7 @@
 
           <!-- Email input field -->
           <div class="mb-3">
-            <input
-              type="email"
-              class="form-input form-control"
-              placeholder="Enter Email"
-              name="email"
-              ngModel
-              #email="ngModel"
-              email
-              required
-            />
+            <input type="email" class="form-input form-control" placeholder="Enter Email" name="email" ngModel #email="ngModel" email required />
           </div>
           <p class="invalid-input">
             <span *ngIf="email.invalid && email.touched">Please Enter a Valid Email</span>
@@ -44,35 +23,17 @@
 
           <!-- Password input field -->
           <div class="mb-3">
-            <input
-              type="password"
-              class="form-input form-control"
-              placeholder="Enter Password"
-              name="password"
-              ngModel
-              #password="ngModel"
-              minlength="3"
-              maxlength="20"
-              required
-            />
+            <input type="password" class="form-input form-control" placeholder="Enter Password" name="password" ngModel #password="ngModel" minlength="3" maxlength="20" required />
           </div>
           <p class="invalid-input">
             <span *ngIf="password.invalid && password.touched">Please Enter a Valid Password</span>
           </p>
 
           <!-- Submit button, disabled if form is invalid -->
-          <button
-            [disabled]="userSignUp.invalid"
-            class="form-button btn btn-primary w-100 mb-3"
-            type="submit"
-          >
-            Sign Up
-          </button>
+          <button [disabled]="userSignUp.invalid" class="form-button btn btn-primary w-100 mb-3" type="submit">Sign Up</button>
 
           <!-- Link to switch to the login form -->
-          <a (click)="openLogin()" class="d-block text-center">
-            Already have an account? Click for Login
-          </a>
+          <a (click)="openLogin()" class="d-block text-center">Already have an account? Click for Login</a>
         </form>
       </div>
 
@@ -80,23 +41,10 @@
       <div *ngIf="showLogin" class="login">
         <h1 class="text-center mb-4">User Login</h1>
         <p class="error-p">{{ authError }}</p>
-        <form
-          #userLogin="ngForm"
-          (ngSubmit)="login(userLogin)"
-          class="common-form"
-        >
+        <form #userLogin="ngForm" (ngSubmit)="login(userLogin)" class="common-form">
           <!-- Email input field -->
           <div class="mb-3">
-            <input
-              type="email"
-              class="form-input form-control"
-              placeholder="Enter Email"
-              name="email"
-              ngModel
-              #email="ngModel"
-              email
-              required
-            />
+            <input type="email" class="form-input form-control" placeholder="Enter Email" name="email" ngModel #email="ngModel" email required />
           </div>
           <p class="invalid-input">
             <span *ngIf="email.invalid && email.touched">Please Enter a Valid Email</span>
@@ -104,35 +52,17 @@
 
           <!-- Password input field -->
           <div class="mb-3">
-            <input
-              type="password"
-              class="form-input form-control"
-              placeholder="Enter Password"
-              name="password"
-              ngModel
-              #password="ngModel"
-              minlength="3"
-              maxlength="20"
-              required
-            />
+            <input type="password" class="form-input form-control" placeholder="Enter Password" name="password" ngModel #password="ngModel" minlength="3" maxlength="20" required />
           </div>
           <p class="invalid-input">
             <span *ngIf="password.invalid && password.touched">Please Enter a Valid Password</span>
           </p>
 
           <!-- Submit button, disabled if form is invalid -->
-          <button
-            [disabled]="userLogin.invalid"
-            class="form-button btn btn-primary w-100 mb-3"
-            type="submit"
-          >
-            Login
-          </button>
+          <button [disabled]="userLogin.invalid" class="form-button btn btn-primary w-100 mb-3" type="submit">Login</button>
 
           <!-- Link to switch to the sign-up form -->
-          <a (click)="openSignUp()" class="d-block text-center">
-            Don't have an account? Click for Sign Up
-          </a>
+          <a (click)="openSignUp()" class="d-block text-center">Don't have an account? Click for Sign Up</a>
         </form>
       </div>
     </div>

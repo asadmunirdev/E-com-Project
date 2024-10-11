@@ -35,14 +35,14 @@ export class HeaderComponent implements OnInit {
           this.menuType = 'seller';
           const sellerStore = localStorage.getItem('seller');
           const sellerData = sellerStore ? JSON.parse(sellerStore) : null;
-          this.sellerName = sellerData ? sellerData.name : '';
+          this.sellerName = sellerData ? sellerData.name.split(' ')[0] : ''; // Get only first name
         }
         // Check for user regardless of the URL path
         else if (localStorage.getItem('user')) {
           this.menuType = 'user';
           const userStore = localStorage.getItem('user');
           const userData = userStore ? JSON.parse(userStore) : null; // Adjust to parse directly
-          this.userName = userData ? userData.name : '';
+          this.userName = userData ? userData.name.split(' ')[0] : ''; // Get only first name
           this.product.getCartList(userData.id);
         }
         // Default case
@@ -71,7 +71,7 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     localStorage.removeItem('seller');
-    this.route.navigate(['/']);
+    this.route.navigate(['/seller-auth']);
   }
 
   userLogout() {

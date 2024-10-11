@@ -14,12 +14,6 @@
       "email": "asad@gmail.com",
       "password": "123",
       "id": "1"
-    },
-    {
-      "id": "e3c1",
-      "name": "Saad",
-      "email": "saad@gmail.com",
-      "password": "123"
     }
   ],
   "categories": [
@@ -68,20 +62,7 @@
       "name": "Home Appliances"
     }
   ],
-  "cart": [
-    {
-      "id": "dd7f",
-      "name": "Smartphone",
-      "price": "299",
-      "color": "Black",
-      "category": "Electronics",
-      "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",
-      "description": "Latest smartphone with advanced features.",
-      "quantity": 1,
-      "productId": "gg02",
-      "userId": "1"
-    }
-  ],
+  "cart": [],
   "orders": [],
   "products": [
     {

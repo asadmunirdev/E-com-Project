@@ -18,16 +18,31 @@
             [style.backgroundColor]="productData.color | titlecase"
           ></span>
         </div>
-        <h6 class="category">Category: {{ productData.category | titlecase }}</h6>
+        <h6 class="category">
+          Category: {{ productData.category | titlecase }}
+        </h6>
         <p class="description">{{ productData.description | titlecase }}</p>
         <div class="btn-group mt-4 mb-4">
-          <button *ngIf="!removeCart" class="btn btn-warning me-3" (click)="AddToCart()">Add to Cart</button>
-          <button *ngIf="removeCart" class="btn btn-warning me-3" (click)="RemoveFromCart(productData.id)">Remove from Cart</button>
+          <button
+            *ngIf="!removeCart"
+            class="btn btn-warning me-3"
+            (click)="AddToCart()"
+          >
+            Add to Cart
+          </button>
+          <button
+            *ngIf="removeCart"
+            class="btn btn-warning me-3"
+            (click)="RemoveFromCart(productData.id)"
+          >
+            Remove from Cart
+          </button>
         </div>
         <div class="quantity-group d-flex align-items-center mt-3">
           <button
             (click)="handleQuality('min')"
- class="btn btn-secondary bg-gray-700 text-white hover:bg-gray-600 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 rounded-md px-4 py-2"          >
+            class="btn btn-secondary bg-gray-700 text-white hover:bg-gray-600 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 rounded-md px-4 py-2"
+          >
             -
           </button>
           <input
@@ -37,7 +52,8 @@
           />
           <button
             (click)="handleQuality('plus')"
- class="btn btn-secondary bg-gray-700 text-white hover:bg-gray-600 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 rounded-md px-4 py-2"          >
+            class="btn btn-secondary bg-gray-700 text-white hover:bg-gray-600 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 rounded-md px-4 py-2"
+          >
             +
           </button>
         </div>
@@ -45,5 +61,3 @@
     </div>
   </div>
 </div>
-
-

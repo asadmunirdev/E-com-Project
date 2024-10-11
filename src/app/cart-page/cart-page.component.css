@@ -1,4 +1,4 @@
-/* General styles for the cart page */
+/* General styles for the cart page */ 
 .cart-page {
     padding: 30px;
     margin-bottom: 45px;
@@ -21,11 +21,11 @@
     text-align: center;
 }
 
+/* Set a fixed width and height for images to ensure uniformity */
 .cart-image {
-    max-width: 100%;
-    cursor: pointer;
-    height: 180px;
-    object-fit: cover;
+    width: 200px;  /* Fixed width for consistency */
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover the area without stretching */
     border-radius: 8px;
 }
 
@@ -38,7 +38,6 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: #333;
-    cursor: pointer;
 }
 
 .product-price {
@@ -48,12 +47,14 @@
     font-weight: bold;
 }
 
+/* Centered color section */
 .product-color {
     display: flex;
     align-items: center;
     margin: 8px 0;
     font-size: 1rem;
     font-weight: bold;
+    justify-content: center; /* Center align the color section */
 }
 
 .color-swatch {
@@ -65,57 +66,71 @@
     border: 2px solid #ccc;
 }
 
-.product-category {
-    color: #28A745;
-}
-
-.product-description {
-    color: #6C757D;
-}
-
+/* Quantity Control Styles */
 .product-quantity {
     font-size: 1rem;
     font-weight: bold;
     color: #FF8800; /* Distinct color for quantity */
     margin: 8px 0;
     display: flex;
-    align-items: center;
+    align-items: center; /* Center align items vertically */
 }
 
-.product-quantity strong {
-    margin-right: 5px;
+/* Border for the quantity control buttons */
+.quantity-controls {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center align items */
+    margin-left: 10px; /* Add space between label and controls */
+    border: 1px solid #ccc; /* Border for quantity controls */
+    border-radius: 5px; /* Rounded corners for the border */
+    padding: 5px; /* Padding inside the border */
 }
 
-.product-quantity input {
-    width: 60px;
-    padding: 5px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    margin-left: 10px;
+.quantity-btn {
+    width: 30px; /* Set width for the buttons */
+    height: 30px; /* Set height for the buttons */
+    padding: 0; /* Remove padding */
+    font-size: 1.5rem; /* Increased font size for visibility */
+    line-height: 30px; /* Center the text vertically */
+    border: none; /* Remove border */
+    background-color: transparent; /* Transparent background */
+    color: #FF8800; /* Same color as quantity */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s ease; /* Transition effect */
 }
 
-.product-quantity input:focus {
-    outline: none;
-    border-color: #007BFF;
+/* Center quantity display */
+.quantity-display {
+    flex-grow: 1; /* Allow it to take up remaining space */
+    text-align: center; /* Center align the quantity text */
+    color: #FF8800; /* Color for quantity text */
+    font-weight: bold; /* Bold text */
+}
+
+/* Button hover effects */
+.quantity-btn:hover {
+    transform: scale(1.1); /* Slightly scale up on hover */
+}
+
+/* Additional styles for button active state */
+.quantity-btn:active {
+    transform: scale(0.95); /* Slightly scale down on click */
+}
+
+.quantity-input {
+    width: 50px;
 }
 
 /* Button section styles */
 .button-section {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center the button section */
 }
 
-button {
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    max-width: 180px;
-    width: 100%;
+/* Remove button */
+.cancel-button {
+    width: 100px; /* Set a specific width for the button */
 }
 
 /* Order Summary Section */
@@ -152,68 +167,75 @@ button {
 /* Responsive styles */
 @media (max-width: 768px) {
     .cart-page {
-        padding: 15px; /* Reduced padding */
+        padding: 15px; /* Reduce padding for smaller screens */
     }
 
-    h1 {
-        font-size: 2rem; /* Smaller title */
-        margin-bottom: 30px; /* Adjusted margin */
+    .product-quantity {
+        flex-direction: column; /* Stack quantity controls vertically */
+        align-items: center; /* Center align items */
+    }
+
+    .button-section {
+        margin-top: 10px; /* Margin above the button */
+    }
+
+    .card-title {
+        font-size: 1.3rem; /* Adjust title size for smaller screens */
+    }
+
+    .product-price {
+        font-size: 1.1rem; /* Adjust price size for smaller screens */
+    }
+
+    .quantity-controls {
+        margin-left: 5px; /* Less margin for smaller screens */
+    }
+
+    .cancel-button {
+        width: 90px; /* Slightly smaller button for mobile */
+    }
+}
+
+/* Tablet-specific styles */
+@media (max-width: 1024px) { /* Tablet styles */
+    .product-color {
+        flex-direction: column; /* Stack color label and swatch vertically */
+        align-items: center; /* Center items in column layout */
+    }
+
+    .color-swatch {
+        margin-bottom: 5px; /* Add space below the swatch when stacked */
+    }
+
+    .details-section {
+        padding-left: 0; /* Remove left padding for a cleaner look */
     }
 
     .custom-card {
-        margin-bottom: 20px; /* Spacing between cards */
-    }
-
-    .cart-items {
-        flex-direction: column; /* Stack items vertically */
+        margin-bottom: 15px; /* Adjust spacing between cards on tablets */
     }
 
     .image-section,
     .details-section,
     .button-section {
-        text-align: center;
-        margin-bottom: 15px;
+        text-align: center; /* Center text in sections */
+        margin-bottom: 10px; /* Adjust margin for spacing */
     }
 
     .cart-image {
-        height: 150px; /* Adjusted image height */
-    }
-
-    .details-section {
-        padding: 0; /* Remove left padding */
-    }
-
-    button {
-        max-width: 100%; /* Full width buttons */
-        font-size: 0.9rem; /* Smaller font size */
-        padding: 10px; /* Reduced padding */
-    }
-
-    .product-color {
-        justify-content: center; /* Center alignment */
-    }
-
-    .color-swatch {
-        margin-left: 5px; /* Adjusted margin */
+        width: 300px;  /* Fixed width for consistency */
+        height: 150px; /* Adjust height for tablets */
     }
 
     .product-quantity {
-        justify-content: center; /* Center alignment */
+        justify-content: center; /* Center the quantity controls */
     }
 
-    .product-quantity input {
-        width: 40px; /* Smaller input width */
+    .quantity-controls {
+        justify-content: center; /* Center the quantity control buttons */
     }
 
-    .summary-card {
-        padding: 15px; /* Reduced padding for summary card */
-    }
-
-    .summary-card h3 {
-        font-size: 1.25rem; /* Smaller heading in summary */
-    }
-
-    .total {
-        font-size: 1.25rem; /* Smaller total font size */
+    .button-section {
+        justify-content: center; /* Center the button section */
     }
 }

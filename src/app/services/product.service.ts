@@ -150,4 +150,9 @@ export class ProductService {
   cancelOrder(orderId:number){
 return this.http.delete(`http://localhost:3000/orders/${orderId}`)
   }
+
+    //* Update Cart Item Quantity
+    updateCartItemQuantity(cartItem: cart) {
+      return this.http.put(`http://localhost:3000/cart/${cartItem.id}`, cartItem);
+    }
 }

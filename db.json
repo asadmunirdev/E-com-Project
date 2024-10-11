@@ -63,7 +63,21 @@
     }
   ],
   "cart": [],
-  "orders": [],
+  "orders": [
+    {
+      "id": "1b8f",
+      "email": "asad@gmail.com",
+      "address": "House #43, Street #1A, Isteqlal Street Sohwari Mughapura Lahore",
+      "contact": "03244590782",
+      "totalPrice": 1968.9,
+      "userId": "1",
+      "paymentMethod": "creditCard",
+      "products": [
+        "Digital Camera",
+        "Smartphone"
+      ]
+    }
+  ],
   "products": [
     {
       "name": "Smartphone",
@@ -85,7 +99,7 @@
     },
     {
       "name": "Smartwatch",
-      "price": "199",
+      "price": "200",
       "color": "Black",
       "category": "Electronics",
       "image": "https://c4.wallpaperflare.com/wallpaper/41/294/427/smartwatch-apple-wristwatch-wallpaper-preview.jpg",

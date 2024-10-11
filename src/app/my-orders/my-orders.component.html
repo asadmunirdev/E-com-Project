@@ -1,31 +1,44 @@
 <h1 class="heading my-5">My Orders</h1>
 <div class="container my-orders">
   <div class="order-list">
-    <!-- Loop through orders -->
-    <div class="order-card" *ngFor="let order of orderData">
-      <div class="order-header">
-        <div class="order-image-container">
-          <img
-            src="delivery.png"
-            alt="Order Image"
-            class="order-image rounded"
-          />
+    <!-- Check if orderData has items -->
+    <ng-container *ngIf="orderData && orderData.length > 0; else noOrders">
+      <!-- Loop through orders -->
+      <div class="order-card" *ngFor="let order of orderData">
+        <div class="order-header">
+          <div class="order-image-container">
+            <img
+              src="delivery.png"
+              alt="Order Image"
+              class="order-image rounded"
+            />
+          </div>
+          <div class="order-details-info">
+            <h4 class="order-id">Order ID: #{{ order.id }}</h4>
+            <p class="order-status text-warning">Status: In Process</p>
+            <p class="order-price">{{ order.totalPrice | pkrCurrency }}</p>
+          </div>
         </div>
-        <div class="order-details-info">
-          <h4 class="order-id">Order ID: #{{ order.id }}</h4>
-          <p class="order-status text-warning">Status: In Process</p>
-          <p class="order-price">{{ order.totalPrice | pkrCurrency }}</p>
+        <div class="order-actions">
+          <button class="form-button btn-sm" (click)="showDetails(order)">
+            View Details
+          </button>
+          <button class="cancel-button btn-sm" (click)="cancelOrder(order.id)">
+            Cancel Order
+          </button>
         </div>
       </div>
-      <div class="order-actions">
-        <button class="form-button btn-sm" (click)="showDetails(order)">
-          View Details
-        </button>
-        <button class="cancel-button btn-sm" (click)="cancelOrder(order.id)">
-          Cancel Order
-        </button>
-      </div>
-    </div>
+    </ng-container>
+    
+    <!-- Empty State Component for No Orders -->
+    <ng-template #noOrders>
+      <app-empty-state
+        title="No Orders Found"
+        message="You have not placed any orders yet."
+        buttonLabel="Browse Products"
+        link="/products"
+      ></app-empty-state>
+    </ng-template>
   </div>
 
   <!-- Order Details Modal -->

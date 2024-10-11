@@ -1,0 +1,125 @@
+.empty-state-container{
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.empty-state {
+  padding: 40px; /* Padding for all screens */
+  background-color: #ffffff; /* White background color for the card */
+  border: 1px solid #e9ecef; /* Light border for separation */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  margin: 20px; /* Margin for spacing */
+  max-width: 500px; /* Limit maximum width for larger screens */
+  width: 90%; /* Take up 90% of the container width */
+  text-align: center; /* Center text */
+  animation: slideIn 0.5s ease forwards; /* Slide in animation */
+  transform: scale(1.05); /* Slightly enlarged */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.empty-state:hover {
+  transform: scale(1.1); /* Scale up on hover */
+}
+
+.empty-title {
+  font-size: 28px; /* Larger title font size */
+  margin-bottom: 15px; /* Spacing below the title */
+  color: #343a40; /* Darker color for better readability */
+  animation: fadeIn 0.6s ease forwards; /* Fade in effect */
+}
+
+.empty-message {
+  font-size: 18px; /* Larger message font size */
+  margin-bottom: 25px; /* Spacing below the message */
+  color: #6c757d; /* Gray color for the message */
+  animation: fadeIn 0.8s ease forwards; /* Fade in effect */
+}
+
+.empty-icon {
+  font-size: 64px; /* Increase icon size */
+  color: #007bff; /* Primary color for the icon */
+  animation: bounce 1s infinite; /* Bounce animation */
+}
+
+/* Button Animation */
+.animated-button {
+  position: relative; /* Position relative for inner shadow */
+  overflow: hidden; /* Hide overflow for shadow effect */
+  padding: 12px 20px; /* Padding for button */
+  border-radius: 5px; /* Rounded button corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transition for background and text color */
+}
+
+.animated-button::before {
+  content: ''; /* Create a pseudo-element */
+  position: absolute; /* Position absolute for layering */
+  top: 0; /* Align to top */
+  left: -100%; /* Start off screen */
+  width: 100%; /* Cover full width */
+  height: 100%; /* Cover full height */
+  background: rgba(255, 255, 255, 0.3); /* White overlay for hover effect */
+  transition: left 0.3s ease; /* Smooth transition */
+}
+
+.animated-button:hover::before {
+  left: 0; /* Move into view on hover */
+}
+
+.animated-button:hover {
+  background-color: #0056b3; /* Darker blue background on hover */
+  color: #fff; /* White text on hover */
+}
+
+/* Animation keyframes */
+@keyframes slideIn {
+  from {
+      transform: translateY(30px); /* Start 30px down */
+      opacity: 0; /* Start invisible */
+  }
+  to {
+      transform: translateY(0); /* Move to original position */
+      opacity: 1; /* Fade in to visible */
+  }
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Start invisible */
+  }
+  to {
+      opacity: 1; /* Fade in to visible */
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0); /* Normal position */
+  }
+  40% {
+      transform: translateY(-10px); /* Bounce up */
+  }
+  60% {
+      transform: translateY(-5px); /* Slightly bounce down */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .empty-title {
+      font-size: 24px; /* Smaller title font size for mobile */
+  }
+
+  .empty-message {
+      font-size: 16px; /* Smaller message font size for mobile */
+  }
+
+  .empty-icon {
+      font-size: 48px; /* Smaller icon size for mobile */
+  }
+
+  .empty-state {
+      padding: 30px; /* Reduce padding for smaller screens */
+  }
+}

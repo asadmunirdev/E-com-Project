@@ -5,7 +5,7 @@
       "email": "asad@gmail.com",
       "password": "123",
       "securityKey": "pass1122",
-      "id": 1
+      "id": "1"
     }
   ],
   "users": [
@@ -13,119 +13,57 @@
       "name": "Asad Munir",
       "email": "asad@gmail.com",
       "password": "123",
-      "id": 1
+      "id": "1"
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Electronics"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Clothing & Accessories"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Home & Garden"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Beauty & Personal Care"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Health & Wellness"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Sports & Outdoors"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Toys & Games"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Automotive"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Books & Stationery"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Food & Beverages"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Home Appliances"
     }
   ],
-  "cart": [
-    {
-      "name": "Smartphone",
-      "price": "299",
-      "color": "Black",
-      "category": "Electronics",
-      "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",
-      "description": "Latest smartphone with advanced features.",
-      "quantity": 9,
-      "userId": 1,
-      "productId": "gg02",
-      "id": 1
-    },
-    {
-      "name": "Laptop",
-      "price": "999",
-      "color": "Gray",
-      "category": "Electronics",
-      "image": "https://c1.wallpaperflare.com/preview/722/538/350/interior-minimal-white-workspace.jpg",
-      "description": "High-performance laptop for all your needs.",
-      "quantity": 1,
-      "userId": 1,
-      "productId": "gg03",
-      "id": 2
-    }
-  ],
-  "orders": [
-    {
-      "email": "asad@gmail.com",
-      "address": "House #43, Street #1A, Isteqlal Street Sohwari Mughapura Lahore",
-      "contact": "03244590782",
-      "totalPrice": 232,
-      "userId": 1,
-      "paymentMethod": "creditCard",
-      "products": [
-        "Bluetooth Headphones"
-      ],
-      "id": 1
-    },
-    {
-      "email": "asad@gmail.com",
-      "address": "House #43, Street #1A, Isteqlal Street Sohwari Mughapura Lahore",
-      "contact": "03244590782",
-      "totalPrice": 177,
-      "userId": 1,
-      "paymentMethod": "creditCard",
-      "products": [
-        "Bluetooth Speaker"
-      ],
-      "id": 3
-    },
-    {
-      "email": "asad@gmail.com",
-      "address": "House #43, Street #1A, Isteqlal Street Sohwari Mughapura Lahore",
-      "contact": "03244590782",
-      "totalPrice": 408,
-      "userId": 1,
-      "paymentMethod": "creditCard",
-      "products": [
-        "Bluetooth Speaker"
-      ],
-      "id": 4
-    }
-  ],
+  "cart": [],
+  "orders": [],
   "products": [
     {
       "name": "Smartphone",

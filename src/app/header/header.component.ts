@@ -110,4 +110,7 @@ export class HeaderComponent implements OnInit {
   submitSearch(val: string) {
     this.route.navigate([`search/${val}`]);
   }
+  
+  
+
 }

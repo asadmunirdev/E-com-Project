@@ -3,11 +3,12 @@ import { ProductService } from '../services/product.service';
 import { order } from '../data-type';
 import { CommonModule } from '@angular/common';
 import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
+import { EmptyStateComponent } from '../empty-state/empty-state.component'; // Import EmptyStateComponent
 
 @Component({
   selector: 'app-my-orders',
   standalone: true,
-  imports: [CommonModule, PkrCurrencyPipe],
+  imports: [CommonModule, PkrCurrencyPipe, EmptyStateComponent], // Add EmptyStateComponent here
   templateUrl: './my-orders.component.html',
   styleUrls: ['./my-orders.component.css'],
 })
@@ -23,7 +24,7 @@ export class MyOrdersComponent implements OnInit {
 
   cancelOrder(orderId: number | undefined) {
     orderId &&
-      this.product.cancelOrder(orderId).subscribe((result) => {
+      this.product.cancelOrder(orderId).subscribe(() => {
         this.getOrderList();
       });
   }

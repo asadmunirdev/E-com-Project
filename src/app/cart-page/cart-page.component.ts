@@ -4,16 +4,17 @@ import { cart, priceSummary } from '../data-type';
 import { CommonModule } from '@angular/common';
 import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
 import { Router, RouterModule } from '@angular/router';
+import { EmptyStateComponent } from '../empty-state/empty-state.component'; // Import your EmptyStateComponent
 
 @Component({
   selector: 'app-cart-page',
   standalone: true,
-  imports: [CommonModule, PkrCurrencyPipe, RouterModule],
+  imports: [CommonModule, PkrCurrencyPipe, RouterModule, EmptyStateComponent], // Add EmptyStateComponent here
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css'],
 })
 export class CartPageComponent implements OnInit {
-  cartData: cart[] | undefined;
+  cartData: cart[] = []; // Initialize as an empty array
   priceSummary: priceSummary = {
     price: 0,
     discount: 0,
@@ -46,18 +47,13 @@ export class CartPageComponent implements OnInit {
         this.priceSummary.tax +
         this.priceSummary.delivery -
         this.priceSummary.discount;
-
-           if(!this.cartData.length){
-            this.router.navigate(['/']);
-           }
-
     });
   }
 
   removeCart(cartId: number | undefined) {
     cartId &&
       this.cartData &&
-      this.product.removeToCart(cartId).subscribe((result) => {
+      this.product.removeToCart(cartId).subscribe(() => {
         this.getCartData();
       });
   }
@@ -65,19 +61,4 @@ export class CartPageComponent implements OnInit {
   checkout() {
     this.router.navigate(['checkout']);
   }
-
-  // removeCart(itemId: number) {
-  //   if (localStorage.getItem('user')) {
-  //     const user = localStorage.getItem('user');
-  //     const userId = user && JSON.parse(user).id;
-
-  //     this.product.removeToCart(itemId).subscribe((result) => {
-  //       if (result) {
-  //         console.log(result);
-  //         this.getCartData();
-  //         this.product.getCartList(userId);
-  //       }
-  //     });
-  //   }
-  // }
 }

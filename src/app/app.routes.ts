@@ -14,6 +14,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { LoginPromptComponent } from './login-prompt/login-prompt.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { MyOrdersComponent } from './my-orders/my-orders.component';
+import { EmptyStateComponent } from './empty-state/empty-state.component';
 
 export const routes: Routes = [
   {
@@ -75,4 +76,8 @@ export const routes: Routes = [
     component: FooterComponent,
     path: 'footer',
   },
+  {
+    component:EmptyStateComponent,
+    path:'no-items'
+  }
 ];

@@ -63,21 +63,7 @@
     }
   ],
   "cart": [],
-  "orders": [
-    {
-      "id": "1b8f",
-      "email": "asad@gmail.com",
-      "address": "House #43, Street #1A, Isteqlal Street Sohwari Mughapura Lahore",
-      "contact": "03244590782",
-      "totalPrice": 1968.9,
-      "userId": "1",
-      "paymentMethod": "creditCard",
-      "products": [
-        "Digital Camera",
-        "Smartphone"
-      ]
-    }
-  ],
+  "orders": [],
   "products": [
     {
       "name": "Smartphone",

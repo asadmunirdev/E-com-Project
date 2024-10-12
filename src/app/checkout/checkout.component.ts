@@ -89,8 +89,8 @@ export class CheckoutComponent implements OnInit {
     }
   }
   
-  // Handles the change of payment method
-  onPaymentMethodChange(method: string) {
-    this.selectedPaymentMethod = method; // Set the selected payment method
-  }
+// Handles the change of payment method
+onPaymentMethodChange(method: string) {
+  this.selectedPaymentMethod = method; // Set the selected payment method
+}
 }

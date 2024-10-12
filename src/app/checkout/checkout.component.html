@@ -60,14 +60,14 @@
           </p>
         </div>
 
-        <!-- Submit Button, disabled if form is invalid or payment method is not selected -->
         <button
-          [disabled]="orderData.invalid || !selectedPaymentMethod"
-          class="form-button btn btn-primary w-100 mb-3"
-          type="submit"
-        >
-          Confirm Order
-        </button>
+        [disabled]="orderData.invalid || !selectedPaymentMethod"
+        class="form-button btn btn-primary w-100 mb-3"
+        type="submit"
+      >
+        Confirm Order
+      </button>
+      
       </form>
     </div>
 
@@ -76,42 +76,67 @@
       <div class="card p-3 mb-4">
         <h3>Total Amount: <span class="text-success">{{ totalPrice }}</span></h3>
         <h4 class="mb-3">Payment Method:</h4>
+
         <div class="form-check mb-2">
           <input
             class="form-check-input"
-            type="checkbox"
+            type="radio"
             id="COD"
+            name="paymentMethod"
             (change)="onPaymentMethodChange('COD')"
             [checked]="selectedPaymentMethod === 'COD'"
           />
-          <label class="form-check-label" for="COD">
-            Cash on Delivery
-          </label>
+          <label class="form-check-label" for="COD">Cash on Delivery</label>
         </div>
+        
         <div class="form-check mb-2">
           <input
             class="form-check-input"
-            type="checkbox"
+            type="radio"
             id="creditCard"
+            name="paymentMethod"
             (change)="onPaymentMethodChange('creditCard')"
             [checked]="selectedPaymentMethod === 'creditCard'"
           />
-          <label class="form-check-label" for="creditCard">
-            Credit Card
-          </label>
+          <label class="form-check-label" for="creditCard">Credit/Debit Card</label>
         </div>
+        
         <div class="form-check mb-2">
           <input
             class="form-check-input"
-            type="checkbox"
+            type="radio"
+            id="bankTransfer"
+            name="paymentMethod"
+            (change)="onPaymentMethodChange('bankTransfer')"
+            [checked]="selectedPaymentMethod === 'bankTransfer'"
+          />
+          <label class="form-check-label" for="bankTransfer">Bank Transfer</label>
+        </div>
+        
+        <div class="form-check mb-2">
+          <input
+            class="form-check-input"
+            type="radio"
             id="paypal"
+            name="paymentMethod"
             (change)="onPaymentMethodChange('paypal')"
             [checked]="selectedPaymentMethod === 'paypal'"
           />
-          <label class="form-check-label" for="bankTransfer">
-            Bank Transfer
-          </label>
+          <label class="form-check-label" for="paypal">PayPal</label>
         </div>
+        
+        <div class="form-check mb-2">
+          <input
+            class="form-check-input"
+            type="radio"
+            id="mobilePayment"
+            name="paymentMethod"
+            (change)="onPaymentMethodChange('mobilePayment')"
+            [checked]="selectedPaymentMethod === 'mobilePayment'"
+          />
+          <label class="form-check-label" for="mobilePayment">Mobile Payment (e.g., Apple Pay, Google Pay)</label>
+        </div>
+        
       </div>
     </div>
   </div>

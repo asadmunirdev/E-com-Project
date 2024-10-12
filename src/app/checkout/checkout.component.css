@@ -18,7 +18,7 @@
 }
 
 .checkout h3 {
-    font-size: 2rem;  /* Increased font size */
+    font-size: 2rem;
     font-weight: 600;
     color: #212529;
     margin-bottom: 20px;
@@ -26,7 +26,7 @@
 }
 
 .checkout h4 {
-    font-size: 1.75rem;  /* Increased font size */
+    font-size: 1.75rem;
     font-weight: 500;
     color: #495057;
     margin-bottom: 15px;
@@ -37,13 +37,23 @@
     border-radius: 5px;
     border: 1px solid #ced4da;
     padding: 15px;
-    font-size: 1.1rem;  /* Increased font size */
+    font-size: 1.1rem;
 }
 
 /* Button Styling */
 .form-button {
     padding: 12px;
-    font-size: 1.2rem;  /* Increased font size */
+    font-size: 1.2rem;
+    background-color: #28a745; /* Green button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #218838; /* Darker shade on hover */
 }
 
 /* Card Styling */
@@ -52,49 +62,64 @@
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
     padding: 25px;
-    max-width: 400px; /* Reduced card width */
-    margin: 0 auto; /* Center the card horizontally */
+    max-width: 450px;
+    margin: 0 auto;
 }
 
-/* Centered Text */
-.card h3 {
-    font-size: 2rem;  /* Increased font size */
-    color: #28a745;
-    font-weight: 600;
-    text-align: center; /* Center text */
+/* Payment Method Section */
+.form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* Reduced space */
+    padding: 8px; /* Reduced padding */
+    background-color: #fff;
+    border-radius: 6px; /* Slightly reduced rounding */
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s ease;
 }
 
-.card h4 {
-    font-size: 1.75rem;  /* Increased font size */
-    font-weight: 500;
-    margin-bottom: 15px;
+.form-check:hover {
+    border-color: #007bff;
 }
 
-/* Checkbox Label Styling */
 .form-check-label {
-    font-size: 1.5rem;  /* Increased font size */
+    font-size: 1.15rem; /* Reduced font size */
     color: #495057;
+    margin-left: 8px; /* Reduced margin */
+}
+/* Radio Button Styles */
+.form-check-input:checked {
+    background-color: #007bff; /* Background color for the checked radio button */
+    border-color: #007bff; /* Border color for the checked state */
 }
 
-/* Checkbox Styling */
-.form-check-input {
-    margin-right: 10px;
-    width: 20px; /* Increased checkbox size */
-    height: 20px; /* Increased checkbox size */
+/* Customizing the label for the checked state */
+.form-check-input:checked + .form-check-label {
+    color: #007bff; /* Change label color when selected */
+    font-weight: bold; /* Make the label bold when selected */
+}
+
+/* Adding a border to the container when selected */
+.form-check-input:checked {
+    outline: none;
 }
 
 .form-check {
-    text-align: left; /* Align checkboxes to the left */
+    position: relative; /* Needed for positioning the indicator */
+}
+
+.form-check:has(.form-check-input:checked) {
+    border: 2px solid #007bff; /* Add a border to the entire container */
 }
 
 /* Invalid Input Message Styling */
 .checkout-invalid-input {
-    color: #e60000; /* Slightly darker red for better readability */
-    font-size: 15px; /* Adjust font size for visibility */
+    color: #e60000;
+    font-size: 15px;
     display: block;
-    margin: -10px 0 -10px 7px; /* top right bottom left */
-    font-weight: bold; /* Makes the text bold */
-    padding: 5px; /* Adds a bit of padding for spacing */
+    margin: -10px 0 -10px 7px;
+    font-weight: bold;
+    padding: 5px;
 }
 
 /* Form Input Styling */
@@ -103,24 +128,65 @@
     width: 100%;
     padding: 12px;
     border-radius: 12px;
-    font-size: 1rem; /* Increased font size */
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ced4da;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: #ffffff; /* Solid white background for input fields */
-    color: #333; /* Dark text color for readability */
-    border: 1px solid #ced4da; /* Light gray border */
 }
 
 .check-form-input:focus {
-    border-color: #0056b3; /* Matches the header color */
-    outline: none;
-    box-shadow: 0 0 8px rgba(0, 86, 179, 0.2); /* Subtle shadow for focus effect */
-    background-color: #ffffff; /* Keep white background on focus */
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.2);
+    background-color: #ffffff;
 }
 
-/* Responsive Adjustments */
+/* Responsive Adjustments for Tablets and Smaller Screens */
+@media (max-width: 1024px) {
+    .checkout {
+        padding: 25px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+
+    .checkout h1 {
+        font-size: 2.25rem; /* Slightly smaller for tablets */
+    }
+
+    .checkout h3 {
+        font-size: 1.75rem;
+    }
+
+    .checkout h4 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .form-button {
+        font-size: 1.15rem;
+    }
+
+    .common-form .form-control {
+        font-size: 1rem;
+        padding: 13px;
+    }
+
+    .form-check-label {
+        font-size: 1.1rem;
+    }
+
+    .form-check-input {
+        width: 16px; /* Smaller size for tablets */
+        height: 16px;
+    }
+}
+
 @media (max-width: 768px) {
     .checkout {
-        padding: 15px;
+        padding: 20px;
         margin-top: 60px;
         margin-bottom: 60px;
     }
@@ -135,16 +201,25 @@
 
     .card {
         padding: 20px;
+        max-width: 100%;
     }
 
     .form-button {
-        padding: 12px;
         font-size: 1.1rem;
     }
 
     .common-form .form-control {
         font-size: 1rem;
         padding: 12px;
+    }
+
+    .form-check-label {
+        font-size: 1.05rem;
+    }
+
+    .form-check-input {
+        width: 16px;
+        height: 16px;
     }
 }
 
@@ -174,5 +249,14 @@
     .common-form .form-control {
         font-size: 0.85rem;
         padding: 10px;
+    }
+
+    .form-check-label {
+        font-size: 0.95rem; /* Further reduction for extra small screens */
+    }
+
+    .form-check-input {
+        width: 14px; /* Even smaller checkboxes */
+        height: 14px;
     }
 }

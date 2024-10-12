@@ -76,13 +76,30 @@ export class CartPageComponent implements OnInit {
     });
   }
 
-  removeCart(cartId: number | undefined) {
-    cartId &&
-      this.cartData &&
-      this.product.removeToCart(cartId).subscribe(() => {
-        this.getCartData();
+  // removeCart(cartId: number | undefined) {
+  //   cartId &&
+  //     this.cartData &&
+  //     this.product.removeToCart(cartId).subscribe(() => {
+  //       this.getCartData();
+  //     });
+  // }
+
+  removeCart(itemId: number) {
+    if (localStorage.getItem('user')) {
+      const user = localStorage.getItem('user');
+      const userId = user && JSON.parse(user).id;
+
+      // Call the service method with the correct item ID
+      this.product.removeToCart(itemId).subscribe((result) => {
+        if (result) {
+          console.log(result);
+          this.getCartData(); // Refresh cart data
+          this.product.getCartList(userId); // Optionally refresh cart list
+        }
       });
+    }
   }
+
 
   checkout() {
     this.router.navigate(['checkout']);

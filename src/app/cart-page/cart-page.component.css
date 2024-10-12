@@ -192,14 +192,13 @@
     }
 
     .cancel-button {
-        width: 90px; /* Slightly smaller button for mobile */
+        width: 100%; /* Slightly smaller button for mobile */
     }
 }
 
 /* Tablet-specific styles */
 @media (max-width: 1024px) { /* Tablet styles */
     .product-color {
-        flex-direction: column; /* Stack color label and swatch vertically */
         align-items: center; /* Center items in column layout */
     }
 
@@ -238,4 +237,8 @@
     .button-section {
         justify-content: center; /* Center the button section */
     }
+    .cancel-button{
+        width: 90px;
+    }
+
 }

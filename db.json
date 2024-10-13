@@ -14,6 +14,12 @@
       "email": "asad@gmail.com",
       "password": "123",
       "id": "1"
+    },
+    {
+      "id": "d670",
+      "name": "Butt ",
+      "email": "butt@gmail.com",
+      "password": "123"
     }
   ],
   "categories": [

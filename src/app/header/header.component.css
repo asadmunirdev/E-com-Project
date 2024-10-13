@@ -20,6 +20,47 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* dropdown css */
+/* Animated Dropdown */
+.animated-dropdown {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.nav-item.dropdown.show .animated-dropdown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional styling for dropdown */
+.dropdown-menu {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Divider styling */
+.dropdown-divider {
+  height: 1px;
+  margin: 0.5rem 0;
+  background-color: #e9ecef; /* Light gray color for the divider */
+}
+
+/* Dropdown item styling */
+.dropdown-item {
+  padding: 10px 20px;
+  color: #0056b3;
+  text-align: center;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: #007bff;
+}
+
+
+
 /* Center and resize the search bar */
 .search-form {
   width: auto;

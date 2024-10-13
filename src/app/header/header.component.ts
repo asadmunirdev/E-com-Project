@@ -69,7 +69,7 @@ export class HeaderComponent implements OnInit {
     bsCollapse.hide();
   }
 
-  logout() {
+  sellerLogout() {
     localStorage.removeItem('seller');
     this.route.navigate(['/seller-auth']);
   }
@@ -104,13 +104,10 @@ export class HeaderComponent implements OnInit {
   }
 
   redirectToDetails(id: number) {
-    this.route.navigate(['/details', id])
+    this.route.navigate(['/details', id]);
   }
 
   submitSearch(val: string) {
     this.route.navigate([`search/${val}`]);
   }
-  
-  
-
 }

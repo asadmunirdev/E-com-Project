@@ -23,9 +23,7 @@
     <!-- Collapsible content -->
     <div #navbarNav class="navbar-collapse collapse" id="navbarNav">
       <!-- Search bar visible for 'default' and 'user' menu types -->
-      <form
-        class="d-flex mx-auto my-2 my-lg-0 search-form w-100"
-      >
+      <form class="d-flex mx-auto my-2 my-lg-0 search-form w-100">
         <input
           #searchInput
           class="form-control me-2"
@@ -63,31 +61,38 @@
           *ngSwitchCase="'default'"
           class="navbar-nav ms-auto mb-2 mb-lg-0 justify-content-center w-100"
         >
-          <!-- <li class="nav-item text-center">
+          <!-- Dropdown for Login/Sign Up -->
+          <li class="nav-item dropdown text-center">
             <a
-              routerLink=""
               class="nav-link custom-nav-link"
-              aria-current="page"
-              (click)="collapseNavbar()"
-              >Home</a
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
             >
-          </li> -->
-          <li class="nav-item text-center">
-            <a
-              routerLink="seller-auth"
-              class="nav-link custom-nav-link"
-              (click)="collapseNavbar()"
-              >Seller</a
-            >
+              Login/Sign Up
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <a
+                  routerLink="user-auth"
+                  class="dropdown-item"
+                  (click)="collapseNavbar()"
+                  >User
+                </a>
+              </li>
+              <li>
+                <a
+                  routerLink="seller-auth"
+                  class="dropdown-item"
+                  (click)="collapseNavbar()"
+                  >Seller
+                </a>
+              </li>
+            </ul>
           </li>
-          <li class="nav-item text-center">
-            <a
-              routerLink="user-auth"
-              class="nav-link custom-nav-link"
-              (click)="collapseNavbar()"
-              >Login/Sign Up</a
-            >
-          </li>
+
           <li class="nav-item text-center">
             <a
               routerLink="login-first"
@@ -104,15 +109,6 @@
           *ngSwitchCase="'user'"
           class="navbar-nav ms-auto mb-2 mb-lg-0 justify-content-center w-100"
         >
-          <!-- <li class="nav-item text-center">
-            <a
-              routerLink=""
-              class="nav-link custom-nav-link"
-              aria-current="page"
-              (click)="collapseNavbar()"
-              >Home</a
-            >
-          </li> -->
           <li class="nav-item text-center">
             <a
               routerLink="seller-auth"
@@ -130,13 +126,34 @@
             >
           </li>
 
-          <li class="nav-item text-center">
+          <!-- Dropdown for Logout -->
+          <li class="nav-item dropdown text-center">
             <a
-              class="nav-link custom-nav-link pointer"
-              (click)="collapseNavbar()"
-              (click)="userLogout()"
-              >Logout</a
+              class="nav-link custom-nav-link"
+              id="logoutDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
             >
+              Logout
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="logoutDropdown">
+              <li>
+                <a
+                  class="dropdown-item pointer"
+                  (click)="collapseNavbar(); userLogout()"
+                  >User Logout</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item pointer"
+                  (click)="collapseNavbar(); sellerLogout()"
+                  >Seller Logout</a
+                >
+              </li>
+            </ul>
           </li>
           <li class="nav-item text-center">
             <a
@@ -174,10 +191,34 @@
               >Product List</a
             >
           </li>
-          <li class="nav-item text-center">
-            <a (click)="logout()" class="nav-link custom-nav-link pointer"
-              >Logout</a
+          <!-- Dropdown for Logout -->
+          <li class="nav-item dropdown text-center">
+            <a
+              class="nav-link custom-nav-link"
+              id="logoutDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
             >
+              Logout
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="logoutDropdown">
+              <li>
+                <a
+                  class="dropdown-item pointer"
+                  (click)="collapseNavbar(); userLogout()"
+                  >User Logout</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item pointer"
+                  (click)="collapseNavbar(); sellerLogout()"
+                  >Seller Logout</a
+                >
+              </li>
+            </ul>
           </li>
           <li class="nav-item text-center">
             <a class="nav-link egg-shaped">{{ sellerName | titlecase }}</a>

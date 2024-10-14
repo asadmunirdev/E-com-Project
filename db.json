@@ -245,7 +245,7 @@
     {
       "name": "Smart Refrigerator",
       "price": "1200",
-      "color": "Stainless Steel",
+      "color": "silver",
       "category": "Home & Garden",
       "image": "https://images.unsplash.com/photo-1716193696093-9c54b6a290e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNtYXJ0JTIwcmVmcmlnZXJhdG9yfGVufDB8fDB8fHww",
       "description": "Keep your food fresh and organized.",
@@ -299,7 +299,7 @@
     {
       "name": "Mechanical Keyboard",
       "price": "120",
-      "color": "RGB",
+      "color": "Black",
       "category": "Electronics",
       "image": "https://plus.unsplash.com/premium_photo-1664194583917-b0ba07c4ce2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVjaGFuaWNhbCUyMGtleWJvYXJkfGVufDB8fDB8fHww",
       "description": "Enjoy a tactile typing experience.",

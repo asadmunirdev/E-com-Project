@@ -6,11 +6,18 @@ import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
 import { Router, RouterModule } from '@angular/router';
 import { EmptyStateComponent } from '../empty-state/empty-state.component'; // Import your EmptyStateComponent
 import { FormsModule } from '@angular/forms';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-cart-page',
   standalone: true,
-  imports: [CommonModule, PkrCurrencyPipe, RouterModule, EmptyStateComponent, FormsModule], // Add EmptyStateComponent here
+  imports: [
+    CommonModule,
+    PkrCurrencyPipe,
+    RouterModule,
+    EmptyStateComponent,
+    FormsModule,
+  ], // Add EmptyStateComponent here
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css'],
 })
@@ -24,7 +31,11 @@ export class CartPageComponent implements OnInit {
     total: 0,
   };
 
-  constructor(private product: ProductService, private router: Router) {}
+  constructor(
+    private product: ProductService,
+    private router: Router,
+    private toastService: ToastService
+  ) {}
 
   ngOnInit(): void {
     this.getCartData();
@@ -56,7 +67,8 @@ export class CartPageComponent implements OnInit {
   }
   increaseQuantity(cart: cart) {
     const currentQuantity = cart.quantity || 0; // Default to 0 if undefined
-    if (currentQuantity < 20) { // Restrict quantity to a maximum of 20
+    if (currentQuantity < 20) {
+      // Restrict quantity to a maximum of 20
       cart.quantity = currentQuantity + 1; // Increase quantity
       this.updateCart(cart); // Update cart
     }
@@ -95,11 +107,16 @@ export class CartPageComponent implements OnInit {
           console.log(result);
           this.getCartData(); // Refresh cart data
           this.product.getCartList(userId); // Optionally refresh cart list
+
+          // Show success toast for removing from cart using ToastService
+          this.toastService.showToast(
+            '🎉 Item removed from cart successfully!',
+            'success'
+          );
         }
       });
     }
   }
-
 
   checkout() {
     this.router.navigate(['checkout']);

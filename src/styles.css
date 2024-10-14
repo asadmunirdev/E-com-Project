@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 @import '../node_modules/ngx-toastr/toastr.css';
+@import '../node_modules/toastify-js/src/toastify.css';
 
 /* @import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; */
 @tailwind base;
@@ -218,7 +219,67 @@ router-outlet {
   height: 15px;
 }
 
+/* toaster styling */
+
+/* Styling for moderately sized toasts */
+.toastify {
+  font-size: 1.2rem; /* Moderately larger font size */
+  font-weight: bold; /* Bold text */
+  padding: 15px; /* Adequate padding */
+  min-width: 250px; /* Ensure the toasts are wide enough but not too big */
+  max-width: 400px; /* Set a maximum width to prevent overflowing */
+  border-radius: 8px; /* Smooth corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for prominence */
+  animation: slideInRight 0.5s ease-in-out, fadeOutRight 0.5s ease-in-out 6s; /* Keep the toasts visible for longer */
+  margin-top: 80px; /* Space from the top of the screen */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+
+  .toastify {
+    font-size: 1rem; /* Smaller font size for mobile */
+    min-width: 200px; /* Adjust minimum width for mobile */
+    max-width: 90%; /* Limit maximum width to 90% of the viewport */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .toastify {
+    font-size: 1.1rem; /* Slightly smaller font size for tablets */
+    max-width: 350px; /* Adjust maximum width for tablet screens */
+  }
+}
+
+@media (min-width: 1025px) {
+  .toastify {
+    max-width: 400px; /* Maintain a reasonable maximum width for larger screens */
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
 
 
+/* 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

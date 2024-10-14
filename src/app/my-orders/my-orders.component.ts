@@ -4,6 +4,7 @@ import { order } from '../data-type';
 import { CommonModule } from '@angular/common';
 import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
 import { EmptyStateComponent } from '../empty-state/empty-state.component'; // Import EmptyStateComponent
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-my-orders',
@@ -16,17 +17,26 @@ export class MyOrdersComponent implements OnInit {
   orderData: order[] | undefined;
   selectedOrder: order | undefined;
 
-  constructor(private product: ProductService) {}
+  constructor(
+    private product: ProductService,
+    private toastService: ToastService
+  ) {}
 
   ngOnInit(): void {
     this.getOrderList();
   }
 
+  // Method to cancel an order
   cancelOrder(orderId: number | undefined) {
-    orderId &&
+    if (orderId) {
       this.product.cancelOrder(orderId).subscribe(() => {
-        this.getOrderList();
+        this.getOrderList(); // Refresh the order list
+
+        // Show success toast for canceling the order
+        const successMessage = '🎉 Order canceled successfully!';
+        this.toastService.showToast(successMessage, 'success');
       });
+    }
   }
 
   getOrderList() {

@@ -4,6 +4,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { cart, product, signUp, login } from '../data-type'; // Ensure login is imported here
 import { UserService } from '../services/user.service';
 import { ProductService } from '../services/product.service';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-user-auth', // Selector for the component
@@ -17,7 +18,11 @@ export class UserAuthComponent implements OnInit {
   authError: string = ''; // Variable to store authentication error messages
 
   // Injecting UserService and ProductService through the constructor
-  constructor(private user: UserService, private product: ProductService) {}
+  constructor(
+    private user: UserService,
+    private product: ProductService,
+    private toastService: ToastService
+  ) {}
 
   // Lifecycle hook that runs when the component initializes
   ngOnInit(): void {
@@ -42,10 +47,20 @@ export class UserAuthComponent implements OnInit {
       this.user.isLoginError.subscribe((isError) => {
         if (!isError) {
           this.localCartToRemoteCart(); // Transfer local cart to remote cart after successful signup
+
+          // Show success toast using the ToastService
+          this.toastService.showToast('🎉 Sign up successful!', 'success');
+        } else {
+          // Show error toast using the ToastService
+          this.toastService.showToast(
+            '😢 Sign up failed. Please try again.',
+            'error'
+          );
         }
       });
     } else {
-      console.log('Sign Up Form is invalid');
+      // Show invalid form toast using the ToastService
+      this.toastService.showToast('😢 Sign Up Form is invalid.', 'error');
     }
   }
 
@@ -57,12 +72,19 @@ export class UserAuthComponent implements OnInit {
       this.user.isLoginError.subscribe((isError) => {
         if (isError) {
           this.authError = 'Please enter valid user details';
+
+          // Show error toast using the ToastService
+          this.toastService.showToast('😢 ' + this.authError, 'error');
         } else {
           this.localCartToRemoteCart(); // Transfer local cart to remote cart after successful login
+
+          // Show success toast using the ToastService
+          this.toastService.showToast('🎉 Login successful!', 'success');
         }
       });
     } else {
-      console.log('Login Form is invalid');
+      // Show invalid form toast using the ToastService
+      this.toastService.showToast('😢 Login Form is invalid.', 'error');
     }
   }
 

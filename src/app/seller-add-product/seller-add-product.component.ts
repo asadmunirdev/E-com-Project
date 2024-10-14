@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { ProductService } from '../services/product.service';
 import { product, category } from '../data-type';
 import { CommonModule } from '@angular/common';
+import { ToastService } from '../services/toast.service';
+
 
 @Component({
   selector: 'app-seller-add-product', // Selector for the component
@@ -18,7 +20,9 @@ export class SellerAddProductComponent implements OnInit {
   categories: category[] = []; // Array to hold categories
 
   // Injecting FormBuilder and ProductService through the constructor
-  constructor(private fb: FormBuilder, private product: ProductService) {
+  constructor(private fb: FormBuilder, private product: ProductService,
+    private toastService: ToastService
+  ) {
     // Initializing the form with controls and validators
     this.addProductForm = this.fb.group({
       name: ['', Validators.required], // Product name is required
@@ -37,19 +41,23 @@ export class SellerAddProductComponent implements OnInit {
     });
   }
 
-  // Method to handle form submission
-  submit() {
-    if (this.addProductForm.valid) { // Check if the form is valid
-      const formData: product = this.addProductForm.value; // Get form data
-      // Call the addProduct method from ProductService
-      this.product.addProduct(formData).subscribe((result) => {
-        if (result) {
-          this.addProductMessage = "Product is added successfully"; // Set success message
-          this.addProductForm.reset(); // Reset form after successful submission
-        }
+// Method to handle form submission
+submit() {
+  if (this.addProductForm.valid) { // Check if the form is valid
+    const formData: product = this.addProductForm.value; // Get form data
+    // Call the addProduct method from ProductService
+    this.product.addProduct(formData).subscribe((result) => {
+      if (result) {
+        this.addProductMessage = "Product is added successfully"; // Set success message
+        this.addProductForm.reset(); // Reset form after successful submission
+
+        // Show success toast for product addition
+        this.toastService.showToast(this.addProductMessage, 'success');
+
         // Clear the success message after 3 seconds
         setTimeout(() => this.addProductMessage = undefined, 3000);
-      });
-    }
+      }
+    });
   }
+}
 }

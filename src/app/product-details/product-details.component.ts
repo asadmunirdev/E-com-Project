@@ -5,6 +5,7 @@ import { cart, product } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { CommonModule } from '@angular/common';
 import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-product-details', // Selector for the component
@@ -22,7 +23,8 @@ export class ProductDetailsComponent implements OnInit {
   // Injecting ActivatedRoute and ProductService through the constructor
   constructor(
     private activateRoute: ActivatedRoute,
-    private product: ProductService
+    private product: ProductService,
+    private toastService: ToastService
   ) {}
 
   // Lifecycle hook that runs when the component initializes
@@ -83,52 +85,67 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
-  // Method to add the product to the cart
-  AddToCart() {
-    if (this.productData) {
-      this.productData.quantity = this.productQuantity; // Set the quantity of the product
-      // Check if the user is logged in
-      if (!localStorage.getItem('user')) {
-        this.product.localAddToCart(this.productData); // Add product to local cart
-        this.removeCart = true; // Update removeCart flag
-      } else {
-        let user = localStorage.getItem('user'); // Get user data from local storage
-        let userId = user && JSON.parse(user).id; // Extract user ID
-        // Prepare cart data to send to the server
-        let cartData: cart = {
-          ...this.productData,
-          userId,
-          productId: this.productData.id,
-        };
-        delete cartData.id; // Remove local cart ID before sending to the server
-        // Add product to remote cart
-        this.product.addtoCart(cartData).subscribe((result) => {
-          if (result) {
-            this.product.getCartList(userId); // Fetch updated cart list
-            this.removeCart = true; // Update removeCart flag
-          }
-        });
-      }
-    }
-  }
-
-  // Method to remove the product from the cart
-  RemoveFromCart(productId: number) {
+// Method to add the product to the cart
+AddToCart() {
+  if (this.productData) {
+    this.productData.quantity = this.productQuantity; // Set the quantity of the product
     // Check if the user is logged in
     if (!localStorage.getItem('user')) {
-      this.product.removeItemsFromCart(productId); // Remove product from local cart
-      this.removeCart = false; // Update removeCart flag
+      this.product.localAddToCart(this.productData); // Add product to local cart
+      this.removeCart = true; // Update removeCart flag
+
+      // Show success toast for adding to local cart using ToastService
+      this.toastService.showToast("🎉 Product added to local cart!", "success");
     } else {
       let user = localStorage.getItem('user'); // Get user data from local storage
       let userId = user && JSON.parse(user).id; // Extract user ID
-      // Remove product from remote cart
-      this.cartData &&
-        this.product.removeToCart(this.cartData.id).subscribe((result) => {
-          if (result) {
-            this.product.getCartList(userId); // Fetch updated cart list
-          }
-        });
-      this.removeCart = false; // Update removeCart flag
+
+      // Prepare cart data to send to the server
+      let cartData: cart = {
+        ...this.productData,
+        userId,
+        productId: this.productData.id,
+      };
+      delete cartData.id; // Remove local cart ID before sending to the server
+      
+      // Add product to remote cart
+      this.product.addtoCart(cartData).subscribe((result) => {
+        if (result) {
+          this.product.getCartList(userId); // Fetch updated cart list
+          this.removeCart = true; // Update removeCart flag
+
+          // Show success toast for adding to remote cart using ToastService
+          this.toastService.showToast("🎉 Product added to cart!", "success");
+        }
+      });
     }
   }
+}
+
+// Method to remove the product from the cart
+RemoveFromCart(productId: number) {
+  // Check if the user is logged in
+  if (!localStorage.getItem('user')) {
+    this.product.removeItemsFromCart(productId); // Remove product from local cart
+    this.removeCart = false; // Update removeCart flag
+
+    // Show success toast for removing from local cart using ToastService
+    this.toastService.showToast("🎉 Product removed from local cart!", "success");
+  } else {
+    let user = localStorage.getItem('user'); // Get user data from local storage
+    let userId = user && JSON.parse(user).id; // Extract user ID
+
+    // Remove product from remote cart
+    this.cartData &&
+      this.product.removeToCart(this.cartData.id).subscribe((result) => {
+        if (result) {
+          this.product.getCartList(userId); // Fetch updated cart list
+
+          // Show success toast for removing from remote cart using ToastService
+          this.toastService.showToast("🎉 Product removed from cart!", "success");
+        }
+      });
+    this.removeCart = false; // Update removeCart flag
+  }
+}
 }

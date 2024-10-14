@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
 import { FormsModule } from '@angular/forms';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-seller-home',
@@ -15,12 +16,15 @@ import { FormsModule } from '@angular/forms';
 })
 export class SellerHomeComponent implements OnInit {
   productList: undefined | product[]; // All products
-  filteredProducts: product[] = [];   // Filtered products
-  categories: string[] = [];          // Available categories
-  selectedCategory: string = '';      // Selected category
+  filteredProducts: product[] = []; // Filtered products
+  categories: string[] = []; // Available categories
+  selectedCategory: string = ''; // Selected category
   productMessage: undefined | string; // Success or error message
 
-  constructor(private product: ProductService) {}
+  constructor(
+    private product: ProductService,
+    private toastService: ToastService
+  ) {}
 
   ngOnInit(): void {
     this.list(); // Load products on component initialization
@@ -38,16 +42,19 @@ export class SellerHomeComponent implements OnInit {
   // Extract categories from the product list
   setCategories() {
     if (this.productList) {
-      this.categories = Array.from(new Set(this.productList.map(product => product.category)));
+      this.categories = Array.from(
+        new Set(this.productList.map((product) => product.category))
+      );
     }
   }
 
   // Filter products based on the selected category
   filterProducts() {
     if (this.selectedCategory) {
-      this.filteredProducts = this.productList?.filter(
-        (product) => product.category === this.selectedCategory
-      ) || [];
+      this.filteredProducts =
+        this.productList?.filter(
+          (product) => product.category === this.selectedCategory
+        ) || [];
     } else {
       this.filteredProducts = this.productList || [];
     }
@@ -58,13 +65,15 @@ export class SellerHomeComponent implements OnInit {
     this.product.deleteProduct(id).subscribe((result) => {
       if (result) {
         this.productMessage = 'Product is deleted';
+
+        // Show success toast for product deletion
+        this.toastService.showToast(this.productMessage, 'success');
+
         this.list(); // Reload the product list after deletion
+
+        // Clear the message immediately after showing the toast
+        this.productMessage = undefined;
       }
     });
-
-    // Clear the message after 3 seconds
-    setTimeout(() => {
-      this.productMessage = undefined;
-    }, 3000);
   }
 }

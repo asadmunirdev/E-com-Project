@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductService } from '../services/product.service';
 import { cart, order } from '../data-type';
 import { Router } from '@angular/router';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-checkout',
@@ -18,7 +19,11 @@ export class CheckoutComponent implements OnInit {
   orderMessage: string | undefined; // Holds the message after placing an order
   selectedPaymentMethod: string = ''; // Stores the selected payment method
 
-  constructor(private product: ProductService, private route: Router) {}
+  constructor(
+    private product: ProductService,
+    private route: Router,
+    private toastService: ToastService
+  ) {}
 
   // Lifecycle hook that runs after component initialization
   ngOnInit(): void {
@@ -54,10 +59,10 @@ export class CheckoutComponent implements OnInit {
   orderNow(data: { email: string; address: string; contact: string }) {
     let user = localStorage.getItem('user');
     let userId = user && JSON.parse(user).id;
-  
+
     // Extract product names from cartData
     const productNames = this.cartData?.map((item) => item.name) || [];
-  
+
     // Proceed if total price and payment method are available
     if (this.totalPrice && this.selectedPaymentMethod) {
       let orderData: order = {
@@ -68,18 +73,22 @@ export class CheckoutComponent implements OnInit {
         products: productNames, // Add product names to order data
         id: undefined, // Set order ID to undefined
       };
-  
+
       // Loop through cart items and remove them after order placement
       this.cartData?.forEach((item) => {
         setTimeout(() => {
           item.id && this.product.deleteCartItems(item.id); // Delete cart items
         }, 700); // Delay for smooth deletion
       });
-  
+
       // Send the order data to the backend
       this.product.orderNow(orderData).subscribe((result) => {
         if (result) {
           this.orderMessage = 'Your Order has been placed successfully';
+
+          // Show success toast for order placement
+          this.toastService.showToast(this.orderMessage, 'success');
+
           setTimeout(() => {
             this.route.navigate(['my-orders']); // Navigate to "My Orders" page
             this.orderMessage = undefined; // Clear the success message
@@ -88,9 +97,9 @@ export class CheckoutComponent implements OnInit {
       });
     }
   }
-  
-// Handles the change of payment method
-onPaymentMethodChange(method: string) {
-  this.selectedPaymentMethod = method; // Set the selected payment method
-}
+
+  // Handles the change of payment method
+  onPaymentMethodChange(method: string) {
+    this.selectedPaymentMethod = method; // Set the selected payment method
+  }
 }

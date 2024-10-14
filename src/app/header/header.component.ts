@@ -4,6 +4,7 @@ import { Router, RouterModule } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { product } from '../data-type';
 import { UserService } from '../services/user.service';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-header',
@@ -24,7 +25,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private route: Router,
     private product: ProductService,
-    private user: UserService
+    private user: UserService,
+    private toastService:ToastService
   ) {}
 
   ngOnInit(): void {
@@ -68,18 +70,36 @@ export class HeaderComponent implements OnInit {
     });
     bsCollapse.hide();
   }
-
-  sellerLogout() {
+// Method for seller logout
+sellerLogout() {
+  try {
     localStorage.removeItem('seller');
     this.route.navigate(['/seller-auth']);
+    
+    // Show success toast using the ToastService
+    this.toastService.showToast("🎉 Seller logged out successfully!", "success");
+  } catch (error) {
+    // Show error toast using the ToastService
+    this.toastService.showToast("😢 Failed to log out. Please try again.", "error");
   }
+}
 
-  userLogout() {
+// Method for user logout
+userLogout() {
+  try {
     localStorage.removeItem('user');
     this.route.navigate(['user-auth']);
     this.product.cartData.emit([]);
+    
+    // Show success toast using the ToastService
+    this.toastService.showToast("🎉 User logged out successfully!", "success");
+  } catch (error) {
+    // Show error toast using the ToastService
+    this.toastService.showToast("😢 Failed to log out. Please try again.", "error");
   }
+}
 
+    
   searchProducts(query: KeyboardEvent) {
     const element = query.target as HTMLInputElement;
     // console.warn(element.value);

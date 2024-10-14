@@ -4,6 +4,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { SellerService } from '../services/seller.service';
 import { signUp } from '../data-type';
 import { CommonModule } from '@angular/common';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-seller-auth', // Selector for the component
@@ -19,7 +20,10 @@ export class SellerAuthComponent implements OnInit {
   private securityKey: string = 'pass1122'; // Security key for signup
 
   // Injecting SellerService through the constructor
-  constructor(private seller: SellerService) {}
+  constructor(
+    private seller: SellerService,
+    private toastService: ToastService
+  ) {}
 
   // Lifecycle hook that runs when the component initializes
   ngOnInit(): void {
@@ -35,7 +39,6 @@ export class SellerAuthComponent implements OnInit {
   openSignUp(): void {
     this.showLogin = false;
   }
-
   // Method to handle seller signup
   signUp(form: NgForm): void {
     if (form.valid) {
@@ -46,12 +49,22 @@ export class SellerAuthComponent implements OnInit {
       if (enteredSecurityKey === this.securityKey) {
         console.log('Security key matched, proceeding with signup');
         this.securityError = ''; // Clear any previous security errors
-        this.seller.userSignUp(data); // Call the signup method from SellerService
+
+        // Call the signup method from SellerService
+        this.seller.userSignUp(data);
+
+        // Show success toast using ToastService
+        this.toastService.showToast('🎉 Seller sign up successful!', 'success');
       } else {
         this.securityError = 'Invalid security key, please try again'; // Set an error message if the key doesn't match
         console.log('Invalid security key');
+
+        // Show error toast using ToastService
+        this.toastService.showToast('😢 ' + this.securityError, 'error');
       }
     } else {
+      // Show invalid form toast using ToastService
+      this.toastService.showToast('😢 Sign Up Form is invalid.', 'error');
       console.log('Form is invalid'); // Log an error message if the form is invalid
     }
   }
@@ -64,9 +77,17 @@ export class SellerAuthComponent implements OnInit {
       this.seller.isLoginError.subscribe((isError) => {
         if (isError) {
           this.authError = 'Email or password is not correct'; // Display error message if login fails
+
+          // Show error toast using ToastService
+          this.toastService.showToast('😢 ' + this.authError, 'error');
+        } else {
+          // Show success toast for successful login using ToastService
+          this.toastService.showToast('🎉 Seller login successful!', 'success');
         }
       });
     } else {
+      // Show invalid form toast using ToastService
+      this.toastService.showToast('😢 Login Form is invalid.', 'error');
       console.log('Form is invalid'); // Log an error message if the form is invalid
     }
   }

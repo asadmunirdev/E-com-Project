@@ -68,7 +68,20 @@
       "name": "Home Appliances"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "name": "Bluetooth Speaker",
+      "price": "70",
+      "color": "Black",
+      "category": "Electronics",
+      "image": "https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJsdWV0b290aCUyMHNwZWFrZXJ8ZW58MHx8MHx8fDA%3D",
+      "description": "Portable speaker with powerful sound.",
+      "quantity": 1,
+      "userId": "1",
+      "productId": "gg06",
+      "id": 1
+    }
+  ],
   "orders": [],
   "products": [
     {

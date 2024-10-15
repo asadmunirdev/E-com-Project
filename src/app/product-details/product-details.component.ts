@@ -96,7 +96,7 @@ AddToCart() {
       this.removeCart = true; // Update removeCart flag
 
       // Show success toast for adding to local cart using ToastService
-      this.toastService.showToast("Product added to local cart!", "success");
+      this.toastService.showToast("Product added to cart!", "success");
     } else {
       let user = localStorage.getItem('user'); // Get user data from local storage
       let userId = user && JSON.parse(user).id; // Extract user ID
@@ -131,7 +131,7 @@ RemoveFromCart(productId: number) {
     this.removeCart = false; // Update removeCart flag
 
     // Show success toast for removing from local cart using ToastService
-    this.toastService.showToast("Product removed from local cart!", "success");
+    this.toastService.showToast("Product removed from cart!", "success");
   } else {
     let user = localStorage.getItem('user'); // Get user data from local storage
     let userId = user && JSON.parse(user).id; // Extract user ID
@@ -160,6 +160,7 @@ buyNow() {
   } else {
     // If user is not logged in, show toast notification
     this.toastService.showToast("Please log in to buy products.", "error");
+    this.router.navigate(['login-first'])
   }
 }
 

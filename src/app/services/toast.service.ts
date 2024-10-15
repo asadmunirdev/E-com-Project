@@ -29,7 +29,7 @@ export class ToastService {
 
     Toastify({
       text: `${emoji} ${message}`, // Add emoji automatically
-      duration: 3000,
+      duration: 5000,
       backgroundColor,
       close: true,
       className: 'toastify',

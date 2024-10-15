@@ -79,7 +79,7 @@ export class UserAuthComponent implements OnInit {
           this.localCartToRemoteCart(); // Transfer local cart to remote cart after successful login
 
           // Show success toast using the ToastService
-          this.toastService.showToast('🎉 Login successful!', 'success');
+          this.toastService.showToast('🎉 User login successful!', 'success');
         }
       });
     } else {

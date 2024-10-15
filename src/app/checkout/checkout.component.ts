@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from '../services/product.service';
-import { cart, order } from '../data-type';
+import { cart, order, ProductDetail } from '../data-type';
 import { Router } from '@angular/router';
 import { ToastService } from '../services/toast.service';
 
@@ -59,21 +59,27 @@ export class CheckoutComponent implements OnInit {
   orderNow(data: { email: string; address: string; contact: string }) {
     let user = localStorage.getItem('user');
     let userId = user && JSON.parse(user).id;
-
-    // Extract product names from cartData
-    const productNames = this.cartData?.map((item) => item.name) || [];
-
+  
+    // Extract product names and quantities from cartData
+    const productDetails: ProductDetail[] = this.cartData?.map((item) => ({ 
+      name: item.name, 
+      quantity: item.quantity || 0 // Default to 0 if undefined
+    })) || [];
+  
+    // Calculate total quantity
+    const totalQuantity = productDetails.reduce((sum, item) => sum + (item.quantity || 0), 0);
+  
     // Proceed if total price and payment method are available
     if (this.totalPrice && this.selectedPaymentMethod) {
       let orderData: order = {
         ...data, // User email, address, contact
+        totalQuantity, // Include total quantity here
         totalPrice: this.totalPrice, // Total price
         userId, // User ID from local storage
         paymentMethod: this.selectedPaymentMethod, // Payment method
-        products: productNames, // Add product names to order data
+        products: productDetails, // Add product names and quantities to order data
         id: undefined, // Set order ID to undefined
       };
-
       // Loop through cart items and remove them after order placement
       this.cartData?.forEach((item) => {
         setTimeout(() => {

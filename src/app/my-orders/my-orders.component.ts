@@ -52,4 +52,14 @@ export class MyOrdersComponent implements OnInit {
   closeDetails(): void {
     this.selectedOrder = undefined;
   }
+
+    // Method to get formatted product names and quantities
+    getFormattedProducts(): string {
+      if (!this.selectedOrder?.products) return ''; // Return an empty string if no products
+  
+      return this.selectedOrder.products
+        .map(product => `${product.name} (Qty: ${product.quantity})`)
+        .join(", ");
+    }
+
 }

@@ -5,7 +5,7 @@ import Toastify from 'toastify-js';
   providedIn: 'root',
 })
 export class ToastService {
-  showToast(message: string, type: 'success' | 'error') {
+  showToast(message: string, type: 'success' | 'error' | 'warning' | 'info') {
     const backgroundColor =
       type === 'success'
         ? 'linear-gradient(to right, #00b09b, #96c93d)'

@@ -1,6 +1,6 @@
 // Importing necessary modules and dependencies
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { cart, product } from '../data-type';
 import { ProductService } from '../services/product.service';
 import { CommonModule } from '@angular/common';
@@ -24,7 +24,8 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private activateRoute: ActivatedRoute,
     private product: ProductService,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private router:Router
   ) {}
 
   // Lifecycle hook that runs when the component initializes
@@ -148,4 +149,19 @@ RemoveFromCart(productId: number) {
     this.removeCart = false; // Update removeCart flag
   }
 }
+
+buyNow() {
+  // Check for user in local storage
+  const user = localStorage.getItem('user');
+  
+  if (user) {
+    // If user is logged in, navigate to checkout
+    this.router.navigate(['checkout']);
+  } else {
+    // If user is not logged in, show toast notification
+    this.toastService.showToast("Please log in to buy products.", "error");
+  }
+}
+
+
 }

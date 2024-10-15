@@ -37,6 +37,13 @@
           >
             Remove from Cart
           </button>
+          <button
+            *ngIf="removeCart"
+            class="btn btn-success me-3"
+            (click)="buyNow()"
+          >
+            Buy Now
+          </button>
         </div>
         <div class="quantity-group d-flex align-items-center mt-3">
           <button

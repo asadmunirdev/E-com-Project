@@ -16,10 +16,22 @@
       "id": "1"
     },
     {
+      "name": "Saad",
+      "email": "saad@gmail.com",
+      "password": "123",
+      "id": "Qt4xxAJ"
+    },
+    {
+      "name": "Saad",
+      "email": "saad@gmail.com",
+      "password": "123",
+      "id": "wjIcYCi"
+    },
+    {
       "name": "Rafay",
       "email": "rafay@gmail.com",
       "password": "123",
-      "id": "6Yca1gR"
+      "id": "4KjD8xf"
     }
   ],
   "categories": [
@@ -73,7 +85,7 @@
   "products": [
     {
       "name": "Smartphone",
-      "price": "299",
+      "price": "300",
       "color": "Black",
       "category": "Electronics",
       "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",

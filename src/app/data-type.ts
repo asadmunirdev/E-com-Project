@@ -42,15 +42,22 @@ export interface priceSummary {
   delivery: number;
   total: number;
 }
+
+export interface ProductDetail {
+  name: string; // Product name
+  quantity: number | undefined; // Quantity of the product can be undefined
+}
+
 export interface order {
+  id: number | undefined;
   email: string;
   address: string;
   contact: string;
+  totalQuantity: number; // Consider renaming if it's a total
   totalPrice: number;
-  userId: number;
-  paymentMethod: string; // Payment method field
-  products: string[]; // Array of product names
-  id: number | undefined;
+  userId: number | undefined; // Make this undefined to avoid errors when user is not logged in
+  paymentMethod: string; 
+  products: ProductDetail[]; 
 }
 
 export interface category {

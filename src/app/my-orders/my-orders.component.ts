@@ -33,7 +33,7 @@ export class MyOrdersComponent implements OnInit {
         this.getOrderList(); // Refresh the order list
 
         // Show success toast for canceling the order
-        const successMessage = '🎉 Order canceled successfully!';
+        const successMessage = 'Order canceled successfully!';
         this.toastService.showToast(successMessage, 'success');
       });
     }

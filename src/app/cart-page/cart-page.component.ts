@@ -65,6 +65,7 @@ export class CartPageComponent implements OnInit {
       this.priceSummary.delivery -
       this.priceSummary.discount;
   }
+
   increaseQuantity(cart: cart) {
     const currentQuantity = cart.quantity || 0; // Default to 0 if undefined
     if (currentQuantity < 20) {
@@ -81,20 +82,13 @@ export class CartPageComponent implements OnInit {
       this.updateCart(cart); // Update cart
     }
   }
+
   // Method to update the cart item quantity in the server
   updateCart(cart: cart) {
     this.product.updateCartItemQuantity(cart).subscribe(() => {
       this.calculatePriceSummary(); // Recalculate price summary
     });
   }
-
-  // removeCart(cartId: number | undefined) {
-  //   cartId &&
-  //     this.cartData &&
-  //     this.product.removeToCart(cartId).subscribe(() => {
-  //       this.getCartData();
-  //     });
-  // }
 
   removeCart(itemId: number) {
     if (localStorage.getItem('user')) {
@@ -110,7 +104,7 @@ export class CartPageComponent implements OnInit {
 
           // Show success toast for removing from cart using ToastService
           this.toastService.showToast(
-            '🎉 Item removed from cart successfully!',
+            'Item removed from cart successfully!',
             'success'
           );
         }
@@ -118,7 +112,9 @@ export class CartPageComponent implements OnInit {
     }
   }
 
+  // Updated checkout method to pass product IDs
   checkout() {
-    this.router.navigate(['checkout']);
+    const productIds = this.cartData.map(item => item.productId).join(','); // Join product IDs into a string
+    this.router.navigate(['checkout'], { queryParams: { productIds } }); // Pass product IDs as query parameters
   }
 }

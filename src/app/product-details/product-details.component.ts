@@ -96,7 +96,7 @@ AddToCart() {
       this.removeCart = true; // Update removeCart flag
 
       // Show success toast for adding to local cart using ToastService
-      this.toastService.showToast("🎉 Product added to local cart!", "success");
+      this.toastService.showToast("Product added to local cart!", "success");
     } else {
       let user = localStorage.getItem('user'); // Get user data from local storage
       let userId = user && JSON.parse(user).id; // Extract user ID
@@ -116,7 +116,7 @@ AddToCart() {
           this.removeCart = true; // Update removeCart flag
 
           // Show success toast for adding to remote cart using ToastService
-          this.toastService.showToast("🎉 Product added to cart!", "success");
+          this.toastService.showToast("Product added to cart!", "success");
         }
       });
     }
@@ -131,7 +131,7 @@ RemoveFromCart(productId: number) {
     this.removeCart = false; // Update removeCart flag
 
     // Show success toast for removing from local cart using ToastService
-    this.toastService.showToast("🎉 Product removed from local cart!", "success");
+    this.toastService.showToast("Product removed from local cart!", "success");
   } else {
     let user = localStorage.getItem('user'); // Get user data from local storage
     let userId = user && JSON.parse(user).id; // Extract user ID
@@ -143,20 +143,20 @@ RemoveFromCart(productId: number) {
           this.product.getCartList(userId); // Fetch updated cart list
 
           // Show success toast for removing from remote cart using ToastService
-          this.toastService.showToast("🎉 Product removed from cart!", "success");
+          this.toastService.showToast("Product removed from cart!", "success");
         }
       });
     this.removeCart = false; // Update removeCart flag
   }
 }
 
+// In ProductDetailsComponent
 buyNow() {
-  // Check for user in local storage
   const user = localStorage.getItem('user');
-  
+
   if (user) {
-    // If user is logged in, navigate to checkout
-    this.router.navigate(['checkout']);
+    // If user is logged in, navigate to checkout with productId as a query parameter
+    this.router.navigate(['checkout'], { queryParams: { productIds: this.productData?.id } });
   } else {
     // If user is not logged in, show toast notification
     this.toastService.showToast("Please log in to buy products.", "error");

@@ -49,16 +49,16 @@ signUp(form: NgForm): void {
     this.user.isSignUpSuccess.subscribe((isSuccess) => {
       if (isSuccess) {
         this.localCartToRemoteCart();
-        this.toastService.showToast('🎉 User sign up successful!', 'success');
+        this.toastService.showToast('User sign up successful!', 'success');
       } else {
         this.toastService.showToast(
-          '😢 Sign up failed. Please try again.',
+          'Sign up failed. Please try again.',
           'error'
         );
       }
     });
   } else {
-    this.toastService.showToast('😢 Sign Up Form is invalid.', 'error');
+    this.toastService.showToast('Sign Up Form is invalid.', 'error');
   }
 }
 
@@ -72,17 +72,17 @@ signUp(form: NgForm): void {
           this.authError = 'Please enter valid user details';
 
           // Show error toast using the ToastService
-          this.toastService.showToast('😢 ' + this.authError, 'error');
+          this.toastService.showToast( this.authError, 'error');
         } else {
           this.localCartToRemoteCart(); // Transfer local cart to remote cart after successful login
 
           // Show success toast using the ToastService
-          this.toastService.showToast('🎉 User login successful!', 'success');
+          this.toastService.showToast('User login successful!', 'success');
         }
       });
     } else {
       // Show invalid form toast using the ToastService
-      this.toastService.showToast('😢 Login Form is invalid.', 'error');
+      this.toastService.showToast('Login Form is invalid.', 'error');
     }
   }
 

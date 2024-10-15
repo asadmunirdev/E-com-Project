@@ -67,7 +67,7 @@
   "products": [
     {
       "name": "Smartphone",
-      "price": "300",
+      "price": "400",
       "color": "Black",
       "category": "Electronics",
       "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",
@@ -487,15 +487,6 @@
       "image": "https://images.unsplash.com/photo-1613497646519-ee1ab64293af?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "description": "Good quality eardbuds",
       "id": "Bj32Sr9"
-    },
-    {
-      "name": "SmartDrive Vehicle",
-      "price": "90000",
-      "color": "black",
-      "category": "Automotive",
-      "image": "https://plus.unsplash.com/premium_photo-1683134240084-ba074973f75e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YXV0b21vdGl2ZXxlbnwwfHwwfHx8MA%3D%3D",
-      "description": "Experience the future of transportation with this cutting-edge vehicle",
-      "id": "6c3b"
     },
     {
       "name": "USB",

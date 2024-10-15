@@ -54,17 +54,17 @@ export class SellerAuthComponent implements OnInit {
         this.seller.userSignUp(data);
 
         // Show success toast using ToastService
-        this.toastService.showToast('🎉 Seller sign up successful!', 'success');
+        this.toastService.showToast('Seller sign up successful!', 'success');
       } else {
         this.securityError = 'Invalid security key, please try again'; // Set an error message if the key doesn't match
         console.log('Invalid security key');
 
         // Show error toast using ToastService
-        this.toastService.showToast('😢 ' + this.securityError, 'error');
+        this.toastService.showToast(this.securityError, 'error');
       }
     } else {
       // Show invalid form toast using ToastService
-      this.toastService.showToast('😢 Sign Up Form is invalid.', 'error');
+      this.toastService.showToast('Sign Up Form is invalid.', 'error');
       console.log('Form is invalid'); // Log an error message if the form is invalid
     }
   }
@@ -79,15 +79,15 @@ export class SellerAuthComponent implements OnInit {
           this.authError = 'Email or password is not correct'; // Display error message if login fails
 
           // Show error toast using ToastService
-          this.toastService.showToast('😢 ' + this.authError, 'error');
+          this.toastService.showToast(this.authError, 'error');
         } else {
           // Show success toast for successful login using ToastService
-          this.toastService.showToast('🎉 Seller login successful!', 'success');
+          this.toastService.showToast('Seller login successful!', 'success');
         }
       });
     } else {
       // Show invalid form toast using ToastService
-      this.toastService.showToast('😢 Login Form is invalid.', 'error');
+      this.toastService.showToast('Login Form is invalid.', 'error');
       console.log('Form is invalid'); // Log an error message if the form is invalid
     }
   }

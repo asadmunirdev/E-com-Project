@@ -77,10 +77,10 @@ sellerLogout() {
     this.route.navigate(['/seller-auth']);
     
     // Show success toast using the ToastService
-    this.toastService.showToast("🎉 Seller logged out successfully!", "success");
+    this.toastService.showToast("Seller logged out successfully!", "success");
   } catch (error) {
     // Show error toast using the ToastService
-    this.toastService.showToast("😢 Failed to log out. Please try again.", "error");
+    this.toastService.showToast("Failed to log out. Please try again.", "error");
   }
 }
 
@@ -92,10 +92,10 @@ userLogout() {
     this.product.cartData.emit([]);
     
     // Show success toast using the ToastService
-    this.toastService.showToast("🎉 User logged out successfully!", "success");
+    this.toastService.showToast("User logged out successfully!", "success");
   } catch (error) {
     // Show error toast using the ToastService
-    this.toastService.showToast("😢 Failed to log out. Please try again.", "error");
+    this.toastService.showToast("Failed to log out. Please try again.", "error");
   }
 }
 

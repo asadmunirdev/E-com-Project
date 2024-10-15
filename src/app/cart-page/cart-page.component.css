@@ -1,244 +1,247 @@
-/* General styles for the cart page */ 
+/* General styles for the cart page */
 .cart-page {
-    padding: 30px;
-    margin-bottom: 45px;
-    border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 45px;
+  border-radius: 10px;
 }
 
 /* Cart item card */
 .custom-card {
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
 }
 
 .custom-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 /* Image section styles */
 .image-section {
-    text-align: center;
+  text-align: center;
+}
+.image-section img:hover {
+  cursor: pointer;
 }
 
 /* Set a fixed width and height for images to ensure uniformity */
 .cart-image {
-    width: 200px;  /* Fixed width for consistency */
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Cover the area without stretching */
-    border-radius: 8px;
+  width: 200px; /* Fixed width for consistency */
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Cover the area without stretching */
+  border-radius: 8px;
 }
 
 /* Product details section */
 .details-section {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
 }
 
 .product-price {
-    margin: 8px 0;
-    font-size: 1.3rem;
-    color: #007BFF;
-    font-weight: bold;
+  margin: 8px 0;
+  font-size: 1.3rem;
+  color: #007bff;
+  font-weight: bold;
 }
 
 /* Centered color section */
 .product-color {
-    display: flex;
-    align-items: center;
-    margin: 8px 0;
-    font-size: 1rem;
-    font-weight: bold;
-    justify-content: center; /* Center align the color section */
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  justify-content: center; /* Center align the color section */
 }
 
 .color-swatch {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    margin-left: 10px;
-    margin-right: 5px;
-    border: 2px solid #ccc;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-right: 5px;
+  border: 2px solid #ccc;
 }
 
 /* Quantity Control Styles */
 .product-quantity {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #FF8800; /* Distinct color for quantity */
-    margin: 8px 0;
-    display: flex;
-    align-items: center; /* Center align items vertically */
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff8800; /* Distinct color for quantity */
+  margin: 8px 0;
+  display: flex;
+  align-items: center; /* Center align items vertically */
 }
 
 /* Border for the quantity control buttons */
 .quantity-controls {
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center align items */
-    margin-left: 10px; /* Add space between label and controls */
-    border: 1px solid #ccc; /* Border for quantity controls */
-    border-radius: 5px; /* Rounded corners for the border */
-    padding: 5px; /* Padding inside the border */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center align items */
+  margin-left: 10px; /* Add space between label and controls */
+  border: 1px solid #ccc; /* Border for quantity controls */
+  border-radius: 5px; /* Rounded corners for the border */
+  padding: 5px; /* Padding inside the border */
 }
 
 .quantity-btn {
-    width: 30px; /* Set width for the buttons */
-    height: 30px; /* Set height for the buttons */
-    padding: 0; /* Remove padding */
-    font-size: 1.5rem; /* Increased font size for visibility */
-    line-height: 30px; /* Center the text vertically */
-    border: none; /* Remove border */
-    background-color: transparent; /* Transparent background */
-    color: #FF8800; /* Same color as quantity */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: transform 0.3s ease; /* Transition effect */
+  width: 30px; /* Set width for the buttons */
+  height: 30px; /* Set height for the buttons */
+  padding: 0; /* Remove padding */
+  font-size: 1.5rem; /* Increased font size for visibility */
+  line-height: 30px; /* Center the text vertically */
+  border: none; /* Remove border */
+  background-color: transparent; /* Transparent background */
+  color: #ff8800; /* Same color as quantity */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: transform 0.3s ease; /* Transition effect */
 }
 
 /* Center quantity display */
 .quantity-display {
-    flex-grow: 1; /* Allow it to take up remaining space */
-    text-align: center; /* Center align the quantity text */
-    color: #FF8800; /* Color for quantity text */
-    font-weight: bold; /* Bold text */
+  flex-grow: 1; /* Allow it to take up remaining space */
+  text-align: center; /* Center align the quantity text */
+  color: #ff8800; /* Color for quantity text */
+  font-weight: bold; /* Bold text */
 }
 
 /* Button hover effects */
 .quantity-btn:hover {
-    transform: scale(1.1); /* Slightly scale up on hover */
+  transform: scale(1.1); /* Slightly scale up on hover */
 }
 
 /* Additional styles for button active state */
 .quantity-btn:active {
-    transform: scale(0.95); /* Slightly scale down on click */
+  transform: scale(0.95); /* Slightly scale down on click */
 }
 
 .quantity-input {
-    width: 50px;
+  width: 50px;
 }
 
 /* Button section styles */
 .button-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the button section */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the button section */
 }
 
 /* Remove button */
 .cancel-button {
-    width: 100px; /* Set a specific width for the button */
+  width: 100px; /* Set a specific width for the button */
 }
 
 /* Order Summary Section */
 .order-summary {
-    position: sticky; /* Make the order summary sticky */
-    top: 130px; /* Adjust this value to set how far from the top it should stick */
-    height: fit-content; /* Allow the section to resize based on content */
+  position: sticky; /* Make the order summary sticky */
+  top: 130px; /* Adjust this value to set how far from the top it should stick */
+  height: fit-content; /* Allow the section to resize based on content */
 }
 
 /* Order Summary Card */
 .summary-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 .summary-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 .summary-card hr {
-    border-top: 1px solid #eee;
-    margin: 10px 0; /* Space around the hr element */
+  border-top: 1px solid #eee;
+  margin: 10px 0; /* Space around the hr element */
 }
 
 .total {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #28A745;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .cart-page {
-        padding: 15px; /* Reduce padding for smaller screens */
-    }
+  .cart-page {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
 
-    .product-quantity {
-        flex-direction: column; /* Stack quantity controls vertically */
-        align-items: center; /* Center align items */
-    }
+  .product-quantity {
+    flex-direction: column; /* Stack quantity controls vertically */
+    align-items: center; /* Center align items */
+  }
 
-    .button-section {
-        margin-top: 10px; /* Margin above the button */
-    }
+  .button-section {
+    margin-top: 10px; /* Margin above the button */
+  }
 
-    .card-title {
-        font-size: 1.3rem; /* Adjust title size for smaller screens */
-    }
+  .card-title {
+    font-size: 1.3rem; /* Adjust title size for smaller screens */
+  }
 
-    .product-price {
-        font-size: 1.1rem; /* Adjust price size for smaller screens */
-    }
+  .product-price {
+    font-size: 1.1rem; /* Adjust price size for smaller screens */
+  }
 
-    .quantity-controls {
-        margin-left: 5px; /* Less margin for smaller screens */
-    }
+  .quantity-controls {
+    margin-left: 5px; /* Less margin for smaller screens */
+  }
 
-    .cancel-button {
-        width: 100%; /* Slightly smaller button for mobile */
-    }
+  .cancel-button {
+    width: 100%; /* Slightly smaller button for mobile */
+  }
 }
 
 /* Tablet-specific styles */
-@media (max-width: 1024px) { /* Tablet styles */
-    .product-color {
-        align-items: center; /* Center items in column layout */
-    }
+@media (max-width: 1024px) {
+  /* Tablet styles */
+  .product-color {
+    align-items: center; /* Center items in column layout */
+  }
 
-    .color-swatch {
-        margin-bottom: 5px; /* Add space below the swatch when stacked */
-    }
+  .color-swatch {
+    margin-bottom: 5px; /* Add space below the swatch when stacked */
+  }
 
-    .details-section {
-        padding-left: 0; /* Remove left padding for a cleaner look */
-    }
+  .details-section {
+    padding-left: 0; /* Remove left padding for a cleaner look */
+  }
 
-    .custom-card {
-        margin-bottom: 15px; /* Adjust spacing between cards on tablets */
-    }
+  .custom-card {
+    margin-bottom: 15px; /* Adjust spacing between cards on tablets */
+  }
 
-    .image-section,
-    .details-section,
-    .button-section {
-        text-align: center; /* Center text in sections */
-        margin-bottom: 10px; /* Adjust margin for spacing */
-    }
+  .image-section,
+  .details-section,
+  .button-section {
+    text-align: center; /* Center text in sections */
+    margin-bottom: 10px; /* Adjust margin for spacing */
+  }
 
-    .cart-image {
-        width: 300px;  /* Fixed width for consistency */
-        height: 150px; /* Adjust height for tablets */
-    }
+  .cart-image {
+    width: 300px; /* Fixed width for consistency */
+    height: 150px; /* Adjust height for tablets */
+  }
 
-    .product-quantity {
-        justify-content: center; /* Center the quantity controls */
-    }
+  .product-quantity {
+    justify-content: center; /* Center the quantity controls */
+  }
 
-    .quantity-controls {
-        justify-content: center; /* Center the quantity control buttons */
-    }
+  .quantity-controls {
+    justify-content: center; /* Center the quantity control buttons */
+  }
 
-    .button-section {
-        justify-content: center; /* Center the button section */
-    }
-    .cancel-button{
-        width: 90px;
-    }
-
+  .button-section {
+    justify-content: center; /* Center the button section */
+  }
+  .cancel-button {
+    width: 90px;
+  }
 }

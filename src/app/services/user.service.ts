@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http'; // For making HTTP requests
 import { EventEmitter, Injectable } from '@angular/core'; // For creating injectable services and event emitters
 import { Router } from '@angular/router'; // For navigation
 import { login, signUp } from '../data-type'; // Importing data types for user login and signup
-import { BehaviorSubject } from 'rxjs'; // Importing BehaviorSubject for reactive programming
+import { BehaviorSubject, Subject } from 'rxjs'; // Importing BehaviorSubject for reactive programming
 import { ProductService } from './product.service'; // Import ProductService to access cart methods
 
 @Injectable({
@@ -12,23 +12,30 @@ import { ProductService } from './product.service'; // Import ProductService to 
 export class UserService {
   //* Event emitter to handle login errors
   isLoginError = new EventEmitter<boolean>(false); // Emits a boolean value indicating if there is a login error
+  isSignUpSuccess = new Subject<boolean>();
 
   // Constructor to inject HttpClient, Router, and ProductService
   constructor(private http: HttpClient, private router: Router, private productService: ProductService) {}
 
-  // Method for user signup
-  userSignUp(data: signUp) {
-    this.http
-      .post('http://localhost:3000/users', data, { observe: 'response' }) // Sends a POST request to create a new user
-      .subscribe((result) => {
+ // Method for user signup
+ userSignUp(data: signUp) {
+  this.http
+    .post('http://localhost:3000/users', data, { observe: 'response' })
+    .subscribe(
+      (result) => {
         if (result) {
-          localStorage.setItem('user', JSON.stringify(result.body)); // Store user data in localStorage
-          this.router.navigate(['/']); // Navigate to the home page after successful signup
-          this.localCartToRemoteCart(); // Transfer local cart items to remote cart
+          localStorage.setItem('user', JSON.stringify(result.body));
+          this.router.navigate(['/']);
+          this.localCartToRemoteCart();
+          this.isSignUpSuccess.next(true); // Emit success
         }
-      });
-  }
-
+      },
+      (error) => {
+        console.error('Signup failed', error);
+        this.isSignUpSuccess.next(false); // Emit failure
+      }
+    );
+}
   // Method for user login
   userLogin(data: login) {
     this.http

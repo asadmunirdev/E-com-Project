@@ -39,30 +39,28 @@ export class UserAuthComponent implements OnInit {
     this.showLogin = false;
   }
 
-  // Method to handle user signup
-  signUp(form: NgForm): void {
-    if (form.valid) {
-      const data: signUp = form.value;
-      this.user.userSignUp(data); // Calling user signup method
-      this.user.isLoginError.subscribe((isError) => {
-        if (!isError) {
-          this.localCartToRemoteCart(); // Transfer local cart to remote cart after successful signup
+// In user-auth.component.ts
+signUp(form: NgForm): void {
+  if (form.valid) {
+    const data: signUp = form.value;
+    this.user.userSignUp(data); // Calling user signup method
 
-          // Show success toast using the ToastService
-          this.toastService.showToast('🎉 Sign up successful!', 'success');
-        } else {
-          // Show error toast using the ToastService
-          this.toastService.showToast(
-            '😢 Sign up failed. Please try again.',
-            'error'
-          );
-        }
-      });
-    } else {
-      // Show invalid form toast using the ToastService
-      this.toastService.showToast('😢 Sign Up Form is invalid.', 'error');
-    }
+    // Subscribe to signup success events
+    this.user.isSignUpSuccess.subscribe((isSuccess) => {
+      if (isSuccess) {
+        this.localCartToRemoteCart();
+        this.toastService.showToast('🎉 User sign up successful!', 'success');
+      } else {
+        this.toastService.showToast(
+          '😢 Sign up failed. Please try again.',
+          'error'
+        );
+      }
+    });
+  } else {
+    this.toastService.showToast('😢 Sign Up Form is invalid.', 'error');
   }
+}
 
   // Method to handle user login
   login(form: NgForm): void {

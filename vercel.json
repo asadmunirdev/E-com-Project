@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "dist/ECOM-PROJECT",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "api/json-server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "api/json-server.js"
+      }
+    ]
+  }
+  

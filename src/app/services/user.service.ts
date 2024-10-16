@@ -14,35 +14,39 @@ export class UserService {
   isLoginError = new EventEmitter<boolean>(false); // Emits a boolean value indicating if there is a login error
   isSignUpSuccess = new Subject<boolean>();
 
+  // Define API endpoints as constants
+  private readonly API_URL = 'http://localhost:3000';
+  private readonly USERS_ENDPOINT = `${this.API_URL}/users`;
+
   // Constructor to inject HttpClient, Router, and ProductService
   constructor(private http: HttpClient, private router: Router, private productService: ProductService) {}
 
- // Method for user signup
- userSignUp(data: signUp) {
-  this.http
-    .post('http://localhost:3000/users', data, { observe: 'response' })
-    .subscribe(
-      (result) => {
-        if (result) {
-          localStorage.setItem('user', JSON.stringify(result.body));
-          this.router.navigate(['/']);
-          this.localCartToRemoteCart();
-          this.isSignUpSuccess.next(true); // Emit success
+  // Method for user signup
+  userSignUp(data: signUp) {
+    this.http
+      .post(this.USERS_ENDPOINT, data, { observe: 'response' })
+      .subscribe(
+        (result) => {
+          if (result) {
+            localStorage.setItem('user', JSON.stringify(result.body));
+            this.router.navigate(['/']);
+            this.localCartToRemoteCart();
+            this.isSignUpSuccess.next(true); // Emit success
+          }
+        },
+        (error) => {
+          console.error('Signup failed', error);
+          this.isSignUpSuccess.next(false); // Emit failure
         }
-      },
-      (error) => {
-        console.error('Signup failed', error);
-        this.isSignUpSuccess.next(false); // Emit failure
-      }
-    );
-}
+      );
+  }
+
   // Method for user login
   userLogin(data: login) {
     this.http
-      .get<signUp[]>( // Sends a GET request to verify user credentials
-        `http://localhost:3000/users?email=${data.email}&password=${data.password}`,
-        { observe: 'response' }
-      )
+      .get<signUp[]>(`${this.USERS_ENDPOINT}?email=${data.email}&password=${data.password}`, {
+        observe: 'response',
+      })
       .subscribe((result: any) => {
         if (result && result.body && result.body.length === 1) { // Check if user exists
           localStorage.setItem('user', JSON.stringify(result.body[0])); // Store user data in localStorage

@@ -30,52 +30,63 @@ export class ProductDetailsComponent implements OnInit {
 
   // Lifecycle hook that runs when the component initializes
   ngOnInit() {
-    // Get productId from the route parameters
-    this.activateRoute.paramMap.subscribe((param) => {
-      const productId = param.get('productId');
-      if (productId) {
-        this.product.getProduct(productId).subscribe((result) => {
-          this.productData = result; // Assign fetched product data to productData
+   this.fetchData()
+  }
   
-          // Check local storage for cart data
-          let cartData = localStorage.getItem('localCart');
-          if (productId && cartData) {
-            let items = JSON.parse(cartData);
-            // Filter items in the cart to see if the current product is present
-            items = items.filter(
-              (item: product) => item.id && productId === item.id.toString()
-            );
-            // Update removeCart flag based on presence in the cart
-            if (items.length) {
-              this.removeCart = true;
-            } else {
-              this.removeCart = false;
-            }
-          }
-  
-          // Check for user in local storage to determine if the user is logged in
-          let user = localStorage.getItem('user');
-          if (user) {
-            let userId = user && JSON.parse(user).id; // Get user ID from local storage
-            this.product.getCartList(userId); // Fetch cart list for the user
-            this.product.cartData.subscribe((result) => {
-              // Check if the current product is in the user's cart
-              let item = result.filter(
-                (item: product) =>
-                  productId?.toString() === item.productId?.toString()
-              );
-              // Update cartData and removeCart flag if the product is found
-              if (item.length) {
-                this.cartData = item[0];
-                this.removeCart = true;
-              }
-            });
+fetchData(){
+ // Get productId from the route parameters
+ this.activateRoute.paramMap.subscribe((param) => {
+  const productId = param.get('productId');
+  if (productId) {
+    this.product.getProduct(productId).subscribe((result) => {
+      this.productData = result; // Assign fetched product data to productData
+      
+      // Reset removeCart flag to false for the new product
+      this.removeCart = false; 
+
+      // Check local storage for cart data
+      let cartData = localStorage.getItem('localCart');
+      if (productId && cartData) {
+        let items = JSON.parse(cartData);
+        // Filter items in the cart to see if the current product is present
+        items = items.filter(
+          (item: product) => item.id && productId === item.id.toString()
+        );
+        // Update removeCart flag based on presence in the cart
+        if (items.length) {
+          this.removeCart = true;
+        }
+      }
+
+      // Check for user in local storage to determine if the user is logged in
+      let user = localStorage.getItem('user');
+      if (user) {
+        let userId = user && JSON.parse(user).id; // Get user ID from local storage
+        this.product.getCartList(userId); // Fetch cart list for the user
+        this.product.cartData.subscribe((result) => {
+          // Check if the current product is in the user's cart
+          let item = result.filter(
+            (item: product) =>
+              productId?.toString() === item.productId?.toString()
+          );
+          // Update cartData and removeCart flag if the product is found
+          if (item.length) {
+            this.cartData = item[0];
+            this.removeCart = true;
+          } else {
+            // Reset cartData and removeCart if product is not in the cart
+            this.cartData = undefined;
+            this.removeCart = false;
           }
         });
+      } else {
+        // If not logged in, ensure removeCart is updated
+        this.cartData = undefined;
       }
-    
     });
   }
+});
+}
 
   // Method to handle product quantity adjustments
   handleQuality(val: string) {

@@ -1,176 +1,200 @@
 <div class="checkout container">
   <h1 class="text-center heading">Checkout</h1>
   <p class="messagee_p">{{ orderMessage }}</p>
-  <div class="row">
-    <!-- Shipping Address and Payment Method Section -->
-    <div class="col-lg-7 col-md-12 mb-4">
-      <h4 class="mb-3">Shipping Address & Payment Method:</h4>
-      <form
-        #orderData="ngForm"
-        class="common-form"
-        (ngSubmit)="orderNow(orderData.value)"
-      >
-        <!-- Email Input with Validation -->
-        <div class="form-group mb-3">
-          <input
-            type="email"
-            class="check-form-input"
-            name="email"
-            placeholder="Enter user email"
-            ngModel
-            #email="ngModel"
-            required
-            email
-          />
-          <p class="checkout-invalid-input">
-            <span *ngIf="email.invalid && email.touched"
-              >Please Enter a Valid Email</span
-            >
-          </p>
-        </div>
 
-        <!-- Address Input with Validation -->
-        <div class="form-group mb-3">
-          <input
-            type="text"
-            class="check-form-input"
-            name="address"
-            placeholder="Enter your address"
-            ngModel
-            #address="ngModel"
-            required
-          />
-          <p class="checkout-invalid-input">
-            <span *ngIf="address.invalid && address.touched"
-              >Address is required.</span
-            >
-          </p>
-        </div>
-
-        <!-- Contact Input with Validation -->
-        <div class="form-group mb-3">
-          <input
-            type="text"
-            class="check-form-input"
-            name="contact"
-            placeholder="Enter your contact details"
-            ngModel
-            #contact="ngModel"
-            required
-            minlength="10"
-            maxlength="15"
-          />
-          <p class="checkout-invalid-input">
-            <span *ngIf="contact.invalid && contact.touched"
-              >Contact is required.</span
-            >
-            <span *ngIf="contact.errors?.['minlength'] && contact.touched"
-              >Contact must be at least 10 characters.</span
-            >
-            <span *ngIf="contact.errors?.['maxlength'] && contact.touched"
-              >Contact cannot exceed 15 characters.</span
-            >
-          </p>
-        </div>
-
-        <!-- Payment Method Section -->
-        <h4 class="mb-3">Payment Method:</h4>
-        <div class="form-check mb-2">
-          <input
-            class="form-check-input"
-            type="radio"
-            id="COD"
-            name="paymentMethod"
-            (change)="onPaymentMethodChange('COD')"
-            [checked]="selectedPaymentMethod === 'COD'"
-          />
-          <label class="form-check-label" for="COD">Cash on Delivery</label>
-        </div>
-
-        <div class="form-check mb-2">
-          <input
-            class="form-check-input"
-            type="radio"
-            id="creditCard"
-            name="paymentMethod"
-            (change)="onPaymentMethodChange('creditCard')"
-            [checked]="selectedPaymentMethod === 'creditCard'"
-          />
-          <label class="form-check-label" for="creditCard"
-            >Credit/Debit Card</label
-          >
-        </div>
-
-        <div class="form-check mb-2">
-          <input
-            class="form-check-input"
-            type="radio"
-            id="bankTransfer"
-            name="paymentMethod"
-            (change)="onPaymentMethodChange('bankTransfer')"
-            [checked]="selectedPaymentMethod === 'bankTransfer'"
-          />
-          <label class="form-check-label" for="bankTransfer"
-            >Bank Transfer</label
-          >
-        </div>
-
-        <div class="form-check mb-2">
-          <input
-            class="form-check-input"
-            type="radio"
-            id="paypal"
-            name="paymentMethod"
-            (change)="onPaymentMethodChange('paypal')"
-            [checked]="selectedPaymentMethod === 'paypal'"
-          />
-          <label class="form-check-label" for="paypal">PayPal</label>
-        </div>
-
-        <div class="form-check mb-2">
-          <input
-            class="form-check-input"
-            type="radio"
-            id="mobilePayment"
-            name="paymentMethod"
-            (change)="onPaymentMethodChange('mobilePayment')"
-            [checked]="selectedPaymentMethod === 'mobilePayment'"
-          />
-          <label class="form-check-label" for="mobilePayment"
-            >Mobile Payment (e.g., Apple Pay, Google Pay)</label
-          >
-        </div>
-
-        <button
-          [disabled]="orderData.invalid || !selectedPaymentMethod"
-          class="form-button btn btn-primary w-100 mt-2"
-          type="submit"
+  <ng-container *ngIf="cartData && cartData.length > 0; else emptyState">
+    <div class="row">
+      <!-- Shipping Address and Payment Method Section -->
+      <div class="col-lg-7 col-md-12 mb-4">
+        <h4 class="mb-3">Shipping Address & Payment Method:</h4>
+        <form
+          #orderData="ngForm"
+          class="common-form"
+          (ngSubmit)="orderNow(orderData.value)"
         >
-          Confirm Order
-        </button>
-      </form>
-    </div>
+          <!-- Email Input with Validation -->
+          <div class="form-group mb-3">
+            <input
+              type="email"
+              class="check-form-input"
+              name="email"
+              placeholder="Enter user email"
+              ngModel
+              #email="ngModel"
+              required
+              email
+            />
+            <p class="checkout-invalid-input">
+              <span *ngIf="email.invalid && email.touched"
+                >Please Enter a Valid Email</span
+              >
+            </p>
+          </div>
 
-    <!-- Order-Summary -->
-    <div class="col-lg-5 col-md-12 order-summary">
-      <div class="summary-card">
-        <h3>Order Summary</h3>
-        <hr />
-        <p><strong>Subtotal:</strong> {{ priceSummary.price | pkrCurrency }}</p>
-        <p>
-          <strong>Discount:</strong> {{ priceSummary.discount | pkrCurrency }}
-        </p>
-        <p>
-          <strong>Delivery Charges:</strong>
-          {{ priceSummary.delivery | pkrCurrency }}
-        </p>
-        <p><strong>Tax:</strong> {{ priceSummary.tax | pkrCurrency }}</p>
-        <hr />
-        <p class="total">
-          <strong>Total:</strong> {{ priceSummary.total | pkrCurrency }}
-        </p>
-        <hr />
+          <!-- Address Input with Validation -->
+          <div class="form-group mb-3">
+            <input
+              type="text"
+              class="check-form-input"
+              name="address"
+              placeholder="Enter your address"
+              ngModel
+              #address="ngModel"
+              required
+            />
+            <p class="checkout-invalid-input">
+              <span *ngIf="address.invalid && address.touched"
+                >Address is required.</span
+              >
+            </p>
+          </div>
+
+          <!-- Contact Input with Validation -->
+          <div class="form-group mb-3">
+            <input
+              type="text"
+              class="check-form-input"
+              name="contact"
+              placeholder="Enter your contact details"
+              ngModel
+              #contact="ngModel"
+              required
+              minlength="10"
+              maxlength="15"
+            />
+            <p class="checkout-invalid-input">
+              <span *ngIf="contact.invalid && contact.touched"
+                >Contact is required.</span
+              >
+              <span *ngIf="contact.errors?.['minlength'] && contact.touched"
+                >Contact must be at least 10 characters.</span
+              >
+              <span *ngIf="contact.errors?.['maxlength'] && contact.touched"
+                >Contact cannot exceed 15 characters.</span
+              >
+            </p>
+          </div>
+
+          <!-- Payment Method Section -->
+          <h4 class="mb-3">Payment Method:</h4>
+          <div class="form-check mb-2" (click)="onPaymentMethodChange('COD')">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="COD"
+              name="paymentMethod"
+              [checked]="selectedPaymentMethod === 'COD'"
+            />
+            <label class="form-check-label" for="COD">Cash on Delivery</label>
+          </div>
+
+          <div
+            class="form-check mb-2"
+            (click)="onPaymentMethodChange('creditCard')"
+          >
+            <input
+              class="form-check-input"
+              type="radio"
+              id="creditCard"
+              name="paymentMethod"
+              [checked]="selectedPaymentMethod === 'creditCard'"
+            />
+            <label class="form-check-label" for="creditCard"
+              >Credit/Debit Card</label
+            >
+          </div>
+
+          <div
+            class="form-check mb-2"
+            (click)="onPaymentMethodChange('bankTransfer')"
+          >
+            <input
+              class="form-check-input"
+              type="radio"
+              id="bankTransfer"
+              name="paymentMethod"
+              [checked]="selectedPaymentMethod === 'bankTransfer'"
+            />
+            <label class="form-check-label" for="bankTransfer"
+              >Bank Transfer</label
+            >
+          </div>
+
+          <div
+            class="form-check mb-2"
+            (click)="onPaymentMethodChange('paypal')"
+          >
+            <input
+              class="form-check-input"
+              type="radio"
+              id="paypal"
+              name="paymentMethod"
+              [checked]="selectedPaymentMethod === 'paypal'"
+            />
+            <label class="form-check-label" for="paypal">PayPal</label>
+          </div>
+
+          <div
+            class="form-check mb-2"
+            (click)="onPaymentMethodChange('mobilePayment')"
+          >
+            <input
+              class="form-check-input"
+              type="radio"
+              id="mobilePayment"
+              name="paymentMethod"
+              [checked]="selectedPaymentMethod === 'mobilePayment'"
+            />
+            <label class="form-check-label" for="mobilePayment"
+              >Mobile Payment (e.g., Apple Pay, Google Pay)</label
+            >
+          </div>
+
+          <button
+            [disabled]="orderData.invalid || !selectedPaymentMethod"
+            class="form-button btn btn-primary w-100 mt-2"
+            type="submit"
+          >
+            Confirm Order
+          </button>
+        </form>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="col-lg-5 col-md-12 order-summary">
+        <div class="summary-card">
+          <h3>Order Summary</h3>
+          <hr />
+          <p>
+            <strong>Subtotal:</strong> {{ priceSummary.price | pkrCurrency }}
+          </p>
+          <p>
+            <strong>Discount:</strong> {{ priceSummary.discount | pkrCurrency }}
+          </p>
+          <p>
+            <strong>Delivery Charges:</strong>
+            {{ priceSummary.delivery | pkrCurrency }}
+          </p>
+          <p><strong>Tax:</strong> {{ priceSummary.tax | pkrCurrency }}</p>
+          <hr />
+          <p class="total">
+            <strong>Total:</strong> {{ priceSummary.total | pkrCurrency }}
+          </p>
+          <hr />
+        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
+
+  <!-- Empty State Template -->
+  <ng-template #emptyState>
+    <div class="col-12 spacing">
+      <app-empty-state
+        title="Your Cart is Empty"
+        message="It seems you have no items in your cart. Please add products to proceed."
+        buttonLabel="Continue Shopping"
+        link="/cart-page"
+      ></app-empty-state>
+    </div>
+  </ng-template>
 </div>

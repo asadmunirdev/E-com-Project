@@ -7,11 +7,12 @@ import { cart, order, priceSummary, ProductDetail } from '../data-type';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastService } from '../services/toast.service';
 import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
+import { EmptyStateComponent } from '../empty-state/empty-state.component';
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, FormsModule, PkrCurrencyPipe],
+  imports: [CommonModule, FormsModule, PkrCurrencyPipe, EmptyStateComponent],
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css'],
 })

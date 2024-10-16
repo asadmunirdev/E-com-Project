@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "json-server": "json-server --watch db.json"
-  },
+    "server": "node server.js"  
+    },
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.8",
@@ -26,6 +26,8 @@
     "@ng-bootstrap/ng-bootstrap": "^17.0.1",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
+    "express": "^4.21.1",
+    "json-server": "^0.17.4",
     "ngx-toastr": "^19.0.0",
     "node": "^20.18.0",
     "rollup": "^4.24.0",

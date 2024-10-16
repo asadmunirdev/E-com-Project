@@ -1,33 +1,41 @@
-<div class="row search-item" *ngFor="let item of searchResult">
-  <!-- Image Section -->
-  <div class="col-sm-4">
-    <a routerLink="/details/{{item.id}}">
-      <img src="{{ item.image }}" alt="{{ item.name }}" class="search-img" />
-    </a>
-  </div>
-
-  <!-- Details Section -->
-  <div class="col-sm-8 details">
-    <a routerLink="/details/{{item.id}}">
-      <h6 class="search-title">{{ item.name | titlecase }}</h6>
-    </a>
-    <div class="search-info">
-      <p class="search-price"><strong>Price:</strong> {{ item.price | pkrCurrency }}</p>
-      <p class="search-color">
-        <strong>Color:</strong> {{ item.color | titlecase }}
-      </p>
-      <p class="search-category">
-        <strong>Category:</strong> {{ item.category | titlecase }}
-      </p>
-      <p class="search-description">
-        <strong>Description:</strong> {{ item.description | titlecase }}
-      </p>
+<div *ngIf="searchResult && searchResult.length > 0; else emptyState">
+  <div class="row search-item" *ngFor="let item of searchResult">
+    <!-- Image Section -->
+    <div class="col-sm-4">
+      <a [routerLink]="['/details', item.id]">
+        <img [src]="item.image" [alt]="item.name" class="search-img" />
+      </a>
     </div>
 
-    <!-- Buttons -->
-    <!-- <div class="search-footer text-center">
-        <a href="#" class="btn btn-primary">View Details</a>
-        <a href="#" class="btn btn-success">Add to Cart</a>
-      </div> -->
+    <!-- Details Section -->
+    <div class="col-sm-8 details">
+      <a [routerLink]="['/details', item.id]">
+        <h6 class="search-title">{{ item.name | titlecase }}</h6>
+      </a>
+      <div class="search-info">
+        <p class="search-price"><strong>Price:</strong> {{ item.price | pkrCurrency }}</p>
+        <p class="search-color">
+          <strong>Color:</strong> {{ item.color | titlecase }}
+        </p>
+        <p class="search-category">
+          <strong>Category:</strong> {{ item.category | titlecase }}
+        </p>
+        <p class="search-description">
+          <strong>Description:</strong> {{ item.description | titlecase }}
+        </p>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- Empty State Template -->
+<ng-template #emptyState>
+  <div class="col-12 spacing">
+    <app-empty-state
+      title="No Results Found"
+      message="We couldn't find any products matching your search."
+      buttonLabel="Try Another Search"
+      link="/"
+    ></app-empty-state>
+  </div>
+</ng-template>

@@ -11,6 +11,10 @@
   padding: 20px; /* Consistent padding */
 }
 
+.spacing{
+  margin: 50px 0;
+}
+
 /* Search Image */
 .search-img {
   width: 100%;

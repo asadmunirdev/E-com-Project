@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from '../services/product.service';
-import { cart, order, ProductDetail } from '../data-type';
+import { cart, order, priceSummary, ProductDetail } from '../data-type';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastService } from '../services/toast.service';
+import { PkrCurrencyPipe } from '../pipelines/pkr-currency.pipe';
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, PkrCurrencyPipe],
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.css'],
 })
@@ -19,6 +20,13 @@ export class CheckoutComponent implements OnInit {
   cartData: cart[] | undefined; // Holds the data of items in the cart
   orderMessage: string | undefined; // Holds the message after placing an order
   selectedPaymentMethod: string = ''; // Stores the selected payment method
+  priceSummary: priceSummary = {
+    price: 0,
+    discount: 0,
+    tax: 0,
+    delivery: 0,
+    total: 0,
+  };
 
   constructor(
     private product: ProductService,
@@ -57,13 +65,18 @@ getCartData(productIds: string[]) {
     });
 
     // Calculate tax, delivery charges, and discount
-    let tax = price / 5;
-    let delivery = 100;
-    let discount = price / 10;
-    let total = price + tax + delivery - discount;
+    this.priceSummary.price = price;
+    this.priceSummary.discount = price / 10;
+    this.priceSummary.tax = price / 5;
+    this.priceSummary.delivery = 100;
+    this.priceSummary.total =
+      price +
+      this.priceSummary.tax +
+      this.priceSummary.delivery -
+      this.priceSummary.discount;
 
     // Ensure totalPrice has only 2 decimal places
-    this.totalPrice = parseFloat(total.toFixed(2)); // Store the total price with 2 decimal precision
+    this.totalPrice = parseFloat(this.priceSummary.total.toFixed(2)); // Store the total price with 2 decimal precision
   });
 }
   // Function triggered when the user confirms the order

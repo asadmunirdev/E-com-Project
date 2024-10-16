@@ -131,10 +131,6 @@
   align-items: center; /* Center the button section */
 }
 
-/* Remove button */
-.cancel-button {
-  width: 100px; /* Set a specific width for the button */
-}
 
 /* Order Summary Section */
 .order-summary {
@@ -193,10 +189,6 @@
   .quantity-controls {
     margin-left: 5px; /* Less margin for smaller screens */
   }
-
-  .cancel-button {
-    width: 100%; /* Slightly smaller button for mobile */
-  }
 }
 
 /* Tablet-specific styles */
@@ -241,7 +233,7 @@
   .button-section {
     justify-content: center; /* Center the button section */
   }
-  .cancel-button {
+  .cancel-button{
     width: 90px;
   }
 }

@@ -62,8 +62,38 @@
       "name": "Home Appliances"
     }
   ],
-  "cart": [],
-  "orders": [],
+  "cart": [
+    {
+      "name": "Smartphone",
+      "price": "400",
+      "color": "Black",
+      "category": "Electronics",
+      "image": "https://c4.wallpaperflare.com/wallpaper/155/904/900/hi-tech-windows-8-windows-phone-digital-art-wallpaper-preview.jpg",
+      "description": "Latest smartphone with advanced features.",
+      "quantity": 4,
+      "userId": "1",
+      "productId": "gg02",
+      "id": 1
+    }
+  ],
+  "orders": [
+    {
+      "email": "asad@gmail.com",
+      "address": "House #43, Street #1A, Isteqlal Street Sohwari Mughapura Lahore",
+      "contact": "03244590782",
+      "totalQuantity": 5,
+      "totalPrice": 320,
+      "userId": "1",
+      "paymentMethod": "creditCard",
+      "products": [
+        {
+          "name": "LED Desk Lamp",
+          "quantity": 5
+        }
+      ],
+      "id": 1
+    }
+  ],
   "products": [
     {
       "name": "Smartphone",

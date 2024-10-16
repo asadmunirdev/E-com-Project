@@ -2,11 +2,14 @@
   <h1 class="text-center heading">Checkout</h1>
   <p class="messagee_p">{{ orderMessage }}</p>
   <div class="row">
-    <!-- Shipping Address Section -->
+    <!-- Shipping Address and Payment Method Section -->
     <div class="col-lg-7 col-md-12 mb-4">
-      <h3 class="mb-4">Add Shipping Address</h3>
-      <form #orderData="ngForm" class="common-form" (ngSubmit)="orderNow(orderData.value)">
-        
+      <h4 class="mb-3">Shipping Address & Payment Method:</h4>
+      <form
+        #orderData="ngForm"
+        class="common-form"
+        (ngSubmit)="orderNow(orderData.value)"
+      >
         <!-- Email Input with Validation -->
         <div class="form-group mb-3">
           <input
@@ -20,7 +23,9 @@
             email
           />
           <p class="checkout-invalid-input">
-            <span *ngIf="email.invalid && email.touched">Please Enter a Valid Email</span>
+            <span *ngIf="email.invalid && email.touched"
+              >Please Enter a Valid Email</span
+            >
           </p>
         </div>
 
@@ -36,7 +41,9 @@
             required
           />
           <p class="checkout-invalid-input">
-            <span *ngIf="address.invalid && address.touched">Address is required.</span>
+            <span *ngIf="address.invalid && address.touched"
+              >Address is required.</span
+            >
           </p>
         </div>
 
@@ -54,29 +61,20 @@
             maxlength="15"
           />
           <p class="checkout-invalid-input">
-            <span *ngIf="contact.invalid && contact.touched">Contact is required.</span>
-            <span *ngIf="contact.errors?.['minlength'] && contact.touched">Contact must be at least 10 characters.</span>
-            <span *ngIf="contact.errors?.['maxlength'] && contact.touched">Contact cannot exceed 15 characters.</span>
+            <span *ngIf="contact.invalid && contact.touched"
+              >Contact is required.</span
+            >
+            <span *ngIf="contact.errors?.['minlength'] && contact.touched"
+              >Contact must be at least 10 characters.</span
+            >
+            <span *ngIf="contact.errors?.['maxlength'] && contact.touched"
+              >Contact cannot exceed 15 characters.</span
+            >
           </p>
         </div>
 
-        <button
-        [disabled]="orderData.invalid || !selectedPaymentMethod"
-        class="form-button btn btn-primary w-100 mb-3"
-        type="submit"
-      >
-        Confirm Order
-      </button>
-      
-      </form>
-    </div>
-
-    <!-- Order Summary & Payment Method Section -->
-    <div class="col-lg-5 col-md-12">
-      <div class="card p-3 mb-4">
-        <h3>Total Amount: <span class="text-success">{{ totalPrice }}</span></h3>
+        <!-- Payment Method Section -->
         <h4 class="mb-3">Payment Method:</h4>
-
         <div class="form-check mb-2">
           <input
             class="form-check-input"
@@ -88,7 +86,7 @@
           />
           <label class="form-check-label" for="COD">Cash on Delivery</label>
         </div>
-        
+
         <div class="form-check mb-2">
           <input
             class="form-check-input"
@@ -98,9 +96,11 @@
             (change)="onPaymentMethodChange('creditCard')"
             [checked]="selectedPaymentMethod === 'creditCard'"
           />
-          <label class="form-check-label" for="creditCard">Credit/Debit Card</label>
+          <label class="form-check-label" for="creditCard"
+            >Credit/Debit Card</label
+          >
         </div>
-        
+
         <div class="form-check mb-2">
           <input
             class="form-check-input"
@@ -110,9 +110,11 @@
             (change)="onPaymentMethodChange('bankTransfer')"
             [checked]="selectedPaymentMethod === 'bankTransfer'"
           />
-          <label class="form-check-label" for="bankTransfer">Bank Transfer</label>
+          <label class="form-check-label" for="bankTransfer"
+            >Bank Transfer</label
+          >
         </div>
-        
+
         <div class="form-check mb-2">
           <input
             class="form-check-input"
@@ -124,7 +126,7 @@
           />
           <label class="form-check-label" for="paypal">PayPal</label>
         </div>
-        
+
         <div class="form-check mb-2">
           <input
             class="form-check-input"
@@ -134,9 +136,40 @@
             (change)="onPaymentMethodChange('mobilePayment')"
             [checked]="selectedPaymentMethod === 'mobilePayment'"
           />
-          <label class="form-check-label" for="mobilePayment">Mobile Payment (e.g., Apple Pay, Google Pay)</label>
+          <label class="form-check-label" for="mobilePayment"
+            >Mobile Payment (e.g., Apple Pay, Google Pay)</label
+          >
         </div>
-        
+
+        <button
+          [disabled]="orderData.invalid || !selectedPaymentMethod"
+          class="form-button btn btn-primary w-100 mt-2"
+          type="submit"
+        >
+          Confirm Order
+        </button>
+      </form>
+    </div>
+
+    <!-- Order-Summary -->
+    <div class="col-lg-5 col-md-12 order-summary">
+      <div class="summary-card">
+        <h3>Order Summary</h3>
+        <hr />
+        <p><strong>Subtotal:</strong> {{ priceSummary.price | pkrCurrency }}</p>
+        <p>
+          <strong>Discount:</strong> {{ priceSummary.discount | pkrCurrency }}
+        </p>
+        <p>
+          <strong>Delivery Charges:</strong>
+          {{ priceSummary.delivery | pkrCurrency }}
+        </p>
+        <p><strong>Tax:</strong> {{ priceSummary.tax | pkrCurrency }}</p>
+        <hr />
+        <p class="total">
+          <strong>Total:</strong> {{ priceSummary.total | pkrCurrency }}
+        </p>
+        <hr />
       </div>
     </div>
   </div>

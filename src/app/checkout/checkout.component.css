@@ -1,11 +1,11 @@
-/* General Checkout Container Styles */
+/* General Checkout Container Styles */ 
 .checkout {
     padding: 30px;
     background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    margin-top: 80px;  /* Space from fixed navbar */
-    margin-bottom: 80px;  /* Space from footer */
+    margin-top: 80px; /* Space from fixed navbar */
+    margin-bottom: 80px; /* Space from footer */
 }
 
 /* Heading Styling */
@@ -22,7 +22,6 @@
     font-weight: 600;
     color: #212529;
     margin-bottom: 20px;
-    margin-left: 10px;
 }
 
 .checkout h4 {
@@ -62,18 +61,28 @@
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
     padding: 25px;
-    max-width: 450px;
-    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Merged Shipping and Payment Method Section */
+.merged-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.merged-section h4 {
+    margin-bottom: 15px;
 }
 
 /* Payment Method Section */
 .form-check {
     display: flex;
     align-items: center;
-    margin-bottom: 15px; /* Reduced space */
-    padding: 8px; /* Reduced padding */
+    margin-bottom: 15px;
+    padding: 8px;
     background-color: #fff;
-    border-radius: 6px; /* Slightly reduced rounding */
+    border-radius: 6px;
     border: 1px solid #ced4da;
     transition: border-color 0.3s ease;
 }
@@ -83,10 +92,11 @@
 }
 
 .form-check-label {
-    font-size: 1.15rem; /* Reduced font size */
+    font-size: 1.15rem;
     color: #495057;
-    margin-left: 8px; /* Reduced margin */
+    margin-left: 8px;
 }
+
 /* Radio Button Styles */
 .form-check-input:checked {
     background-color: #007bff; /* Background color for the checked radio button */
@@ -97,11 +107,6 @@
 .form-check-input:checked + .form-check-label {
     color: #007bff; /* Change label color when selected */
     font-weight: bold; /* Make the label bold when selected */
-}
-
-/* Adding a border to the container when selected */
-.form-check-input:checked {
-    outline: none;
 }
 
 .form-check {
@@ -138,7 +143,36 @@
 .check-form-input:focus {
     border-color: #0056b3;
     box-shadow: 0 0 8px rgba(0, 86, 179, 0.2);
-    background-color: #ffffff;
+}
+
+/* Order Summary Section */
+.order-summary {
+    position: sticky;
+    top: 130px;
+    height: fit-content;
+}
+
+.summary-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.summary-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.summary-card hr {
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+.total {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745;
 }
 
 /* Responsive Adjustments for Tablets and Smaller Screens */
@@ -150,7 +184,7 @@
     }
 
     .checkout h1 {
-        font-size: 2.25rem; /* Slightly smaller for tablets */
+        font-size: 2.25rem;
     }
 
     .checkout h3 {
@@ -179,7 +213,7 @@
     }
 
     .form-check-input {
-        width: 16px; /* Smaller size for tablets */
+        width: 16px;
         height: 16px;
     }
 }
@@ -197,6 +231,10 @@
 
     .checkout h3 {
         font-size: 1.5rem;
+    }
+
+    .checkout h4 {
+        font-size: 1.25rem;
     }
 
     .card {
@@ -221,6 +259,10 @@
         width: 16px;
         height: 16px;
     }
+
+    .order-summary {
+        position: static; /* Reset position for smaller screens */
+    }
 }
 
 @media (max-width: 576px) {
@@ -235,6 +277,10 @@
 
     .checkout h3 {
         font-size: 1.4rem;
+    }
+
+    .checkout h4 {
+        font-size: 1.1rem;
     }
 
     .card {
@@ -252,11 +298,15 @@
     }
 
     .form-check-label {
-        font-size: 0.95rem; /* Further reduction for extra small screens */
+        font-size: 0.95rem;
     }
 
     .form-check-input {
-        width: 14px; /* Even smaller checkboxes */
+        width: 14px;
         height: 14px;
+    }
+
+    .order-summary {
+        position: static; /* Reset position for smaller screens */
     }
 }

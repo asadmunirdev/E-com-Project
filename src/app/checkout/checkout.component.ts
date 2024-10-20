@@ -124,7 +124,7 @@ getCartData(productIds: string[]) {
           setTimeout(() => {
             this.route.navigate(['my-orders']); // Navigate to "My Orders" page
             this.orderMessage = undefined; // Clear the success message
-          }, 2000);
+          }, 1000);
         }
       });
     }

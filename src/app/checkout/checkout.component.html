@@ -149,14 +149,6 @@
               >Mobile Payment (e.g., Apple Pay, Google Pay)</label
             >
           </div>
-
-          <button
-            [disabled]="orderData.invalid || !selectedPaymentMethod"
-            class="form-button btn btn-primary w-100 mt-2"
-            type="submit"
-          >
-            Confirm Order
-          </button>
         </form>
       </div>
 
@@ -181,6 +173,13 @@
             <strong>Total:</strong> {{ priceSummary.total | pkrCurrency }}
           </p>
           <hr />
+          <button
+            [disabled]="orderData.invalid || !selectedPaymentMethod"
+            (click)="orderNow(orderData.value)"
+            class="form-button btn  w-100 "
+            >
+            Confirm Order
+          </button>
         </div>
       </div>
     </div>

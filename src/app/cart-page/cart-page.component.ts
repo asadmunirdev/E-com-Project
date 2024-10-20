@@ -17,12 +17,12 @@ import { ToastService } from '../services/toast.service';
     RouterModule,
     EmptyStateComponent,
     FormsModule,
-  ], // Add EmptyStateComponent here
+  ],
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css'],
 })
 export class CartPageComponent implements OnInit {
-  cartData: cart[] = []; // Initialize as an empty array
+  cartData: cart[] = [];
   priceSummary: priceSummary = {
     price: 0,
     discount: 0,
@@ -30,6 +30,7 @@ export class CartPageComponent implements OnInit {
     delivery: 0,
     total: 0,
   };
+  allSelected: boolean = false; // To track Select All checkbox
 
   constructor(
     private product: ProductService,
@@ -51,8 +52,8 @@ export class CartPageComponent implements OnInit {
   calculatePriceSummary() {
     let price = 0;
     this.cartData.forEach((item) => {
-      if (item.quantity) {
-        price += +item.price * +item.quantity;
+      if (item.selected) {
+        price += (item.price || 0) * (item.quantity || 1);
       }
     });
     this.priceSummary.price = price;
@@ -66,27 +67,40 @@ export class CartPageComponent implements OnInit {
       this.priceSummary.discount;
   }
 
+  toggleSelectAll() {
+    this.cartData.forEach((cart) => (cart.selected = this.allSelected));
+    this.calculatePriceSummary(); // Recalculate the summary
+  }
+
+  isAnyItemSelected(): boolean {
+    return this.cartData.some(cart => cart.selected);
+  }
+  
+
+  updateSelectedItems() {
+    this.allSelected = this.cartData.every(cart => cart.selected);
+    this.calculatePriceSummary(); // Recalculate the summary
+  }
+
   increaseQuantity(cart: cart) {
-    const currentQuantity = cart.quantity || 0; // Default to 0 if undefined
+    const currentQuantity = cart.quantity || 0;
     if (currentQuantity < 20) {
-      // Restrict quantity to a maximum of 20
-      cart.quantity = currentQuantity + 1; // Increase quantity
-      this.updateCart(cart); // Update cart
+      cart.quantity = currentQuantity + 1;
+      this.updateCart(cart);
     }
   }
 
   decreaseQuantity(cart: cart) {
-    const currentQuantity = cart.quantity || 0; // Default to 0 if undefined
+    const currentQuantity = cart.quantity || 0;
     if (currentQuantity > 1) {
-      cart.quantity = currentQuantity - 1; // Decrease quantity
-      this.updateCart(cart); // Update cart
+      cart.quantity = currentQuantity - 1;
+      this.updateCart(cart);
     }
   }
 
-  // Method to update the cart item quantity in the server
   updateCart(cart: cart) {
     this.product.updateCartItemQuantity(cart).subscribe(() => {
-      this.calculatePriceSummary(); // Recalculate price summary
+      this.calculatePriceSummary();
     });
   }
 
@@ -95,14 +109,10 @@ export class CartPageComponent implements OnInit {
       const user = localStorage.getItem('user');
       const userId = user && JSON.parse(user).id;
 
-      // Call the service method with the correct item ID
       this.product.removeToCart(itemId).subscribe((result) => {
         if (result) {
-          console.log(result);
-          this.getCartData(); // Refresh cart data
-          this.product.getCartList(userId); // Optionally refresh cart list
-
-          // Show success toast for removing from cart using ToastService
+          this.getCartData();
+          this.product.getCartList(userId);
           this.toastService.showToast(
             'Item removed from cart successfully!',
             'success'
@@ -112,9 +122,12 @@ export class CartPageComponent implements OnInit {
     }
   }
 
-  // Updated checkout method to pass product IDs
   checkout() {
-    const productIds = this.cartData.map(item => item.productId).join(','); // Join product IDs into a string
-    this.router.navigate(['checkout'], { queryParams: { productIds } }); // Pass product IDs as query parameters
+    const selectedProductIds = this.cartData
+      .filter(item => item.selected)
+      .map(item => item.productId)
+      .join(',');
+
+    this.router.navigate(['checkout'], { queryParams: { productIds: selectedProductIds } });
   }
 }

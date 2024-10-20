@@ -3,6 +3,22 @@
   padding: 30px;
   margin-bottom: 45px;
   border-radius: 10px;
+  position: relative; /* Added relative positioning for child absolute elements */
+}
+
+/* Checkbox section styling */
+.checkbox-section {
+  display: flex;
+  align-items: center;
+  position: absolute; /* Make the checkbox section position absolute */
+  top: 20px; /* Distance from the top */
+  left: 20px; /* Distance from the left */
+  z-index: 10; /* Ensure it appears above other elements */
+}
+
+.select-all {
+  margin-top: 20px; /* Add some space above the select all checkbox */
+  text-align: left; /* Align text to the left */
 }
 
 /* Cart item card */
@@ -10,24 +26,31 @@
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  margin-bottom: 20px; /* Add space between cards */
+  max-width: fit-content;
 }
 
 .custom-card:hover {
   transform: translateY(-5px);
 }
 
+.cancel-button {
+  width: 100%; /* Increased button width for consistency */
+}
+
 /* Image section styles */
 .image-section {
   text-align: center;
 }
+
 .image-section img:hover {
   cursor: pointer;
 }
 
 /* Set a fixed width and height for images to ensure uniformity */
 .cart-image {
-  width: 200px; /* Fixed width for consistency */
-  height: 200px; /* Fixed height for consistency */
+  width: 400px; /* Fixed width for consistency */
+  height: 150px; /* Fixed height for consistency */
   object-fit: cover; /* Cover the area without stretching */
   border-radius: 8px;
 }
@@ -131,7 +154,6 @@
   align-items: center; /* Center the button section */
 }
 
-
 /* Order Summary Section */
 .order-summary {
   position: sticky; /* Make the order summary sticky */
@@ -163,6 +185,15 @@
   color: #28a745;
 }
 
+/* Style the checkboxes as circles */
+.form-check-input {
+  width: 20px; /* Set width for the checkbox */
+  height: 20px; /* Set height for the checkbox */
+  border-radius: 50%; /* Make it circular */
+  border: 2px solid #007bff; /* Border color */
+  accent-color: #007bff; /* Use primary color */
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .cart-page {
@@ -189,51 +220,62 @@
   .quantity-controls {
     margin-left: 5px; /* Less margin for smaller screens */
   }
-}
 
+  .select-all {
+    font-size: 1rem; /* Slightly larger font size for select all */
+  }
+}
 /* Tablet-specific styles */
 @media (max-width: 1024px) {
   /* Tablet styles */
   .product-color {
     align-items: center; /* Center items in column layout */
+    flex-direction: column; /* Stack color swatches vertically */
   }
 
   .color-swatch {
-    margin-bottom: 5px; /* Add space below the swatch when stacked */
+    margin-bottom: 10px; /* Increased space below the swatch when stacked */
+    border: 2px solid #007bff; /* Highlight color swatches */
   }
 
   .details-section {
-    padding-left: 0; /* Remove left padding for a cleaner look */
+    padding-left: 15px; /* Slight left padding for better alignment */
+    padding-right: 15px; /* Add right padding for consistency */
   }
 
   .custom-card {
-    margin-bottom: 15px; /* Adjust spacing between cards on tablets */
+    margin-bottom: 20px; /* Adjust spacing between cards on tablets */
+    padding: 15px; /* Add padding inside cards */
+    border: 1px solid #e0e0e0; /* Light border for card separation */
+    background-color: #f9f9f9; /* Light background for better visibility */
   }
 
   .image-section,
   .details-section,
   .button-section {
     text-align: center; /* Center text in sections */
-    margin-bottom: 10px; /* Adjust margin for spacing */
+    margin-bottom: 15px; /* Adjust margin for spacing */
   }
 
   .cart-image {
-    width: 300px; /* Fixed width for consistency */
-    height: 150px; /* Adjust height for tablets */
+    width: 250px; /* Adjust width for tablets */
+    height: 120px; /* Adjust height for tablets */
+    border-radius: 8px; /* Keep rounded corners for images */
   }
 
   .product-quantity {
-    justify-content: center; /* Center the quantity controls */
+    justify-content: space-between; /* Space out the quantity controls */
+    margin-top: 10px; /* Add margin above quantity controls */
   }
 
   .quantity-controls {
-    justify-content: center; /* Center the quantity control buttons */
+    justify-content: space-between; /* Space out quantity control buttons */
+    margin-left: 5px; /* Add margin for better spacing */
   }
 
   .button-section {
     justify-content: center; /* Center the button section */
+    margin-top: 10px; /* Add space above button section */
   }
-  .cancel-button{
-    width: 90px;
-  }
+
 }

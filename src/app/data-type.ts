@@ -33,6 +33,8 @@ export interface cart {
   quantity: undefined | number;
   productId: number;
   userId: number;
+  selected?: boolean;
+
 }
 
 export interface priceSummary {
